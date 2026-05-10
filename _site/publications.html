@@ -163,6 +163,13 @@ ul.task-list li input[type="checkbox"] {
 <p>The table below is generated from <code>works.bib</code> and supports instant search and column sorting.</p>
 <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
 <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+<style>
+#pub-table thead th {
+    background: #f8f9fa;
+    font-weight: 700;
+    cursor: pointer;
+}
+</style>
 <div id="pub-load-status">
 Loading publications from works.bib…
 </div>
@@ -448,7 +455,11 @@ const loadPublications = async () => {
         const table = new DataTable("#pub-table", {
             pageLength: 25,
             order: [[0, "desc"]],
-            columnDefs: [{ targets: 0, type: "num" }],
+            columnDefs: [
+                { targets: 0, type: "num", orderable: true },
+                { targets: [1, 2, 3, 4], orderable: true },
+                { targets: 5, orderable: false }
+            ],
         });
 
         const applyFilters = () => {
