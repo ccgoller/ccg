@@ -4,5 +4,23 @@
   },
   "index.qmd": {
     "index.html": "9f966b73"
+  },
+  "teaching.qmd": {
+    "teaching.html": "2203f1a8"
+  },
+  "research.qmd": {
+    "research.html": "d9f22761"
+  },
+  "publications.qmd": {
+    "publications.html": "205a5362"
+  },
+  "cv.qmd": {
+    "cv.html": "96e5b111"
+  },
+  "professional-development.qmd": {
+    "professional-development.html": "87c75e61"
+  },
+  "mentoring.qmd": {
+    "mentoring.html": "630f91a2"
   }
 }

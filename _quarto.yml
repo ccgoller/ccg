@@ -17,6 +17,18 @@ website:
     left:
       - text: "Home"
         href: index.qmd
+      - text: "Publications"
+        href: publications.qmd
+      - text: "CV"
+        href: cv.qmd
+      - text: "Teaching"
+        href: teaching.qmd
+      - text: "Research"
+        href: research.qmd
+      - text: "Mentoring"
+        href: mentoring.qmd
+      - text: "Prof. Dev"
+        href: professional-development.qmd
 
 format:
   html:
