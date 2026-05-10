@@ -12,7 +12,7 @@ quarto preview
 
 ## Publish to GitHub Pages
 
-This repository includes a workflow at `/home/runner/work/ccg/ccg/.github/workflows/deploy-pages.yml` that renders the Quarto site and deploys `_site/` to GitHub Pages on pushes to the default branch.
+This repository includes a workflow at `.github/workflows/deploy-pages.yml` that renders the Quarto site and deploys `_site/` to GitHub Pages on pushes to the default branch.
 
 In GitHub repository settings:
 
