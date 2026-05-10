@@ -74,7 +74,7 @@
     "href": "publications.html",
     "title": "Publications",
     "section": "",
-    "text": "Publications\nThe table below is generated from works.bib and supports instant search and column sorting.\n\n\n\nLoading publications from works.bib…\n\n\n&lt;label for=\"pub-year-filter\" style=\"margin-right: 1rem;\"&gt;\n    Year:\n    &lt;select id=\"pub-year-filter\"&gt;\n        &lt;option value=\"\"&gt;All&lt;/option&gt;\n    &lt;/select&gt;\n&lt;/label&gt;\n&lt;label for=\"pub-type-filter\"&gt;\n    Type:\n    &lt;select id=\"pub-type-filter\"&gt;\n        &lt;option value=\"\"&gt;All&lt;/option&gt;\n    &lt;/select&gt;\n&lt;/label&gt;\n\n\n\n\n\nYear\n\n\nTitle\n\n\nAuthors\n\n\nVenue\n\n\nType\n\n\nLink"
+    "text": "Publications\nThe table below is generated from works.bib and supports instant search and column sorting.\n\n\n\nLoading publications from works.bib…\n\n\n\n\n\n\n\n\nYear\n\n\nTitle\n\n\nAuthors\n\n\nVenue\n\n\nType\n\n\nLink"
   },
   {
     "objectID": "research.html",

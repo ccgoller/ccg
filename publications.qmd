@@ -11,20 +11,7 @@ The table below is generated from `works.bib` and supports instant search and co
 
 <div id="pub-load-status">Loading publications from works.bib...</div>
 
-<div id="pub-filters" style="display:none; margin: 0.75rem 0 1rem;">
-	<label for="pub-year-filter" style="margin-right: 1rem;">
-		Year:
-		<select id="pub-year-filter">
-			<option value="">All</option>
-		</select>
-	</label>
-	<label for="pub-type-filter">
-		Type:
-		<select id="pub-type-filter">
-			<option value="">All</option>
-		</select>
-	</label>
-</div>
+<div id="pub-filters" style="display:none; margin: 0.75rem 0 1rem;"></div>
 
 <table id="pub-table" class="display" style="width:100%">
 	<thead>
@@ -207,8 +194,25 @@ const loadPublications = async () => {
 	const status = document.getElementById("pub-load-status");
 	const tbody = document.querySelector("#pub-table tbody");
 	const filters = document.getElementById("pub-filters");
-	const yearFilter = document.getElementById("pub-year-filter");
-	const typeFilter = document.getElementById("pub-type-filter");
+
+	const yearLabel = document.createElement("label");
+	yearLabel.style.marginRight = "1rem";
+	yearLabel.htmlFor = "pub-year-filter";
+	yearLabel.textContent = "Year: ";
+
+	const yearFilter = document.createElement("select");
+	yearFilter.id = "pub-year-filter";
+	yearFilter.innerHTML = '<option value="">All</option>';
+	yearLabel.appendChild(yearFilter);
+
+	const typeLabel = document.createElement("label");
+	typeLabel.htmlFor = "pub-type-filter";
+	typeLabel.textContent = "Type: ";
+
+	const typeFilter = document.createElement("select");
+	typeFilter.id = "pub-type-filter";
+	typeFilter.innerHTML = '<option value="">All</option>';
+	typeLabel.appendChild(typeFilter);
 
 	try {
 		const response = await fetch("works.bib");
@@ -251,6 +255,8 @@ const loadPublications = async () => {
 			option.textContent = type;
 			typeFilter.appendChild(option);
 		});
+
+		filters.replaceChildren(yearLabel, typeLabel);
 
 		tbody.innerHTML = rows
 			.map((row) => {
