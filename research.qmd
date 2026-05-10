@@ -4,16 +4,26 @@ title: "Research"
 
 # Research
 
-Current and recent research themes are summarized here.
+This page is adapted from my research statement at [ccgoller.com/research](https://ccgoller.com/research/).
 
-## Microbial Metabolism and Genomics
+## Research Statement Summary
 
-- Content coming soon.
+Bacterial pathogens that cause disease in healthcare settings and vulnerable populations threaten patient care and have spread rapidly across the globe. My research focuses on understanding microbial trends and characteristics associated with persistence and treatment evasion. By combining broad molecular epidemiological surveys with targeted screens for novel inhibitors, I aim to identify directed therapies that reduce the spread of emerging pathogens.
 
-## Biotechnology Education Research
+These projects are intentionally designed to be accessible and training-rich. Many approaches are relatively inexpensive, straightforward, and safe for undergraduate participation while still producing meaningful data on microbial mechanisms and behavior.
 
-- Content coming soon.
+## Core Research Directions
 
-## Current Projects
+- Microbial pathogenesis and antimicrobial strategy development.
+- Molecular epidemiology of clinically relevant microorganisms.
+- Undergraduate-centered discovery projects in microbiology and genomics.
+- Environmental and applied microbiology, including waste reduction and recycling opportunities.
 
-- Content coming soon.
+## Collaborative Vision
+
+I am committed to bridging clinical and basic science through collaborations with clinical microbiology laboratories, clinicians, ecologists, bioinformaticians, and basic scientists. The goal is a research ecosystem that is both a vibrant training environment and a productive program for discovery.
+
+## Additional Links
+
+- Full research statement page: [https://ccgoller.com/research/](https://ccgoller.com/research/)
+- Research projects index: [https://ccgoller.com/research-projects/](https://ccgoller.com/research-projects/)

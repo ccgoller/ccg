@@ -4,16 +4,30 @@ title: "Publications"
 
 # Publications
 
-A selected list of scholarly publications will be maintained here.
+This page is adapted from the publications list at [ccgoller.com/publications](https://ccgoller.com/publications/) and highlights selected recent work.
 
-## Journal Articles
+## 2025 (Selected)
 
-- Content coming soon.
+- McCulloch LA, Cavazos B, Ganong C, Goller C, Kjelvik M, Mehrotra P, Hardin R, Russell. 2025. Bridging the gap: increasing accessibility to authentic learning in undergraduate education. *Journal of Microbiology & Biology Education*. [https://doi.org/10.1128/jmbe.00218-25](https://doi.org/10.1128/jmbe.00218-25)
+- Tully D, Goller C, Mueller K, McKenney E, Giles E. 2025. *Approaches to Open Pedagogy: A Guide for Practitioners*. OER. [https://doi.org/10.52750/826428](https://doi.org/10.52750/826428)
+- Mathews SL, Goller C, Wolyniak MJ, Swamy U, Misra A, Moore ME, et al. 2025. Examining the influence of Vision and Change and a mentoring network on teaching philosophies and strategies. *JMBE*. [http://dx.doi.org/10.1128/jmbe.00074-25](http://dx.doi.org/10.1128/jmbe.00074-25)
+- Spence PL, Goller C, Riley N, Norman D, Leggett Z. 2025. Where is Delftia? Implementing citizen science into biotechnology and environmental science curriculum. *JMBE*. [http://dx.doi.org/10.1128/jmbe.00088-24](http://dx.doi.org/10.1128/jmbe.00088-24)
 
-## Book Chapters
+## 2024 (Selected)
 
-- Content coming soon.
+- Wilkins MR, Rapciak SE, Goller CC, Weintraub J, Mikaelyan A. 2024. Scaling the wall: overcoming barriers to STEM knowledge mobilization. *Frontiers in Communication*.
+- Vemu S, Mulcahy M, Mehrotra D, Goller C, Kaushik B, Rissler H, et al. 2024. Project Leadership Resources - Bringing Leadership Experiences into the Classroom. QUBES. [https://qubeshub.org/publications/4606/1](https://qubeshub.org/publications/4606/1)
+- McKenney EA, Gates TA, Goller CC, Tully D, Leggett Z, Lupek M, et al. 2024. Strategies to empower students through open pedagogy and citizen science. *International Journal of Open Educational Resources*. [http://dx.doi.org/10.18278/ijoer.5.1.5](http://dx.doi.org/10.18278/ijoer.5.1.5)
+- Chen SH, Garcia CB, Lazear E, Lentz TB, Robertson SD, Li Z, et al. 2024. Implementation of electronic lab notebooks (ELNs) in science laboratory classes. *Discover Education*. [http://dx.doi.org/10.1007/s44217-024-00161-3](http://dx.doi.org/10.1007/s44217-024-00161-3)
 
-## Conference Proceedings
+## 2023 and Earlier (Selected)
 
-- Content coming soon.
+- Smyth DS, Broderick NA, Goller CC. 2023. Editorial: Community series in tools, techniques, and strategies for teaching in a real-world context with microbiology, volume II. *Frontiers in Microbiology*. [http://dx.doi.org/10.3389/fmicb.2023.1156805](http://dx.doi.org/10.3389/fmicb.2023.1156805)
+- Sjogren CA, Comstock G, Goller CC. 2023. Connecting ethical reasoning to global challenges through analysis of argumentation. *JMBE*. [http://dx.doi.org/10.1128/jmbe.00166-22](http://dx.doi.org/10.1128/jmbe.00166-22)
+- Riley NG, Goller CC, Leggett ZH, Lewis DM, Ciccone K, Dunn RR. 2020. Catalyzing rapid discovery of gold-precipitating bacterial lineages with university students. *PeerJ*. [http://dx.doi.org/10.7717/peerj.8925](http://dx.doi.org/10.7717/peerj.8925)
+- Goller CC, Ott LE. 2020. Evolution of an 8-week upper-division metagenomics course. *Biochemistry and Molecular Biology Education*. [http://dx.doi.org/10.1002/bmb.21349](http://dx.doi.org/10.1002/bmb.21349)
+- Anderson GG, Goller CC, Justice S, Hultgren SJ, Seed PC. 2010. Polysaccharide capsule and sialic acid-mediated regulation promote biofilm-like intracellular bacterial communities during cystitis. *Infection and Immunity*. [http://dx.doi.org/10.1128/IAI.00925-09](http://dx.doi.org/10.1128/IAI.00925-09)
+
+## Full List
+
+- Full publication list: [https://ccgoller.com/publications/](https://ccgoller.com/publications/)

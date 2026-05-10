@@ -4,16 +4,33 @@ title: "Mentoring"
 
 # Mentoring
 
-This page highlights mentoring goals and student support activities.
+This page is adapted from [ccgoller.com/mentoring](https://ccgoller.com/mentoring/) and related mentoring resources.
 
 ## Mentoring Philosophy
 
-- Content coming soon.
+My mentoring approach emphasizes meaningful, research-active participation across career stages, from early undergraduate researchers to graduate trainees and postdoctoral education scholars. I aim to create inclusive, collaborative project environments where trainees contribute to authentic discovery and professional growth.
+
+- Research mentoring philosophy page: [https://ccgoller.com/research-mentoring-philosophy-2/](https://ccgoller.com/research-mentoring-philosophy-2/)
+- Research mentoring philosophy PDF: [https://ccgoller.com/wp-content/uploads/2025/07/my-research-philosophy.pdf](https://ccgoller.com/wp-content/uploads/2025/07/my-research-philosophy.pdf)
 
 ## Student Projects
 
-- Content coming soon.
+Representative recent projects include:
+
+- Role of tryptophan in *Delftia tsuruhatensis* regulation of antimalarial compounds.
+- Analysis of microbial communities in wax worm samples from North Carolina beekeepers.
+- Plastic decomposition and genomic features in *Galleria mellonella*.
+- Transcriptome analysis of *Delftia acidovorans* strains in the presence of gold ions.
+- Characterization of *Comamonas* and *Delftia* isolates.
+- Metagenomics and genomics projects in bee-associated microbial systems.
+- Citizen science and campus sampling projects such as "Where is Delftia?".
 
 ## Alumni and Outcomes
 
-- Content coming soon.
+- Mentoring has included scholars from NC State, Wake STEM Early College, Durham Tech, University of Maryland, University of Puerto Rico, Rochester Institute of Technology/NTID, College of Charleston, and other partner programs.
+- Multiple mentees have co-authored publications and contributed to course-based and independent research outputs.
+- Projects frequently connect research training with public engagement, open educational resources, and community-facing science.
+
+## Full Mentoring List
+
+- Complete mentoring roster and project details: [https://ccgoller.com/mentoring/](https://ccgoller.com/mentoring/)

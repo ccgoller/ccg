@@ -4,17 +4,30 @@ title: "Teaching"
 
 # Teaching
 
-Overview of teaching philosophy, courses, and instructional projects.
+This page is adapted from [ccgoller.com/teaching-philosophy](https://ccgoller.com/teaching-philosophy/) and [ccgoller.com/courses](https://ccgoller.com/courses/).
 
 ## Teaching Philosophy
 
-- Content coming soon.
+The mysteries of nature inspire innovation and scientific discovery, but scientific literacy is essential for everyone in an interconnected world. I am committed to making science more accessible by engaging students as participants and co-creators in the learning process.
+
+My teaching framework emphasizes discovery, collaboration, and communication: discover, teach, and share together.
+
+- Teaching philosophy page: [https://ccgoller.com/teaching-philosophy/](https://ccgoller.com/teaching-philosophy/)
+- Teaching philosophy PDF: [https://carloscgollerphd.blog/wp-content/uploads/2014/12/teaching-philosophy-v2-4.pdf](https://carloscgollerphd.blog/wp-content/uploads/2014/12/teaching-philosophy-v2-4.pdf)
 
 ## Courses
 
-- MB 360: Scientific Inquiry in Microbiology at the Bench
-- Additional course listings coming soon.
+- Outbreak | HON 312 | NC State University Honors Program. Website: [http://go.ncsu.edu/outbreak](http://go.ncsu.edu/outbreak)
+- Microbial Superheroes | LSC 170 | NC State Department of Biological Sciences. Website: [http://go.ncsu.edu/delftiabook](http://go.ncsu.edu/delftiabook)
+- Portable Genome Sequencing | BIT 495/595 | NC State Biotechnology Program.
+- Metagenomics | BIT 477/577 | NC State Biotechnology Program. Website: [http://go.ncsu.edu/bitmetagenomics](http://go.ncsu.edu/bitmetagenomics)
+- High-throughput Discovery | BIT 479/579 | NC State Biotechnology Program. Website: [http://go.ncsu.edu/htd](http://go.ncsu.edu/htd)
+- Biotechnology and Sustainability | BIT 295 | NC State Biotechnology Program. Website: [http://go.ncsu.edu/bits](http://go.ncsu.edu/bits)
+- Metabolic Modeling | BIT 495/595 | NC State Biotechnology Program. Website: [http://go.ncsu.edu/metmod](http://go.ncsu.edu/metmod)
+- Open Education Resources and Pedagogies | OPEN 9200 | Kwantlen Polytechnic University
 
 ## Curriculum Development
 
-- Content coming soon.
+- Inquiry-driven laboratory design for biotechnology and microbiology learning.
+- Integration of high-throughput and genomics approaches into undergraduate teaching.
+- Open pedagogy and OER-centered curriculum innovation.
