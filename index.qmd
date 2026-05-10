@@ -1,0 +1,9 @@
+---
+title: "Welcome"
+---
+
+# Welcome
+
+This site contains my professional profile and background.
+
+[Visit the About page](about.html)
