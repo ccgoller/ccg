@@ -1,6 +1,6 @@
 ---
 title: "Carlos C. Goller"
-number-sections: false
+number-sections: true
 about:
   template: broadside
   image: https://raw.githubusercontent.com/ccgoller/mb360workbook/main/workbook/images/author/GollerCarlos.jpg
@@ -55,3 +55,4 @@ August 1998 - May 2002
 ## Additional Links
 
 - [BSC 495: The Hidden World's Code](https://ccgoller.github.io/bsc-fungal-genomics-lab/)
+- [MB 360: Microbial Metabolism](https://ccgoller.github.io/mb360workbook/)
