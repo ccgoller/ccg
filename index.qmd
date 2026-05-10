@@ -2,7 +2,7 @@
 title: "Welcome"
 ---
 
-# Welcome
+# Hi
 
 This site contains my professional profile and background.
 

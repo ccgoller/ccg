@@ -2,7 +2,7 @@
 title: "Carlos C. Goller"
 number-sections: true
 about:
-  template: broadside
+  template: trestles
   image: https://raw.githubusercontent.com/ccgoller/mb360workbook/main/workbook/images/author/GollerCarlos.jpg
   image-shape: rounded
   links:

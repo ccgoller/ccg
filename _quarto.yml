@@ -3,14 +3,23 @@ project:
 
 website:
   title: "Carlos C. Goller"
+
+  announcement:
+    icon: info-circle
+    dismissable: true
+    content: "**Welcome** - this is some information that you should pay attention to"
+    type: primary
+    position: below-navbar
+  
   navbar:
+    background: primary
+    search: true
     left:
-      - href: index.qmd
-        text: Home
-      - href: about.qmd
-        text: About
+      - text: "Home"
+        href: index.qmd
 
 format:
   html:
     theme: cosmo
-    toc: true
+    css: styles.css
+    toc: false
