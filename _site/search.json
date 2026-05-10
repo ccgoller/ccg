@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome\nThis site contains my professional profile and background.\nVisit the About page"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Carlos C. Goller",
+    "section": "",
+    "text": "Carlos C. Goller is a Teaching Professor at North Carolina State University in Raleigh, NC. He teaches microbiology, life science, public health, and other fun courses as part of the Department of Biological Sciences. When not playing with Delftia acidovorans or code, Carlos enjoys spending time with his family and playing with his dog Sunshine."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "Carlos C. Goller",
+    "section": "Education",
+    "text": "Education\n\nNorth Carolina State University\nRaleigh, NC\nAdvisor: Dr. Sue Carson\nTopic: Biotechnology Education and Curriculum Development\n\n\nDuke University Medical Center\nDurham, NC\nAdvisor: Patrick C. Seed\nTopic: Bacterial Pathogenesis and Anti-infective Screening\nThe Hartwell Foundation Postdoctoral Fellowship\nSeptember 2008 - July 2012\n\n\nEmory University\nAtlanta, GA\nAdvisor: Tony Romeo\nTopic: Bacterial Biofilm Formation and Regulation\nPh.D. in Microbiology and Molecular Genetics\nAugust 2002 - September 2008\n\n\nWorcester Polytechnic Institute\nWorcester, MA\nB.S. in Biology and Biotechnology\nAugust 1998 - May 2002"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "Carlos C. Goller",
+    "section": "Experience",
+    "text": "Experience\n\nTeaching Professor, North Carolina State University Department of Biological Sciences, 2024 - Present\nAssociate Teaching Professor, North Carolina State University Department of Biological Sciences, 2019 - 2024\nAssistant Teaching Professor, North Carolina State University Department of Biological Sciences, 2015 - 2019"
+  },
+  {
+    "objectID": "about.html#additional-links",
+    "href": "about.html#additional-links",
+    "title": "Carlos C. Goller",
+    "section": "Additional Links",
+    "text": "Additional Links\n\nBSC 495: The Hidden World’s Code"
+  }
+]
