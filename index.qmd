@@ -6,4 +6,4 @@ title: "Welcome"
 
 This site contains my professional profile and background.
 
-[Visit the About page](about.qmd)
+[Visit the About page](about.html)
