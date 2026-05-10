@@ -4,30 +4,172 @@ title: "Publications"
 
 # Publications
 
-This page is adapted from the publications list at [ccgoller.com/publications](https://ccgoller.com/publications/) and highlights selected recent work.
+The table below is generated from `works.bib` and supports instant search and column sorting.
 
-## 2025 (Selected)
+<link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bibtex-parse-js@0.0.24/src/bibtexParse.min.js"></script>
+<script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
 
-- McCulloch LA, Cavazos B, Ganong C, Goller C, Kjelvik M, Mehrotra P, Hardin R, Russell. 2025. Bridging the gap: increasing accessibility to authentic learning in undergraduate education. *Journal of Microbiology & Biology Education*. [https://doi.org/10.1128/jmbe.00218-25](https://doi.org/10.1128/jmbe.00218-25)
-- Tully D, Goller C, Mueller K, McKenney E, Giles E. 2025. *Approaches to Open Pedagogy: A Guide for Practitioners*. OER. [https://doi.org/10.52750/826428](https://doi.org/10.52750/826428)
-- Mathews SL, Goller C, Wolyniak MJ, Swamy U, Misra A, Moore ME, et al. 2025. Examining the influence of Vision and Change and a mentoring network on teaching philosophies and strategies. *JMBE*. [http://dx.doi.org/10.1128/jmbe.00074-25](http://dx.doi.org/10.1128/jmbe.00074-25)
-- Spence PL, Goller C, Riley N, Norman D, Leggett Z. 2025. Where is Delftia? Implementing citizen science into biotechnology and environmental science curriculum. *JMBE*. [http://dx.doi.org/10.1128/jmbe.00088-24](http://dx.doi.org/10.1128/jmbe.00088-24)
+<div id="pub-load-status">Loading publications from works.bib...</div>
 
-## 2024 (Selected)
+<div id="pub-filters" style="display:none; margin: 0.75rem 0 1rem;">
+	<label for="pub-year-filter" style="margin-right: 1rem;">
+		Year:
+		<select id="pub-year-filter">
+			<option value="">All</option>
+		</select>
+	</label>
+	<label for="pub-type-filter">
+		Type:
+		<select id="pub-type-filter">
+			<option value="">All</option>
+		</select>
+	</label>
+</div>
 
-- Wilkins MR, Rapciak SE, Goller CC, Weintraub J, Mikaelyan A. 2024. Scaling the wall: overcoming barriers to STEM knowledge mobilization. *Frontiers in Communication*.
-- Vemu S, Mulcahy M, Mehrotra D, Goller C, Kaushik B, Rissler H, et al. 2024. Project Leadership Resources - Bringing Leadership Experiences into the Classroom. QUBES. [https://qubeshub.org/publications/4606/1](https://qubeshub.org/publications/4606/1)
-- McKenney EA, Gates TA, Goller CC, Tully D, Leggett Z, Lupek M, et al. 2024. Strategies to empower students through open pedagogy and citizen science. *International Journal of Open Educational Resources*. [http://dx.doi.org/10.18278/ijoer.5.1.5](http://dx.doi.org/10.18278/ijoer.5.1.5)
-- Chen SH, Garcia CB, Lazear E, Lentz TB, Robertson SD, Li Z, et al. 2024. Implementation of electronic lab notebooks (ELNs) in science laboratory classes. *Discover Education*. [http://dx.doi.org/10.1007/s44217-024-00161-3](http://dx.doi.org/10.1007/s44217-024-00161-3)
+<table id="pub-table" class="display" style="width:100%">
+	<thead>
+		<tr>
+			<th>Year</th>
+			<th>Title</th>
+			<th>Authors</th>
+			<th>Venue</th>
+			<th>Type</th>
+			<th>Link</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
+</table>
 
-## 2023 and Earlier (Selected)
+<script>
+const cleanField = (value) => {
+	if (!value) return "";
+	const asText = String(value)
+		.replace(/<[^>]*>/g, " ")
+		.replace(/[{}]/g, "")
+		.replace(/\\[a-zA-Z]+\s*/g, "")
+		.replace(/\s+/g, " ")
+		.trim();
 
-- Smyth DS, Broderick NA, Goller CC. 2023. Editorial: Community series in tools, techniques, and strategies for teaching in a real-world context with microbiology, volume II. *Frontiers in Microbiology*. [http://dx.doi.org/10.3389/fmicb.2023.1156805](http://dx.doi.org/10.3389/fmicb.2023.1156805)
-- Sjogren CA, Comstock G, Goller CC. 2023. Connecting ethical reasoning to global challenges through analysis of argumentation. *JMBE*. [http://dx.doi.org/10.1128/jmbe.00166-22](http://dx.doi.org/10.1128/jmbe.00166-22)
-- Riley NG, Goller CC, Leggett ZH, Lewis DM, Ciccone K, Dunn RR. 2020. Catalyzing rapid discovery of gold-precipitating bacterial lineages with university students. *PeerJ*. [http://dx.doi.org/10.7717/peerj.8925](http://dx.doi.org/10.7717/peerj.8925)
-- Goller CC, Ott LE. 2020. Evolution of an 8-week upper-division metagenomics course. *Biochemistry and Molecular Biology Education*. [http://dx.doi.org/10.1002/bmb.21349](http://dx.doi.org/10.1002/bmb.21349)
-- Anderson GG, Goller CC, Justice S, Hultgren SJ, Seed PC. 2010. Polysaccharide capsule and sialic acid-mediated regulation promote biofilm-like intracellular bacterial communities during cystitis. *Infection and Immunity*. [http://dx.doi.org/10.1128/IAI.00925-09](http://dx.doi.org/10.1128/IAI.00925-09)
+	const decode = document.createElement("textarea");
+	decode.innerHTML = asText;
+	return decode.value;
+};
 
-## Full List
+const parseAuthors = (rawAuthors) => {
+	if (!rawAuthors) return "";
+	return cleanField(rawAuthors)
+		.split(/\s+and\s+/i)
+		.map((name) => name.trim())
+		.filter(Boolean)
+		.join(", ");
+};
 
-- Full publication list: [https://ccgoller.com/publications/](https://ccgoller.com/publications/)
+const entryLink = (fields) => {
+	const doi = cleanField(fields.doi || fields.DOI);
+	const url = cleanField(fields.url || fields.URL);
+	if (doi) return `https://doi.org/${doi}`;
+	return url;
+};
+
+const escapeRegex = (value) => String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+const loadPublications = async () => {
+	const status = document.getElementById("pub-load-status");
+	const tbody = document.querySelector("#pub-table tbody");
+	const filters = document.getElementById("pub-filters");
+	const yearFilter = document.getElementById("pub-year-filter");
+	const typeFilter = document.getElementById("pub-type-filter");
+
+	try {
+		const response = await fetch("works.bib");
+		if (!response.ok) {
+			throw new Error(`Could not load works.bib (HTTP ${response.status})`);
+		}
+
+		const bibText = await response.text();
+		const entries = bibtexParse.toJSON(bibText);
+
+		const rows = entries.map((entry) => {
+			const fields = entry.entryTags || {};
+			const year = cleanField(fields.year || "");
+			const title = cleanField(fields.title || "");
+			const authors = parseAuthors(fields.author || "");
+			const venue = cleanField(fields.journal || fields.booktitle || fields.publisher || "");
+			const type = cleanField(entry.entryType || "");
+			const link = entryLink(fields);
+
+			return { year, title, authors, venue, type, link };
+		});
+
+		rows.sort((a, b) => Number(b.year || 0) - Number(a.year || 0));
+
+		const years = [...new Set(rows.map((row) => row.year).filter(Boolean))]
+			.sort((a, b) => Number(b) - Number(a));
+		const types = [...new Set(rows.map((row) => row.type).filter(Boolean))]
+			.sort((a, b) => a.localeCompare(b));
+
+		years.forEach((year) => {
+			const option = document.createElement("option");
+			option.value = year;
+			option.textContent = year;
+			yearFilter.appendChild(option);
+		});
+
+		types.forEach((type) => {
+			const option = document.createElement("option");
+			option.value = type;
+			option.textContent = type;
+			typeFilter.appendChild(option);
+		});
+
+		tbody.innerHTML = rows
+			.map((row) => {
+				const safeLink = row.link
+					? `<a href="${row.link}" target="_blank" rel="noopener noreferrer">View</a>`
+					: "";
+
+				return `
+					<tr>
+						<td>${row.year}</td>
+						<td>${row.title}</td>
+						<td>${row.authors}</td>
+						<td>${row.venue}</td>
+						<td>${row.type}</td>
+						<td>${safeLink}</td>
+					</tr>
+				`;
+			})
+			.join("");
+
+		const table = new DataTable("#pub-table", {
+			pageLength: 25,
+			order: [[0, "desc"]],
+			columnDefs: [{ targets: 0, type: "num" }],
+		});
+
+		const applyFilters = () => {
+			const yearValue = yearFilter.value;
+			const typeValue = typeFilter.value;
+
+			table
+				.column(0)
+				.search(yearValue ? `^${escapeRegex(yearValue)}$` : "", true, false);
+			table
+				.column(4)
+				.search(typeValue ? `^${escapeRegex(typeValue)}$` : "", true, false);
+			table.draw();
+		};
+
+		yearFilter.addEventListener("change", applyFilters);
+		typeFilter.addEventListener("change", applyFilters);
+		filters.style.display = "block";
+
+		status.textContent = `Loaded ${rows.length} publications from works.bib.`;
+	} catch (error) {
+		status.textContent = `Unable to load publications: ${error.message}`;
+	}
+};
+
+loadPublications();
+</script>

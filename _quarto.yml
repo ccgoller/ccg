@@ -1,8 +1,11 @@
 project:
   type: website
+  resources:
+    - works.bib
 
 website:
   title: "Carlos C. Goller"
+  favicon: ccg100.jpg
 
   announcement:
     icon: info-circle
@@ -12,6 +15,7 @@ website:
     position: below-navbar
   
   navbar:
+    logo: ccg100.jpg
     background: primary
     search: true
     left:
