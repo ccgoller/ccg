@@ -15,7 +15,6 @@ website:
     position: below-navbar
   
   navbar:
-    logo: ccg100.jpg
     background: primary
     search: true
     left:

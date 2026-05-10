@@ -83,10 +83,6 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./ccg100.jpg" alt="" class="navbar-logo light-content">
-    <img src="./ccg100.jpg" alt="" class="navbar-logo dark-content">
-    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Carlos C. Goller</span>
     </a>
@@ -166,7 +162,6 @@ ul.task-list li input[type="checkbox"] {
 <h1>Publications</h1>
 <p>The table below is generated from <code>works.bib</code> and supports instant search and column sorting.</p>
 <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
-<script src="https://cdn.jsdelivr.net/npm/bibtex-parse-js@0.0.24/src/bibtexParse.min.js"></script>
 <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
 <div id="pub-load-status">
 Loading publications from works.bib…
@@ -244,6 +239,136 @@ const entryLink = (fields) => {
 
 const escapeRegex = (value) => String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
+const parseBibEntries = (text) => {
+    const entries = [];
+    const normalized = String(text || "").replace(/\r\n/g, "\n");
+    let index = 0;
+
+    const skipWhitespace = () => {
+        while (index < normalized.length && /\s/.test(normalized[index])) {
+            index += 1;
+        }
+    };
+
+    const readUntil = (terminator) => {
+        const start = index;
+        while (index < normalized.length && normalized[index] !== terminator) {
+            index += 1;
+        }
+        return normalized.slice(start, index);
+    };
+
+    const readBalancedBlock = (openChar, closeChar) => {
+        let depth = 1;
+        const start = index;
+        while (index < normalized.length) {
+            const char = normalized[index];
+            if (char === openChar) depth += 1;
+            if (char === closeChar) depth -= 1;
+            index += 1;
+            if (depth === 0) break;
+        }
+        return normalized.slice(start, index - 1);
+    };
+
+    const parseFields = (body) => {
+        const fields = {};
+        let i = 0;
+
+        const readFieldValue = () => {
+            skipFieldWhitespace();
+            if (body[i] === "{") {
+                i += 1;
+                let depth = 1;
+                const start = i;
+                while (i < body.length) {
+                    const char = body[i];
+                    if (char === "{") depth += 1;
+                    if (char === "}") depth -= 1;
+                    i += 1;
+                    if (depth === 0) break;
+                }
+                return body.slice(start, i - 1);
+            }
+
+            if (body[i] === '"') {
+                i += 1;
+                const start = i;
+                while (i < body.length) {
+                    if (body[i] === '"' && body[i - 1] !== "\\") break;
+                    i += 1;
+                }
+                const value = body.slice(start, i);
+                i += 1;
+                return value;
+            }
+
+            const start = i;
+            while (i < body.length && body[i] !== ",") {
+                i += 1;
+            }
+            return body.slice(start, i).trim();
+        };
+
+        const skipFieldWhitespace = () => {
+            while (i < body.length && /\s/.test(body[i])) {
+                i += 1;
+            }
+        };
+
+        while (i < body.length) {
+            skipFieldWhitespace();
+            if (i >= body.length) break;
+
+            const keyStart = i;
+            while (i < body.length && /[\w\-]/.test(body[i])) {
+                i += 1;
+            }
+            const key = body.slice(keyStart, i).trim();
+            skipFieldWhitespace();
+            if (body[i] !== "=") {
+                break;
+            }
+            i += 1;
+            const value = readFieldValue();
+            if (key) fields[key] = value;
+            skipFieldWhitespace();
+            if (body[i] === ",") {
+                i += 1;
+            }
+        }
+
+        return fields;
+    };
+
+    while (index < normalized.length) {
+        const at = normalized.indexOf("@", index);
+        if (at === -1) break;
+        index = at + 1;
+        skipWhitespace();
+
+        const typeStart = index;
+        while (index < normalized.length && /[A-Za-z]/.test(normalized[index])) {
+            index += 1;
+        }
+        const entryType = normalized.slice(typeStart, index).toLowerCase();
+        skipWhitespace();
+        if (normalized[index] !== "{") {
+            continue;
+        }
+        index += 1;
+
+        const key = readUntil(",").trim();
+        if (normalized[index] === ",") index += 1;
+        const body = readBalancedBlock("{", "}");
+        const entryTags = parseFields(body);
+
+        entries.push({ entryType, citationKey: key, entryTags });
+    }
+
+    return entries;
+};
+
 const loadPublications = async () => {
     const status = document.getElementById("pub-load-status");
     const tbody = document.querySelector("#pub-table tbody");
@@ -258,7 +383,7 @@ const loadPublications = async () => {
         }
 
         const bibText = await response.text();
-        const entries = bibtexParse.toJSON(bibText);
+        const entries = parseBibEntries(bibText);
 
         const rows = entries.map((entry) => {
             const fields = entry.entryTags || {};
