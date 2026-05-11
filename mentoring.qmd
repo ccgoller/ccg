@@ -4,33 +4,279 @@ title: "Mentoring"
 
 # Mentoring
 
-This page is adapted from [ccgoller.com/mentoring](https://ccgoller.com/mentoring/) and related mentoring resources.
+The table below is generated from `mentoring.bib` and supports instant search and column sorting.
 
-## Mentoring Philosophy
+<link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
+<script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
 
-My mentoring approach emphasizes meaningful, research-active participation across career stages, from early undergraduate researchers to graduate trainees and postdoctoral education scholars. I aim to create inclusive, collaborative project environments where trainees contribute to authentic discovery and professional growth.
+<style>
+#mentor-table thead th {
+	background: #f8f9fa;
+	font-weight: 700;
+	cursor: pointer;
+}
+</style>
 
-- Research mentoring philosophy page: [https://ccgoller.com/research-mentoring-philosophy-2/](https://ccgoller.com/research-mentoring-philosophy-2/)
-- Research mentoring philosophy PDF: [https://ccgoller.com/wp-content/uploads/2025/07/my-research-philosophy.pdf](https://ccgoller.com/wp-content/uploads/2025/07/my-research-philosophy.pdf)
+<div id="mentor-load-status">Loading mentoring records from mentoring.bib...</div>
+<div id="mentor-filters" style="display:none; margin: 0.75rem 0 1rem;"></div>
 
-## Student Projects
+<table id="mentor-table" class="display" style="width:100%">
+	<thead>
+		<tr>
+			<th>Year</th>
+			<th>Mentee</th>
+			<th>Category</th>
+			<th>Summary</th>
+			<th>Source</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
+</table>
 
-Representative recent projects include:
+<script>
+const cleanField = (value) => {
+	if (!value) return "";
+	const asText = String(value)
+		.replace(/<[^>]*>/g, " ")
+		.replace(/[{}]/g, "")
+		.replace(/\\[a-zA-Z]+\s*/g, "")
+		.replace(/\s+/g, " ")
+		.trim();
 
-- Role of tryptophan in *Delftia tsuruhatensis* regulation of antimalarial compounds.
-- Analysis of microbial communities in wax worm samples from North Carolina beekeepers.
-- Plastic decomposition and genomic features in *Galleria mellonella*.
-- Transcriptome analysis of *Delftia acidovorans* strains in the presence of gold ions.
-- Characterization of *Comamonas* and *Delftia* isolates.
-- Metagenomics and genomics projects in bee-associated microbial systems.
-- Citizen science and campus sampling projects such as "Where is Delftia?".
+	const decode = document.createElement("textarea");
+	decode.innerHTML = asText;
+	return decode.value;
+};
 
-## Alumni and Outcomes
+const escapeRegex = (value) => String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
-- Mentoring has included scholars from NC State, Wake STEM Early College, Durham Tech, University of Maryland, University of Puerto Rico, Rochester Institute of Technology/NTID, College of Charleston, and other partner programs.
-- Multiple mentees have co-authored publications and contributed to course-based and independent research outputs.
-- Projects frequently connect research training with public engagement, open educational resources, and community-facing science.
+const parseBibEntries = (text) => {
+	const entries = [];
+	const normalized = String(text || "").replace(/\r\n/g, "\n");
+	let index = 0;
 
-## Full Mentoring List
+	const skipWhitespace = () => {
+		while (index < normalized.length && /\s/.test(normalized[index])) {
+			index += 1;
+		}
+	};
 
-- Complete mentoring roster and project details: [https://ccgoller.com/mentoring/](https://ccgoller.com/mentoring/)
+	const readUntil = (terminator) => {
+		const start = index;
+		while (index < normalized.length && normalized[index] !== terminator) {
+			index += 1;
+		}
+		return normalized.slice(start, index);
+	};
+
+	const readBalancedBlock = (openChar, closeChar) => {
+		let depth = 1;
+		const start = index;
+		while (index < normalized.length) {
+			const char = normalized[index];
+			if (char === openChar) depth += 1;
+			if (char === closeChar) depth -= 1;
+			index += 1;
+			if (depth === 0) break;
+		}
+		return normalized.slice(start, index - 1);
+	};
+
+	const parseFields = (body) => {
+		const fields = {};
+		let i = 0;
+
+		const skipFieldWhitespace = () => {
+			while (i < body.length && /\s/.test(body[i])) i += 1;
+		};
+
+		const readFieldValue = () => {
+			skipFieldWhitespace();
+
+			if (body[i] === "{") {
+				i += 1;
+				let depth = 1;
+				const start = i;
+				while (i < body.length) {
+					const char = body[i];
+					if (char === "{") depth += 1;
+					if (char === "}") depth -= 1;
+					i += 1;
+					if (depth === 0) break;
+				}
+				return body.slice(start, i - 1);
+			}
+
+			if (body[i] === '"') {
+				i += 1;
+				const start = i;
+				while (i < body.length) {
+					if (body[i] === '"' && body[i - 1] !== "\\") break;
+					i += 1;
+				}
+				const value = body.slice(start, i);
+				i += 1;
+				return value;
+			}
+
+			const start = i;
+			while (i < body.length && body[i] !== ",") i += 1;
+			return body.slice(start, i).trim();
+		};
+
+		while (i < body.length) {
+			skipFieldWhitespace();
+			if (i >= body.length) break;
+
+			const keyStart = i;
+			while (i < body.length && /[\w\-]/.test(body[i])) i += 1;
+			const key = body.slice(keyStart, i).trim();
+
+			skipFieldWhitespace();
+			if (body[i] !== "=") break;
+
+			i += 1;
+			const value = readFieldValue();
+			if (key) fields[key] = value;
+
+			skipFieldWhitespace();
+			if (body[i] === ",") i += 1;
+		}
+
+		return fields;
+	};
+
+	while (index < normalized.length) {
+		const at = normalized.indexOf("@", index);
+		if (at === -1) break;
+		index = at + 1;
+		skipWhitespace();
+
+		const typeStart = index;
+		while (index < normalized.length && /[A-Za-z]/.test(normalized[index])) index += 1;
+		const entryType = normalized.slice(typeStart, index).toLowerCase();
+
+		skipWhitespace();
+		if (normalized[index] !== "{") continue;
+		index += 1;
+
+		const key = readUntil(",").trim();
+		if (normalized[index] === ",") index += 1;
+
+		const body = readBalancedBlock("{", "}");
+		const entryTags = parseFields(body);
+		entries.push({ entryType, citationKey: key, entryTags });
+	}
+
+	return entries;
+};
+
+const loadMentoring = async () => {
+	const status = document.getElementById("mentor-load-status");
+	const tbody = document.querySelector("#mentor-table tbody");
+	const filters = document.getElementById("mentor-filters");
+
+	const yearLabel = document.createElement("label");
+	yearLabel.style.marginRight = "1rem";
+	yearLabel.textContent = "Year: ";
+	const yearFilter = document.createElement("select");
+	yearFilter.id = "mentor-year-filter";
+	yearFilter.innerHTML = '<option value="">All</option>';
+	yearLabel.appendChild(yearFilter);
+
+	const categoryLabel = document.createElement("label");
+	categoryLabel.textContent = "Category: ";
+	const categoryFilter = document.createElement("select");
+	categoryFilter.id = "mentor-category-filter";
+	categoryFilter.innerHTML = '<option value="">All</option>';
+	categoryLabel.appendChild(categoryFilter);
+
+	try {
+		const response = await fetch("mentoring.bib");
+		if (!response.ok) {
+			throw new Error(`Could not load mentoring.bib (HTTP ${response.status})`);
+		}
+
+		const bibText = await response.text();
+		const entries = parseBibEntries(bibText);
+
+		const rows = entries.map((entry) => {
+			const fields = entry.entryTags || {};
+			const year = cleanField(fields.year || "");
+			const mentee = cleanField(fields.author || "");
+			const category = cleanField(fields.howpublished || "");
+			const summary = cleanField(fields.note || "");
+			const source = cleanField(fields.source || "");
+			return { year, mentee, category, summary, source };
+		});
+
+		rows.sort((a, b) => Number(b.year || 0) - Number(a.year || 0));
+
+		const years = [...new Set(rows.map((row) => row.year).filter(Boolean))].sort((a, b) => Number(b) - Number(a));
+		const categories = [...new Set(rows.map((row) => row.category).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+
+		years.forEach((year) => {
+			const option = document.createElement("option");
+			option.value = year;
+			option.textContent = year;
+			yearFilter.appendChild(option);
+		});
+
+		categories.forEach((category) => {
+			const option = document.createElement("option");
+			option.value = category;
+			option.textContent = category;
+			categoryFilter.appendChild(option);
+		});
+
+		filters.replaceChildren(yearLabel, categoryLabel);
+
+		tbody.innerHTML = rows
+			.map((row) => {
+				const safeSource = row.source
+					? `<a href="${row.source}" target="_blank" rel="noopener noreferrer">Source</a>`
+					: "";
+
+				return `
+					<tr>
+						<td>${row.year}</td>
+						<td>${row.mentee}</td>
+						<td>${row.category}</td>
+						<td>${row.summary}</td>
+						<td>${safeSource}</td>
+					</tr>
+				`;
+			})
+			.join("");
+
+		const table = new DataTable("#mentor-table", {
+			pageLength: 25,
+			order: [[0, "desc"]],
+			columnDefs: [
+				{ targets: 0, type: "num", orderable: true },
+				{ targets: [1, 2, 3], orderable: true },
+				{ targets: 4, orderable: false }
+			]
+		});
+
+		const applyFilters = () => {
+			const yearValue = yearFilter.value;
+			const categoryValue = categoryFilter.value;
+
+			table.column(0).search(yearValue ? `^${escapeRegex(yearValue)}$` : "", true, false);
+			table.column(2).search(categoryValue ? `^${escapeRegex(categoryValue)}$` : "", true, false);
+			table.draw();
+		};
+
+		yearFilter.addEventListener("change", applyFilters);
+		categoryFilter.addEventListener("change", applyFilters);
+		filters.style.display = "block";
+
+		status.textContent = `Loaded ${rows.length} mentoring records from mentoring.bib.`;
+	} catch (error) {
+		status.textContent = `Unable to load mentoring records: ${error.message}`;
+	}
+};
+
+loadMentoring();
+</script>
