@@ -50,6 +50,18 @@ const cleanField = (value) => {
 
 const escapeRegex = (value) => String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
+const createDataTable = (selector, options) => {
+	if (typeof window.DataTable === "function") {
+		return new window.DataTable(selector, options);
+	}
+
+	if (window.jQuery?.fn?.DataTable) {
+		return window.jQuery(selector).DataTable(options);
+	}
+
+	return null;
+};
+
 const parseBibEntries = (text) => {
 	const entries = [];
 	const normalized = String(text || "").replace(/\r\n/g, "\n");
@@ -249,7 +261,7 @@ const loadMentoring = async () => {
 			})
 			.join("");
 
-		const table = new DataTable("#mentor-table", {
+		const table = createDataTable("#mentor-table", {
 			pageLength: 25,
 			order: [[0, "desc"]],
 			columnDefs: [
@@ -258,6 +270,11 @@ const loadMentoring = async () => {
 				{ targets: 4, orderable: false }
 			]
 		});
+
+		if (!table) {
+			status.textContent = `Loaded ${rows.length} mentoring records from mentoring.bib. DataTables did not load, so advanced sorting/filtering is unavailable.`;
+			return;
+		}
 
 		const applyFilters = () => {
 			const yearValue = yearFilter.value;

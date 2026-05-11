@@ -68,6 +68,18 @@ const entryLink = (fields) => {
 
 const escapeRegex = (value) => String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
+const createDataTable = (selector, options) => {
+	if (typeof window.DataTable === "function") {
+		return new window.DataTable(selector, options);
+	}
+
+	if (window.jQuery?.fn?.DataTable) {
+		return window.jQuery(selector).DataTable(options);
+	}
+
+	return null;
+};
+
 const parseBibEntries = (text) => {
 	const entries = [];
 	const normalized = String(text || "").replace(/\r\n/g, "\n");
@@ -285,7 +297,7 @@ const loadPublications = async () => {
 			})
 			.join("");
 
-		const table = new DataTable("#pub-table", {
+		const table = createDataTable("#pub-table", {
 			pageLength: 25,
 			order: [[0, "desc"]],
 			columnDefs: [
@@ -294,6 +306,11 @@ const loadPublications = async () => {
 				{ targets: 5, orderable: false }
 			],
 		});
+
+		if (!table) {
+			status.textContent = `Loaded ${rows.length} publications from works.bib. DataTables did not load, so advanced sorting/filtering is unavailable.`;
+			return;
+		}
 
 		const applyFilters = () => {
 			const yearValue = yearFilter.value;
