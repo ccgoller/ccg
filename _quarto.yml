@@ -7,6 +7,9 @@ project:
 website:
   title: "Carlos C. Goller"
   favicon: ccg100.jpg
+  description: Explorer of Bacterial and Learner Diversity
+  page-navigation: true
+  reader-mode: true
 
   announcement:
     icon: info-circle
@@ -39,3 +42,16 @@ format:
     theme: cosmo
     css: styles.css
     toc: false
+
+    page-footer:
+      background: "#153268"
+      foreground: "#f2f0e8"
+      left: >-
+        &#169; 2026 Carlos C. Goller, Ph.D.
+      center: >-
+        Website built with <a href="https://quarto.org/" target="_blank">Quarto</a>
+        <br>Source available at <a href="https://github.com/ccgoller/" target="_blank">GitHub</a></br>
+      right: >-
+        Licensed under
+        <br><a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">Creative Commons Zero v1.0 Universal</a></br>
+editor: source
