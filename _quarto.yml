@@ -30,6 +30,8 @@ website:
         href: cv.qmd
       - text: "Teaching"
         href: teaching.qmd
+      - text: "Courses"
+        href: courses.qmd
       - text: "Research"
         href: research.qmd
       - text: "Mentoring"
