@@ -31,7 +31,7 @@ Below are featured courses with links and live previews. Click any card title or
         src="https://go.ncsu.edu/mb360"
         title="MB 360 course website preview"
         loading="lazy"
-        sandbox="allow-scripts allow-same-origin allow-popups"
+        sandbox="allow-scripts allow-popups"
       ></iframe>
       <div class="course-preview-overlay">
         <a href="https://go.ncsu.edu/mb360" target="_blank" rel="noopener" aria-label="Open MB 360 course website">
@@ -64,7 +64,7 @@ Below are featured courses with links and live previews. Click any card title or
         src="https://go.ncsu.edu/delftiabook"
         title="Microbial Superheroes / Delftia Book course website preview"
         loading="lazy"
-        sandbox="allow-scripts allow-same-origin allow-popups"
+        sandbox="allow-scripts allow-popups"
       ></iframe>
       <div class="course-preview-overlay">
         <a href="https://go.ncsu.edu/delftiabook" target="_blank" rel="noopener" aria-label="Open Microbial Superheroes course website">
@@ -97,7 +97,7 @@ Below are featured courses with links and live previews. Click any card title or
         src="https://go.ncsu.edu/mycoed"
         title="MyCOED course website preview"
         loading="lazy"
-        sandbox="allow-scripts allow-same-origin allow-popups"
+        sandbox="allow-scripts allow-popups"
       ></iframe>
       <div class="course-preview-overlay">
         <a href="https://go.ncsu.edu/mycoed" target="_blank" rel="noopener" aria-label="Open MyCOED course website">
