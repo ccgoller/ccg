@@ -3,6 +3,7 @@ project:
   resources:
     - works.bib
     - mentoring.bib
+    - assets/vendor/datatables/*
 
 website:
   title: "Carlos C. Goller"

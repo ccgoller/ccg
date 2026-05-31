@@ -6,8 +6,8 @@ title: "Mentoring"
 
 The table below is generated from `mentoring.bib` and supports instant search and column sorting.
 
-<link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
-<script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+<link rel="stylesheet" href="assets/vendor/datatables/dataTables.dataTables.min.css">
+<script src="assets/vendor/datatables/dataTables.min.js"></script>
 
 <div id="mentor-load-status">Loading mentoring records from mentoring.bib...</div>
 <div id="mentor-filters" style="display:none"></div>
