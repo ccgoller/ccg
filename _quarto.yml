@@ -39,6 +39,8 @@ website:
         href: mentoring.qmd
       - text: "Prof. Dev"
         href: professional-development.qmd
+      - text: "Contact"
+        href: contact.qmd
 
 format:
   html:
