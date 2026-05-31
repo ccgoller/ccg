@@ -4,7 +4,7 @@ title: "Courses"
 
 # Courses
 
-Below are featured courses with links and live previews. Click any card title or the **Visit Course** button to open the course website.
+Below are featured courses with links and each site’s favicon/logo. Click any card title or the **Visit Course** button to open the course website.
 
 ```{=html}
 <div class="course-grid">
@@ -26,18 +26,10 @@ Below are featured courses with links and live previews. Click any card title or
         Visit Course ↗
       </a>
     </div>
-    <div class="course-preview">
-      <iframe
-        src="https://go.ncsu.edu/mb360"
-        title="MB 360 course website preview"
-        loading="lazy"
-        sandbox="allow-scripts allow-popups"
-      ></iframe>
-      <div class="course-preview-overlay">
-        <a href="https://go.ncsu.edu/mb360" target="_blank" rel="noopener" aria-label="Open MB 360 course website">
-          Open site ↗
-        </a>
-      </div>
+    <div class="course-logo">
+      <a href="https://go.ncsu.edu/mb360" target="_blank" rel="noopener" aria-label="Open MB 360 course website">
+        <img src="https://go.ncsu.edu/mb360/favicon.ico" alt="MB 360 site logo" loading="lazy">
+      </a>
     </div>
   </div>
 
@@ -59,18 +51,10 @@ Below are featured courses with links and live previews. Click any card title or
         Visit Course ↗
       </a>
     </div>
-    <div class="course-preview">
-      <iframe
-        src="https://go.ncsu.edu/delftiabook"
-        title="Microbial Superheroes / Delftia Book course website preview"
-        loading="lazy"
-        sandbox="allow-scripts allow-popups"
-      ></iframe>
-      <div class="course-preview-overlay">
-        <a href="https://go.ncsu.edu/delftiabook" target="_blank" rel="noopener" aria-label="Open Microbial Superheroes course website">
-          Open site ↗
-        </a>
-      </div>
+    <div class="course-logo">
+      <a href="https://go.ncsu.edu/delftiabook" target="_blank" rel="noopener" aria-label="Open Microbial Superheroes course website">
+        <img src="https://go.ncsu.edu/delftiabook/favicon.ico" alt="Microbial Superheroes site logo" loading="lazy">
+      </a>
     </div>
   </div>
 
@@ -92,22 +76,12 @@ Below are featured courses with links and live previews. Click any card title or
         Visit Course ↗
       </a>
     </div>
-    <div class="course-preview">
-      <iframe
-        src="https://go.ncsu.edu/mycoed"
-        title="MyCOED course website preview"
-        loading="lazy"
-        sandbox="allow-scripts allow-popups"
-      ></iframe>
-      <div class="course-preview-overlay">
-        <a href="https://go.ncsu.edu/mycoed" target="_blank" rel="noopener" aria-label="Open MyCOED course website">
-          Open site ↗
-        </a>
-      </div>
+    <div class="course-logo">
+      <a href="https://go.ncsu.edu/mycoed" target="_blank" rel="noopener" aria-label="Open MyCOED course website">
+        <img src="https://go.ncsu.edu/mycoed/favicon.ico" alt="MyCOED site logo" loading="lazy">
+      </a>
     </div>
   </div>
 
 </div>
 ```
-
-> **Note:** If an embedded preview does not load (some sites restrict embedding), click **Visit Course** or **Open site ↗** to view it directly.
