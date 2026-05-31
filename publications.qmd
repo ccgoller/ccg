@@ -6,8 +6,8 @@ title: "Publications"
 
 The table below is generated from `works.bib` and supports instant search and column sorting.
 
-<link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
-<script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+<link rel="stylesheet" href="assets/vendor/datatables/dataTables.dataTables.min.css">
+<script src="assets/vendor/datatables/dataTables.min.js"></script>
 
 <div id="pub-load-status">Loading publications from works.bib...</div>
 
