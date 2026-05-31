@@ -9,18 +9,10 @@ The table below is generated from `mentoring.bib` and supports instant search an
 <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
 <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
 
-<style>
-#mentor-table thead th {
-	background: #f8f9fa;
-	font-weight: 700;
-	cursor: pointer;
-}
-</style>
-
 <div id="mentor-load-status">Loading mentoring records from mentoring.bib...</div>
-<div id="mentor-filters" style="display:none; margin: 0.75rem 0 1rem;"></div>
+<div id="mentor-filters" style="display:none"></div>
 
-<table id="mentor-table" class="display" style="width:100%">
+<table id="mentor-table" class="display" style="width:100%" aria-label="Mentoring records">
 	<thead>
 		<tr>
 			<th>Year</th>
@@ -189,7 +181,7 @@ const loadMentoring = async () => {
 	const filters = document.getElementById("mentor-filters");
 
 	const yearLabel = document.createElement("label");
-	yearLabel.style.marginRight = "1rem";
+	yearLabel.htmlFor = "mentor-year-filter";
 	yearLabel.textContent = "Year: ";
 	const yearFilter = document.createElement("select");
 	yearFilter.id = "mentor-year-filter";
@@ -197,6 +189,7 @@ const loadMentoring = async () => {
 	yearLabel.appendChild(yearFilter);
 
 	const categoryLabel = document.createElement("label");
+	categoryLabel.htmlFor = "mentor-category-filter";
 	categoryLabel.textContent = "Category: ";
 	const categoryFilter = document.createElement("select");
 	categoryFilter.id = "mentor-category-filter";
@@ -246,7 +239,7 @@ const loadMentoring = async () => {
 		tbody.innerHTML = rows
 			.map((row) => {
 				const safeSource = row.source
-					? `<a href="${row.source}" target="_blank" rel="noopener noreferrer">Source</a>`
+					? `<a href="${row.source}" target="_blank" rel="noopener noreferrer" aria-label="Source for ${row.mentee}">Source</a>`
 					: "";
 
 				return `
