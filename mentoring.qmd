@@ -8,6 +8,12 @@ The table below is generated from `mentoring.bib` and supports instant search an
 <script src="assets/vendor/datatables/dataTables.min.js"></script>
 
 <div id="mentor-load-status">Loading mentoring records from mentoring.bib...</div>
+
+<figure class="chart-figure" aria-label="Bar chart: mentees by category">
+	<canvas id="mentor-chart" role="img" aria-label="Bar chart showing number of mentees by category"></canvas>
+	<figcaption id="mentor-chart-caption" class="chart-caption"></figcaption>
+</figure>
+
 <div id="mentor-filters" style="display:none"></div>
 
 <table id="mentor-table" class="display accessible-table" style="width:100%" aria-label="Mentoring records">
@@ -25,6 +31,121 @@ The table below is generated from `mentoring.bib` and supports instant search an
 </table>
 
 <script>
+const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor = null } = {}) => {
+	const isDark = document.body.classList.contains("quarto-dark");
+	const primary = isDark ? "#fac800" : "#990000";
+	const textColor = isDark ? "#c9c9c9" : "#444444";
+	const gridColor = isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)";
+	const axisColor = isDark ? "rgba(255,255,255,0.25)" : "rgba(0,0,0,0.18)";
+	const bar = barColor || primary;
+
+	const dpr = window.devicePixelRatio || 1;
+	const W = Math.max(canvasEl.parentElement?.clientWidth || 640, 320);
+	const padB = rotateLabels ? 72 : 48;
+	const H = 300;
+	const padL = 48, padR = 16, padT = 30;
+	const cW = W - padL - padR;
+	const cH = H - padT - padB;
+
+	canvasEl.width = W * dpr;
+	canvasEl.height = H * dpr;
+	canvasEl.style.width = W + "px";
+	canvasEl.style.height = H + "px";
+
+	const ctx = canvasEl.getContext("2d");
+	ctx.scale(dpr, dpr);
+
+	const maxVal = Math.max(...values, 1);
+	const niceMax = Math.ceil(maxVal / 5) * 5 || 5;
+	const nTicks = 5;
+
+	for (let t = 0; t <= nTicks; t++) {
+		const v = (t / nTicks) * niceMax;
+		const y = padT + cH - (v / niceMax) * cH;
+		ctx.strokeStyle = gridColor;
+		ctx.lineWidth = 1;
+		ctx.beginPath();
+		ctx.moveTo(padL, y);
+		ctx.lineTo(padL + cW, y);
+		ctx.stroke();
+		ctx.fillStyle = textColor;
+		ctx.font = "11px sans-serif";
+		ctx.textAlign = "right";
+		ctx.fillText(Math.round(v), padL - 6, y + 4);
+	}
+
+	const n = labels.length;
+	const slot = cW / n;
+	const barW = Math.max(slot * 0.65, 4);
+	const barOffset = (slot - barW) / 2;
+
+	labels.forEach((lbl, i) => {
+		const val = values[i];
+		const bH = Math.max((val / niceMax) * cH, 0);
+		const x = padL + slot * i + barOffset;
+		const y = padT + cH - bH;
+
+		ctx.fillStyle = bar;
+		ctx.fillRect(x, y, barW, bH);
+
+		if (val > 0) {
+			ctx.fillStyle = textColor;
+			ctx.font = "11px sans-serif";
+			ctx.textAlign = "center";
+			ctx.fillText(val, x + barW / 2, Math.max(y - 5, padT + 12));
+		}
+
+		ctx.save();
+		ctx.translate(x + barW / 2, padT + cH + 10);
+		if (rotateLabels) {
+			ctx.rotate(-Math.PI / 4);
+			ctx.textAlign = "right";
+		} else {
+			ctx.textAlign = "center";
+		}
+		ctx.fillStyle = textColor;
+		ctx.font = "11px sans-serif";
+		ctx.fillText(lbl, 0, 0);
+		ctx.restore();
+	});
+
+	ctx.strokeStyle = axisColor;
+	ctx.lineWidth = 1.5;
+	ctx.beginPath();
+	ctx.moveTo(padL, padT);
+	ctx.lineTo(padL, padT + cH);
+	ctx.lineTo(padL + cW, padT + cH);
+	ctx.stroke();
+};
+
+const CATEGORY_LABELS = {
+	"Undergraduate Scholars": "Undergraduate",
+	"Graduate Student Mentoring": "Graduate",
+	"Postdoctoral Education Scholar Mentoring": "Postdoctoral",
+};
+
+const renderMentoringChart = (rows) => {
+	const canvas = document.getElementById("mentor-chart");
+	const caption = document.getElementById("mentor-chart-caption");
+	if (!canvas) return;
+
+	const counts = { Undergraduate: 0, Graduate: 0, Postdoctoral: 0 };
+	rows.forEach(({ category }) => {
+		const short = CATEGORY_LABELS[category];
+		if (short) counts[short] += 1;
+	});
+
+	const labels = ["Undergraduate", "Graduate", "Postdoctoral", "Total"];
+	const total = counts.Undergraduate + counts.Graduate + counts.Postdoctoral;
+	const values = [counts.Undergraduate, counts.Graduate, counts.Postdoctoral, total];
+
+	drawBarChart(canvas, labels, values);
+
+	if (caption) {
+		caption.textContent = `Mentees by category: Undergraduate (${counts.Undergraduate}), Graduate (${counts.Graduate}), Postdoctoral (${counts.Postdoctoral}), Total (${total}).`;
+	}
+};
+
 const cleanField = (value) => {
 	if (!value) return "";
 	const asText = String(value)
@@ -277,6 +398,8 @@ const loadMentoring = async () => {
 		});
 
 		rows.sort((a, b) => Number(b.year || 0) - Number(a.year || 0));
+
+		renderMentoringChart(rows);
 
 		const years = [...new Set(rows.map((row) => row.year).filter(Boolean))].sort((a, b) => Number(b) - Number(a));
 		const categories = [...new Set(rows.map((row) => row.category).filter(Boolean))].sort((a, b) => a.localeCompare(b));

@@ -450,6 +450,27 @@ body.quarto-dark .course-btn:focus {
   }
 }
 
+/* ── Bar charts (publications & mentoring) ───────────────────────── */
+
+.chart-figure {
+	margin: 1.25rem 0 1.5rem;
+	padding: 0;
+}
+
+.chart-figure canvas {
+	display: block;
+	max-width: 100%;
+}
+
+.chart-caption {
+	margin-top: 0.5rem;
+	font-size: 0.875rem;
+	color: var(--bs-secondary-color);
+	text-align: center;
+}
+
+/* ── End Bar charts ──────────────────────────────────────────────── */
+
 /* ── Data tables ─────────────────────────────────────────────────── */
 
 /* Horizontal scroll on small screens */
