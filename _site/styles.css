@@ -535,11 +535,11 @@ body.quarto-dark table.dataTable tbody tr:hover > th {
   background: rgba(250, 200, 0, 0.09);
 }
 
-.table tbody tr:nth-child(odd) > * {
+body.quarto-light .table tbody tr:nth-child(odd) > * {
   background: #ffffff;
 }
 
-.table tbody tr:nth-child(even) > * {
+body.quarto-light .table tbody tr:nth-child(even) > * {
   background: #fdf5f5;
 }
 
