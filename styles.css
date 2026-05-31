@@ -16,6 +16,38 @@ body.quarto-dark {
   --bs-link-hover-color-rgb: 255, 242, 179;
 }
 
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: 1rem;
+  z-index: 2000;
+  padding: 0.55rem 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: top 0.15s ease-in-out;
+}
+
+body.quarto-light .skip-link {
+  color: #ffffff;
+  background: #990000;
+}
+
+body.quarto-dark .skip-link {
+  color: #000000;
+  background: #fac800;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 0.65rem;
+}
+
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 2px;
+}
+
 body.quarto-light #quarto-header .navbar {
   background-color: #990000;
 }
@@ -50,6 +82,27 @@ body.quarto-dark #quarto-header .navbar .menu-text,
 body.quarto-dark #quarto-header .navbar .bi,
 body.quarto-dark #quarto-header .navbar #quarto-search {
   color: #fac800;
+}
+
+#quarto-header .navbar .nav-link,
+#quarto-header .navbar .navbar-brand,
+#quarto-header .navbar .navbar-title {
+  padding: 0.6rem 0.75rem;
+  font-weight: 600;
+}
+
+body.quarto-light #quarto-header .navbar .nav-link:hover,
+body.quarto-light #quarto-header .navbar .nav-link:focus-visible,
+body.quarto-light #quarto-header .navbar .nav-link.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+body.quarto-dark #quarto-header .navbar .nav-link:hover,
+body.quarto-dark #quarto-header .navbar .nav-link:focus-visible,
+body.quarto-dark #quarto-header .navbar .nav-link.active {
+  color: #fff2b3;
+  background: rgba(250, 200, 0, 0.18);
 }
 
 .quarto-title-block.default {
@@ -266,5 +319,11 @@ div.callout {
   .sidebar {
     border-right: 0;
     border-bottom: 1px solid var(--bs-border-color);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-link {
+    transition: none;
   }
 }
