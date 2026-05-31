@@ -491,6 +491,7 @@ table.dataTable thead th {
   cursor: pointer;
   white-space: nowrap;
   border-bottom: 3px solid var(--bs-primary);
+  border-top: 2px solid var(--bs-primary);
 }
 
 table.dataTable tbody td {
@@ -516,8 +517,8 @@ table.dataTable thead th:focus-visible {
 
 /* Light mode */
 body.quarto-light table.dataTable thead th {
-  background: #f8f9fa;
-  color: #212529;
+  background: #f4dcdc;
+  color: #5f0000;
 }
 
 body.quarto-light table.dataTable tbody tr.odd > td,
@@ -527,7 +528,7 @@ body.quarto-light table.dataTable tbody tr.odd > th {
 
 body.quarto-light table.dataTable tbody tr.even > td,
 body.quarto-light table.dataTable tbody tr.even > th {
-  background: #fdf5f5;
+  background: #f8e5e5;
 }
 
 body.quarto-light table.dataTable tbody tr:hover > td,
@@ -537,7 +538,7 @@ body.quarto-light table.dataTable tbody tr:hover > th {
 
 /* Dark mode */
 body.quarto-dark table.dataTable thead th {
-  background: #1f1f1f;
+  background: #3a2f00;
   color: #fac800;
 }
 
@@ -548,7 +549,7 @@ body.quarto-dark table.dataTable tbody tr.odd > th {
 
 body.quarto-dark table.dataTable tbody tr.even > td,
 body.quarto-dark table.dataTable tbody tr.even > th {
-  background: rgba(250, 200, 0, 0.04);
+  background: rgba(250, 200, 0, 0.12);
 }
 
 body.quarto-dark table.dataTable tbody tr:hover > td,
@@ -561,7 +562,14 @@ body.quarto-light .table tbody tr:nth-child(odd) > * {
 }
 
 body.quarto-light .table tbody tr:nth-child(even) > * {
-  background: #fdf5f5;
+  background: #f8e5e5;
+}
+
+body.quarto-light .table thead th {
+  background: #f4dcdc;
+  color: #5f0000;
+  border-top: 2px solid var(--bs-primary);
+  border-bottom: 3px solid var(--bs-primary);
 }
 
 body.quarto-dark .table tbody tr:nth-child(odd) > * {
@@ -569,7 +577,14 @@ body.quarto-dark .table tbody tr:nth-child(odd) > * {
 }
 
 body.quarto-dark .table tbody tr:nth-child(even) > * {
-  background: rgba(250, 200, 0, 0.04);
+  background: rgba(250, 200, 0, 0.12);
+}
+
+body.quarto-dark .table thead th {
+  background: #3a2f00;
+  color: #fac800;
+  border-top: 2px solid var(--bs-primary);
+  border-bottom: 3px solid var(--bs-primary);
 }
 
 /* Custom filter controls (above publications & mentoring tables) */
