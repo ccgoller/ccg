@@ -9,19 +9,11 @@ The table below is generated from `works.bib` and supports instant search and co
 <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
 <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
 
-<style>
-#pub-table thead th {
-	background: #f8f9fa;
-	font-weight: 700;
-	cursor: pointer;
-}
-</style>
-
 <div id="pub-load-status">Loading publications from works.bib...</div>
 
-<div id="pub-filters" style="display:none; margin: 0.75rem 0 1rem;"></div>
+<div id="pub-filters" style="display:none"></div>
 
-<table id="pub-table" class="display" style="width:100%">
+<table id="pub-table" class="display" style="width:100%" aria-label="Publications">
 	<thead>
 		<tr>
 			<th>Year</th>
@@ -216,7 +208,6 @@ const loadPublications = async () => {
 	const filters = document.getElementById("pub-filters");
 
 	const yearLabel = document.createElement("label");
-	yearLabel.style.marginRight = "1rem";
 	yearLabel.htmlFor = "pub-year-filter";
 	yearLabel.textContent = "Year: ";
 
@@ -281,7 +272,7 @@ const loadPublications = async () => {
 		tbody.innerHTML = rows
 			.map((row) => {
 				const safeLink = row.link
-					? `<a href="${row.link}" target="_blank" rel="noopener noreferrer">View</a>`
+					? `<a href="${row.link}" target="_blank" rel="noopener noreferrer" aria-label="View publication: ${row.title}">View</a>`
 					: "";
 
 				return `
