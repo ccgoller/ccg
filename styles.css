@@ -479,6 +479,14 @@ table.dataTable tbody td {
   border-bottom: 1px solid var(--bs-border-color);
 }
 
+table.dataTable tbody th {
+  padding: 0.55rem 1rem;
+  vertical-align: top;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--bs-border-color);
+  font-weight: 600;
+}
+
 /* Sort header focus ring */
 table.dataTable thead th:focus-visible {
   outline: 3px solid var(--bs-primary);
@@ -491,15 +499,18 @@ body.quarto-light table.dataTable thead th {
   color: #212529;
 }
 
-body.quarto-light table.dataTable tbody tr.odd > td {
+body.quarto-light table.dataTable tbody tr.odd > td,
+body.quarto-light table.dataTable tbody tr.odd > th {
   background: #ffffff;
 }
 
-body.quarto-light table.dataTable tbody tr.even > td {
+body.quarto-light table.dataTable tbody tr.even > td,
+body.quarto-light table.dataTable tbody tr.even > th {
   background: #fdf5f5;
 }
 
-body.quarto-light table.dataTable tbody tr:hover > td {
+body.quarto-light table.dataTable tbody tr:hover > td,
+body.quarto-light table.dataTable tbody tr:hover > th {
   background: #fdeaea;
 }
 
@@ -509,16 +520,35 @@ body.quarto-dark table.dataTable thead th {
   color: #fac800;
 }
 
-body.quarto-dark table.dataTable tbody tr.odd > td {
+body.quarto-dark table.dataTable tbody tr.odd > td,
+body.quarto-dark table.dataTable tbody tr.odd > th {
   background: var(--bs-body-bg);
 }
 
-body.quarto-dark table.dataTable tbody tr.even > td {
+body.quarto-dark table.dataTable tbody tr.even > td,
+body.quarto-dark table.dataTable tbody tr.even > th {
   background: rgba(250, 200, 0, 0.04);
 }
 
-body.quarto-dark table.dataTable tbody tr:hover > td {
+body.quarto-dark table.dataTable tbody tr:hover > td,
+body.quarto-dark table.dataTable tbody tr:hover > th {
   background: rgba(250, 200, 0, 0.09);
+}
+
+body.quarto-light .table tbody tr:nth-child(odd) > * {
+  background: #ffffff;
+}
+
+body.quarto-light .table tbody tr:nth-child(even) > * {
+  background: #fdf5f5;
+}
+
+body.quarto-dark .table tbody tr:nth-child(odd) > * {
+  background: var(--bs-body-bg);
+}
+
+body.quarto-dark .table tbody tr:nth-child(even) > * {
+  background: rgba(250, 200, 0, 0.04);
 }
 
 /* Custom filter controls (above publications & mentoring tables) */

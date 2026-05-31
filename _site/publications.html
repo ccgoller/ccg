@@ -179,25 +179,28 @@ Loading publications from works.bib…
 <div id="pub-filters" style="display:none">
 
 </div>
-<table id="pub-table" class="display" style="width:100%" aria-label="Publications">
+<table id="pub-table" class="display accessible-table" style="width:100%" aria-label="Publications">
+<caption class="visually-hidden">
+Publications with year, title, authors, venue, type, and link.
+</caption>
 <thead>
 <tr>
-<th>
+<th scope="col">
 Year
 </th>
-<th>
+<th scope="col">
 Title
 </th>
-<th>
+<th scope="col">
 Authors
 </th>
-<th>
+<th scope="col">
 Venue
 </th>
-<th>
+<th scope="col">
 Type
 </th>
-<th>
+<th scope="col">
 Link
 </th>
 </tr>
@@ -391,6 +394,8 @@ const loadPublications = async () => {
 
     const yearFilter = document.createElement("select");
     yearFilter.id = "pub-year-filter";
+    yearFilter.setAttribute("aria-label", "Filter publications by year");
+    yearFilter.setAttribute("aria-controls", "pub-table");
     yearFilter.innerHTML = '<option value="">All</option>';
     yearLabel.appendChild(yearFilter);
 
@@ -400,6 +405,8 @@ const loadPublications = async () => {
 
     const typeFilter = document.createElement("select");
     typeFilter.id = "pub-type-filter";
+    typeFilter.setAttribute("aria-label", "Filter publications by type");
+    typeFilter.setAttribute("aria-controls", "pub-table");
     typeFilter.innerHTML = '<option value="">All</option>';
     typeLabel.appendChild(typeFilter);
 
@@ -456,7 +463,7 @@ const loadPublications = async () => {
                 return `
                     <tr>
                         <td>${row.year}</td>
-                        <td>${row.title}</td>
+                        <th scope="row">${row.title}</th>
                         <td>${row.authors}</td>
                         <td>${row.venue}</td>
                         <td>${row.type}</td>
