@@ -583,8 +583,8 @@ body.quarto-dark .table tbody tr:nth-child(even) > * {
 body.quarto-dark .table thead th {
   background: #3a2f00;
   color: #fac800;
-  border-top: 2px solid #fac800;
-  border-bottom: 3px solid #fac800;
+  border-top: 2px solid var(--bs-primary);
+  border-bottom: 3px solid var(--bs-primary);
 }
 
 /* Custom filter controls (above publications & mentoring tables) */
