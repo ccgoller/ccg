@@ -360,7 +360,7 @@ const loadPublications = async () => {
 		});
 
 		if (!table) {
-			enableBasicColumnSorting(pubTable, {
+			enableBasicColumnSorting(document.getElementById("pub-table"), {
 				numericColumns: [0],
 				disabledColumns: [5],
 				defaultOrder: { column: 0, direction: "desc" }

@@ -326,7 +326,7 @@ const loadMentoring = async () => {
 		});
 
 		if (!table) {
-			enableBasicColumnSorting(mentorTable, {
+			enableBasicColumnSorting(document.getElementById("mentor-table"), {
 				numericColumns: [0],
 				disabledColumns: [4],
 				defaultOrder: { column: 0, direction: "desc" }
