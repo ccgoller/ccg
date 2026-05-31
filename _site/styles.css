@@ -16,6 +16,38 @@ body.quarto-dark {
   --bs-link-hover-color-rgb: 255, 242, 179;
 }
 
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: 1rem;
+  z-index: 2000;
+  padding: 0.55rem 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: top 0.15s ease-in-out;
+}
+
+body.quarto-light .skip-link {
+  color: #ffffff;
+  background: #990000;
+}
+
+body.quarto-dark .skip-link {
+  color: #000000;
+  background: #fac800;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 0.65rem;
+}
+
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 2px;
+}
+
 body.quarto-light #quarto-header .navbar {
   background-color: #990000;
 }
@@ -50,6 +82,27 @@ body.quarto-dark #quarto-header .navbar .menu-text,
 body.quarto-dark #quarto-header .navbar .bi,
 body.quarto-dark #quarto-header .navbar #quarto-search {
   color: #fac800;
+}
+
+#quarto-header .navbar .nav-link,
+#quarto-header .navbar .navbar-brand,
+#quarto-header .navbar .navbar-title {
+  padding: 0.6rem 0.75rem;
+  font-weight: 600;
+}
+
+body.quarto-light #quarto-header .navbar .nav-link:hover,
+body.quarto-light #quarto-header .navbar .nav-link:focus-visible,
+body.quarto-light #quarto-header .navbar .nav-link.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+body.quarto-dark #quarto-header .navbar .nav-link:hover,
+body.quarto-dark #quarto-header .navbar .nav-link:focus-visible,
+body.quarto-dark #quarto-header .navbar .nav-link.active {
+  color: #fff2b3;
+  background: rgba(250, 200, 0, 0.18);
 }
 
 .quarto-title-block.default {
@@ -266,5 +319,143 @@ div.callout {
   .sidebar {
     border-right: 0;
     border-bottom: 1px solid var(--bs-border-color);
+  }
+}
+
+/* ── Courses page ───────────────────────────────────────────────── */
+
+.course-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.course-card {
+  border: 1px solid var(--bs-border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--bs-body-bg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.course-card-body {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.course-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+}
+
+.course-title a {
+  text-decoration: none;
+}
+
+.course-title a:hover {
+  text-decoration: underline;
+}
+
+.course-meta {
+  font-size: 0.88rem;
+  color: var(--bs-secondary-color);
+  margin: 0 0 0.75rem;
+}
+
+.course-desc {
+  margin: 0 0 1rem;
+  line-height: 1.6;
+}
+
+.course-btn {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: 2px solid currentColor;
+  transition: background 0.15s, color 0.15s;
+}
+
+body.quarto-light .course-btn {
+  color: #990000;
+  background: #ffffff;
+}
+
+body.quarto-light .course-btn:hover,
+body.quarto-light .course-btn:focus {
+  color: #ffffff;
+  background: #990000;
+}
+
+body.quarto-dark .course-btn {
+  color: #fac800;
+  background: transparent;
+}
+
+body.quarto-dark .course-btn:hover,
+body.quarto-dark .course-btn:focus {
+  color: #000000;
+  background: #fac800;
+}
+
+.course-preview {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  background: var(--bs-tertiary-bg, #f8f9fa);
+  border-top: 1px solid var(--bs-border-color);
+  overflow: hidden;
+}
+
+.course-preview iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  pointer-events: none;
+}
+
+.course-preview-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0.75rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.25) 0%, transparent 40%);
+}
+
+.course-preview-overlay a {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255,255,255,0.4);
+  transition: background 0.15s;
+}
+
+.course-preview-overlay a:hover,
+.course-preview-overlay a:focus {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 767.98px) {
+  .course-preview {
+    height: 280px;
+  }
+}
+
+/* ── End Courses page ───────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-link {
+    transition: none;
   }
 }
