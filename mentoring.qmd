@@ -68,7 +68,7 @@ const enableBasicColumnSorting = (tableElement, { numericColumns = [], disabledC
 				raw,
 				normalized: numericColumns.includes(columnIndex) && Number.isFinite(numeric)
 					? numeric
-					: raw.toLocaleLowerCase()
+					: raw.toLowerCase()
 			};
 		});
 

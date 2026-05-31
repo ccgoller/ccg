@@ -266,7 +266,7 @@ const enableBasicColumnSorting = (tableElement, { numericColumns = [], disabledC
                 raw,
                 normalized: numericColumns.includes(columnIndex) && Number.isFinite(numeric)
                     ? numeric
-                    : raw.toLocaleLowerCase()
+                    : raw.toLowerCase()
             };
         });
 
@@ -540,7 +540,7 @@ const loadPublications = async () => {
         });
 
         if (!table) {
-            enableBasicColumnSorting(pubTable, {
+            enableBasicColumnSorting(document.getElementById("pub-table"), {
                 numericColumns: [0],
                 disabledColumns: [5],
                 defaultOrder: { column: 0, direction: "desc" }

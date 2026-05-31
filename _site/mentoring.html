@@ -247,7 +247,7 @@ const enableBasicColumnSorting = (tableElement, { numericColumns = [], disabledC
                 raw,
                 normalized: numericColumns.includes(columnIndex) && Number.isFinite(numeric)
                     ? numeric
-                    : raw.toLocaleLowerCase()
+                    : raw.toLowerCase()
             };
         });
 
@@ -505,7 +505,7 @@ const loadMentoring = async () => {
         });
 
         if (!table) {
-            enableBasicColumnSorting(mentorTable, {
+            enableBasicColumnSorting(document.getElementById("mentor-table"), {
                 numericColumns: [0],
                 disabledColumns: [4],
                 defaultOrder: { column: 0, direction: "desc" }
