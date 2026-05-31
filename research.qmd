@@ -2,8 +2,6 @@
 title: "Research"
 ---
 
-# Research
-
 This page is adapted from my research statement at [ccgoller.com/research](https://ccgoller.com/research/).
 
 ## Research Statement Summary
