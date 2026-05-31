@@ -2,8 +2,6 @@
 title: "Teaching"
 ---
 
-# Teaching
-
 This page is adapted from [ccgoller.com/teaching-philosophy](https://ccgoller.com/teaching-philosophy/) and [ccgoller.com/courses](https://ccgoller.com/courses/).
 
 ## Teaching Philosophy

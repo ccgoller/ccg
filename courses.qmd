@@ -2,8 +2,6 @@
 title: "Courses"
 ---
 
-# Courses
-
 Below are featured courses with links and each site’s favicon/logo. Click any card title or the **Visit Course** button to open the course website.
 
 ```{=html}

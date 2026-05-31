@@ -2,8 +2,6 @@
 title: "Mentoring"
 ---
 
-# Mentoring
-
 The table below is generated from `mentoring.bib` and supports instant search and column sorting.
 
 <link rel="stylesheet" href="assets/vendor/datatables/dataTables.dataTables.min.css">
@@ -53,6 +51,64 @@ const createDataTable = (selector, options) => {
 	}
 
 	return null;
+};
+
+const enableBasicColumnSorting = (tableElement, { numericColumns = [], disabledColumns = [], defaultOrder = null } = {}) => {
+	const headers = Array.from(tableElement.querySelectorAll("thead th"));
+	const tbodyElement = tableElement.querySelector("tbody");
+	if (!tbodyElement || headers.length === 0) return;
+
+	const rowsForColumn = (columnIndex) =>
+		Array.from(tbodyElement.querySelectorAll("tr")).map((row) => {
+			const cell = row.children[columnIndex];
+			const raw = (cell?.textContent || "").trim();
+			const numeric = Number(raw.replace(/[^0-9.-]/g, ""));
+			return {
+				row,
+				raw,
+				normalized: numericColumns.includes(columnIndex) && Number.isFinite(numeric)
+					? numeric
+					: raw.toLowerCase()
+			};
+		});
+
+	const sortByColumn = (columnIndex, direction) => {
+		const rows = rowsForColumn(columnIndex);
+		rows.sort((a, b) => {
+			if (a.normalized < b.normalized) return direction === "asc" ? -1 : 1;
+			if (a.normalized > b.normalized) return direction === "asc" ? 1 : -1;
+			return 0;
+		});
+		tbodyElement.replaceChildren(...rows.map(({ row }) => row));
+		headers.forEach((header, index) => {
+			header.dataset.sortDir = index === columnIndex ? direction : "";
+			header.setAttribute("aria-sort", index === columnIndex ? (direction === "asc" ? "ascending" : "descending") : "none");
+		});
+	};
+
+	headers.forEach((header, index) => {
+		if (disabledColumns.includes(index)) return;
+		header.tabIndex = 0;
+		header.style.cursor = "pointer";
+		header.setAttribute("aria-sort", "none");
+
+		const onSort = () => {
+			const nextDirection = header.dataset.sortDir === "asc" ? "desc" : "asc";
+			sortByColumn(index, nextDirection);
+		};
+
+		header.addEventListener("click", onSort);
+		header.addEventListener("keydown", (event) => {
+			if (event.key === "Enter" || event.key === " ") {
+				event.preventDefault();
+				onSort();
+			}
+		});
+	});
+
+	if (defaultOrder) {
+		sortByColumn(defaultOrder.column, defaultOrder.direction);
+	}
 };
 
 const parseBibEntries = (text) => {
@@ -270,7 +326,12 @@ const loadMentoring = async () => {
 		});
 
 		if (!table) {
-			status.textContent = `Loaded ${rows.length} mentoring records from mentoring.bib. DataTables did not load, so advanced sorting/filtering is unavailable.`;
+			enableBasicColumnSorting(document.getElementById("mentor-table"), {
+				numericColumns: [0],
+				disabledColumns: [4],
+				defaultOrder: { column: 0, direction: "desc" }
+			});
+			status.textContent = `Loaded ${rows.length} mentoring records from mentoring.bib. DataTables did not load, so basic column sorting is enabled.`;
 			return;
 		}
 
