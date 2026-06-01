@@ -6,12 +6,41 @@ Professional growth activities, workshops, and certifications.
 
 ## Workshops and Training
 
-- Content coming soon.
+### Key Categories
+
+- Online and hybrid teaching quality
+- Evidence-based and inclusive pedagogy
+- STEM education networks and faculty mentoring
+- Bioinformatics and life-science instructional training
+
+### At a Glance
+
+| Category | Count |
+|---|---:|
+| Quality Matters (QM) workshops | 20+ |
+| Other named pedagogy workshops/programs | 8+ |
+| Total workshops/programs | 28+ |
 
 ## Certifications
 
-- Content coming soon.
+| Certification | Count |
+|---|---:|
+| Teaching Online Certificate | 1 |
+| Universal Course Design Certification (UCDC) | 1 |
+| Total certifications | 2 |
+
+## Selected Professional Development Programs
+
+- ASM Biology Scholars Program
+- Summer Institute on Scientific Teaching
+- Science CaseNet / NCCSTS workshops
+- PALM Fellowship
+- NSF ENCOUR Fellowship
+- NSF TAPESTRy Fellowship
+- NSF OCELOTS Fellowship
+- NSF BioGraphI Fellowship
 
 ## Leadership and Service
 
-- Content coming soon.
+- Facilitator and contributor in faculty mentoring and professional learning communities.
+- Active participant in national STEM education collaborations that support sustained teaching innovation.
