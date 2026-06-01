@@ -11,36 +11,32 @@ website:
   description: Explorer of Bacterial and Learner Diversity
   page-navigation: true
   reader-mode: true
-
-  announcement:
-    icon: info-circle
-    dismissable: true
-    content: "**Welcome** - this is some information that you should pay attention to"
-    type: primary
-    position: below-navbar
   
   navbar:
-    background: primary
+    background: "#ffffff"
     search: true
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Publications"
-        href: publications.qmd
-      - text: "CV"
-        href: cv.qmd
-      - text: "Teaching"
-        href: teaching.qmd
-      - text: "Courses"
-        href: courses.qmd
       - text: "Research"
         href: research.qmd
-      - text: "Mentoring"
-        href: mentoring.qmd
-      - text: "Prof. Dev"
-        href: professional-development.qmd
-      - text: "Contact"
-        href: contact.qmd
+      - text: "Publications"
+        href: publications.qmd
+      - text: "Teaching"
+        href: teaching.qmd
+      - text: "CV"
+        href: cv.qmd
+    right:
+      - text: "More"
+        menu:
+          - text: "Courses"
+            href: courses.qmd
+          - text: "Mentoring"
+            href: mentoring.qmd
+          - text: "Prof. Dev"
+            href: professional-development.qmd
+          - text: "Contact"
+            href: contact.qmd
 
 format:
   html:
@@ -50,8 +46,8 @@ format:
     toc: false
 
     page-footer:
-      background: "#153268"
-      foreground: "#f2f0e8"
+      background: "#f7f5f2"
+      foreground: "#4b5563"
       left: >-
         &#169; 2026 Carlos C. Goller, Ph.D.
       center: >-
