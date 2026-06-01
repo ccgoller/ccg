@@ -10,7 +10,7 @@ title-block-style: none
 # Carlos C. Goller {.home-name}
 
 Teaching Professor · North Carolina State University  
-Microbiology, public health, and learner-centered science education
+Microbiology, public health, and learner-centered science education.
 
 I design inclusive, evidence-based learning experiences while exploring microbial diversity and metabolism. My work connects microbiology research with practical teaching and mentoring in the life sciences.
 
@@ -26,7 +26,7 @@ I design inclusive, evidence-based learning experiences while exploring microbia
 :::
 
 ::: {.home-hero-media}
-![Portrait of Carlos C. Goller](https://raw.githubusercontent.com/ccgoller/mb360workbook/main/workbook/images/author/GollerCarlos.jpg){.home-portrait}
+![Portrait of Carlos C. Goller](ccg100.jpg){.home-portrait}
 :::
 :::
 
@@ -69,7 +69,7 @@ Support for students and trainees through mentoring, advising, and professional 
 :::
 
 ::: {.home-section}
-## Quick Links
+## Resources & Course Sites
 
 - [Courses](courses.qmd)
 - [Professional Development](professional-development.qmd)
