@@ -2,20 +2,103 @@
 title: "CV"
 ---
 
-A current CV summary is provided below.
+This page provides a concise, web-friendly CV for Carlos C. Goller, Ph.D., with links to related pages that are maintained elsewhere on the site.
+
+::: {.callout-note}
+**Download:** [PDF CV](https://go.ncsu.edu/goller)  
+**Related pages:** [Publications](publications.qmd), [Teaching](teaching.qmd), [Research](research.qmd), [Mentoring](mentoring.qmd), [Contact](contact.qmd)
+:::
+
+## Professional Summary
+
+Carlos C. Goller is a Teaching Professor in the Department of Biological Sciences at North Carolina State University. His work brings together microbiology, biotechnology, genomics, open education, and inquiry-driven teaching, with a focus on building accessible, research-rich learning experiences for students.
 
 ## Current Appointment
 
-- Teaching Professor, Department of Biological Sciences, North Carolina State University
+| Role | Unit | Institution | Location |
+|---|---|---|---|
+| Teaching Professor | Department of Biological Sciences | North Carolina State University | Raleigh, NC |
 
-## Education
+## Contact and Professional Profiles
 
-- Content coming soon.
+| Type | Details |
+|---|---|
+| Email | [ccgoller@ncsu.edu](mailto:ccgoller@ncsu.edu) |
+| LinkedIn | [linkedin.com/in/ccgoller](https://linkedin.com/in/ccgoller) |
+| GitHub | [github.com/ccgoller](https://github.com/ccgoller) |
+| Department | Department of Biological Sciences, North Carolina State University |
 
-## Professional Experience
+## Education and Training
 
-- Content coming soon.
+| Institution | Location | Degree / Training | Focus | Dates |
+|---|---|---|---|---|
+| North Carolina State University | Raleigh, NC | — | Biotechnology Education and Curriculum Development (Advisor: Dr. Sue Carson) | Not listed |
+| Duke University Medical Center | Durham, NC | Postdoctoral Fellowship | Bacterial Pathogenesis and Anti-infective Screening | Sept. 2008 - July 2012 |
+| Emory University | Atlanta, GA | Ph.D., Microbiology and Molecular Genetics | Bacterial Biofilm Formation and Regulation | Aug. 2002 - Sept. 2008 |
+| Worcester Polytechnic Institute | Worcester, MA | B.S., Biology and Biotechnology | Biology and Biotechnology | Aug. 1998 - May 2002 |
 
-## Download
+## Academic Appointments
 
-- Full CV PDF link coming soon.
+| Title | Institution | Dates |
+|---|---|---|
+| Teaching Professor | North Carolina State University, Department of Biological Sciences | 2024 - Present |
+| Associate Teaching Professor | North Carolina State University, Department of Biological Sciences | 2019 - 2024 |
+| Assistant Teaching Professor | North Carolina State University, Department of Biological Sciences | 2015 - 2019 |
+
+## Honors and Fellowships
+
+| Recognition | Institution | Dates |
+|---|---|---|
+| The Hartwell Foundation Postdoctoral Fellowship | Duke University Medical Center | Sept. 2008 - July 2012 |
+
+## Teaching and Curriculum Leadership
+
+Goller's teaching emphasizes discovery, collaboration, and communication, encouraging students to learn science by participating in authentic inquiry and shared knowledge creation.
+
+### Selected Courses
+
+- **MB 360 — Microbiology**, North Carolina State University
+- **LSC 170 — Microbial Superheroes**, North Carolina State University
+- **HON 312 — Outbreak**, North Carolina State University Honors Program
+- **BIT 477/577 — Metagenomics**, NC State Biotechnology Program
+- **BIT 479/579 — High-throughput Discovery**, NC State Biotechnology Program
+- **BIT 495/595 — Portable Genome Sequencing**, NC State Biotechnology Program
+- **BIT 495/595 — Metabolic Modeling**, NC State Biotechnology Program
+- **BIT 295 — Biotechnology and Sustainability**, NC State Biotechnology Program
+- **OPEN 9200 — Open Education Resources and Pedagogies**, Kwantlen Polytechnic University
+
+### Curriculum Development Themes
+
+- Inquiry-driven laboratory design in microbiology and biotechnology
+- Integration of genomics, bioinformatics, and high-throughput discovery into teaching
+- Open pedagogy and open educational resource development
+- Technology-enhanced instruction, including electronic lab notebooks and collaborative annotation
+
+## Research and Scholarship
+
+### Research Areas
+
+- Microbial pathogenesis and antimicrobial strategy development
+- Molecular epidemiology of clinically relevant microorganisms
+- Undergraduate-centered discovery projects in microbiology and genomics
+- Environmental and applied microbiology
+- Open education, biotechnology education, and curriculum development
+
+### Scholarship Highlights
+
+- Publications span microbiology, biotechnology education, bioinformatics education, open pedagogy, and course-based undergraduate research.
+- Scholarship includes peer-reviewed journal articles, book chapters, educational resources, and collaborative teaching publications.
+- Full publication records are maintained on the [Publications](publications.qmd) page.
+
+## Mentoring
+
+Goller has mentored undergraduate researchers, graduate students, and postdoctoral education scholars across microbiology, biotechnology, education, and related interdisciplinary fields.
+
+- Full mentoring records are maintained on the [Mentoring](mentoring.qmd) page.
+
+## Selected Professional Links
+
+- [Teaching Philosophy](https://ccgoller.com/teaching-philosophy/)
+- [Research Statement](https://ccgoller.com/research/)
+- [BSC 495: The Hidden World's Code](https://ccgoller.github.io/bsc-fungal-genomics-lab/)
+- [MB 360: Microbial Metabolism](https://ccgoller.github.io/mb360workbook/)
