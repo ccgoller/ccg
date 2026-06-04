@@ -7,26 +7,51 @@ title-block-style: none
 ::: {.home-shell}
 ::: {.home-hero}
 ::: {.home-hero-text}
+<p class="home-eyebrow">Microbiology · Teaching · Mentoring</p>
+
 # Carlos C. Goller {.home-name}
 
-Teaching Professor · North Carolina State University  
-Microbiology, public health, and learner-centered science education.
+<p class="home-subhead">Teaching Professor · North Carolina State University</p>
 
-I design inclusive, evidence-based learning experiences while exploring microbial diversity and metabolism. My work connects microbiology research with practical teaching and mentoring in the life sciences.
+<p class="home-lede">I design inclusive, evidence-based learning experiences while exploring microbial diversity and metabolism. My work connects microbiology research with practical teaching and mentoring in the life sciences.</p>
 
 ::: {.profile-buttons}
-[Research](research.qmd){.profile-button}
-[Publications](publications.qmd){.profile-button}
-[Teaching](teaching.qmd){.profile-button}
-[Curriculum Vitae](cv.qmd){.profile-button}
-[Contact](contact.qmd){.profile-button}
+<a href="research.qmd" class="profile-button">Research</a>
+<a href="publications.qmd" class="profile-button">Publications</a>
+<a href="teaching.qmd" class="profile-button">Teaching</a>
+<a href="cv.qmd" class="profile-button">Curriculum Vitae</a>
+<a href="contact.qmd" class="profile-button">Contact</a>
 :::
 
 <p class="home-social"><a href="https://linkedin.com/in/ccgoller">LinkedIn</a> · <a href="https://github.com/ccgoller">GitHub</a></p>
 :::
 
+::: {.home-hero-panel}
+### At a Glance
+
+- Research in microbial physiology, metabolism, and science education
+- Learner-centered course design for active and inclusive classrooms
+- Mentoring pathways for student growth and professional development
+:::
+
 ::: {.home-hero-media}
-![Portrait of Carlos C. Goller](ccg100.jpg){.home-portrait}
+<img src="ccg500.jpeg" alt="Portrait of Carlos C. Goller" class="home-portrait">
+<p class="home-portrait-caption">Connecting microbiology, public health, and learner success.</p>
+:::
+:::
+
+::: {.home-stat-strip}
+::: {.home-stat}
+<p class="home-stat-value">4</p>
+<p class="home-stat-label">Featured focus areas</p>
+:::
+::: {.home-stat}
+<p class="home-stat-value">2</p>
+<p class="home-stat-label">Active course sites</p>
+:::
+::: {.home-stat}
+<p class="home-stat-value">1</p>
+<p class="home-stat-label">Integrated academic profile</p>
 :::
 :::
 
@@ -71,11 +96,13 @@ Support for students and trainees through mentoring, advising, and professional 
 ::: {.home-section}
 ## Resources & Course Sites
 
-- [Courses](courses.qmd)
-- [Professional Development](professional-development.qmd)
-- [Curriculum Vitae](cv.qmd)
-- [Contact](contact.qmd)
-- [BSC 495: The Hidden World's Code](https://ccgoller.github.io/bsc-fungal-genomics-lab/)
-- [MB 360: Microbial Metabolism](https://ccgoller.github.io/mb360workbook/)
+::: {.home-link-grid}
+<a href="courses.qmd" class="home-link-card">Courses</a>
+<a href="professional-development.qmd" class="home-link-card">Professional Development</a>
+<a href="cv.qmd" class="home-link-card">Curriculum Vitae</a>
+<a href="contact.qmd" class="home-link-card">Contact</a>
+<a href="https://ccgoller.github.io/bsc-fungal-genomics-lab/" class="home-link-card">BSC 495: The Hidden World's Code</a>
+<a href="https://ccgoller.github.io/mb360workbook/" class="home-link-card">MB 360: Microbial Metabolism</a>
+:::
 :::
 :::
