@@ -2,7 +2,7 @@
 title: "Research"
 ---
 
-This page is adapted from my research statement at [ccgoller.com/research](https://ccgoller.com/research/).
+This page presents an independent overview of current research themes, scholarly directions, and collaborative interests.
 
 ## Research Statement Summary
 
@@ -21,7 +21,8 @@ These projects are intentionally designed to be accessible and training-rich. Ma
 
 I am committed to bridging clinical and basic science through collaborations with clinical microbiology laboratories, clinicians, ecologists, bioinformaticians, and basic scientists. The goal is a research ecosystem that is both a vibrant training environment and a productive program for discovery.
 
-## Additional Links
+## Research Highlights
 
-- Full research statement page: [https://ccgoller.com/research/](https://ccgoller.com/research/)
-- Research projects index: [https://ccgoller.com/research-projects/](https://ccgoller.com/research-projects/)
+- Projects are designed to create meaningful entry points for student researchers.
+- Research questions connect microbiology, public health, genomics, and applied problem solving.
+- Scholarship supports both scientific discovery and research-rich teaching.
