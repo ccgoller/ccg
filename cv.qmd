@@ -2,7 +2,7 @@
 title: "CV"
 ---
 
-This page provides a concise, web-friendly CV for Carlos C. Goller, Ph.D., with links to related pages that are maintained elsewhere on the site.
+This page provides a concise, web-friendly CV for Carlos C. Goller, Ph.D., with links to related pages maintained across this independent site.
 
 ::: {.callout-note}
 **Download:** [PDF CV](https://go.ncsu.edu/goller)  
@@ -98,7 +98,7 @@ Goller has mentored undergraduate researchers, graduate students, and postdoctor
 
 ## Selected Professional Links
 
-- [Teaching Philosophy](https://ccgoller.com/teaching-philosophy/)
-- [Research Statement](https://ccgoller.com/research/)
+- [Teaching page](teaching.qmd)
+- [Research page](research.qmd)
 - [BSC 495: The Hidden World's Code](https://ccgoller.github.io/bsc-fungal-genomics-lab/)
 - [MB 360: Microbial Metabolism](https://ccgoller.github.io/mb360workbook/)
