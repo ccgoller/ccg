@@ -2,7 +2,7 @@
 title: "Teaching"
 ---
 
-This page is adapted from [ccgoller.com/teaching-philosophy](https://ccgoller.com/teaching-philosophy/) and [ccgoller.com/courses](https://ccgoller.com/courses/).
+This page highlights a teaching philosophy and course portfolio presented as part of this independent academic site.
 
 ## Teaching Philosophy
 
@@ -10,8 +10,12 @@ The mysteries of nature inspire innovation and scientific discovery, but scienti
 
 My teaching framework emphasizes discovery, collaboration, and communication: discover, teach, and share together.
 
-- Teaching philosophy page: [https://ccgoller.com/teaching-philosophy/](https://ccgoller.com/teaching-philosophy/)
-- Teaching philosophy PDF: [https://carloscgollerphd.blog/wp-content/uploads/2014/12/teaching-philosophy-v2-4.pdf](https://carloscgollerphd.blog/wp-content/uploads/2014/12/teaching-philosophy-v2-4.pdf)
+Teaching priorities include:
+
+- Active and inclusive learning environments
+- Inquiry-driven scientific practice
+- Clear connections between microbiology, society, and public health
+- Collaborative knowledge-building and open educational approaches
 
 ## Courses
 
