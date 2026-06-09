@@ -6,6 +6,11 @@ title-block-style: none
 
 ::: {.home-shell}
 ::: {.home-hero}
+::: {.home-hero-orb .home-hero-orb-one}
+:::
+::: {.home-hero-orb .home-hero-orb-two}
+:::
+
 ::: {.home-hero-text}
 <p class="home-eyebrow">Microbiology · Teaching · Mentoring</p>
 
@@ -13,45 +18,55 @@ title-block-style: none
 
 <p class="home-subhead">Teaching Professor · North Carolina State University</p>
 
-<p class="home-lede">I design inclusive, evidence-based learning experiences while exploring microbial diversity and metabolism. My work connects microbiology research with practical teaching and mentoring in the life sciences.</p>
+<p class="home-lede">An independent academic site bringing together microbiology research, evidence-based teaching, and mentoring that helps students grow as scientists, collaborators, and problem-solvers.</p>
+
+<p class="home-intro">Explore current scholarship, teaching philosophy, course innovation, publications, and professional resources in one place.</p>
 
 ::: {.profile-buttons}
-<a href="research.qmd" class="profile-button">Research</a>
+<a href="research.qmd" class="profile-button">Explore Research</a>
+<a href="teaching.qmd" class="profile-button">Teaching Approach</a>
 <a href="publications.qmd" class="profile-button">Publications</a>
-<a href="teaching.qmd" class="profile-button">Teaching</a>
-<a href="cv.qmd" class="profile-button">Curriculum Vitae</a>
-<a href="contact.qmd" class="profile-button">Contact</a>
+<a href="mentoring.qmd" class="profile-button">Mentoring</a>
+<a href="contact.qmd" class="profile-button">Connect</a>
 :::
 
 <p class="home-social"><a href="https://linkedin.com/in/ccgoller">LinkedIn</a> · <a href="https://github.com/ccgoller">GitHub</a></p>
 :::
 
 ::: {.home-hero-panel}
-### At a Glance
+### Current Focus
 
-- Research in microbial physiology, metabolism, and science education
-- Learner-centered course design for active and inclusive classrooms
-- Mentoring pathways for student growth and professional development
+- Advancing microbiology education through active, inclusive course design
+- Connecting microbial physiology and genomics with authentic student discovery
+- Creating mentoring pathways that support confidence, curiosity, and long-term growth
 :::
 
 ::: {.home-hero-media}
 <img src="ccg500.jpeg" alt="Portrait of Carlos C. Goller" class="home-portrait">
-<p class="home-portrait-caption">Connecting microbiology, public health, and learner success.</p>
+<p class="home-portrait-caption">Research, teaching, and professional development organized into a modern independent web presence.</p>
 :::
+:::
+
+::: {.home-highlight-band}
+::: {.home-highlight-intro}
+## Science, teaching, and mentorship in one place
+
+This homepage is designed as a front door to research themes, publications, course design, mentoring, and professional development resources for students, collaborators, and colleagues.
 :::
 
 ::: {.home-stat-strip}
 ::: {.home-stat}
 <p class="home-stat-value">4</p>
-<p class="home-stat-label">Featured focus areas</p>
+<p class="home-stat-label">Core areas featured</p>
 :::
 ::: {.home-stat}
 <p class="home-stat-value">2</p>
-<p class="home-stat-label">Active course sites</p>
+<p class="home-stat-label">Linked course sites</p>
 :::
 ::: {.home-stat}
 <p class="home-stat-value">1</p>
-<p class="home-stat-label">Integrated academic profile</p>
+<p class="home-stat-label">Independent academic hub</p>
+:::
 :::
 :::
 
@@ -59,34 +74,34 @@ title-block-style: none
 ## Featured Areas
 
 ::: {.home-card-grid}
-::: {.home-card}
+::: {.home-card .home-card-accent-research}
 ### Research
 
-Current work at the intersection of microbial physiology, metabolism, and education-focused scholarship.
+Explore work in microbial physiology, metabolism, pathogenesis, and research-rich scholarship designed to create meaningful discovery opportunities.
 
 [Explore research](research.qmd)
 :::
 
-::: {.home-card}
+::: {.home-card .home-card-accent-publications}
 ### Publications
 
-Peer-reviewed research, teaching scholarship, and conference contributions over time.
+Browse peer-reviewed articles, education scholarship, and collaborative outputs across microbiology, teaching, and interdisciplinary science.
 
 [View publications](publications.qmd)
 :::
 
-::: {.home-card}
+::: {.home-card .home-card-accent-teaching}
 ### Teaching
 
-Course design, instructional priorities, and approaches for active, inclusive science learning.
+See how inclusive, inquiry-driven pedagogy connects scientific concepts with authentic practice and learner engagement.
 
 [See teaching](teaching.qmd)
 :::
 
-::: {.home-card}
+::: {.home-card .home-card-accent-mentoring}
 ### Mentoring & Professional Development
 
-Support for students and trainees through mentoring, advising, and professional growth opportunities.
+Discover mentoring, advising, and professional growth work that supports learner success across multiple stages of development.
 
 [Explore mentoring](mentoring.qmd)
 :::
@@ -94,7 +109,7 @@ Support for students and trainees through mentoring, advising, and professional 
 :::
 
 ::: {.home-section}
-## Resources & Course Sites
+## Explore the Site
 
 ::: {.home-link-grid}
 <a href="courses.qmd" class="home-link-card">Courses</a>
