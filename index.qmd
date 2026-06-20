@@ -18,55 +18,40 @@ title-block-style: none
 
 <p class="home-subhead">Teaching Professor · North Carolina State University</p>
 
-<p class="home-lede">A modern NC State academic hub bringing together microbiology research, evidence-based teaching, and mentoring that helps students grow as scientists, collaborators, and problem-solvers.</p>
-
-<p class="home-intro">Explore current scholarship, teaching philosophy, course innovation, publications, and professional resources in one place.</p>
+<p class="home-lede">Microbiologist, educator, and mentor connecting evidence-based teaching with authentic scientific discovery at NC State.</p>
 
 ::: {.profile-buttons role="navigation" aria-label="Homepage quick links"}
-<a href="research.qmd" class="profile-button">Explore Research</a>
-<a href="teaching.qmd" class="profile-button">Teaching Approach</a>
+<a href="research.qmd" class="profile-button profile-button-primary">Explore Research</a>
 <a href="publications.qmd" class="profile-button">Publications</a>
+<a href="teaching.qmd" class="profile-button">Teaching</a>
 <a href="mentoring.qmd" class="profile-button">Mentoring</a>
 <a href="contact.qmd" class="profile-button">Connect</a>
 :::
 
-<p class="home-social" aria-label="External profile links"><a href="https://linkedin.com/in/ccgoller">LinkedIn</a> · <a href="https://github.com/ccgoller">GitHub</a></p>
-:::
-
-::: {.home-hero-panel}
-### Current Focus
-
-- Advancing microbiology education through active, inclusive course design
-- Connecting microbial physiology and genomics with authentic student discovery
-- Creating mentoring pathways that support confidence, curiosity, and long-term growth
+<p class="home-social" aria-label="External profile links"><a href="https://linkedin.com/in/ccgoller">LinkedIn</a> · <a href="https://github.com/ccgoller">GitHub</a> · <a href="cv.qmd">CV</a></p>
 :::
 
 ::: {.home-hero-media}
 <img src="ccg500.jpeg" alt="Portrait of Carlos C. Goller" class="home-portrait">
-<p class="home-portrait-caption">Research, teaching, and professional development organized into a modern independent web presence.</p>
 :::
 :::
 
-::: {.home-highlight-band}
-::: {.home-highlight-intro}
-## Science, teaching, and mentorship in one place
-
-This homepage is designed as a front door to research themes, publications, course design, mentoring, and professional development resources for students, collaborators, and colleagues.
+::: {.home-stat-band}
+::: {.home-stat}
+<p class="home-stat-value">77+</p>
+<p class="home-stat-label">Scholarly works</p>
 :::
-
-::: {.home-stat-strip}
+::: {.home-stat}
+<p class="home-stat-value">70+</p>
+<p class="home-stat-label">Students mentored</p>
+:::
+::: {.home-stat}
+<p class="home-stat-value">12+</p>
+<p class="home-stat-label">Years at NC State</p>
+:::
 ::: {.home-stat}
 <p class="home-stat-value">4</p>
-<p class="home-stat-label">Core areas featured</p>
-:::
-::: {.home-stat}
-<p class="home-stat-value">2</p>
-<p class="home-stat-label">Linked course sites</p>
-:::
-::: {.home-stat}
-<p class="home-stat-value">1</p>
-<p class="home-stat-label">Independent academic hub</p>
-:::
+<p class="home-stat-label">Active course sites</p>
 :::
 :::
 
@@ -77,7 +62,7 @@ This homepage is designed as a front door to research themes, publications, cour
 ::: {.home-card .home-card-accent-research}
 ### Research
 
-Explore work in microbial physiology, metabolism, pathogenesis, and research-rich scholarship designed to create meaningful discovery opportunities.
+Microbial physiology, metabolism, pathogenesis, and research-rich scholarship creating authentic discovery opportunities for students.
 
 [Explore research](research.qmd)
 :::
@@ -85,7 +70,7 @@ Explore work in microbial physiology, metabolism, pathogenesis, and research-ric
 ::: {.home-card .home-card-accent-publications}
 ### Publications
 
-Browse peer-reviewed articles, education scholarship, and collaborative outputs across microbiology, teaching, and interdisciplinary science.
+Peer-reviewed articles, education scholarship, and collaborative work across microbiology, teaching, and interdisciplinary science.
 
 [View publications](publications.qmd)
 :::
@@ -93,15 +78,15 @@ Browse peer-reviewed articles, education scholarship, and collaborative outputs 
 ::: {.home-card .home-card-accent-teaching}
 ### Teaching
 
-See how inclusive, inquiry-driven pedagogy connects scientific concepts with authentic practice and learner engagement.
+Inclusive, inquiry-driven pedagogy that connects scientific concepts with authentic practice and student engagement.
 
 [See teaching](teaching.qmd)
 :::
 
 ::: {.home-card .home-card-accent-mentoring}
-### Mentoring & Professional Development
+### Mentoring
 
-Discover mentoring, advising, and professional growth work that supports learner success across multiple stages of development.
+Mentoring and professional growth work that supports learner success at every stage of scientific development.
 
 [Explore mentoring](mentoring.qmd)
 :::

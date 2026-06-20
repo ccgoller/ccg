@@ -311,6 +311,13 @@ body.quarto-light .profile-button {
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
+body.quarto-light .profile-button-primary {
+  color: #ffffff;
+  background: #990000;
+  border-color: #990000;
+  box-shadow: 0 10px 24px rgba(153, 0, 0, 0.22);
+}
+
 body.quarto-light .profile-button:hover,
 body.quarto-light .profile-button:focus {
   color: #ffffff;
@@ -323,6 +330,12 @@ body.quarto-light .profile-button:focus {
 body.quarto-dark .profile-button {
   color: #ffb3b3;
   background: rgba(255, 179, 179, 0.08);
+}
+
+body.quarto-dark .profile-button-primary {
+  color: #1a0c0c;
+  background: #ffb3b3;
+  border-color: #ffb3b3;
 }
 
 body.quarto-dark .profile-button:hover,
@@ -383,10 +396,10 @@ body.quarto-dark .quarto-about-trestles .about-link:focus {
 
 .home-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(220px, 1fr) minmax(230px, 320px);
-  gap: 1.35rem;
-  align-items: stretch;
-  padding: 1.4rem;
+  grid-template-columns: minmax(0, 1.55fr) minmax(240px, 340px);
+  gap: 2rem;
+  align-items: center;
+  padding: 2.5rem 2rem;
   border: 1px solid var(--bs-border-color);
   border-radius: 24px;
   position: relative;
@@ -444,9 +457,9 @@ body.quarto-light .home-eyebrow {
 }
 
 .home-name {
-  margin: 0 0 0.75rem;
-  font-size: clamp(2.2rem, 4vw, 3.35rem);
-  line-height: 0.98;
+  margin: 0 0 0.6rem;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  line-height: 0.95;
   letter-spacing: -0.03em;
 }
 
@@ -462,9 +475,9 @@ body.quarto-dark .home-subhead {
 }
 
 .home-lede {
-  margin: 0 0 0.75rem;
-  font-size: 1.08rem;
-  line-height: 1.75;
+  margin: 0 0 1.15rem;
+  font-size: 1.12rem;
+  line-height: 1.7;
   max-width: 42rem;
 }
 
@@ -551,6 +564,13 @@ body.quarto-dark .home-hero-panel {
   color: var(--bs-secondary-color);
 }
 
+.home-stat-band {
+  margin-top: 1.15rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
 .home-highlight-band {
   margin-top: 1.15rem;
   padding: 1.1rem;
@@ -590,6 +610,11 @@ body.quarto-dark .home-highlight-band {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.85rem;
+}
+
+.home-stat-band .home-stat-value,
+.home-stat-strip .home-stat-value {
+  font-size: 2.1rem;
 }
 
 .home-stat {
@@ -812,6 +837,7 @@ div.callout {
   .home-hero {
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+    padding: 1.75rem 1.5rem;
   }
 
   .home-hero-text {
@@ -823,8 +849,8 @@ div.callout {
     margin-left: auto;
   }
 
-  .home-highlight-band {
-    padding: 1rem;
+  .home-stat-band {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -835,7 +861,7 @@ div.callout {
 
   .home-hero {
     grid-template-columns: 1fr;
-    padding: 1rem;
+    padding: 1.25rem;
     border-radius: 20px;
   }
 
@@ -844,10 +870,11 @@ div.callout {
     margin: 0 auto;
   }
 
+  .home-stat-band,
   .home-stat-strip,
   .home-link-grid,
   .home-card-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
