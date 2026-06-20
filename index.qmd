@@ -46,6 +46,18 @@ title-block-style: none
 :::
 :::
 
+::: {.home-cta-band}
+::: {.home-cta-copy}
+## Advancing science, teaching, and student growth
+
+A professional academic site for research, mentoring, publications, course innovation, and practical teaching resources.
+:::
+::: {.home-cta-actions role="navigation" aria-label="Primary homepage actions"}
+<a href="cv.qmd" class="home-cta-button home-cta-button-primary">View CV</a>
+<a href="contact.qmd" class="home-cta-button">Contact</a>
+:::
+:::
+
 ::: {.home-stat-band}
 ::: {.home-stat}
 <p class="home-stat-value">77+</p>

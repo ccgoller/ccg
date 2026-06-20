@@ -11,9 +11,10 @@ website:
   description: Explorer of Bacterial and Learner Diversity
   page-navigation: true
   reader-mode: true
-  
   navbar:
-    background: "#f7f8f9"
+    logo: CCG-nobkg.png
+    logo-alt: CCG monogram
+    background: "#f5f1ee"
     search: true
     left:
       - text: "Home"
