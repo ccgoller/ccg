@@ -16,7 +16,7 @@ title-block-style: none
 
 <div class="home-brand-lockup" aria-label="Homepage identity">
   <div class="home-brand-mark-wrap">
-    <img src="CCG-nobkg.png" alt="CCG monogram logo" class="home-brand-mark">
+    ![](CCG-nobkg.png){.home-brand-mark fig-alt="CCG monogram logo"}
   </div>
   <div class="home-brand-copy">
 
@@ -42,7 +42,7 @@ title-block-style: none
 :::
 
 ::: {.home-hero-media}
-<img src="ccg500.jpeg" alt="Portrait of Carlos C. Goller" class="home-portrait">
+![](ccg500.jpeg){.home-portrait fig-alt="Portrait of Carlos C. Goller"}
 :::
 :::
 
