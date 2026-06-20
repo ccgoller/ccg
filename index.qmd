@@ -16,13 +16,11 @@ title-block-style: none
 
 <div class="home-brand-lockup" aria-label="Homepage identity">
   <div class="home-brand-mark-wrap">
-    <img src="CCG-nobkg.png" alt="CCG monogram logo" class="home-brand-mark">
+    <img src="CCG-nobkg.png" alt="CCG monogram logo" class="home-brand-mark" />
   </div>
   <div class="home-brand-copy">
-
-# Carlos C. Goller {.home-name}
-
-<p class="home-subhead">Teaching Professor · North Carolina State University</p>
+    <h1 class="home-name">Carlos C. Goller</h1>
+    <p class="home-subhead">Teaching Professor · North Carolina State University</p>
   </div>
 </div>
 
@@ -42,7 +40,7 @@ title-block-style: none
 :::
 
 ::: {.home-hero-media}
-<img src="ccg500.jpeg" alt="Portrait of Carlos C. Goller" class="home-portrait">
+<img src="ccg500.jpeg" alt="Portrait of Carlos C. Goller" class="home-portrait" />
 :::
 :::
 
