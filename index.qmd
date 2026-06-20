@@ -4,12 +4,10 @@ page-layout: full
 title-block-style: none
 ---
 
-<div class="home-shell">
+<div class="home-shell home-shell-minimal">
   <p class="home-eyebrow">NC State · Microbiology · Teaching · Mentoring</p>
 
-  <p>
-    <img src="CCG-nobkg.png" alt="CCG monogram logo" class="home-brand-mark home-brand-mark-small" />
-  </p>
+  <img src="CCG-nobkg.png" alt="CCG monogram logo" class="home-brand-mark home-brand-mark-tiny" />
 
   <h1 class="home-name">Carlos C. Goller</h1>
   <p class="home-subhead">Teaching Professor · North Carolina State University</p>
@@ -18,25 +16,11 @@ title-block-style: none
 
   <p class="home-intro">Explore scholarship, teaching, mentoring, and course innovation through a clear, modern academic homepage designed to highlight impact and make professional resources easy to find.</p>
 
-  <div class="profile-buttons" role="navigation" aria-label="Homepage quick links">
-    <a href="research.qmd" class="profile-button profile-button-primary">Explore Research</a>
-    <a href="publications.qmd" class="profile-button">Publications</a>
-    <a href="teaching.qmd" class="profile-button">Teaching</a>
-    <a href="mentoring.qmd" class="profile-button">Mentoring</a>
-    <a href="contact.qmd" class="profile-button">Connect</a>
-  </div>
+  <p><a href="research.qmd">Research</a> · <a href="publications.qmd">Publications</a> · <a href="teaching.qmd">Teaching</a> · <a href="mentoring.qmd">Mentoring</a> · <a href="contact.qmd">Contact</a></p>
 
-  <p class="home-social" aria-label="External profile links"><a href="https://linkedin.com/in/ccgoller">LinkedIn</a> · <a href="https://github.com/ccgoller">GitHub</a> · <a href="cv.qmd">CV</a></p>
+  <p><a href="https://linkedin.com/in/ccgoller">LinkedIn</a> · <a href="https://github.com/ccgoller">GitHub</a> · <a href="cv.qmd">CV</a></p>
 
   <hr>
-
-  <h2>Featured Areas</h2>
-  <ul>
-    <li><a href="research.qmd">Research</a></li>
-    <li><a href="publications.qmd">Publications</a></li>
-    <li><a href="teaching.qmd">Teaching</a></li>
-    <li><a href="mentoring.qmd">Mentoring</a></li>
-  </ul>
 
   <h2>Explore the Site</h2>
   <ul>
