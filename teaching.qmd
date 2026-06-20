@@ -1,6 +1,27 @@
 ---
 title: "Teaching"
+subtitle: "Teaching philosophy, course design, and inclusive learning practices"
+page-layout: article
 ---
+
+::: {.page-intro}
+Teaching centers on evidence-based pedagogy, scientific curiosity, and student participation in meaningful, inquiry-driven learning experiences.
+:::
+
+::: {.feature-card-grid}
+::: {.feature-card .feature-card-teaching}
+### Inclusive Pedagogy
+Designing learning environments that are welcoming, rigorous, and accessible.
+:::
+::: {.feature-card .feature-card-discovery}
+### Active Learning
+Using practice, reflection, and collaboration to deepen scientific understanding.
+:::
+::: {.feature-card .feature-card-mentoring}
+### Student Growth
+Helping students build confidence, communication skills, and scientific identity.
+:::
+:::
 
 This page highlights a teaching philosophy and course portfolio presented as part of this independent academic site.
 
@@ -19,17 +40,9 @@ Teaching priorities include:
 
 ## Courses
 
-- Outbreak | HON 312 | NC State University Honors Program. Website: [http://go.ncsu.edu/outbreak](http://go.ncsu.edu/outbreak)
-- Microbial Superheroes | LSC 170 | NC State Department of Biological Sciences. Website: [http://go.ncsu.edu/delftiabook](http://go.ncsu.edu/delftiabook)
+- Outbreak | HON 312 | NC State University Honors Program. Website: <http://go.ncsu.edu/outbreak>
+- Microbial Superheroes | LSC 170 | NC State Department of Biological Sciences. Website: <http://go.ncsu.edu/delftiabook>
 - Portable Genome Sequencing | BIT 495/595 | NC State Biotechnology Program.
-- Metagenomics | BIT 477/577 | NC State Biotechnology Program. Website: [http://go.ncsu.edu/bitmetagenomics](http://go.ncsu.edu/bitmetagenomics)
-- High-throughput Discovery | BIT 479/579 | NC State Biotechnology Program. Website: [http://go.ncsu.edu/htd](http://go.ncsu.edu/htd)
-- Biotechnology and Sustainability | BIT 295 | NC State Biotechnology Program. Website: [http://go.ncsu.edu/bits](http://go.ncsu.edu/bits)
-- Metabolic Modeling | BIT 495/595 | NC State Biotechnology Program. Website: [http://go.ncsu.edu/metmod](http://go.ncsu.edu/metmod)
-- Open Education Resources and Pedagogies | OPEN 9200 | Kwantlen Polytechnic University
-
-## Curriculum Development
-
-- Inquiry-driven laboratory design for biotechnology and microbiology learning.
-- Integration of high-throughput and genomics approaches into undergraduate teaching.
-- Open pedagogy and OER-centered curriculum innovation.
+- Metagenomics | BIT 477/577 | NC State Biotechnology Program. Website: <http://go.ncsu.edu/bitmetagenomics>
+- High-throughput Discovery | BIT 479/579 | NC State Biotechnology Program. Website: <http://go.ncsu.edu/htd>
+- Biotechnology and Sustainability | BIT 295 | NC State Biotechnology Program. Website: <http://go.ncsu.edu/bits>

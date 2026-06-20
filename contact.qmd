@@ -1,199 +1,24 @@
 ---
 title: "Contact"
+subtitle: "Professional contact details and ways to connect"
+page-layout: article
 ---
 
-::: {.contact-layout}
-
-::: {.contact-info-col}
-
-## Get in Touch
-
-I welcome messages from students, collaborators, and colleagues. Whether you have a question about my courses, research, or are interested in working together, feel free to reach out.
-
-::: {.contact-card}
-
-::: {.contact-card-item}
-<i class="bi bi-building contact-icon"></i>
-**Department of Biological Sciences**  
-North Carolina State University  
-Raleigh, NC 27695
+::: {.page-intro}
+Use this page to connect regarding teaching, research, mentoring, collaboration, or professional opportunities.
 :::
 
-::: {.contact-card-item}
-<i class="bi bi-envelope contact-icon"></i>
-**Email**  
-[ccgoller\@ncsu.edu](mailto:ccgoller@ncsu.edu)
+::: {.feature-card-grid}
+::: {.feature-card .feature-card-contact}
+### Professional Inquiries
+Questions about teaching, academic work, speaking, or collaboration.
 :::
-
-::: {.contact-card-item}
-<i class="bi bi-linkedin contact-icon"></i>
-**LinkedIn**  
-[linkedin.com/in/ccgoller](https://linkedin.com/in/ccgoller)
+::: {.feature-card .feature-card-mentoring}
+### Mentoring Connections
+Opportunities related to student support, development, and growth.
 :::
-
-::: {.contact-card-item}
-<i class="bi bi-github contact-icon"></i>
-**GitHub**  
-[github.com/ccgoller](https://github.com/ccgoller)
+::: {.feature-card .feature-card-collaboration}
+### Collaboration
+Invitations to work across science, education, or interdisciplinary projects.
 :::
-
-:::
-
-:::
-
-::: {.contact-form-col}
-
-## Send a Message
-
-```{=html}
-<!--
-  To activate this form, create a free account at https://formspree.io,
-  create a new form, and replace YOUR_FORM_ID in the action URL below.
--->
-<form
-  id="contact-form"
-  action="https://formspree.io/f/YOUR_FORM_ID"
-  method="POST"
-  novalidate
-  class="contact-form"
->
-  <div class="cf-group">
-    <label for="cf-name" class="cf-label">Name <span class="cf-required" aria-hidden="true">*</span></label>
-    <input
-      type="text"
-      id="cf-name"
-      name="name"
-      class="cf-control"
-      placeholder="Your full name"
-      required
-      autocomplete="name"
-    />
-    <div class="cf-invalid-feedback">Please enter your name.</div>
-  </div>
-
-  <div class="cf-group">
-    <label for="cf-email" class="cf-label">Email <span class="cf-required" aria-hidden="true">*</span></label>
-    <input
-      type="email"
-      id="cf-email"
-      name="email"
-      class="cf-control"
-      placeholder="you@example.com"
-      required
-      autocomplete="email"
-    />
-    <div class="cf-invalid-feedback">Please enter a valid email address.</div>
-  </div>
-
-  <div class="cf-group">
-    <label for="cf-subject" class="cf-label">Subject <span class="cf-required" aria-hidden="true">*</span></label>
-    <select id="cf-subject" name="subject" class="cf-control" required>
-      <option value="" disabled selected>Select a topic…</option>
-      <option value="Course Inquiry">Course Inquiry</option>
-      <option value="Research Collaboration">Research Collaboration</option>
-      <option value="Mentoring / Advising">Mentoring / Advising</option>
-      <option value="Media / Press">Media / Press</option>
-      <option value="General Question">General Question</option>
-      <option value="Other">Other</option>
-    </select>
-    <div class="cf-invalid-feedback">Please select a subject.</div>
-  </div>
-
-  <div class="cf-group">
-    <label for="cf-message" class="cf-label">Message <span class="cf-required" aria-hidden="true">*</span></label>
-    <textarea
-      id="cf-message"
-      name="message"
-      class="cf-control"
-      rows="6"
-      placeholder="Your message…"
-      required
-    ></textarea>
-    <div class="cf-invalid-feedback">Please enter your message.</div>
-  </div>
-
-  <!-- Honeypot anti-spam field – hidden from real users -->
-  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-
-  <div id="cf-status" class="cf-status" role="status" aria-live="polite"></div>
-
-  <button type="submit" class="cf-btn" id="cf-submit">
-    <span class="cf-btn-text">Send Message</span>
-    <span class="cf-btn-icon bi bi-send" aria-hidden="true"></span>
-  </button>
-</form>
-
-<script>
-(function () {
-  var form    = document.getElementById('contact-form');
-  var status  = document.getElementById('cf-status');
-  var btn     = document.getElementById('cf-submit');
-
-  if (!form) return;
-
-  /* Basic client-side validation feedback */
-  function showError(input) {
-    input.classList.add('cf-invalid');
-    var fb = input.parentElement.querySelector('.cf-invalid-feedback');
-    if (fb) fb.style.display = 'block';
-  }
-  function clearError(input) {
-    input.classList.remove('cf-invalid');
-    var fb = input.parentElement.querySelector('.cf-invalid-feedback');
-    if (fb) fb.style.display = '';
-  }
-
-  form.querySelectorAll('.cf-control').forEach(function (el) {
-    el.addEventListener('input', function () { clearError(el); });
-    el.addEventListener('change', function () { clearError(el); });
-  });
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var valid = true;
-    form.querySelectorAll('[required]').forEach(function (el) {
-      /* Use the browser's built-in validity check for all field types */
-      if (!el.validity.valid) { showError(el); valid = false; }
-    });
-    if (!valid) return;
-
-    btn.disabled = true;
-    btn.querySelector('.cf-btn-text').textContent = 'Sending…';
-
-    var data = new FormData(form);
-    fetch(form.action, {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    })
-    .then(function (res) {
-      if (res.ok) {
-        status.className = 'cf-status cf-status--success';
-        status.textContent = '✓ Your message was sent! I\u2019ll get back to you as soon as possible.';
-        form.reset();
-      } else {
-        return res.json().then(function (json) {
-          var msg = (json.errors && json.errors.map(function (e) { return e.message; }).join(', ')) ||
-                    json.error ||
-                    'Submission failed (HTTP ' + res.status + ').';
-          throw new Error(msg);
-        });
-      }
-    })
-    .catch(function (err) {
-      status.className = 'cf-status cf-status--error';
-      status.textContent = '✗ ' + (err && err.message ? err.message : 'Something went wrong. Please try again or email me directly.');
-    })
-    .finally(function () {
-      btn.disabled = false;
-      btn.querySelector('.cf-btn-text').textContent = 'Send Message';
-      status.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
-  });
-})();
-</script>
-```
-
-:::
-
 :::

@@ -1,28 +1,35 @@
 ---
 title: "Research"
+subtitle: "Research themes, scholarly directions, and discovery-centered academic work"
+page-layout: article
 ---
 
-This page presents an independent overview of current research themes, scholarly directions, and collaborative interests.
+::: {.page-intro}
+Research in the Goller academic portfolio connects microbiology, physiology, genomics, and inquiry-rich scientific practice, with an emphasis on discovery, collaboration, and student engagement.
+:::
 
-## Research Statement Summary
+::: {.feature-card-grid}
+::: {.feature-card .feature-card-research}
+### Microbial Physiology
+Investigating how microorganisms function, adapt, and interact across diverse biological systems.
+:::
+::: {.feature-card .feature-card-discovery}
+### Student Discovery
+Creating authentic research experiences that help students participate in real scientific questions.
+:::
+::: {.feature-card .feature-card-collaboration}
+### Scholarly Collaboration
+Supporting interdisciplinary work that links teaching, mentorship, and microbiological research.
+:::
+:::
 
-Bacterial pathogens that cause disease in healthcare settings and vulnerable populations threaten patient care and have spread rapidly across the globe. My research focuses on understanding microbial trends and characteristics associated with persistence and treatment evasion. By combining broad molecular epidemiological surveys with targeted screens for novel inhibitors, I aim to identify directed therapies that reduce the spread of emerging pathogens.
+## Research Overview
 
-These projects are intentionally designed to be accessible and training-rich. Many approaches are relatively inexpensive, straightforward, and safe for undergraduate participation while still producing meaningful data on microbial mechanisms and behavior.
+Research interests span microbial physiology, metabolism, pathogenesis, and integrative biology, with an emphasis on connecting scientific inquiry to meaningful student participation.
 
-## Core Research Directions
+## Current Directions
 
-- Microbial pathogenesis and antimicrobial strategy development.
-- Molecular epidemiology of clinically relevant microorganisms.
-- Undergraduate-centered discovery projects in microbiology and genomics.
-- Environmental and applied microbiology, including waste reduction and recycling opportunities.
-
-## Collaborative Vision
-
-I am committed to bridging clinical and basic science through collaborations with clinical microbiology laboratories, clinicians, ecologists, bioinformaticians, and basic scientists. The goal is a research ecosystem that is both a vibrant training environment and a productive program for discovery.
-
-## Research Highlights
-
-- Projects are designed to create meaningful entry points for student researchers.
-- Research questions connect microbiology, public health, genomics, and applied problem solving.
-- Scholarship supports both scientific discovery and research-rich teaching.
+- Microbiology and physiology-centered scholarship
+- Discovery-driven student learning experiences
+- Research-informed teaching and mentoring
+- Interdisciplinary scientific collaboration
