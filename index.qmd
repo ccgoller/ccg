@@ -4,37 +4,25 @@ page-layout: article
 title-block-style: none
 ---
 
-<div class="home-shell home-shell-minimal home-shell-professional">
-  <div class="home-identity-row" aria-label="Homepage identity">
-    <img src="CCG-nobkg.png" alt="CCG monogram logo" class="home-brand-mark home-brand-mark-homepage-small" />
-    <div>
-      <p class="home-eyebrow">NC State · Microbiology · Teaching · Mentoring</p>
-      <p class="home-subhead home-subhead-compact">Teaching Professor · North Carolina State University</p>
-    </div>
-  </div>
+Carlos C. Goller is a Teaching Professor at North Carolina State University whose work brings together microbiology, teaching, mentoring, and course innovation.
 
-  <p class="home-lede">Research, teaching, mentoring, and course innovation in microbiology and evidence-based science education.</p>
+## Site Navigation
 
-  <nav aria-label="Primary site navigation" class="home-primary-nav">
-    <ul class="home-primary-nav-list">
-      <li><a href="research.qmd">Research</a></li>
-      <li><a href="publications.qmd">Publications</a></li>
-      <li><a href="teaching.qmd">Teaching</a></li>
-      <li><a href="mentoring.qmd">Mentoring</a></li>
-      <li><a href="courses.qmd">Courses</a></li>
-      <li><a href="professional-development.qmd">Professional Development</a></li>
-      <li><a href="cv.qmd">CV</a></li>
-      <li><a href="contact.qmd">Contact</a></li>
-    </ul>
-  </nav>
+- [Research](research.qmd)
+- [Publications](publications.qmd)
+- [Teaching](teaching.qmd)
+- [Mentoring](mentoring.qmd)
+- [Courses](courses.qmd)
+- [Professional Development](professional-development.qmd)
+- [Curriculum Vitae](cv.qmd)
+- [Contact](contact.qmd)
 
-  <section aria-labelledby="homepage-overview-heading">
-    <h2 id="homepage-overview-heading">Overview</h2>
-    <p class="home-intro">This site highlights scholarship, publications, inclusive teaching, student mentoring, and course resources in a streamlined, accessible format.</p>
-  </section>
+## Featured Resources
 
-  <section aria-labelledby="homepage-external-heading">
-    <h2 id="homepage-external-heading">External Links</h2>
-    <p><a href="https://linkedin.com/in/ccgoller">LinkedIn</a> · <a href="https://github.com/ccgoller">GitHub</a> · <a href="https://ccgoller.github.io/bsc-fungal-genomics-lab/">BSC 495: The Hidden World's Code</a> · <a href="https://ccgoller.github.io/mb360workbook/">MB 360: Microbial Metabolism</a></p>
-  </section>
-</div>
+- [BSC 495: The Hidden World's Code](https://ccgoller.github.io/bsc-fungal-genomics-lab/)
+- [MB 360: Microbial Metabolism](https://ccgoller.github.io/mb360workbook/)
+
+## External Links
+
+- [LinkedIn](https://linkedin.com/in/ccgoller)
+- [GitHub](https://github.com/ccgoller)
