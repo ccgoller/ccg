@@ -12,17 +12,17 @@ title-block-style: none
 :::
 
 ::: {.home-hero-text}
-<p class="home-eyebrow">Microbiology · Teaching · Mentoring</p>
+<p class="home-eyebrow">NC State · Microbiology · Teaching · Mentoring</p>
 
 # Carlos C. Goller {.home-name}
 
 <p class="home-subhead">Teaching Professor · North Carolina State University</p>
 
-<p class="home-lede">An independent academic site bringing together microbiology research, evidence-based teaching, and mentoring that helps students grow as scientists, collaborators, and problem-solvers.</p>
+<p class="home-lede">A modern NC State academic hub bringing together microbiology research, evidence-based teaching, and mentoring that helps students grow as scientists, collaborators, and problem-solvers.</p>
 
 <p class="home-intro">Explore current scholarship, teaching philosophy, course innovation, publications, and professional resources in one place.</p>
 
-::: {.profile-buttons}
+::: {.profile-buttons role="navigation" aria-label="Homepage quick links"}
 <a href="research.qmd" class="profile-button">Explore Research</a>
 <a href="teaching.qmd" class="profile-button">Teaching Approach</a>
 <a href="publications.qmd" class="profile-button">Publications</a>
@@ -30,7 +30,7 @@ title-block-style: none
 <a href="contact.qmd" class="profile-button">Connect</a>
 :::
 
-<p class="home-social"><a href="https://linkedin.com/in/ccgoller">LinkedIn</a> · <a href="https://github.com/ccgoller">GitHub</a></p>
+<p class="home-social" aria-label="External profile links"><a href="https://linkedin.com/in/ccgoller">LinkedIn</a> · <a href="https://github.com/ccgoller">GitHub</a></p>
 :::
 
 ::: {.home-hero-panel}
@@ -70,8 +70,8 @@ This homepage is designed as a front door to research themes, publications, cour
 :::
 :::
 
-::: {.home-section}
-## Featured Areas
+::: {.home-section aria-labelledby="featured-areas-heading"}
+## Featured Areas {#featured-areas-heading}
 
 ::: {.home-card-grid}
 ::: {.home-card .home-card-accent-research}
@@ -108,10 +108,10 @@ Discover mentoring, advising, and professional growth work that supports learner
 :::
 :::
 
-::: {.home-section}
-## Explore the Site
+::: {.home-section aria-labelledby="explore-site-heading"}
+## Explore the Site {#explore-site-heading}
 
-::: {.home-link-grid}
+::: {.home-link-grid role="navigation" aria-label="Explore the site"}
 <a href="courses.qmd" class="home-link-card">Courses</a>
 <a href="professional-development.qmd" class="home-link-card">Professional Development</a>
 <a href="cv.qmd" class="home-link-card">Curriculum Vitae</a>
