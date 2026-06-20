@@ -6,14 +6,14 @@ project:
     - assets/vendor/datatables/*
 
 website:
-  title: "Carlos C. Goller"
+  title: "Carlos C. Goller, Ph.D."
   favicon: ccg100.jpg
   description: Explorer of Bacterial and Learner Diversity
   page-navigation: true
   reader-mode: true
   navbar:
     logo: CCG-nobkg.png
-    logo-alt: CCG monogram
+    logo-alt: CCG logo
     background: "#f5f1ee"
     search: true
     left:
