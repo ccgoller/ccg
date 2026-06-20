@@ -42,7 +42,3 @@ Teaching priorities include:
 
 - Outbreak | HON 312 | NC State University Honors Program. Website: <http://go.ncsu.edu/outbreak>
 - Microbial Superheroes | LSC 170 | NC State Department of Biological Sciences. Website: <http://go.ncsu.edu/delftiabook>
-- Portable Genome Sequencing | BIT 495/595 | NC State Biotechnology Program.
-- Metagenomics | BIT 477/577 | NC State Biotechnology Program. Website: <http://go.ncsu.edu/bitmetagenomics>
-- High-throughput Discovery | BIT 479/579 | NC State Biotechnology Program. Website: <http://go.ncsu.edu/htd>
-- Biotechnology and Sustainability | BIT 295 | NC State Biotechnology Program. Website: <http://go.ncsu.edu/bits>
