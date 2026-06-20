@@ -1,21 +1,58 @@
 ---
-title: "Carlos C. Goller"
+title: "Home"
+subtitle: "Research, teaching, mentoring, and academic resources"
 page-layout: article
-title-block-style: none
 ---
 
+::: {.page-intro}
 Carlos C. Goller is a Teaching Professor at North Carolina State University whose work brings together microbiology, teaching, mentoring, and course innovation.
+:::
 
-## Site Navigation
+::: {.feature-card-grid}
+::: {.feature-card .feature-card-research}
+### Research
+Explore research themes in microbiology, physiology, scholarly discovery, and interdisciplinary collaboration.
 
-- [Research](research.qmd)
-- [Publications](publications.qmd)
-- [Teaching](teaching.qmd)
-- [Mentoring](mentoring.qmd)
-- [Courses](courses.qmd)
-- [Professional Development](professional-development.qmd)
-- [Curriculum Vitae](cv.qmd)
-- [Contact](contact.qmd)
+[Go to Research](research.qmd)
+:::
+
+::: {.feature-card .feature-card-publications}
+### Publications
+Browse peer-reviewed scholarship, academic writing, and collaborative publications.
+
+[Go to Publications](publications.qmd)
+:::
+
+::: {.feature-card .feature-card-teaching}
+### Teaching
+Learn about teaching philosophy, course design, and inclusive evidence-based pedagogy.
+
+[Go to Teaching](teaching.qmd)
+:::
+:::
+
+::: {.feature-card-grid}
+::: {.feature-card .feature-card-mentoring}
+### Mentoring
+See mentoring work focused on student growth, scientific identity, and professional development.
+
+[Go to Mentoring](mentoring.qmd)
+:::
+
+::: {.feature-card .feature-card-collaboration}
+### Courses
+Access course pages, student resources, and instructional materials.
+
+[Go to Courses](courses.qmd)
+:::
+
+::: {.feature-card .feature-card-contact}
+### Contact and CV
+Find contact information and view the curriculum vitae.
+
+[Go to Contact](contact.qmd) · [View CV](cv.qmd)
+:::
+:::
 
 ## Featured Resources
 
