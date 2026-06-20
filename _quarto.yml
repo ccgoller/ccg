@@ -20,23 +20,31 @@ website:
       - text: "Home"
         href: index.qmd
       - text: "Research"
+        icon: search
         href: research.qmd
       - text: "Publications"
+        icon: journal-text
         href: publications.qmd
       - text: "Teaching"
+        icon: mortarboard
         href: teaching.qmd
       - text: "CV"
+        icon: file-earmark-person
         href: cv.qmd
     right:
       - text: "More"
         menu:
           - text: "Courses"
+            icon: grid-3x3-gap
             href: courses.qmd
           - text: "Mentoring"
+            icon: people
             href: mentoring.qmd
           - text: "Prof. Dev"
+            icon: briefcase
             href: professional-development.qmd
           - text: "Contact"
+            icon: envelope
             href: contact.qmd
 
 format:
@@ -47,14 +55,19 @@ format:
     toc: false
 
     page-footer:
-      background: "#f1f3f5"
+      background: "#ede8e2"
       foreground: "#374151"
       left: >-
-        &#169; 2026 Carlos C. Goller, Ph.D.
+        <strong>Carlos C. Goller, Ph.D.</strong><br>
+        Teaching Professor · North Carolina State University
       center: >-
-        Website built with <a href="https://quarto.org/" target="_blank">Quarto</a>
-        <br>Source available at <a href="https://github.com/ccgoller/" target="_blank">GitHub</a></br>
+        <a href="/ccg/research.html">Research</a> ·
+        <a href="/ccg/publications.html">Publications</a> ·
+        <a href="/ccg/teaching.html">Teaching</a> ·
+        <a href="/ccg/contact.html">Contact</a><br>
+        Built with <a href="https://quarto.org/" target="_blank">Quarto</a>
       right: >-
-        Licensed under
-        <br><a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">Creative Commons Zero v1.0 Universal</a></br>
+        <a href="https://linkedin.com/in/ccgoller" target="_blank">LinkedIn</a><br>
+        <a href="https://github.com/ccgoller" target="_blank">GitHub</a><br>
+        <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 License</a>
 editor: source
