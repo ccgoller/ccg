@@ -5,17 +5,12 @@ title-block-style: none
 ---
 
 <div class="home-shell">
-  <section class="home-hero">
-    <div class="home-hero-orb home-hero-orb-one"></div>
-    <div class="home-hero-orb home-hero-orb-two"></div>
-
+  <section class="home-hero home-hero-simple">
     <div class="home-hero-text">
       <p class="home-eyebrow">NC State · Microbiology · Teaching · Mentoring</p>
 
-      <div class="home-brand-lockup" aria-label="Homepage identity">
-        <div class="home-brand-mark-wrap home-brand-mark-wrap-compact">
-          <img src="CCG-nobkg.png" alt="CCG monogram logo" class="home-brand-mark home-brand-mark-compact" />
-        </div>
+      <div class="home-brand-lockup home-brand-lockup-simple" aria-label="Homepage identity">
+        <img src="CCG-nobkg.png" alt="CCG monogram logo" class="home-brand-mark home-brand-mark-small" />
         <div class="home-brand-copy">
           <h1 class="home-name">Carlos C. Goller</h1>
           <p class="home-subhead">Teaching Professor · North Carolina State University</p>
@@ -70,26 +65,22 @@ title-block-style: none
 
   <section class="home-section" aria-labelledby="featured-areas-heading">
     <h2 id="featured-areas-heading">Featured Areas</h2>
-
     <div class="home-card-grid">
       <section class="home-card home-card-accent-research">
         <h3>Research</h3>
         <p>Microbial physiology, metabolism, pathogenesis, and research-rich scholarship creating authentic discovery opportunities for students.</p>
         <p><a href="research.qmd">Explore research</a></p>
       </section>
-
       <section class="home-card home-card-accent-publications">
         <h3>Publications</h3>
         <p>Peer-reviewed articles, education scholarship, and collaborative work across microbiology, teaching, and interdisciplinary science.</p>
         <p><a href="publications.qmd">View publications</a></p>
       </section>
-
       <section class="home-card home-card-accent-teaching">
         <h3>Teaching</h3>
         <p>Inclusive, inquiry-driven pedagogy that connects scientific concepts with authentic practice and student engagement.</p>
         <p><a href="teaching.qmd">See teaching</a></p>
       </section>
-
       <section class="home-card home-card-accent-mentoring">
         <h3>Mentoring</h3>
         <p>Mentoring and professional growth work that supports learner success at every stage of scientific development.</p>
@@ -100,7 +91,6 @@ title-block-style: none
 
   <section class="home-section" aria-labelledby="explore-site-heading">
     <h2 id="explore-site-heading">Explore the Site</h2>
-
     <div class="home-link-grid" role="navigation" aria-label="Explore the site">
       <a href="courses.qmd" class="home-link-card">Courses</a>
       <a href="professional-development.qmd" class="home-link-card">Professional Development</a>
