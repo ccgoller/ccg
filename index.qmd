@@ -14,11 +14,21 @@ title-block-style: none
 ::: {.home-hero-text}
 <p class="home-eyebrow">NC State · Microbiology · Teaching · Mentoring</p>
 
+<div class="home-brand-lockup" aria-label="Homepage identity">
+  <div class="home-brand-mark-wrap">
+    <img src="CCG-nobkg.png" alt="CCG monogram logo" class="home-brand-mark">
+  </div>
+  <div class="home-brand-copy">
+
 # Carlos C. Goller {.home-name}
 
 <p class="home-subhead">Teaching Professor · North Carolina State University</p>
+  </div>
+</div>
 
 <p class="home-lede">Microbiologist, educator, and mentor connecting evidence-based teaching with authentic scientific discovery at NC State.</p>
+
+<p class="home-intro">Explore scholarship, teaching, mentoring, and course innovation through a clear, modern academic homepage designed to highlight impact and make professional resources easy to find.</p>
 
 ::: {.profile-buttons role="navigation" aria-label="Homepage quick links"}
 <a href="research.qmd" class="profile-button profile-button-primary">Explore Research</a>
