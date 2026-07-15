@@ -174,7 +174,7 @@ body.quarto-dark .home-hero-section {
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
-.home-page h2 {
+.home-page h1 {
   margin: 0 0 1rem;
   color: inherit;
   font-size: clamp(2.3rem, 5vw, 4rem);
@@ -304,7 +304,7 @@ body.quarto-dark .home-detail-strip { background: #20252b; }
 body.quarto-light .home-section-band { background: #f3ede8; }
 body.quarto-dark .home-section-band { background: #181c21; }
 
-.home-section > h3 {
+.home-section > h2 {
   width: min(76rem, 100%);
   margin: 0 auto 1.25rem;
   font-size: clamp(1.6rem, 3vw, 2.15rem);
@@ -340,8 +340,8 @@ body.quarto-dark .home-resource-card {
 .home-card:nth-child(2),
 .home-resource-card:nth-child(2) { border-top-color: #495766; }
 .home-card:nth-child(3) { border-top-color: #8f5a1d; }
-.home-card h4,
-.home-resource-card h4 {
+.home-card h3,
+.home-resource-card h3 {
   margin: 0 0 0.7rem;
   font-size: 1.12rem;
 }
@@ -375,7 +375,7 @@ body.quarto-dark .home-resource-card {
   .feature-card-grid { grid-template-columns: 1fr; }
   .page-intro { font-size: 1rem; }
   main.content { line-height: 1.75; }
-  .home-page h2 { font-size: 2rem; }
+  .home-page h1 { font-size: 2rem; }
   .home-button { width: 100%; }
   .home-hero-logo { width: min(100%, 14rem); }
 }
