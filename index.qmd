@@ -1,65 +1,147 @@
 ---
 title: "Home"
 subtitle: "Research, teaching, mentoring, and academic resources"
-page-layout: article
+page-layout: full
 ---
 
-::: {.page-intro}
-Carlos C. Goller is a Teaching Professor at North Carolina State University whose work brings together microbiology, teaching, mentoring, and course innovation.
+::: {.home-page}
+::: {.home-hero-section}
+::: {.home-hero-grid}
+::: {.home-hero-copy}
+::: {.home-kicker}
+Carlos C. Goller, Ph.D.
 :::
 
-::: {.feature-card-grid}
-::: {.feature-card .feature-card-research}
+# Microbiology, inclusive teaching, and student-centered mentorship
+
+Carlos C. Goller is a Teaching Professor at North Carolina State University whose work connects microbiology, evidence-based teaching, mentoring, and course innovation across classroom and research settings.
+
+::: {.home-hero-actions}
+<a class="home-button home-button-primary" href="research.html">Explore research</a>
+<a class="home-button home-button-secondary" href="teaching.html">View teaching</a>
+<a class="home-button home-button-secondary" href="contact.html">Contact Carlos</a>
+:::
+:::
+
+::: {.home-hero-media}
+<img class="home-hero-logo" src="CCG-nobkg.png" alt="CCG logo representing Carlos C. Goller">
+
+::: {.home-hero-panel}
+### Current focus
+
+- Teaching microbiology and life science courses
+- Building inclusive and evidence-based learning experiences
+- Supporting student growth through mentoring and professional development
+:::
+:::
+:::
+:::
+
+::: {.home-detail-strip}
+::: {.home-detail-item}
+#### Role
+
+Teaching Professor
+:::
+
+::: {.home-detail-item}
+#### Institution
+
+North Carolina State University
+:::
+
+::: {.home-detail-item}
+#### Core areas
+
+Microbiology · Teaching · Mentoring
+:::
+
+::: {.home-detail-item}
+#### Explore next
+
+[Curriculum vitae](cv.html)
+:::
+:::
+
+::: {.home-section .home-section-light}
+## Key areas
+
+::: {.home-card-grid}
+::: {.home-card}
 ### Research
+
 Explore research themes in microbiology, physiology, scholarly discovery, and interdisciplinary collaboration.
 
-[Go to Research](research.qmd)
+[Go to research](research.html)
 :::
 
-::: {.feature-card .feature-card-publications}
+::: {.home-card}
 ### Publications
+
 Browse peer-reviewed scholarship, academic writing, and collaborative publications.
 
-[Go to Publications](publications.qmd)
+[Go to publications](publications.html)
 :::
 
-::: {.feature-card .feature-card-teaching}
+::: {.home-card}
 ### Teaching
+
 Learn about teaching philosophy, course design, and inclusive evidence-based pedagogy.
 
-[Go to Teaching](teaching.qmd)
+[Go to teaching](teaching.html)
+:::
 :::
 :::
 
-::: {.feature-card-grid}
-::: {.feature-card .feature-card-mentoring}
+::: {.home-section .home-section-band}
+## Student support and collaboration
+
+::: {.home-card-grid}
+::: {.home-card}
 ### Mentoring
+
 See mentoring work focused on student growth, scientific identity, and professional development.
 
-[Go to Mentoring](mentoring.qmd)
+[Go to mentoring](mentoring.html)
 :::
 
-::: {.feature-card .feature-card-collaboration}
+::: {.home-card}
 ### Courses
+
 Access course pages, student resources, and instructional materials.
 
-[Go to Courses](courses.qmd)
+[Go to courses](courses.html)
 :::
 
-::: {.feature-card .feature-card-contact}
+::: {.home-card}
 ### Contact and CV
+
 Find contact information and view the curriculum vitae.
 
-[Go to Contact](contact.qmd) · [View CV](cv.qmd)
+[Go to contact](contact.html) · [View CV](cv.html)
 :::
 :::
+:::
 
-## Featured Resources
+::: {.home-section .home-section-light}
+## Featured resources
 
-- [BSC 495: The Hidden World's Code](https://ccgoller.github.io/bsc-fungal-genomics-lab/)
-- [MB 360: Microbial Metabolism](https://ccgoller.github.io/mb360workbook/)
+::: {.home-resource-grid}
+::: {.home-resource-card}
+### BSC 495: The Hidden World's Code
 
-## External Links
+Course materials and resources for a fungal genomics learning experience.
 
-- [LinkedIn](https://linkedin.com/in/ccgoller)
-- [GitHub](https://github.com/ccgoller)
+[Open the course site](https://ccgoller.github.io/bsc-fungal-genomics-lab/)
+:::
+
+::: {.home-resource-card}
+### MB 360: Microbial Metabolism
+
+Interactive course content supporting microbiology instruction and student learning.
+
+[Open the workbook](https://ccgoller.github.io/mb360workbook/)
+:::
+:::
+:::
+:::
