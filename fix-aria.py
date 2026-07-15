@@ -71,7 +71,12 @@ def fix_file(path: Path) -> bool:
     return False
 
 
-def main() -> None:
+def main() -> int:
+    """Process all HTML files in the output directory and strip role=menu.
+
+    Returns:
+        0 on success, 1 if any file could not be processed due to I/O errors.
+    """
     output_dir = (
         sys.argv[1]
         if len(sys.argv) > 1
@@ -80,10 +85,16 @@ def main() -> None:
     output_path = Path(output_dir)
     if not output_path.exists():
         print(f"Output directory {output_path} not found; skipping.", file=sys.stderr)
-        return
+        return 0
+    errors = 0
     for html_file in output_path.rglob("*.html"):
-        fix_file(html_file)
+        try:
+            fix_file(html_file)
+        except Exception as exc:
+            print(f"Error processing {html_file}: {exc}", file=sys.stderr)
+            errors += 1
+    return 1 if errors else 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
