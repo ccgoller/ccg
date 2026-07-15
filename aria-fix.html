@@ -1,0 +1,23 @@
+<script>
+(function () {
+  // Fix: remove incorrect role="menu" from the navbar toggler button.
+  // A <button> already carries the implicit ARIA role "button"; adding
+  // role="menu" is invalid and triggers a WAVE broken-ARIA-menu error.
+  var toggler = document.querySelector('.navbar-toggler[role="menu"]');
+  if (toggler) {
+    toggler.removeAttribute('role');
+  }
+
+  // Fix: mark the logo anchor as presentational so that assistive
+  // technologies skip the adjacent duplicate link to the home page.
+  // The brand-title anchor immediately following it already labels the
+  // destination ("Carlos C. Goller, Ph.D."), so hiding the logo link
+  // from the AT tree removes the redundant-link pair without losing any
+  // information for sighted or screen-reader users.
+  var logoLink = document.querySelector('a.navbar-brand-logo');
+  if (logoLink) {
+    logoLink.setAttribute('aria-hidden', 'true');
+    logoLink.setAttribute('tabindex', '-1');
+  }
+})();
+</script>
