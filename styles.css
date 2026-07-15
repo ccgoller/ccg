@@ -1,7 +1,10 @@
 :root {
   color-scheme: light;
   --ncsu-black: #000000;
+  --ncsu-black-rgb: 0, 0, 0;
   --ncsu-yellow: #fac800;
+  --ncsu-yellow-rgb: 250, 200, 0;
+  --ncsu-yellow-border: rgba(var(--ncsu-yellow-rgb), 0.28);
   --ink: #172026;
   --muted: #5c6873;
   --line: #d7dde2;
@@ -113,14 +116,14 @@ a:focus-visible {
 
 body.quarto-light #quarto-header .navbar {
   background: var(--ncsu-black);
-  border-bottom: 1px solid rgba(250, 200, 0, 0.28);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid var(--ncsu-yellow-border);
+  box-shadow: 0 12px 28px rgba(var(--ncsu-black-rgb), 0.3);
   backdrop-filter: blur(14px);
 }
 
 body.quarto-dark #quarto-header .navbar {
   background: var(--ncsu-black);
-  border-bottom: 1px solid rgba(250, 200, 0, 0.28);
+  border-bottom: 1px solid var(--ncsu-yellow-border);
   backdrop-filter: blur(14px);
 }
 
