@@ -14,7 +14,7 @@ website:
   navbar:
     logo: CCG-nobkg.png
     logo-alt: CCG logo
-    background: "#f5f1ee"
+    background: "#000000"
     search: true
     left:
       - text: "Home"
