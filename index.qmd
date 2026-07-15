@@ -37,7 +37,7 @@ Microbiology · Mentoring · Open Education
 
 ::: {.home-hero-media}
 ::: {.home-hero-panel}
-### Current focus
+## Current focus
 
 - Inclusive and evidence-based microbiology teaching
 - Research-informed course design and open learning resources
@@ -186,7 +186,7 @@ Use the contact page for collaboration, teaching, mentoring, or speaking inquiri
 ### About
 Read the full profile, academic background, and selected external links.
 
-[Read more](about.html)
+[Read about Carlos](about.html)
 :::
 :::
 :::

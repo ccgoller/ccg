@@ -17,8 +17,6 @@ website:
     background: "#000000"
     search: true
     left:
-      - text: "Home"
-        href: index.qmd
       - text: "Research"
         icon: search
         href: research.qmd
@@ -52,6 +50,7 @@ format:
     theme: cosmo
     css: styles.css
     include-before-body: skip-link.html
+    include-after-body: aria-fix.html
     toc: false
 
     page-footer:
