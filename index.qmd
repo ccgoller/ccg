@@ -64,7 +64,7 @@ Microbiology · Teaching · Mentoring
 :::
 
 ::: {.home-section .home-section-light}
-## Explore the homepage
+## Key areas
 
 ::: {.home-card-grid}
 ::: {.home-card}
