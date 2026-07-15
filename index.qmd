@@ -1,6 +1,6 @@
 ---
 title: "Home"
-subtitle: "Research, teaching, mentoring, and academic resources"
+subtitle: "Microbiology, teaching, mentoring, and student-centered scholarship"
 page-layout: full
 ---
 
@@ -12,135 +12,184 @@ page-layout: full
 Carlos C. Goller, Ph.D.
 :::
 
-# Microbiology, inclusive teaching, and student-centered mentorship
+# Teaching, microbiology, and inclusive academic leadership
 
-Carlos C. Goller is a Teaching Professor at North Carolina State University whose work connects microbiology, evidence-based teaching, mentoring, and course innovation across classroom and research settings.
+Carlos C. Goller is a Teaching Professor in the Department of Biological Sciences at North Carolina State University. His work connects microbiology, course innovation, student mentoring, and evidence-based teaching through research-rich learning experiences.
+
+::: {.home-chip-row}
+::: {.home-chip}
+North Carolina State University
+:::
+::: {.home-chip}
+Department of Biological Sciences
+:::
+::: {.home-chip}
+Microbiology · Mentoring · Open Education
+:::
+:::
 
 ::: {.home-hero-actions}
-<a class="home-button home-button-primary" href="research.html">Explore research</a>
-<a class="home-button home-button-secondary" href="teaching.html">View teaching</a>
-<a class="home-button home-button-secondary" href="contact.html">Contact Carlos</a>
+<a class="home-button home-button-primary" href="teaching.html">Explore Teaching</a>
+<a class="home-button home-button-secondary" href="research.html">View Research</a>
+<a class="home-button home-button-secondary" href="contact.html">Connect</a>
 :::
 :::
 
 ::: {.home-hero-media}
-<img class="home-hero-logo" src="CCG-nobkg.png" alt="CCG logo representing Carlos C. Goller">
+<img class="home-hero-logo" src="https://github.com/user-attachments/assets/fbc0878e-8cbe-4f7b-98c9-aa5d7774698a" alt="CCG logo">
 
 ::: {.home-hero-panel}
 ### Current focus
 
-- Teaching microbiology and life science courses
-- Building inclusive and evidence-based learning experiences
-- Supporting student growth through mentoring and professional development
+- Inclusive and evidence-based microbiology teaching
+- Research-informed course design and open learning resources
+- Student growth through mentoring and professional development
 :::
 :::
 :::
 :::
 
-::: {.home-detail-strip}
-::: {.home-detail-item}
-#### Role
-
-Teaching Professor
+::: {.affiliation-banner}
+::: {.affiliation-intro}
+<span>Academic journey</span>
+<strong>Teaching, scholarship, and student development across four institutions</strong>
 :::
-
-::: {.home-detail-item}
-#### Institution
-
-North Carolina State University
+::: {.affiliation-segment .affiliation-wpi}
+<span>WPI</span>
 :::
-
-::: {.home-detail-item}
-#### Core areas
-
-Microbiology · Teaching · Mentoring
+::: {.affiliation-segment .affiliation-emory}
+<span>Emory</span>
 :::
-
-::: {.home-detail-item}
-#### Explore next
-
-[Curriculum vitae](cv.html)
+::: {.affiliation-segment .affiliation-duke}
+<span>Duke</span>
+:::
+::: {.affiliation-segment .affiliation-ncsu}
+<span>NC State</span>
 :::
 :::
 
-::: {.home-section .home-section-light}
-## Key areas
-
-::: {.home-card-grid}
-::: {.home-card}
-### Research
-
-Explore research themes in microbiology, physiology, scholarly discovery, and interdisciplinary collaboration.
-
-[Go to research](research.html)
+::: {.details-strip}
+::: {.detail-item}
+<span>Role</span>
+<strong>Teaching Professor</strong>
+:::
+::: {.detail-item}
+<span>Department</span>
+<strong>Biological Sciences</strong>
+:::
+::: {.detail-item}
+<span>Location</span>
+<strong>Raleigh, North Carolina</strong>
+:::
+::: {.detail-item}
+<span>Focus</span>
+<strong>Microbiology, mentoring, and student-centered learning</strong>
+:::
 :::
 
-::: {.home-card}
-### Publications
-
-Browse peer-reviewed scholarship, academic writing, and collaborative publications.
-
-[Go to publications](publications.html)
+::: {.home-section}
+::: {.section-inner .two-column}
+::: {}
+::: {.section-kicker}
+Overview
+:::
+## A teaching-focused academic profile grounded in discovery and support
 :::
 
-::: {.home-card}
-### Teaching
+::: {.prose}
+Carlos teaches microbiology, life science, and related courses while building learning environments that help students engage deeply with science. His academic work blends classroom practice, mentoring, scholarly communication, and course innovation in ways that support both scientific understanding and student belonging.
 
-Learn about teaching philosophy, course design, and inclusive evidence-based pedagogy.
-
-[Go to teaching](teaching.html)
+The site brings together research directions, publications, teaching materials, mentoring resources, and professional information in one place.
 :::
 :::
 :::
 
 ::: {.home-section .home-section-band}
-## Student support and collaboration
+::: {.section-inner}
+::: {.section-kicker}
+Core areas
+:::
+## Explore the main parts of the site
 
-::: {.home-card-grid}
-::: {.home-card}
+::: {.feature-grid}
+::: {.feature}
+### Research
+Explore research themes in microbiology, physiology, genomics, and discovery-centered scholarship.
+
+[Go to research](research.html)
+:::
+::: {.feature}
+### Publications
+Browse peer-reviewed scholarship, academic writing, and collaborative publications.
+
+[Go to publications](publications.html)
+:::
+::: {.feature}
+### Teaching
+See teaching philosophy, course design, and evidence-based instructional practice.
+
+[Go to teaching](teaching.html)
+:::
+:::
+:::
+:::
+
+::: {.home-section}
+::: {.section-inner}
+::: {.section-kicker}
+Student support
+:::
+## Mentoring, courses, and professional growth
+
+::: {.feature-grid}
+::: {.feature}
 ### Mentoring
-
-See mentoring work focused on student growth, scientific identity, and professional development.
+Learn how mentoring work supports scientific identity, growth, and student persistence.
 
 [Go to mentoring](mentoring.html)
 :::
-
-::: {.home-card}
+::: {.feature}
 ### Courses
-
-Access course pages, student resources, and instructional materials.
+Access course pages, learning resources, and classroom materials.
 
 [Go to courses](courses.html)
 :::
+::: {.feature}
+### Professional development
+Find workshops, leadership activities, and professional engagement highlights.
 
-::: {.home-card}
-### Contact and CV
-
-Find contact information and view the curriculum vitae.
-
-[Go to contact](contact.html) · [View CV](cv.html)
+[Go to professional development](professional-development.html)
 :::
 :::
 :::
-
-::: {.home-section .home-section-light}
-## Featured resources
-
-::: {.home-resource-grid}
-::: {.home-resource-card}
-### BSC 495: The Hidden World's Code
-
-Course materials and resources for a fungal genomics learning experience.
-
-[Open the course site](https://ccgoller.github.io/bsc-fungal-genomics-lab/)
 :::
 
-::: {.home-resource-card}
-### MB 360: Microbial Metabolism
+::: {.home-section .home-section-band}
+::: {.section-inner}
+::: {.section-kicker}
+Featured links
+:::
+## Additional resources
 
-Interactive course content supporting microbiology instruction and student learning.
+::: {.feature-grid}
+::: {.feature}
+### Curriculum vitae
+Review a concise web version of the CV, including appointments, teaching, and education.
 
-[Open the workbook](https://ccgoller.github.io/mb360workbook/)
+[Open CV](cv.html)
+:::
+::: {.feature}
+### Contact
+Use the contact page for collaboration, teaching, mentoring, or speaking inquiries.
+
+[Contact Carlos](contact.html)
+:::
+::: {.feature}
+### About
+Read the full profile, academic background, and selected external links.
+
+[Read more](about.html)
+:::
 :::
 :::
 :::
