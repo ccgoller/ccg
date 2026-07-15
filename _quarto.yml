@@ -4,6 +4,7 @@ project:
     - works.bib
     - mentoring.bib
     - assets/vendor/datatables/*
+  post-render: fix-aria.py
 
 website:
   title: "Carlos C. Goller, Ph.D."

@@ -1,13 +1,5 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  // Fix: remove incorrect role="menu" from the navbar toggler button.
-  // A <button> already carries the implicit ARIA role "button"; adding
-  // role="menu" is invalid and triggers a WAVE broken-ARIA-menu error.
-  var toggler = document.querySelector('.navbar-toggler[role="menu"]');
-  if (toggler) {
-    toggler.removeAttribute('role');
-  }
-
   // Fix: mark the logo anchor as presentational so that assistive
   // technologies skip the adjacent duplicate link to the home page.
   // The brand-title anchor immediately following it already labels the
