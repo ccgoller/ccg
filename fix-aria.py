@@ -24,12 +24,17 @@ from pathlib import Path
 
 DEFAULT_OUTPUT_DIR = "_site"
 
-# Match any complete <button ...> opening tag (may span multiple lines).
-_BUTTON_TAG = re.compile(r"<button\b[^>]*>", re.DOTALL)
+# Match any complete <button ...> opening tag, correctly skipping over
+# quoted attribute values that may themselves contain ">".
+_BUTTON_TAG = re.compile(
+    r"""<button\b(?:[^>"']|"[^"]*"|'[^']*')*>""",
+    re.DOTALL,
+)
 # Detect navbar-toggler as an exact CSS class (space- or quote-delimited).
-_TOGGLER_CLASS = re.compile(r'class="(?:[^"]* )?navbar-toggler(?= |")')
-# The role="menu" attribute to strip (with surrounding whitespace).
-_ROLE_MENU = re.compile(r"\s+role=\"menu\"")
+# Handles both single- and double-quoted class attributes.
+_TOGGLER_CLASS = re.compile(r"""class=["'](?:[^"']* )?navbar-toggler(?= |["'])""")
+# The role="menu" (or role='menu') attribute to strip (with surrounding whitespace).
+_ROLE_MENU = re.compile(r"""\s+role=["']menu["']""")
 
 
 def _fix_button_tag(match: re.Match) -> str:
