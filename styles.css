@@ -10,21 +10,22 @@
   --graphite-soft: #253340;
   --gold: #b7791f;
   --gold-soft: #f8eedf;
-  --crimson: #990000;
-  --crimson-dark: #7d0000;
+  --crimson: #cc0000;
+  --crimson-dark: #990000;
   --maroon: #660000;
   --teal: #0f766e;
+  --hero-text-shadow: 0 2px 12px rgba(0, 0, 0, 0.82);
   --shadow: 0 20px 60px rgba(23, 32, 38, 0.14);
   --shadow-soft: 0 14px 32px rgba(31, 41, 51, 0.08);
 }
 
 body.quarto-light {
-  --bs-primary: #990000;
-  --bs-primary-rgb: 153, 0, 0;
-  --bs-link-color: #990000;
-  --bs-link-color-rgb: 153, 0, 0;
-  --bs-link-hover-color: #660000;
-  --bs-link-hover-color-rgb: 102, 0, 0;
+  --bs-primary: #cc0000;
+  --bs-primary-rgb: 204, 0, 0;
+  --bs-link-color: #cc0000;
+  --bs-link-color-rgb: 204, 0, 0;
+  --bs-link-hover-color: #990000;
+  --bs-link-hover-color-rgb: 153, 0, 0;
   --bs-body-bg: #ffffff;
   --bs-body-color: var(--ink);
   --bs-secondary-color: var(--muted);
@@ -414,29 +415,18 @@ body:has(.home-page) main.content {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(95deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.86) 44%, rgba(0, 0, 0, 0.7) 100%),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.86) 0%, rgba(0, 0, 0, 0.2) 46%, rgba(0, 0, 0, 0.75) 100%),
+    linear-gradient(95deg, rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0.58) 44%, rgba(0, 0, 0, 0.42) 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.12) 46%, rgba(0, 0, 0, 0.52) 100%),
     url("https://github.com/user-attachments/assets/ac10ec07-a213-4765-9f56-8a1676547464");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0;
-  animation: home-hero-image-fade 1.2s ease-out 0.15s forwards;
+  opacity: 1;
 }
 
 .home-hero-section > * {
   position: relative;
   z-index: 1;
-}
-
-@keyframes home-hero-image-fade {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
 }
 
 .home-hero-grid {
@@ -451,11 +441,19 @@ body:has(.home-page) main.content {
 .home-kicker,
 .section-kicker {
   margin: 0 0 14px;
-  color: #f7c66d;
+  color: var(--kicker-color);
   font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.home-kicker {
+  --kicker-color: #f6c65b;
+}
+
+.section-kicker {
+  --kicker-color: #990000;
 }
 
 .home-page h1 {
@@ -468,8 +466,9 @@ body:has(.home-page) main.content {
 
 .home-hero-copy > p {
   max-width: 720px;
-  color: rgba(255, 255, 255, 0.88);
+  color: #ffffff;
   font-size: 1.15rem;
+  text-shadow: var(--hero-text-shadow);
 }
 
 .home-chip-row {
@@ -484,13 +483,13 @@ body:has(.home-page) main.content {
   align-items: center;
   min-height: 36px;
   padding: 8px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: 6px;
   color: #ffffff;
   font-size: 0.86rem;
   font-weight: 800;
   line-height: 1.15;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.58);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
 }
 
@@ -527,14 +526,14 @@ body:has(.home-page) main.content {
 
 .home-button-secondary {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.36);
+  background: rgba(0, 0, 0, 0.66);
+  border-color: rgba(255, 255, 255, 0.78);
 }
 
 .home-button-secondary:hover,
 .home-button-secondary:focus-visible {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.82);
 }
 
 .home-hero-media {
@@ -555,10 +554,10 @@ body:has(.home-page) main.content {
 .home-hero-panel {
   width: min(100%, 24rem);
   padding: 1.15rem 1.2rem;
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  border: 1px solid rgba(255, 255, 255, 0.68);
   border-left: 5px solid #f7c66d;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.68);
   backdrop-filter: blur(10px);
 }
 
@@ -571,11 +570,16 @@ body:has(.home-page) main.content {
 
 .home-hero-panel ul {
   padding-left: 1.15rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff;
 }
 
 .home-hero-panel li + li {
   margin-top: 0.6rem;
+}
+
+.home-hero-copy .home-kicker,
+.home-hero-copy h1 {
+  text-shadow: var(--hero-text-shadow);
 }
 
 .affiliation-banner {
