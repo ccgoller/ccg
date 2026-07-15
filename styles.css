@@ -404,6 +404,15 @@ body:has(.home-page) main.content {
   position: relative;
   padding: clamp(6rem, 8vw, 8rem) 3rem 4.5rem;
   color: #ffffff;
+  overflow: hidden;
+  isolation: isolate;
+  background: #111820;
+}
+
+.home-hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background:
     linear-gradient(95deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.86) 44%, rgba(0, 0, 0, 0.7) 100%),
     linear-gradient(0deg, rgba(0, 0, 0, 0.86) 0%, rgba(0, 0, 0, 0.2) 46%, rgba(0, 0, 0, 0.75) 100%),
@@ -411,6 +420,23 @@ body:has(.home-page) main.content {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  opacity: 0;
+  animation: home-hero-image-fade 1.2s ease-out 0.15s forwards;
+}
+
+.home-hero-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes home-hero-image-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .home-hero-grid {
@@ -857,6 +883,11 @@ body:has(.home-page) main.content {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .home-hero-section::before {
+    opacity: 1;
+    animation: none;
+  }
+
   .skip-link {
     transition: none;
   }
