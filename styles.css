@@ -46,9 +46,9 @@ body.quarto-light {
 
 body.quarto-dark {
   --bs-primary: var(--ncsu-yellow);
-  --bs-primary-rgb: 250, 200, 0;
+  --bs-primary-rgb: var(--ncsu-yellow-rgb);
   --bs-link-color: var(--ncsu-yellow);
-  --bs-link-color-rgb: 250, 200, 0;
+  --bs-link-color-rgb: var(--ncsu-yellow-rgb);
   --bs-link-hover-color: #ffd84d;
   --bs-link-hover-color-rgb: 255, 216, 77;
   --bs-body-bg: #111820;
