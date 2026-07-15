@@ -24,7 +24,7 @@ Carlos C. Goller is a Teaching Professor at North Carolina State University whos
 :::
 
 ::: {.home-hero-media}
-![CCG logo representing Carlos C. Goller](CCG-nobkg.png){.home-hero-logo}
+<img class="home-hero-logo" src="CCG-nobkg.png" alt="CCG logo representing Carlos C. Goller">
 
 ::: {.home-hero-panel}
 ### Current focus
