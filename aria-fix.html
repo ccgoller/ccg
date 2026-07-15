@@ -1,5 +1,5 @@
 <script>
-(function () {
+document.addEventListener('DOMContentLoaded', function () {
   // Fix: remove incorrect role="menu" from the navbar toggler button.
   // A <button> already carries the implicit ARIA role "button"; adding
   // role="menu" is invalid and triggers a WAVE broken-ARIA-menu error.
@@ -13,11 +13,14 @@
   // The brand-title anchor immediately following it already labels the
   // destination ("Carlos C. Goller, Ph.D."), so hiding the logo link
   // from the AT tree removes the redundant-link pair without losing any
-  // information for sighted or screen-reader users.
+  // information for screen-reader users.
+  // tabindex="-1" is intentional: per MDN/ARIA specs, focusable elements
+  // with aria-hidden="true" must also be removed from the tab order so
+  // keyboard users cannot tab to a visually-present but AT-hidden link.
   var logoLink = document.querySelector('a.navbar-brand-logo');
   if (logoLink) {
     logoLink.setAttribute('aria-hidden', 'true');
     logoLink.setAttribute('tabindex', '-1');
   }
-})();
+});
 </script>
