@@ -455,17 +455,21 @@ body:has(.home-page) main.content {
   text-transform: uppercase;
 }
 
+.section-kicker,
+.home-hero-panel h3 {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+}
+
 .home-kicker {
   --kicker-color: var(--ncsu-yellow);
 }
 
 .section-kicker {
   --kicker-color: #ffffff;
-  display: inline-flex;
-  align-items: center;
-  padding: 0.45rem 0.8rem;
-  border-radius: 999px;
-  background: var(--crimson);
+  background: #cc0000;
   box-shadow: 0 10px 24px rgba(102, 0, 0, 0.14);
 }
 
@@ -577,10 +581,6 @@ body:has(.home-page) main.content {
 .home-hero-panel h3 {
   margin-top: 0;
   margin-bottom: 0.85rem;
-  display: inline-flex;
-  align-items: center;
-  padding: 0.35rem 0.75rem;
-  border-radius: 999px;
   color: var(--ncsu-black);
   background: var(--ncsu-yellow);
   font-size: 1.05rem;
