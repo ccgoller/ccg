@@ -752,6 +752,7 @@ body:has(.home-page) #quarto-content > main.content {
 .home-section,
 .section {
   padding: 82px 48px;
+  background: var(--surface);
 }
 
 .home-section-band,
