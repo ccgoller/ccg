@@ -57,17 +57,17 @@ def fix_file(path: Path) -> bool:
 
     Returns:
         ``True`` if the file was modified and written back, ``False`` if no
-        changes were needed or if an I/O error prevented processing.
+        changes were needed.
+
+    Raises:
+        OSError: If the file cannot be read or written.
     """
-    try:
-        text = path.read_text(encoding="utf-8")
-        new_text = _BUTTON_TAG.sub(_fix_button_tag, text)
-        if new_text != text:
-            path.write_text(new_text, encoding="utf-8")
-            print(f"Fixed role=menu in {path}", file=sys.stderr)
-            return True
-    except (OSError, PermissionError) as exc:
-        print(f"Warning: could not process {path}: {exc}", file=sys.stderr)
+    text = path.read_text(encoding="utf-8")
+    new_text = _BUTTON_TAG.sub(_fix_button_tag, text)
+    if new_text != text:
+        path.write_text(new_text, encoding="utf-8")
+        print(f'Removed role="menu" attribute from {path}', file=sys.stderr)
+        return True
     return False
 
 
@@ -90,8 +90,8 @@ def main() -> int:
     for html_file in output_path.rglob("*.html"):
         try:
             fix_file(html_file)
-        except Exception as exc:
-            print(f"Error processing {html_file}: {exc}", file=sys.stderr)
+        except OSError as exc:
+            print(f"Warning: could not process {html_file}: {exc}", file=sys.stderr)
             errors += 1
     return 1 if errors else 0
 
