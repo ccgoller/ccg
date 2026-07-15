@@ -1,5 +1,10 @@
 :root {
   color-scheme: light;
+  --ncsu-black: #000000;
+  --ncsu-black-rgb: 0, 0, 0;
+  --ncsu-yellow: #fac800;
+  --ncsu-yellow-rgb: 250, 200, 0;
+  --ncsu-yellow-border: rgba(var(--ncsu-yellow-rgb), 0.28);
   --ink: #172026;
   --muted: #5c6873;
   --line: #d7dde2;
@@ -40,12 +45,12 @@ body.quarto-light {
 }
 
 body.quarto-dark {
-  --bs-primary: #f7c66d;
-  --bs-primary-rgb: 247, 198, 109;
-  --bs-link-color: #f7c66d;
-  --bs-link-color-rgb: 247, 198, 109;
-  --bs-link-hover-color: #ffe0a3;
-  --bs-link-hover-color-rgb: 255, 224, 163;
+  --bs-primary: var(--ncsu-yellow);
+  --bs-primary-rgb: var(--ncsu-yellow-rgb);
+  --bs-link-color: var(--ncsu-yellow);
+  --bs-link-color-rgb: var(--ncsu-yellow-rgb);
+  --bs-link-hover-color: #ffd84d;
+  --bs-link-hover-color-rgb: 255, 216, 77;
   --bs-body-bg: #111820;
   --bs-body-color: #eef2f4;
   --bs-secondary-color: #c7d0d8;
@@ -80,7 +85,7 @@ body.quarto-light .skip-link {
 
 body.quarto-dark .skip-link {
   color: #111820;
-  background: #f7c66d;
+  background: var(--ncsu-yellow);
 }
 
 .skip-link:focus,
@@ -95,8 +100,8 @@ body.quarto-dark .skip-link {
 }
 
 body.quarto-dark :focus-visible {
-  outline-color: #f7c66d;
-  box-shadow: 0 0 0 5px rgba(247, 198, 109, 0.18);
+  outline-color: var(--ncsu-yellow);
+  box-shadow: 0 0 0 5px rgba(250, 200, 0, 0.18);
 }
 
 a {
@@ -110,14 +115,16 @@ a:focus-visible {
 }
 
 body.quarto-light #quarto-header .navbar {
-  background: rgba(10, 18, 24, 0.94);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 12px 28px rgba(10, 18, 24, 0.16);
+  background: var(--ncsu-black);
+  border-bottom: 1px solid var(--ncsu-yellow-border);
+  box-shadow: 0 12px 28px rgba(var(--ncsu-black-rgb), 0.3);
   backdrop-filter: blur(14px);
 }
 
 body.quarto-dark #quarto-header .navbar {
-  background: rgba(10, 18, 24, 0.92);
+  background: var(--ncsu-black);
+  border-bottom: 1px solid var(--ncsu-yellow-border);
+  backdrop-filter: blur(14px);
 }
 
 #quarto-header .navbar a,
@@ -168,13 +175,13 @@ body.quarto-light #quarto-header .navbar .dropdown-menu .dropdown-item:hover {
 body.quarto-light #quarto-header .navbar .nav-link:hover,
 body.quarto-light #quarto-header .navbar .nav-link:focus-visible,
 body.quarto-light #quarto-header .navbar .nav-link.active {
-  color: #f7c66d;
+  color: var(--ncsu-yellow);
 }
 
 body.quarto-dark #quarto-header .navbar .nav-link:hover,
 body.quarto-dark #quarto-header .navbar .nav-link:focus-visible,
 body.quarto-dark #quarto-header .navbar .nav-link.active {
-  color: #f7c66d;
+  color: var(--ncsu-yellow);
 }
 
 #quarto-footer {
@@ -448,12 +455,22 @@ body:has(.home-page) main.content {
   text-transform: uppercase;
 }
 
+.section-kicker,
+.home-hero-panel h3 {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+}
+
 .home-kicker {
-  --kicker-color: #f6c65b;
+  --kicker-color: var(--ncsu-yellow);
 }
 
 .section-kicker {
-  --kicker-color: #990000;
+  --kicker-color: #ffffff;
+  background: #cc0000;
+  box-shadow: 0 10px 24px rgba(102, 0, 0, 0.14);
 }
 
 .home-page h1 {
@@ -555,7 +572,7 @@ body:has(.home-page) main.content {
   width: min(100%, 24rem);
   padding: 1.15rem 1.2rem;
   border: 1px solid rgba(255, 255, 255, 0.68);
-  border-left: 5px solid #f7c66d;
+  border-left: 5px solid var(--ncsu-yellow);
   border-radius: 8px;
   background: rgba(0, 0, 0, 0.68);
   backdrop-filter: blur(10px);
@@ -564,7 +581,8 @@ body:has(.home-page) main.content {
 .home-hero-panel h3 {
   margin-top: 0;
   margin-bottom: 0.85rem;
-  color: #ffffff;
+  color: var(--ncsu-black);
+  background: var(--ncsu-yellow);
   font-size: 1.05rem;
 }
 
