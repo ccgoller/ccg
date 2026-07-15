@@ -14,6 +14,7 @@
   --crimson-dark: #990000;
   --maroon: #660000;
   --teal: #0f766e;
+  --hero-text-shadow: 0 2px 12px rgba(0, 0, 0, 0.82);
   --shadow: 0 20px 60px rgba(23, 32, 38, 0.14);
   --shadow-soft: 0 14px 32px rgba(31, 41, 51, 0.08);
 }
@@ -440,6 +441,7 @@ body:has(.home-page) main.content {
 .home-kicker,
 .section-kicker {
   margin: 0 0 14px;
+  color: var(--kicker-color);
   font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -447,11 +449,11 @@ body:has(.home-page) main.content {
 }
 
 .home-kicker {
-  color: #f6c65b;
+  --kicker-color: #f6c65b;
 }
 
 .section-kicker {
-  color: #990000;
+  --kicker-color: #990000;
 }
 
 .home-page h1 {
@@ -466,7 +468,7 @@ body:has(.home-page) main.content {
   max-width: 720px;
   color: #ffffff;
   font-size: 1.15rem;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+  text-shadow: var(--hero-text-shadow);
 }
 
 .home-chip-row {
@@ -577,7 +579,7 @@ body:has(.home-page) main.content {
 
 .home-hero-copy .home-kicker,
 .home-hero-copy h1 {
-  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.86);
+  text-shadow: var(--hero-text-shadow);
 }
 
 .affiliation-banner {
