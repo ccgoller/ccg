@@ -109,7 +109,7 @@ a:focus-visible {
 }
 
 body.quarto-light #quarto-header .navbar {
-  background: rgba(10, 18, 24, 0.82);
+  background: rgba(10, 18, 24, 0.94);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 12px 28px rgba(10, 18, 24, 0.16);
   backdrop-filter: blur(14px);
@@ -230,7 +230,7 @@ h1,
 h2,
 h3 {
   letter-spacing: 0;
-  line-height: 1.12;
+  line-height: 1.24;
 }
 
 h1 {
@@ -603,11 +603,21 @@ body:has(.home-page) main.content {
 .affiliation-segment span {
   position: relative;
   z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .affiliation-wpi {
   color: #111111;
-  background: linear-gradient(135deg, #f0d7a1 0%, #f7edd5 62%, #111111 62%, #111111 100%);
+  background: linear-gradient(135deg, #f0d7a1 0%, #f7edd5 62%, #5b3a00 62%, #111111 100%);
+}
+
+.affiliation-wpi span {
+  background: rgba(255, 255, 255, 0.82);
 }
 
 .affiliation-emory {

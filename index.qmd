@@ -36,7 +36,7 @@ Microbiology · Mentoring · Open Education
 :::
 
 ::: {.home-hero-media}
-<img class="home-hero-logo" src="https://github.com/user-attachments/assets/fbc0878e-8cbe-4f7b-98c9-aa5d7774698a" alt="CCG logo">
+<img class="home-hero-logo" src="CCG-nobkg.png" alt="CCG logo">
 
 ::: {.home-hero-panel}
 ### Current focus
