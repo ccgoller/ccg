@@ -428,16 +428,6 @@ body:has(.home-page) main.content {
   z-index: 1;
 }
 
-@keyframes home-hero-image-fade {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 .home-hero-grid {
   width: min(1160px, 100%);
   margin: 0 auto;
@@ -476,6 +466,7 @@ body:has(.home-page) main.content {
   max-width: 720px;
   color: #ffffff;
   font-size: 1.15rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
 }
 
 .home-chip-row {
@@ -582,6 +573,11 @@ body:has(.home-page) main.content {
 
 .home-hero-panel li + li {
   margin-top: 0.6rem;
+}
+
+.home-hero-copy .home-kicker,
+.home-hero-copy h1 {
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.86);
 }
 
 .affiliation-banner {
