@@ -158,7 +158,9 @@ body.quarto-light #quarto-header .navbar .dropdown-menu .dropdown-item:hover {
 .navbar-brand img {
   max-height: 30px;
   width: auto;
-  background: transparent !important;
+  padding: 0.2rem;
+  background: #ffffff !important;
+  border-radius: 8px;
   box-shadow: none !important;
 }
 
