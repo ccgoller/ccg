@@ -405,9 +405,12 @@ body:has(.home-page) main.content {
   padding: clamp(6rem, 8vw, 8rem) 3rem 4.5rem;
   color: #ffffff;
   background:
-    linear-gradient(90deg, rgba(4, 12, 18, 0.92) 0%, rgba(17, 13, 12, 0.72) 38%, rgba(75, 0, 0, 0.34) 74%, rgba(4, 12, 18, 0.24) 100%),
-    linear-gradient(0deg, rgba(4, 12, 18, 0.82) 0%, rgba(4, 12, 18, 0) 42%),
-    linear-gradient(135deg, rgba(0, 0, 0, 0.96) 0%, rgba(31, 41, 51, 0.92) 48%, rgba(102, 0, 0, 0.84) 100%);
+    linear-gradient(95deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.86) 44%, rgba(0, 0, 0, 0.7) 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.86) 0%, rgba(0, 0, 0, 0.2) 46%, rgba(0, 0, 0, 0.75) 100%),
+    url("https://github.com/user-attachments/assets/fa85827d-5656-450b-af32-6c1ca87e145d");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .home-hero-grid {
@@ -614,12 +617,12 @@ body:has(.home-page) main.content {
 }
 
 .affiliation-wpi {
-  color: #111111;
-  background: linear-gradient(135deg, #f0d7a1 0%, #f7edd5 62%, #5b3a00 62%, #111111 100%);
+  color: #ffffff;
+  background: linear-gradient(135deg, #ac2b37 0%, #8f1d2c 62%, #6f6f74 62%, #4b4b50 100%);
 }
 
 .affiliation-wpi span {
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .affiliation-emory {
