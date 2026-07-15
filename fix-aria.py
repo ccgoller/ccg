@@ -31,8 +31,12 @@ _BUTTON_TAG = re.compile(
     re.DOTALL,
 )
 # Detect navbar-toggler as an exact CSS class (space- or quote-delimited).
-# Handles both single- and double-quoted class attributes.
-_TOGGLER_CLASS = re.compile(r"""class=["'](?:[^"']* )?navbar-toggler(?= |["'])""")
+# Uses separate alternations for single- and double-quoted class attributes
+# so an opposite-quote character inside the value doesn't break the match.
+_TOGGLER_CLASS = re.compile(
+    r"""class="(?:[^"]* )?navbar-toggler(?= |")|"""
+    r"""class='(?:[^']* )?navbar-toggler(?= |')"""
+)
 # The role="menu" (or role='menu') attribute to strip (with surrounding whitespace).
 _ROLE_MENU = re.compile(r"""\s+role=["']menu["']""")
 
@@ -46,6 +50,15 @@ def _fix_button_tag(match: re.Match) -> str:
 
 
 def fix_file(path: Path) -> bool:
+    """Strip ``role="menu"`` from navbar-toggler buttons in an HTML file.
+
+    Args:
+        path: Path to the HTML file to process.
+
+    Returns:
+        ``True`` if the file was modified and written back, ``False`` if no
+        changes were needed or if an I/O error prevented processing.
+    """
     try:
         text = path.read_text(encoding="utf-8")
         new_text = _BUTTON_TAG.sub(_fix_button_tag, text)
