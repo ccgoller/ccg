@@ -26,25 +26,30 @@ DEFAULT_OUTPUT_DIR = "_site"
 
 # Match any complete <button ...> opening tag (may span multiple lines).
 _BUTTON_TAG = re.compile(r"<button\b[^>]*>", re.DOTALL)
+# Detect navbar-toggler as an exact CSS class (space- or quote-delimited).
+_TOGGLER_CLASS = re.compile(r'class="(?:[^"]* )?navbar-toggler(?= |")')
 # The role="menu" attribute to strip (with surrounding whitespace).
 _ROLE_MENU = re.compile(r"\s+role=\"menu\"")
 
 
 def _fix_button_tag(match: re.Match) -> str:
-    """Remove role="menu" from a button tag if it has the navbar-toggler class."""
+    """Remove role="menu" from a button tag that has the navbar-toggler class."""
     tag = match.group(0)
-    if "navbar-toggler" in tag:
+    if _TOGGLER_CLASS.search(tag):
         tag = _ROLE_MENU.sub("", tag)
     return tag
 
 
 def fix_file(path: Path) -> bool:
-    text = path.read_text(encoding="utf-8")
-    new_text = _BUTTON_TAG.sub(_fix_button_tag, text)
-    if new_text != text:
-        path.write_text(new_text, encoding="utf-8")
-        print(f"Fixed role=menu in {path}", file=sys.stderr)
-        return True
+    try:
+        text = path.read_text(encoding="utf-8")
+        new_text = _BUTTON_TAG.sub(_fix_button_tag, text)
+        if new_text != text:
+            path.write_text(new_text, encoding="utf-8")
+            print(f"Fixed role=menu in {path}", file=sys.stderr)
+            return True
+    except (OSError, PermissionError) as exc:
+        print(f"Warning: could not process {path}: {exc}", file=sys.stderr)
     return False
 
 
