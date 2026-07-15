@@ -389,7 +389,11 @@ body:has(.home-page) #title-block-header {
   display: none;
 }
 
-body:has(.home-page) main.content {
+body:has(.home-page) #quarto-content {
+  background: #111820;
+}
+
+body:has(.home-page) #quarto-content > main.content {
   max-width: none;
   padding-top: 0;
 }
