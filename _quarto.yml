@@ -3,6 +3,7 @@ project:
   resources:
     - works.bib
     - mentoring.bib
+    - ccg500.jpeg
     - assets/vendor/datatables/*
   post-render: fix-aria.py
 
@@ -62,10 +63,10 @@ format:
         <strong>Carlos C. Goller, Ph.D.</strong><br>
         Teaching Professor · North Carolina State University
       center: >-
-        <a href="/ccg/research.html">Research</a> ·
-        <a href="/ccg/publications.html">Publications</a> ·
-        <a href="/ccg/teaching.html">Teaching</a> ·
-        <a href="/ccg/contact.html">Contact</a><br>
+        <a href="./research.html">Research</a> ·
+        <a href="./publications.html">Publications</a> ·
+        <a href="./teaching.html">Teaching</a> ·
+        <a href="./contact.html">Contact</a><br>
         Built with <a href="https://quarto.org/" target="_blank">Quarto</a>
       right: >-
         <a href="https://linkedin.com/in/ccgoller" target="_blank">LinkedIn</a><br>

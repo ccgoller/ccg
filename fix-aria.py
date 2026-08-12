@@ -97,6 +97,11 @@ def _fix_dropdown_menu(match: re.Match) -> str:
     return tag[:-1] + f' id="{label}-menu">'
 
 
+def _hide_bootstrap_icon_role(match: re.Match) -> str:
+    """Hide decorative Bootstrap icons from assistive technologies."""
+    return f'{match.group(1)} aria-hidden="true"{match.group(2)}'
+
+
 def fix_file(path: Path) -> bool:
     """Strip ``role="menu"`` from navbar-toggler buttons in an HTML file.
 
@@ -115,7 +120,7 @@ def fix_file(path: Path) -> bool:
     new_text = _NAV_LIST.sub(_label_nav_list, new_text)
     new_text = _DROPDOWN_TOGGLE.sub(_fix_dropdown_toggle, new_text)
     new_text = _DROPDOWN_MENU.sub(_fix_dropdown_menu, new_text)
-    new_text = _BOOTSTRAP_ICON_ROLE.sub(r"\1 aria-hidden=\"true\"\2", new_text)
+    new_text = _BOOTSTRAP_ICON_ROLE.sub(_hide_bootstrap_icon_role, new_text)
     if new_text != text:
         path.write_text(new_text, encoding="utf-8")
         print(f"Applied navbar accessibility fixes to {path}", file=sys.stderr)

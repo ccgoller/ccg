@@ -1,5 +1,89 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Skip to main content"
+  },
+  {
+    "objectID": "index.html#current-focus",
+    "href": "index.html#current-focus",
+    "title": "Home",
+    "section": "Current focus",
+    "text": "Current focus\n\nInclusive and evidence-based microbiology teaching\nResearch-informed course design and open learning resources\nStudent growth through mentoring and professional development"
+  },
+  {
+    "objectID": "index.html#a-teaching-focused-academic-profile-grounded-in-discovery-and-support",
+    "href": "index.html#a-teaching-focused-academic-profile-grounded-in-discovery-and-support",
+    "title": "Home",
+    "section": "A teaching-focused academic profile grounded in discovery and support",
+    "text": "A teaching-focused academic profile grounded in discovery and support"
+  },
+  {
+    "objectID": "index.html#explore-the-main-parts-of-the-site",
+    "href": "index.html#explore-the-main-parts-of-the-site",
+    "title": "Home",
+    "section": "Explore the main parts of the site",
+    "text": "Explore the main parts of the site\n\n\nResearch\nExplore research themes in microbiology, physiology, genomics, and discovery-centered scholarship.\nGo to research\n\n\nPublications\nBrowse peer-reviewed scholarship, academic writing, and collaborative publications.\nGo to publications\n\n\nTeaching\nSee teaching philosophy, course design, and evidence-based instructional practice.\nGo to teaching"
+  },
+  {
+    "objectID": "index.html#mentoring-courses-and-professional-growth",
+    "href": "index.html#mentoring-courses-and-professional-growth",
+    "title": "Home",
+    "section": "Mentoring, courses, and professional growth",
+    "text": "Mentoring, courses, and professional growth\n\n\nMentoring\nLearn how mentoring work supports scientific identity, growth, and student persistence.\nGo to mentoring\n\n\nCourses\nAccess course pages, learning resources, and classroom materials.\nGo to courses\n\n\nProfessional development\nFind workshops, leadership activities, and professional engagement highlights.\nGo to professional development"
+  },
+  {
+    "objectID": "index.html#additional-resources",
+    "href": "index.html#additional-resources",
+    "title": "Home",
+    "section": "Additional resources",
+    "text": "Additional resources\n\n\nCurriculum vitae\nReview a concise web version of the CV, including appointments, teaching, and education.\nOpen CV\n\n\nContact\nUse the contact page for collaboration, teaching, mentoring, or speaking inquiries.\nContact Carlos\n\n\nAbout\nRead the full profile, academic background, and selected external links.\nRead full profile"
+  },
+  {
+    "objectID": "courses.html",
+    "href": "courses.html",
+    "title": "Courses",
+    "section": "",
+    "text": "Skip to main content\n\n\n\n\nBelow are featured courses with links and each site’s favicon/logo. Click any card title or the Visit Course button to open the course website.\n\n\n  \n  \n    \n      \n        \n          Microbiology | MB 360\n        \n      \n      NC State University · Department of Biological Sciences\n      \n        An introductory microbiology course exploring the diversity, physiology, genetics, and\n        ecological roles of microorganisms, with an emphasis on active learning and discovery.\n      \n      \n        Visit Course ↗\n      \n    \n    \n      \n        \n      \n    \n  \n\n  \n  \n    \n      \n        \n          Microbial Superheroes | LSC 170\n        \n      \n      NC State University · Department of Biological Sciences\n      \n        A course built around an open educational resource (the Delftia book) that\n        engages students in exploring microbial superpowers—from gold biomineralization to\n        antibiotic resistance—through collaborative, inquiry-driven learning.\n      \n      \n        Visit Course ↗\n      \n    \n    \n      \n        \n      \n    \n  \n\n  \n  \n    \n      \n        \n          MyCOED\n        \n      \n      NC State University\n      \n        An open educational resource and course companion focused on microbiology concepts\n        and evidence-based pedagogies, supporting instructors and students through\n        collaborative, community-driven content.\n      \n      \n        Visit Course ↗"
+  },
+  {
+    "objectID": "professional-development.html",
+    "href": "professional-development.html",
+    "title": "Professional Development",
+    "section": "",
+    "text": "Skip to main content\nProfessional growth activities, workshops, and certifications."
+  },
+  {
+    "objectID": "professional-development.html#workshops-and-training",
+    "href": "professional-development.html#workshops-and-training",
+    "title": "Professional Development",
+    "section": "Workshops and Training",
+    "text": "Workshops and Training\n\nKey Categories\n\nOnline and hybrid teaching quality\nEvidence-based and inclusive pedagogy\nSTEM education networks and faculty mentoring\nBioinformatics and life-science instructional training\n\n\n\nAt a Glance\n\n\n\nCategory\nCount\n\n\n\n\nQuality Matters (QM) workshops\n20+\n\n\nOther named pedagogy workshops/programs\n8+\n\n\nTotal workshops/programs\n28+"
+  },
+  {
+    "objectID": "professional-development.html#certifications",
+    "href": "professional-development.html#certifications",
+    "title": "Professional Development",
+    "section": "Certifications",
+    "text": "Certifications\n\n\n\nCertification\nCount\n\n\n\n\nTeaching Online Certificate\n1\n\n\nUniversal Course Design Certification (UCDC)\n1\n\n\nTotal certifications (LinkedIn profile)\n1100+"
+  },
+  {
+    "objectID": "professional-development.html#selected-professional-development-programs",
+    "href": "professional-development.html#selected-professional-development-programs",
+    "title": "Professional Development",
+    "section": "Selected Professional Development Programs",
+    "text": "Selected Professional Development Programs\n\nASM Biology Scholars Program\nSummer Institute on Scientific Teaching\nScience CaseNet / NCCSTS workshops\nPALM Fellowship\nNSF ENCOUR Fellowship\nNSF TAPESTRy Fellowship\nNSF OCELOTS Fellowship\nNSF BioGraphI Fellowship"
+  },
+  {
+    "objectID": "professional-development.html#leadership-and-service",
+    "href": "professional-development.html#leadership-and-service",
+    "title": "Professional Development",
+    "section": "Leadership and Service",
+    "text": "Leadership and Service\n\nFacilitator and contributor in faculty mentoring and professional learning communities.\nActive participant in national STEM education collaborations that support sustained teaching innovation."
+  },
+  {
     "objectID": "research.html",
     "href": "research.html",
     "title": "Research",
@@ -54,55 +138,6 @@
     "title": "About Carlos C. Goller",
     "section": "3 Additional Links",
     "text": "3 Additional Links\n\nBSC 495: The Hidden World’s Code\nMB 360: Microbial Metabolism"
-  },
-  {
-    "objectID": "professional-development.html",
-    "href": "professional-development.html",
-    "title": "Professional Development",
-    "section": "",
-    "text": "Skip to main content\nProfessional growth activities, workshops, and certifications."
-  },
-  {
-    "objectID": "professional-development.html#workshops-and-training",
-    "href": "professional-development.html#workshops-and-training",
-    "title": "Professional Development",
-    "section": "Workshops and Training",
-    "text": "Workshops and Training\n\nKey Categories\n\nOnline and hybrid teaching quality\nEvidence-based and inclusive pedagogy\nSTEM education networks and faculty mentoring\nBioinformatics and life-science instructional training\n\n\n\nAt a Glance\n\n\n\nCategory\nCount\n\n\n\n\nQuality Matters (QM) workshops\n20+\n\n\nOther named pedagogy workshops/programs\n8+\n\n\nTotal workshops/programs\n28+"
-  },
-  {
-    "objectID": "professional-development.html#certifications",
-    "href": "professional-development.html#certifications",
-    "title": "Professional Development",
-    "section": "Certifications",
-    "text": "Certifications\n\n\n\nCertification\nCount\n\n\n\n\nTeaching Online Certificate\n1\n\n\nUniversal Course Design Certification (UCDC)\n1\n\n\nTotal certifications (LinkedIn profile)\n1100+"
-  },
-  {
-    "objectID": "professional-development.html#selected-professional-development-programs",
-    "href": "professional-development.html#selected-professional-development-programs",
-    "title": "Professional Development",
-    "section": "Selected Professional Development Programs",
-    "text": "Selected Professional Development Programs\n\nASM Biology Scholars Program\nSummer Institute on Scientific Teaching\nScience CaseNet / NCCSTS workshops\nPALM Fellowship\nNSF ENCOUR Fellowship\nNSF TAPESTRy Fellowship\nNSF OCELOTS Fellowship\nNSF BioGraphI Fellowship"
-  },
-  {
-    "objectID": "professional-development.html#leadership-and-service",
-    "href": "professional-development.html#leadership-and-service",
-    "title": "Professional Development",
-    "section": "Leadership and Service",
-    "text": "Leadership and Service\n\nFacilitator and contributor in faculty mentoring and professional learning communities.\nActive participant in national STEM education collaborations that support sustained teaching innovation."
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "Skip to main content\n\n\n\n\n\nUse this page to connect regarding teaching, research, mentoring, collaboration, or professional opportunities.\n\n\n\nProfessional Inquiries\nQuestions about teaching, academic work, speaking, or collaboration.\n\n\nMentoring Connections\nOpportunities related to student support, development, and growth.\n\n\nCollaboration\nInvitations to work across science, education, or interdisciplinary projects."
-  },
-  {
-    "objectID": "mentoring.html",
-    "href": "mentoring.html",
-    "title": "Mentoring",
-    "section": "",
-    "text": "Skip to main content\n\n\n\n\n\nMentoring emphasizes confidence, belonging, scientific identity, and long-term growth through supportive and high-expectation academic relationships.\n\n\n\nScientific Identity\nHelping learners see themselves as contributors to science.\n\n\nProfessional Growth\nSupporting communication, reflection, and long-term career development.\n\n\nResearch Participation\nCreating pathways into authentic inquiry and collaborative problem-solving.\n\n\nThe table below is generated from mentoring.bib and supports instant search and column sorting.\n\n\n\nLoading mentoring records from mentoring.bib…\n\n\n\n\n\n\n\n\n\n\n\n\nMentoring records with year, mentee, category, summary, and source.\n\n\n\n\nYear\n\n\nMentee\n\n\nCategory\n\n\nSummary\n\n\nSource"
   },
   {
     "objectID": "cv.html",
@@ -182,13 +217,6 @@
     "text": "Selected Professional Links\n\nTeaching page\nResearch page\nBSC 495: The Hidden World’s Code\nMB 360: Microbial Metabolism"
   },
   {
-    "objectID": "courses.html",
-    "href": "courses.html",
-    "title": "Courses",
-    "section": "",
-    "text": "Skip to main content\n\n\n\n\nBelow are featured courses with links and each site’s favicon/logo. Click any card title or the Visit Course button to open the course website.\n\n\n  \n  \n    \n      \n        \n          Microbiology | MB 360\n        \n      \n      NC State University · Department of Biological Sciences\n      \n        An introductory microbiology course exploring the diversity, physiology, genetics, and\n        ecological roles of microorganisms, with an emphasis on active learning and discovery.\n      \n      \n        Visit Course ↗\n      \n    \n    \n      \n        \n      \n    \n  \n\n  \n  \n    \n      \n        \n          Microbial Superheroes | LSC 170\n        \n      \n      NC State University · Department of Biological Sciences\n      \n        A course built around an open educational resource (the Delftia book) that\n        engages students in exploring microbial superpowers—from gold biomineralization to\n        antibiotic resistance—through collaborative, inquiry-driven learning.\n      \n      \n        Visit Course ↗\n      \n    \n    \n      \n        \n      \n    \n  \n\n  \n  \n    \n      \n        \n          MyCOED\n        \n      \n      NC State University\n      \n        An open educational resource and course companion focused on microbiology concepts\n        and evidence-based pedagogies, supporting instructors and students through\n        collaborative, community-driven content.\n      \n      \n        Visit Course ↗"
-  },
-  {
     "objectID": "teaching.html",
     "href": "teaching.html",
     "title": "Teaching",
@@ -210,45 +238,17 @@
     "text": "Courses\n\nOutbreak | HON 312 | NC State University Honors Program. Website: http://go.ncsu.edu/outbreak\nMicrobial Superheroes | LSC 170 | NC State Department of Biological Sciences. Website: http://go.ncsu.edu/delftiabook"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
     "section": "",
-    "text": "Skip to main content"
+    "text": "Skip to main content\n\n\n\n\n\nUse this page to connect regarding teaching, research, mentoring, collaboration, or professional opportunities.\n\n\n\nProfessional Inquiries\nQuestions about teaching, academic work, speaking, or collaboration.\n\n\nMentoring Connections\nOpportunities related to student support, development, and growth.\n\n\nCollaboration\nInvitations to work across science, education, or interdisciplinary projects."
   },
   {
-    "objectID": "index.html#current-focus",
-    "href": "index.html#current-focus",
-    "title": "Home",
-    "section": "Current focus",
-    "text": "Current focus\n\nInclusive and evidence-based microbiology teaching\nResearch-informed course design and open learning resources\nStudent growth through mentoring and professional development"
-  },
-  {
-    "objectID": "index.html#a-teaching-focused-academic-profile-grounded-in-discovery-and-support",
-    "href": "index.html#a-teaching-focused-academic-profile-grounded-in-discovery-and-support",
-    "title": "Home",
-    "section": "A teaching-focused academic profile grounded in discovery and support",
-    "text": "A teaching-focused academic profile grounded in discovery and support"
-  },
-  {
-    "objectID": "index.html#explore-the-main-parts-of-the-site",
-    "href": "index.html#explore-the-main-parts-of-the-site",
-    "title": "Home",
-    "section": "Explore the main parts of the site",
-    "text": "Explore the main parts of the site\n\n\nResearch\nExplore research themes in microbiology, physiology, genomics, and discovery-centered scholarship.\nGo to research\n\n\nPublications\nBrowse peer-reviewed scholarship, academic writing, and collaborative publications.\nGo to publications\n\n\nTeaching\nSee teaching philosophy, course design, and evidence-based instructional practice.\nGo to teaching"
-  },
-  {
-    "objectID": "index.html#mentoring-courses-and-professional-growth",
-    "href": "index.html#mentoring-courses-and-professional-growth",
-    "title": "Home",
-    "section": "Mentoring, courses, and professional growth",
-    "text": "Mentoring, courses, and professional growth\n\n\nMentoring\nLearn how mentoring work supports scientific identity, growth, and student persistence.\nGo to mentoring\n\n\nCourses\nAccess course pages, learning resources, and classroom materials.\nGo to courses\n\n\nProfessional development\nFind workshops, leadership activities, and professional engagement highlights.\nGo to professional development"
-  },
-  {
-    "objectID": "index.html#additional-resources",
-    "href": "index.html#additional-resources",
-    "title": "Home",
-    "section": "Additional resources",
-    "text": "Additional resources\n\n\nCurriculum vitae\nReview a concise web version of the CV, including appointments, teaching, and education.\nOpen CV\n\n\nContact\nUse the contact page for collaboration, teaching, mentoring, or speaking inquiries.\nContact Carlos\n\n\nAbout\nRead the full profile, academic background, and selected external links.\nRead full profile"
+    "objectID": "mentoring.html",
+    "href": "mentoring.html",
+    "title": "Mentoring",
+    "section": "",
+    "text": "Skip to main content\n\n\n\n\n\nMentoring emphasizes confidence, belonging, scientific identity, and long-term growth through supportive and high-expectation academic relationships.\n\n\n\nScientific Identity\nHelping learners see themselves as contributors to science.\n\n\nProfessional Growth\nSupporting communication, reflection, and long-term career development.\n\n\nResearch Participation\nCreating pathways into authentic inquiry and collaborative problem-solving.\n\n\nThe table below is generated from mentoring.bib and supports instant search and column sorting.\n\n\n\nLoading mentoring records from mentoring.bib…\n\n\n\n\n\n\n\n\n\n\n\n\nMentoring records with year, mentee, category, summary, and source.\n\n\n\n\nYear\n\n\nMentee\n\n\nCategory\n\n\nSummary\n\n\nSource"
   }
 ]

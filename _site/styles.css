@@ -150,6 +150,16 @@ body.quarto-light #quarto-header .navbar .dropdown-menu .dropdown-item:hover {
   background: #f9f1f1;
 }
 
+body.quarto-light #quarto-header .navbar .dropdown-menu .dropdown-item:focus-visible {
+  color: var(--crimson);
+  background: #f9f1f1;
+}
+
+body.quarto-dark #quarto-header .navbar .dropdown-menu .dropdown-item:focus-visible {
+  color: var(--ncsu-yellow);
+  background: rgba(250, 200, 0, 0.14);
+}
+
 #quarto-header .navbar .nav-link,
 #quarto-header .navbar .navbar-brand,
 #quarto-header .navbar .navbar-title {
@@ -428,7 +438,7 @@ body:has(.home-page) #quarto-content > main.content {
   background:
     linear-gradient(95deg, rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0.58) 44%, rgba(0, 0, 0, 0.42) 100%),
     linear-gradient(0deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.12) 46%, rgba(0, 0, 0, 0.52) 100%),
-    url("https://github.com/user-attachments/assets/ac10ec07-a213-4765-9f56-8a1676547464");
+    url("ccg500.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -752,6 +762,7 @@ body:has(.home-page) #quarto-content > main.content {
 .home-section,
 .section {
   padding: 82px 48px;
+  background: var(--surface);
 }
 
 .home-section-band,
@@ -822,6 +833,81 @@ body:has(.home-page) #quarto-content > main.content {
 .feature h3 {
   margin-top: 0;
 }
+
+/* ── Course cards ─────────────────────────────────────────── */
+.course-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.course-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding: 1.4rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.course-card-body {
+  flex: 1 1 0;
+  min-width: 220px;
+}
+
+.course-title {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.course-meta {
+  margin-bottom: 0.55rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.course-desc {
+  margin-bottom: 1rem;
+}
+
+.course-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--crimson);
+  border-radius: 6px;
+  color: var(--crimson);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.course-btn:hover,
+.course-btn:focus-visible {
+  color: #ffffff;
+  background: var(--crimson);
+}
+
+.course-logo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-start;
+}
+
+.course-logo img {
+  display: block;
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-soft);
+  padding: 0.4rem;
+}
+
+/* ── End course cards ─────────────────────────────────────── */
 
 @media (max-width: 991.98px) {
   #quarto-header .navbar .nav-link,

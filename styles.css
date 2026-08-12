@@ -150,6 +150,16 @@ body.quarto-light #quarto-header .navbar .dropdown-menu .dropdown-item:hover {
   background: #f9f1f1;
 }
 
+body.quarto-light #quarto-header .navbar .dropdown-menu .dropdown-item:focus-visible {
+  color: var(--crimson);
+  background: #f9f1f1;
+}
+
+body.quarto-dark #quarto-header .navbar .dropdown-menu .dropdown-item:focus-visible {
+  color: var(--ncsu-yellow);
+  background: rgba(250, 200, 0, 0.14);
+}
+
 #quarto-header .navbar .nav-link,
 #quarto-header .navbar .navbar-brand,
 #quarto-header .navbar .navbar-title {
