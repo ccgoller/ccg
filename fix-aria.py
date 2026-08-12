@@ -53,6 +53,7 @@ _DROPDOWN_MENU = re.compile(
     re.DOTALL,
 )
 _BOOTSTRAP_ICON_ROLE = re.compile(r"""(<i class="bi [^"]*")\s+role="img"([^>]*>)""")
+_FILTER_REGEX = re.compile(r"""var filterRegex = new RegExp\("(?P<pattern>[^"]+)"\);""")
 
 
 def _fix_button_tag(match: re.Match) -> str:
@@ -102,6 +103,12 @@ def _hide_bootstrap_icon_role(match: re.Match) -> str:
     return f'{match.group(1)} aria-hidden="true"{match.group(2)}'
 
 
+def _fix_filter_regex(match: re.Match) -> str:
+    """Escape literal dots in Quarto's generated internal-link regex string."""
+    pattern = match.group("pattern").replace(r"\.", r"\\.")
+    return f'var filterRegex = new RegExp("{pattern}");'
+
+
 def fix_file(path: Path) -> bool:
     """Strip ``role="menu"`` from navbar-toggler buttons in an HTML file.
 
@@ -121,6 +128,7 @@ def fix_file(path: Path) -> bool:
     new_text = _DROPDOWN_TOGGLE.sub(_fix_dropdown_toggle, new_text)
     new_text = _DROPDOWN_MENU.sub(_fix_dropdown_menu, new_text)
     new_text = _BOOTSTRAP_ICON_ROLE.sub(_hide_bootstrap_icon_role, new_text)
+    new_text = _FILTER_REGEX.sub(_fix_filter_regex, new_text)
     if new_text != text:
         path.write_text(new_text, encoding="utf-8")
         print(f"Applied navbar accessibility fixes to {path}", file=sys.stderr)
