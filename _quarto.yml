@@ -8,6 +8,7 @@ project:
 
 website:
   title: "Carlos C. Goller, Ph.D."
+  site-url: https://ccgoller.github.io/ccg/
   favicon: ccg100.jpg
   description: Explorer of Bacterial and Learner Diversity
   page-navigation: true

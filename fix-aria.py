@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """
-Post-render script: remove the invalid role="menu" attribute that Quarto's
-Bootstrap template places on the .navbar-toggler <button>.
+Post-render script: apply navbar accessibility fixes to Quarto's generated HTML.
 
-A <button> has the implicit ARIA role "button". Adding role="menu" is
-incorrect and causes a WAVE "Broken ARIA menu" error because a role="menu"
-element must contain role="menuitem" children, which the toggler does not.
+This script currently:
+- removes the invalid role="menu" attribute that Quarto places on the
+  .navbar-toggler <button>
+- labels the primary and secondary navigation lists
+- upgrades dropdown toggles with button semantics and menu relationships
+- hides decorative Bootstrap icons from assistive technologies
 
 This runs as a Quarto post-render hook so the fix is baked into every
 generated HTML file rather than relying on JavaScript timing.
@@ -39,6 +41,18 @@ _TOGGLER_CLASS = re.compile(
 )
 # The role="menu" (or role='menu') attribute to strip (with surrounding whitespace).
 _ROLE_MENU = re.compile(r"""\s+role=["']menu["']""")
+_NAV_LIST = re.compile(
+    r"""<ul class="navbar-nav navbar-nav-scroll (?P<group>me-auto|ms-auto)"(?P<attrs>[^>]*)>"""
+)
+_DROPDOWN_TOGGLE = re.compile(
+    r"""<a\b(?P<attrs>[^>]*)class="(?P<class_attr>[^"]*\bnav-link\b[^"]*\bdropdown-toggle\b[^"]*)"(?P<rest>[^>]*)>""",
+    re.DOTALL,
+)
+_DROPDOWN_MENU = re.compile(
+    r"""<ul class="(?P<class_attr>[^"]*\bdropdown-menu\b[^"]*)"(?P<attrs>[^>]*)\saria-labelledby="(?P<label>[^"]+)"(?P<tail>[^>]*)>""",
+    re.DOTALL,
+)
+_BOOTSTRAP_ICON_ROLE = re.compile(r"""(<i class="bi [^"]*")\s+role="img"([^>]*>)""")
 
 
 def _fix_button_tag(match: re.Match) -> str:
@@ -47,6 +61,40 @@ def _fix_button_tag(match: re.Match) -> str:
     if _TOGGLER_CLASS.search(tag):
         tag = _ROLE_MENU.sub("", tag)
     return tag
+
+
+def _label_nav_list(match: re.Match) -> str:
+    """Add descriptive labels to the primary and utility nav lists."""
+    group = match.group("group")
+    attrs = match.group("attrs")
+    if "aria-label=" in attrs:
+        return match.group(0)
+    label = "Primary navigation" if group == "me-auto" else "Secondary navigation"
+    return f'<ul class="navbar-nav navbar-nav-scroll {group}"{attrs} aria-label="{label}">'
+
+
+def _fix_dropdown_toggle(match: re.Match) -> str:
+    """Give dropdown toggles button semantics and explicit menu relationships."""
+    tag = match.group(0)
+    if 'role="' not in tag and "role='" not in tag:
+        tag = tag[:-1] + ' role="button">'
+    else:
+        tag = re.sub(r"""\srole=["']link["']""", ' role="button"', tag, count=1)
+    if 'aria-haspopup="' not in tag and "aria-haspopup='" not in tag:
+        tag = tag[:-1] + ' aria-haspopup="true">'
+    id_match = re.search(r"""\sid=["']([^"']+)["']""", tag)
+    if id_match and 'aria-controls="' not in tag and "aria-controls='" not in tag:
+        tag = tag[:-1] + f' aria-controls="{id_match.group(1)}-menu">'
+    return tag
+
+
+def _fix_dropdown_menu(match: re.Match) -> str:
+    """Assign a stable menu id derived from the controlling dropdown toggle."""
+    tag = match.group(0)
+    if ' id="' in tag or " id='" in tag:
+        return tag
+    label = match.group("label")
+    return tag[:-1] + f' id="{label}-menu">'
 
 
 def fix_file(path: Path) -> bool:
@@ -64,9 +112,13 @@ def fix_file(path: Path) -> bool:
     """
     text = path.read_text(encoding="utf-8")
     new_text = _BUTTON_TAG.sub(_fix_button_tag, text)
+    new_text = _NAV_LIST.sub(_label_nav_list, new_text)
+    new_text = _DROPDOWN_TOGGLE.sub(_fix_dropdown_toggle, new_text)
+    new_text = _DROPDOWN_MENU.sub(_fix_dropdown_menu, new_text)
+    new_text = _BOOTSTRAP_ICON_ROLE.sub(r"\1 aria-hidden=\"true\"\2", new_text)
     if new_text != text:
         path.write_text(new_text, encoding="utf-8")
-        print(f'Removed role="menu" attribute from {path}', file=sys.stderr)
+        print(f"Applied navbar accessibility fixes to {path}", file=sys.stderr)
         return True
     return False
 

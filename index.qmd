@@ -36,6 +36,8 @@ Microbiology · Mentoring · Open Education
 :::
 
 ::: {.home-hero-media}
+![](CCG-nobkg.png){.home-hero-logo fig-alt="Carlos C. Goller personal logo"}
+
 ::: {.home-hero-panel}
 ## Current focus
 

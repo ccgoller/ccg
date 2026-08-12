@@ -16,8 +16,11 @@ This repository includes a workflow at `.github/workflows/deploy-pages.yml` that
 
 In GitHub repository settings:
 
-1. Go to **Settings → Pages**
-2. Set **Source** to **GitHub Actions**
+1. Go to **Settings → General → Danger Zone** and change the repository visibility to **Public**
+2. Go to **Settings → Pages**
+3. Set **Source** to **GitHub Actions**
+
+The home page is designed as a public-facing hero landing page, and the site includes accessibility fixes for the navigation menus in both desktop and mobile layouts.
 
 After the deployment workflow succeeds, the public site URL is:
 
