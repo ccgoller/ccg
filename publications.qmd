@@ -25,9 +25,6 @@ Writing that supports innovative and evidence-based teaching practice.
 
 The list below is generated from `works.bib` and supports instant search and sorting by year.
 
-<link rel="stylesheet" href="assets/vendor/datatables/dataTables.dataTables.min.css">
-<script src="assets/vendor/datatables/dataTables.min.js"></script>
-
 <style>
 #pub-list {
 	list-style: none;
@@ -231,7 +228,9 @@ figure.chart-figure {
 <div id="pub-filters" style="display:none">
 	<div>
 		<label for="pub-year-filter">Year:</label>
-		<select id="pub-year-filter" aria-label="Filter publications by year"></select>
+		<select id="pub-year-filter" aria-label="Filter publications by year">
+			<option value="">All years</option>
+		</select>
 	</div>
 	<div>
 		<label for="pub-search">Search:</label>
@@ -484,6 +483,7 @@ const loadPublications = async () => {
 		status.textContent = `Loaded ${rows.length} publications.`;
 	} catch (error) {
 		status.textContent = `Unable to load publications: ${error.message}`;
+		console.error(error);
 	}
 };
 
