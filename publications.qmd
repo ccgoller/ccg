@@ -420,10 +420,36 @@ const loadPublications = async () => {
 	const searchBox = document.getElementById("pub-search");
 
 	try {
-		const response = await fetch("works.bib");
-		if (!response.ok) throw new Error(`Could not load works.bib (HTTP ${response.status})`);
-		const bibText = await response.text();
+		// Try multiple potential paths for the bib file
+		let bibText = null;
+		const potentialPaths = [
+			"works.bib",
+			"../works.bib",
+			"/ccg/works.bib"
+		];
+
+		for (const path of potentialPaths) {
+			try {
+				const response = await fetch(path);
+				if (response.ok) {
+					bibText = await response.text();
+					console.log(`Successfully loaded from: ${path}`);
+					break;
+				}
+			} catch (e) {
+				// Try next path
+			}
+		}
+
+		if (!bibText) {
+			throw new Error("Could not load works.bib from any location");
+		}
+
 		const entries = parseBibEntries(bibText);
+		
+		if (entries.length === 0) {
+			throw new Error("No publications found in works.bib");
+		}
 
 		const rows = entries.map((entry) => {
 			const fields = entry.entryTags || {};
@@ -481,11 +507,12 @@ const loadPublications = async () => {
 		searchBox.addEventListener("input", applyFilters);
 		filters.style.display = "flex";
 		status.textContent = `Loaded ${rows.length} publications.`;
+		console.log(`Successfully loaded ${rows.length} publications`);
 	} catch (error) {
 		status.textContent = `Unable to load publications: ${error.message}`;
-		console.error(error);
+		console.error("Publications loading error:", error);
 	}
 };
 
-loadPublications();
+document.addEventListener("DOMContentLoaded", loadPublications);
 </script>
