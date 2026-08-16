@@ -418,6 +418,14 @@ const loadPublications = async () => {
 	const filters = document.getElementById("pub-filters");
 	const yearFilter = document.getElementById("pub-year-filter");
 	const searchBox = document.getElementById("pub-search");
+	const setStatus = (message) => {
+		if (status) status.textContent = message;
+	};
+
+	if (!pubList) {
+		setStatus("Unable to load publications: Publications list container is missing.");
+		return;
+	}
 
 	try {
 		// Try multiple potential paths for the bib file
@@ -469,10 +477,12 @@ const loadPublications = async () => {
 		[...new Set(rows.map((row) => row.year).filter(Boolean))]
 			.sort((a, b) => Number(b) - Number(a))
 			.forEach((year) => {
-				const option = document.createElement("option");
-				option.value = year;
-				option.textContent = year;
-				yearFilter.appendChild(option);
+				if (yearFilter) {
+					const option = document.createElement("option");
+					option.value = year;
+					option.textContent = year;
+					yearFilter.appendChild(option);
+				}
 			});
 
 		const renderPubs = (filteredRows) => {
@@ -490,8 +500,8 @@ const loadPublications = async () => {
 		};
 
 		const applyFilters = () => {
-			const yearValue = yearFilter.value;
-			const searchValue = searchBox.value.toLowerCase();
+			const yearValue = yearFilter?.value || "";
+			const searchValue = searchBox?.value.toLowerCase() || "";
 
 			const filtered = rows.filter((row) => {
 				const yearMatch = !yearValue || row.year === yearValue;
@@ -503,13 +513,13 @@ const loadPublications = async () => {
 		};
 
 		renderPubs(rows);
-		yearFilter.addEventListener("change", applyFilters);
-		searchBox.addEventListener("input", applyFilters);
-		filters.style.display = "flex";
-		status.textContent = `Loaded ${rows.length} publications.`;
+		if (yearFilter) yearFilter.addEventListener("change", applyFilters);
+		if (searchBox) searchBox.addEventListener("input", applyFilters);
+		if (filters && (yearFilter || searchBox)) filters.style.display = "flex";
+		setStatus(`Loaded ${rows.length} publications.`);
 		console.log(`Successfully loaded ${rows.length} publications`);
 	} catch (error) {
-		status.textContent = `Unable to load publications: ${error.message}`;
+		setStatus(`Unable to load publications: ${error.message}`);
 		console.error("Publications loading error:", error);
 	}
 };
