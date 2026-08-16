@@ -2,7 +2,7 @@
 title: "Courses"
 ---
 
-Below are featured courses with links and each site's favicon/logo. Click any card title or the **Visit Course** button to open the course website.
+Below are featured courses. Click any card title or the **Visit Course** button to open the course website.
 
 ```{=html}
 <div class="course-grid">
