@@ -225,18 +225,7 @@ figure.chart-figure {
 	<figcaption id="pub-chart-caption" class="chart-caption"></figcaption>
 </figure>
 
-<div id="pub-filters" style="display:none">
-<div>
-<label for="pub-year-filter">Year:</label>
-<select id="pub-year-filter" aria-label="Filter publications by year">
-<option value="">All years</option>
-</select>
-</div>
-<div>
-<label for="pub-search">Search:</label>
-<input type="text" id="pub-search" class="pub-search-box" placeholder="Search titles, authors, venues..." aria-label="Search publications">
-</div>
-</div>
+<div id="pub-filters" style="display:none"></div>
 
 <ul id="pub-list" aria-label="Publications list"></ul>
 
@@ -416,8 +405,8 @@ const loadPublications = async () => {
 	const status = document.getElementById("pub-load-status");
 	const pubList = document.getElementById("pub-list");
 	const filters = document.getElementById("pub-filters");
-	let yearFilter = document.getElementById("pub-year-filter");
-	let searchBox = document.getElementById("pub-search");
+	let yearFilter = null;
+	let searchBox = null;
 	const setStatus = (message) => {
 		if (status) status.textContent = message;
 	};
@@ -427,7 +416,8 @@ const loadPublications = async () => {
 		return;
 	}
 
-	if (filters && !yearFilter) {
+	if (filters) {
+		filters.replaceChildren();
 		const yearGroup = document.createElement("div");
 		const yearLabel = document.createElement("label");
 		yearLabel.setAttribute("for", "pub-year-filter");
@@ -442,9 +432,6 @@ const loadPublications = async () => {
 		yearGroup.appendChild(yearLabel);
 		yearGroup.appendChild(yearFilter);
 		filters.appendChild(yearGroup);
-	}
-
-	if (filters && !searchBox) {
 		const searchGroup = document.createElement("div");
 		const searchLabel = document.createElement("label");
 		searchLabel.setAttribute("for", "pub-search");
