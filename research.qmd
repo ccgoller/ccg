@@ -5,7 +5,7 @@ page-layout: article
 ---
 
 ::: {.page-intro}
-Research in the Goller academic portfolio connects microbiology, physiology, genomics, and inquiry-rich scientific practice, with an emphasis on discovery, collaboration, and student engagement.
+Research in the Goller academic portfolio connects microbiology, genomics, bioinformatics, and biology education research, with an emphasis on discovery, collaboration, and student engagement.
 :::
 
 ::: {.feature-card-grid}
@@ -29,7 +29,7 @@ Research interests span microbial physiology, metabolism, pathogenesis, and inte
 
 ## Current Directions
 
-- Microbiology and physiology-centered scholarship
+- Microbiology and genomics-centered scholarship
 - Discovery-driven student learning experiences
 - Research-informed teaching and mentoring
-- Interdisciplinary scientific collaboration
+- Interdisciplinary scientific collaboration, teamwork, and leadership
