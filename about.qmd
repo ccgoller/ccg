@@ -58,3 +58,4 @@ August 1998 - May 2002
 
 - [BSC 495: The Hidden World's Code](https://ccgoller.github.io/bsc-fungal-genomics-lab/)
 - [MB 360: Microbial Metabolism](https://ccgoller.github.io/mb360workbook/)
+- [Gordy-Goller Lab](https://ccgoller.github.io/cgs/)
