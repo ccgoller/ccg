@@ -9,7 +9,7 @@ Professional growth activities, workshops, and certifications.
 ### Key Categories
 
 - Online and hybrid teaching quality
-- Evidence-based and inclusive pedagogy
+- Evidence-based pedagogy
 - STEM education networks and faculty mentoring
 - Bioinformatics and life-science instructional training
 
@@ -23,9 +23,9 @@ Professional growth activities, workshops, and certifications.
 
 ## Certifications
 
-| Certification | Count |
+| Certifications | Count |
 |---|---:|
-| Teaching Online Certificate | 1 |
+| QM Teaching Online Certificate | 1 |
 | Universal Course Design Certification (UCDC) | 1 |
 | Total certifications (LinkedIn profile) | 1100+ |
 
@@ -33,7 +33,8 @@ Professional growth activities, workshops, and certifications.
 
 - ASM Biology Scholars Program
 - Summer Institute on Scientific Teaching
-- Science CaseNet / NCCSTS workshops
+- Science CaseNet & NCCSTS workshops
+- POGIL Workshops
 - PALM Fellowship
 - NSF ENCOUR Fellowship
 - NSF TAPESTRy Fellowship
