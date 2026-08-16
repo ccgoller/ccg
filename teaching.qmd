@@ -1,6 +1,6 @@
 ---
 title: "Teaching"
-subtitle: "Teaching philosophy, course design, and inclusive learning practices"
+subtitle: "Teaching philosophy, course design, and learning practices"
 page-layout: article
 ---
 
@@ -10,8 +10,8 @@ Teaching centers on evidence-based pedagogy, scientific curiosity, and student p
 
 ::: {.feature-card-grid}
 ::: {.feature-card .feature-card-teaching}
-### Inclusive Pedagogy
-Designing learning environments that are welcoming, rigorous, and accessible.
+### Open Pedagogy
+Designing learning environments that are welcoming and accessible.
 :::
 ::: {.feature-card .feature-card-discovery}
 ### Active Learning
@@ -33,7 +33,7 @@ My teaching framework emphasizes discovery, collaboration, and communication: di
 
 Teaching priorities include:
 
-- Active and inclusive learning environments
+- Active learning environments
 - Inquiry-driven scientific practice
 - Clear connections between microbiology, society, and public health
 - Collaborative knowledge-building and open educational approaches
