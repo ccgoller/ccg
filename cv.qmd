@@ -2,7 +2,7 @@
 title: "CV"
 ---
 
-This page provides a concise, web-friendly CV for Carlos C. Goller, Ph.D., with links to related pages maintained across this independent site.
+This page provides a web-friendly CV for Carlos C. Goller, Ph.D., with links to related resources and download options.
 
 ::: {.callout-note}
 **Download:** [PDF CV](https://go.ncsu.edu/goller)  
@@ -53,7 +53,7 @@ Carlos C. Goller is a Teaching Professor in the Department of Biological Science
 
 ## Teaching and Curriculum Leadership
 
-Goller's teaching emphasizes discovery, collaboration, and communication, encouraging students to learn science by participating in authentic inquiry and shared knowledge creation.
+Goller's teaching emphasizes discovery, collaboration, and communication, encouraging students to learn science through authentic inquiry and the creation of shared knowledge.
 
 ### Selected Courses
 
