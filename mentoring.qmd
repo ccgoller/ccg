@@ -5,7 +5,7 @@ page-layout: article
 ---
 
 ::: {.page-intro}
-Mentoring emphasizes confidence, belonging, scientific identity, and long-term growth through supportive and high-expectation academic relationships.
+Mentoring emphasizes confidence, a sense of belonging, scientific identity, and long-term growth through supportive, high-expectation academic relationships.
 :::
 
 ::: {.feature-card-grid}
