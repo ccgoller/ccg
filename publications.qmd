@@ -23,101 +23,12 @@ Writing that supports innovative and evidence-based teaching practice.
 :::
 :::
 
-The list below is generated from `works.bib`.
+The table below is generated from `works.bib` and supports instant search and column sorting.
+
+<link rel="stylesheet" href="assets/vendor/datatables/dataTables.dataTables.min.css">
+<script src="assets/vendor/datatables/dataTables.min.js"></script>
 
 <style>
-#pub-list {
-	list-style: none;
-	padding: 0;
-	margin: 2rem 0;
-}
-
-.pub-item {
-	background: #f9f9f9;
-	border-left: 4px solid #990000;
-	padding: 1.5rem;
-	margin-bottom: 1.5rem;
-	border-radius: 4px;
-	page-break-inside: avoid;
-}
-
-.pub-item:hover {
-	background: #f5f5f5;
-	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.pub-year {
-	font-weight: bold;
-	color: #990000;
-	font-size: 0.9rem;
-	text-transform: uppercase;
-	letter-spacing: 0.5px;
-	margin-bottom: 0.5rem;
-	display: inline-block;
-	background: rgba(153, 0, 0, 0.1);
-	padding: 0.25rem 0.75rem;
-	border-radius: 3px;
-}
-
-.pub-title {
-	font-size: 1.1rem;
-	font-weight: 600;
-	margin: 0.75rem 0;
-	line-height: 1.4;
-	color: #333;
-}
-
-.pub-authors {
-	font-size: 0.95rem;
-	color: #666;
-	margin: 0.5rem 0;
-	line-height: 1.5;
-}
-
-.pub-venue {
-	font-size: 0.95rem;
-	color: #555;
-	font-style: italic;
-	margin: 0.5rem 0;
-}
-
-.pub-link-container {
-	margin-top: 0.75rem;
-	display: flex;
-	gap: 0.75rem;
-	align-items: center;
-	flex-wrap: wrap;
-}
-
-.pub-link {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5rem;
-	padding: 0.5rem 1rem;
-	background-color: #990000;
-	color: white;
-	text-decoration: none;
-	border-radius: 4px;
-	font-size: 0.9rem;
-	font-weight: 500;
-	transition: all 0.2s ease;
-}
-
-.pub-link:hover {
-	background-color: #6b0000;
-	transform: translateY(-2px);
-	box-shadow: 0 4px 12px rgba(153, 0, 0, 0.3);
-}
-
-.pub-link:focus {
-	outline: 2px solid #990000;
-	outline-offset: 2px;
-}
-
-.pub-link-icon {
-	font-size: 1rem;
-}
-
 #pub-load-status {
 	padding: 1rem;
 	margin: 1rem 0;
@@ -155,61 +66,9 @@ The list below is generated from `works.bib`.
 	outline-offset: 0;
 }
 
-.pub-search-box {
-	padding: 0.75rem;
-	border: 1px solid #ddd;
-	border-radius: 4px;
-	font-size: 0.95rem;
-	width: 100%;
-	max-width: 300px;
-}
-
-.pub-search-box:focus {
-	outline: 2px solid #990000;
-	outline-offset: 0;
-}
-
 @media (prefers-color-scheme: dark) {
-	.pub-item {
-		background: #2a2a2a;
-		border-left-color: #fac800;
-	}
-	
-	.pub-item:hover {
-		background: #333;
-	}
-	
-	.pub-year {
-		background: rgba(250, 200, 0, 0.15);
-		color: #fac800;
-	}
-	
-	.pub-title {
-		color: #e0e0e0;
-	}
-	
-	.pub-authors,
-	.pub-venue {
-		color: #b0b0b0;
-	}
-	
-	.pub-link {
-		background-color: #fac800;
-		color: #000;
-	}
-	
-	.pub-link:hover {
-		background-color: #e6b400;
-	}
-	
 	#pub-filters label {
 		color: #e0e0e0;
-	}
-	
-	.pub-search-box {
-		background-color: #333;
-		color: #e0e0e0;
-		border-color: #555;
 	}
 }
 
@@ -225,20 +84,22 @@ figure.chart-figure {
 	<figcaption id="pub-chart-caption" class="chart-caption"></figcaption>
 </figure>
 
-<div id="pub-filters" style="display:none">
-	<div>
-		<label for="pub-year-filter">Year:</label>
-		<select id="pub-year-filter" aria-label="Filter publications by year">
-			<option value="">All years</option>
-		</select>
-	</div>
-	<div>
-		<label for="pub-search">Search:</label>
-		<input type="text" id="pub-search" class="pub-search-box" placeholder="Search titles, authors, venues..." aria-label="Search publications">
-	</div>
-</div>
+<div id="pub-filters" style="display:none"></div>
 
-<ul id="pub-list" aria-label="Publications list"></ul>
+<table id="pub-table" class="caption-top table display accessible-table" style="width:100%" aria-label="Publications">
+	<caption class="visually-hidden">Publications with year, title, authors, venue, type, and link.</caption>
+	<thead>
+		<tr>
+			<th scope="col">Year</th>
+			<th scope="col">Title</th>
+			<th scope="col">Authors</th>
+			<th scope="col">Venue</th>
+			<th scope="col">Type</th>
+			<th scope="col">Link</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
+</table>
 
 <script>
 const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor = null } = {}) => {
@@ -378,19 +239,57 @@ const entryLink = (fields) => {
 	return url;
 };
 
+const escapeRegex = (value) => String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const createDataTable = (selector, options) => typeof window.DataTable === "function" ? new window.DataTable(selector, options) : (window.jQuery?.fn?.DataTable ? window.jQuery(selector).DataTable(options) : null);
+const enableBasicColumnSorting = (tableElement, { numericColumns = [], disabledColumns = [], defaultOrder = null } = {}) => {
+	const headers = Array.from(tableElement.querySelectorAll("thead th"));
+	const tbodyElement = tableElement.querySelector("tbody");
+	if (!tbodyElement || headers.length === 0) return;
+	const rowsForColumn = (columnIndex) => Array.from(tbodyElement.querySelectorAll("tr")).map((row) => {
+		const cell = row.children[columnIndex];
+		const raw = (cell?.textContent || "").trim();
+		const numeric = Number(raw.replace(/[^0-9.-]/g, ""));
+		return { row, raw, normalized: numericColumns.includes(columnIndex) && Number.isFinite(numeric) ? numeric : raw.toLowerCase() };
+	});
+	const sortByColumn = (columnIndex, direction) => {
+		const rows = rowsForColumn(columnIndex);
+		rows.sort((a, b) => a.normalized < b.normalized ? (direction === "asc" ? -1 : 1) : a.normalized > b.normalized ? (direction === "asc" ? 1 : -1) : 0);
+		tbodyElement.replaceChildren(...rows.map(({ row }) => row));
+		headers.forEach((header, index) => {
+			header.dataset.sortDir = index === columnIndex ? direction : "";
+			header.setAttribute("aria-sort", index === columnIndex ? (direction === "asc" ? "ascending" : "descending") : "none");
+		});
+	};
+	headers.forEach((header, index) => {
+		if (disabledColumns.includes(index)) return;
+		header.tabIndex = 0;
+		header.style.cursor = "pointer";
+		header.setAttribute("aria-sort", "none");
+		const onSort = () => sortByColumn(index, header.dataset.sortDir === "asc" ? "desc" : "asc");
+		header.addEventListener("click", onSort);
+		header.addEventListener("keydown", (event) => {
+			if (event.key === "Enter" || event.key === " ") {
+				event.preventDefault();
+				onSort();
+			}
+		});
+	});
+	if (defaultOrder) sortByColumn(defaultOrder.column, defaultOrder.direction);
+};
+
 const parseBibEntries = (text) => {
 	const entries = [];
 	const normalized = String(text || "").replace(/\r\n/g, "\n");
 	let index = 0;
 	const skipWhitespace = () => { while (index < normalized.length && /\s/.test(normalized[index])) index += 1; };
 	const readUntil = (terminator) => { const start = index; while (index < normalized.length && normalized[index] !== terminator) index += 1; return normalized.slice(start, index); };
-	const readBalancedBlock = (openChar, closeChar) => { let depth = 1; const start = index; while (index < normalized.length) { const char = normalized[index]; if (char === openChar) depth += 1; if (char === closeChar) depth -= 1; index += 1; if (depth === 0) return normalized.slice(start, index - 1); } return ""; };
+	const readBalancedBlock = (openChar, closeChar) => { let depth = 1; const start = index; while (index < normalized.length) { const char = normalized[index]; if (char === openChar) depth += 1; if (char === closeChar) depth -= 1; index += 1; if (depth === 0) break; } return normalized.slice(start, index - 1); };
 	const parseFields = (body) => {
 		const fields = {}; let i = 0;
 		const skipFieldWhitespace = () => { while (i < body.length && /\s/.test(body[i])) i += 1; };
 		const readFieldValue = () => {
 			skipFieldWhitespace();
-			if (body[i] === "{") { i += 1; let depth = 1; const start = i; while (i < body.length) { const char = body[i]; if (char === "{") depth += 1; if (char === "}") depth -= 1; i += 1; if (depth === 0) return body.slice(start, i - 1); } return ""; }
+			if (body[i] === "{") { i += 1; let depth = 1; const start = i; while (i < body.length) { const char = body[i]; if (char === "{") depth += 1; if (char === "}") depth -= 1; i += 1; if (depth === 0) break; } return body.slice(start, i - 1); }
 			if (body[i] === '"') { i += 1; const start = i; while (i < body.length) { if (body[i] === '"' && body[i - 1] !== "\\") break; i += 1; } const value = body.slice(start, i); i += 1; return value; }
 			const start = i; while (i < body.length && body[i] !== ",") i += 1; return body.slice(start, i).trim();
 		};
@@ -414,105 +313,53 @@ const parseBibEntries = (text) => {
 
 const loadPublications = async () => {
 	const status = document.getElementById("pub-load-status");
-	const pubList = document.getElementById("pub-list");
+	const tbody = document.querySelector("#pub-table tbody");
 	const filters = document.getElementById("pub-filters");
-	const yearFilter = document.getElementById("pub-year-filter");
-	const searchBox = document.getElementById("pub-search");
-
+	const yearLabel = document.createElement("label"); yearLabel.htmlFor = "pub-year-filter"; yearLabel.textContent = "Year: ";
+	const yearFilter = document.createElement("select"); yearFilter.id = "pub-year-filter"; yearFilter.setAttribute("aria-label", "Filter publications by year"); yearFilter.setAttribute("aria-controls", "pub-table"); yearFilter.innerHTML = '<option value="">All</option>'; yearLabel.appendChild(yearFilter);
+	const typeLabel = document.createElement("label"); typeLabel.htmlFor = "pub-type-filter"; typeLabel.textContent = "Type: ";
+	const typeFilter = document.createElement("select"); typeFilter.id = "pub-type-filter"; typeFilter.setAttribute("aria-label", "Filter publications by type"); typeFilter.setAttribute("aria-controls", "pub-table"); typeFilter.innerHTML = '<option value="">All</option>'; typeLabel.appendChild(typeFilter);
 	try {
-		// Try multiple potential paths for the bib file
-		let bibText = null;
-		const potentialPaths = [
-			"works.bib",
-			"../works.bib",
-			"/ccg/works.bib"
-		];
-
-		for (const path of potentialPaths) {
-			try {
-				const response = await fetch(path);
-				if (response.ok) {
-					bibText = await response.text();
-					console.log(`Successfully loaded from: ${path}`);
-					break;
-				}
-			} catch (e) {
-				// Try next path
-			}
-		}
-
-		if (!bibText) {
-			throw new Error("Could not load works.bib from any location");
-		}
-
+		const response = await fetch("works.bib");
+		if (!response.ok) throw new Error(`Could not load works.bib (HTTP ${response.status})`);
+		const bibText = await response.text();
 		const entries = parseBibEntries(bibText);
-		
-		if (entries.length === 0) {
-			throw new Error("No publications found in works.bib");
-		}
-
 		const rows = entries.map((entry) => {
 			const fields = entry.entryTags || {};
-			const title = cleanField(fields.title || "");
-			const authors = parseAuthors(fields.author || "");
-			const year = cleanField(fields.year || "");
-			const venue = cleanField(fields.journal || fields.booktitle || fields.publisher || "");
-			const link = entryLink(fields);
-			
-			return { title, authors, year, venue, link, searchText: `${title} ${authors} ${venue}`.toLowerCase() };
+			return {
+				year: cleanField(fields.year || ""),
+				title: cleanField(fields.title || ""),
+				authors: parseAuthors(fields.author || ""),
+				venue: cleanField(fields.journal || fields.booktitle || fields.publisher || ""),
+				type: cleanField(entry.entryType || ""),
+				link: entryLink(fields)
+			};
 		});
-
 		rows.sort((a, b) => Number(b.year || 0) - Number(a.year || 0));
 		renderPubChart(rows);
-
-		// Populate year filter
-		[...new Set(rows.map((row) => row.year).filter(Boolean))]
-			.sort((a, b) => Number(b) - Number(a))
-			.forEach((year) => {
-				const option = document.createElement("option");
-				option.value = year;
-				option.textContent = year;
-				yearFilter.appendChild(option);
-			});
-
-		const renderPubs = (filteredRows) => {
-			pubList.innerHTML = filteredRows.map((row) => `
-				<li class="pub-item">
-					<span class="pub-year">${row.year}</span>
-					<div class="pub-title">${row.title}</div>
-					<div class="pub-authors"><strong>Authors:</strong> ${row.authors}</div>
-					<div class="pub-venue"><strong>Venue:</strong> ${row.venue}</div>
-					<div class="pub-link-container">
-						${row.link ? `<a href="${row.link}" class="pub-link" title="View publication" target="_blank" rel="noopener noreferrer"><span class="pub-link-icon">🔗</span> View Resource</a>` : ''}
-					</div>
-				</li>
-			`).join("");
-		};
-
+		[...new Set(rows.map((row) => row.year).filter(Boolean))].sort((a, b) => Number(b) - Number(a)).forEach((year) => { const option = document.createElement("option"); option.value = year; option.textContent = year; yearFilter.appendChild(option); });
+		[...new Set(rows.map((row) => row.type).filter(Boolean))].sort((a, b) => a.localeCompare(b)).forEach((type) => { const option = document.createElement("option"); option.value = type; option.textContent = type; typeFilter.appendChild(option); });
+		filters.replaceChildren(yearLabel, typeLabel);
+		tbody.innerHTML = rows.map((row) => `<tr><td>${row.year}</td><th scope="row">${row.title}</th><td>${row.authors}</td><td>${row.venue}</td><td>${row.type}</td><td>${row.link ? `<a href="${row.link}" target="_blank" rel="noopener noreferrer" aria-label="View publication: ${row.title}">View</a>` : ""}</td></tr>`).join("");
+		const table = createDataTable("#pub-table", { pageLength: 25, order: [[0, "desc"]], columnDefs: [{ targets: 0, type: "num", orderable: true }, { targets: [1, 2, 3, 4], orderable: true }, { targets: 5, orderable: false }] });
+		if (!table) {
+			enableBasicColumnSorting(document.getElementById("pub-table"), { numericColumns: [0], disabledColumns: [5], defaultOrder: { column: 0, direction: "desc" } });
+			status.textContent = `Loaded ${rows.length} publications from works.bib. DataTables did not load, so basic column sorting is enabled.`;
+			return;
+		}
 		const applyFilters = () => {
-			const yearValue = yearFilter.value;
-			const searchValue = searchBox.value.toLowerCase();
-
-			const filtered = rows.filter((row) => {
-				const yearMatch = !yearValue || row.year === yearValue;
-				const searchMatch = !searchValue || row.searchText.includes(searchValue);
-				return yearMatch && searchMatch;
-			});
-
-			renderPubs(filtered);
+			table.column(0).search(yearFilter.value ? `^${escapeRegex(yearFilter.value)}$` : "", true, false);
+			table.column(4).search(typeFilter.value ? `^${escapeRegex(typeFilter.value)}$` : "", true, false);
+			table.draw();
 		};
-
-		renderPubs(rows);
 		yearFilter.addEventListener("change", applyFilters);
-		searchBox.addEventListener("input", applyFilters);
-		filters.style.display = "flex";
-		status.textContent = `Loaded ${rows.length} publications.`;
-		console.log(`Successfully loaded ${rows.length} publications`);
+		typeFilter.addEventListener("change", applyFilters);
+		filters.style.display = "block";
+		status.textContent = `Loaded ${rows.length} publications from works.bib.`;
 	} catch (error) {
 		status.textContent = `Unable to load publications: ${error.message}`;
-		console.error("Publications loading error:", error);
 	}
 };
 
-document.addEventListener("DOMContentLoaded", loadPublications);
+loadPublications();
 </script>
