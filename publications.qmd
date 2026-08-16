@@ -23,7 +23,7 @@ Writing that supports innovative and evidence-based teaching practice.
 :::
 :::
 
-The list below is generated from `works.bib` and supports instant search and sorting by year.
+The list below is generated from `works.bib`.
 
 <style>
 #pub-list {
