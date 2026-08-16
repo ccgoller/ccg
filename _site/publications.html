@@ -595,8 +595,8 @@ const loadPublications = async () => {
     const status = document.getElementById("pub-load-status");
     const pubList = document.getElementById("pub-list");
     const filters = document.getElementById("pub-filters");
-    const yearFilter = document.getElementById("pub-year-filter");
-    const searchBox = document.getElementById("pub-search");
+    let yearFilter = document.getElementById("pub-year-filter");
+    let searchBox = document.getElementById("pub-search");
     const setStatus = (message) => {
         if (status) status.textContent = message;
     };
@@ -604,6 +604,39 @@ const loadPublications = async () => {
     if (!pubList) {
         setStatus("Unable to load publications: Publications list container is missing.");
         return;
+    }
+
+    if (filters && !yearFilter) {
+        const yearGroup = document.createElement("div");
+        const yearLabel = document.createElement("label");
+        yearLabel.setAttribute("for", "pub-year-filter");
+        yearLabel.textContent = "Year:";
+        yearFilter = document.createElement("select");
+        yearFilter.id = "pub-year-filter";
+        yearFilter.setAttribute("aria-label", "Filter publications by year");
+        const allYears = document.createElement("option");
+        allYears.value = "";
+        allYears.textContent = "All years";
+        yearFilter.appendChild(allYears);
+        yearGroup.appendChild(yearLabel);
+        yearGroup.appendChild(yearFilter);
+        filters.appendChild(yearGroup);
+    }
+
+    if (filters && !searchBox) {
+        const searchGroup = document.createElement("div");
+        const searchLabel = document.createElement("label");
+        searchLabel.setAttribute("for", "pub-search");
+        searchLabel.textContent = "Search:";
+        searchBox = document.createElement("input");
+        searchBox.type = "text";
+        searchBox.id = "pub-search";
+        searchBox.className = "pub-search-box";
+        searchBox.placeholder = "Search titles, authors, venues...";
+        searchBox.setAttribute("aria-label", "Search publications");
+        searchGroup.appendChild(searchLabel);
+        searchGroup.appendChild(searchBox);
+        filters.appendChild(searchGroup);
     }
 
     try {
