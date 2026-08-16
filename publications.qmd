@@ -226,16 +226,16 @@ figure.chart-figure {
 </figure>
 
 <div id="pub-filters" style="display:none">
-	<div>
-		<label for="pub-year-filter">Year:</label>
-		<select id="pub-year-filter" aria-label="Filter publications by year">
-			<option value="">All years</option>
-		</select>
-	</div>
-	<div>
-		<label for="pub-search">Search:</label>
-		<input type="text" id="pub-search" class="pub-search-box" placeholder="Search titles, authors, venues..." aria-label="Search publications">
-	</div>
+<div>
+<label for="pub-year-filter">Year:</label>
+<select id="pub-year-filter" aria-label="Filter publications by year">
+<option value="">All years</option>
+</select>
+</div>
+<div>
+<label for="pub-search">Search:</label>
+<input type="text" id="pub-search" class="pub-search-box" placeholder="Search titles, authors, venues..." aria-label="Search publications">
+</div>
 </div>
 
 <ul id="pub-list" aria-label="Publications list"></ul>
