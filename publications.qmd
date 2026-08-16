@@ -232,15 +232,37 @@ const parseAuthors = (rawAuthors) => {
 		.join(", ");
 };
 
+const escapeHtml = (value) => String(value ?? "")
+	.replace(/&/g, "&amp;")
+	.replace(/</g, "&lt;")
+	.replace(/>/g, "&gt;")
+	.replace(/"/g, "&quot;")
+	.replace(/'/g, "&#39;");
+
+const sanitizeUrl = (value) => {
+	try {
+		const parsed = new URL(String(value || ""), window.location.href);
+		return parsed.protocol === "http:" || parsed.protocol === "https:" ? parsed.href : "";
+	} catch {
+		return "";
+	}
+};
+
 const entryLink = (fields) => {
 	const doi = cleanField(fields.doi || fields.DOI);
 	const url = cleanField(fields.url || fields.URL);
-	if (doi) return `https://doi.org/${doi}`;
-	return url;
+	if (doi) return sanitizeUrl(`https://doi.org/${doi}`);
+	return sanitizeUrl(url);
 };
 
 const escapeRegex = (value) => String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-const createDataTable = (selector, options) => typeof window.DataTable === "function" ? new window.DataTable(selector, options) : (window.jQuery?.fn?.DataTable ? window.jQuery(selector).DataTable(options) : null);
+const createDataTable = (selector, options) => {
+	try {
+		return typeof window.DataTable === "function" ? new window.DataTable(selector, options) : (window.jQuery?.fn?.DataTable ? window.jQuery(selector).DataTable(options) : null);
+	} catch {
+		return null;
+	}
+};
 const enableBasicColumnSorting = (tableElement, { numericColumns = [], disabledColumns = [], defaultOrder = null } = {}) => {
 	const headers = Array.from(tableElement.querySelectorAll("thead th"));
 	const tbodyElement = tableElement.querySelector("tbody");
@@ -340,10 +362,26 @@ const loadPublications = async () => {
 		[...new Set(rows.map((row) => row.year).filter(Boolean))].sort((a, b) => Number(b) - Number(a)).forEach((year) => { const option = document.createElement("option"); option.value = year; option.textContent = year; yearFilter.appendChild(option); });
 		[...new Set(rows.map((row) => row.type).filter(Boolean))].sort((a, b) => a.localeCompare(b)).forEach((type) => { const option = document.createElement("option"); option.value = type; option.textContent = type; typeFilter.appendChild(option); });
 		filters.replaceChildren(yearLabel, typeLabel);
-		tbody.innerHTML = rows.map((row) => `<tr><td>${row.year}</td><th scope="row">${row.title}</th><td>${row.authors}</td><td>${row.venue}</td><td>${row.type}</td><td>${row.link ? `<a href="${row.link}" target="_blank" rel="noopener noreferrer" aria-label="View publication: ${row.title}">View</a>` : ""}</td></tr>`).join("");
+		const renderRows = (rowsToRender) => {
+			tbody.innerHTML = rowsToRender.map((row) => {
+				const escapedTitle = escapeHtml(row.title);
+				return `<tr><td>${escapeHtml(row.year)}</td><th scope="row">${escapedTitle}</th><td>${escapeHtml(row.authors)}</td><td>${escapeHtml(row.venue)}</td><td>${escapeHtml(row.type)}</td><td>${row.link ? `<a href="${row.link}" target="_blank" rel="noopener noreferrer" aria-label="View publication: ${escapedTitle}">View</a>` : ""}</td></tr>`;
+			}).join("");
+		};
+		renderRows(rows);
 		const table = createDataTable("#pub-table", { pageLength: 25, order: [[0, "desc"]], columnDefs: [{ targets: 0, type: "num", orderable: true }, { targets: [1, 2, 3, 4], orderable: true }, { targets: 5, orderable: false }] });
 		if (!table) {
+			const applyBasicFilters = () => {
+				const yearValue = yearFilter.value;
+				const typeValue = typeFilter.value;
+				const filteredRows = rows.filter((row) => (!yearValue || row.year === yearValue) && (!typeValue || row.type === typeValue));
+				renderRows(filteredRows);
+				enableBasicColumnSorting(document.getElementById("pub-table"), { numericColumns: [0], disabledColumns: [5], defaultOrder: { column: 0, direction: "desc" } });
+			};
+			yearFilter.addEventListener("change", applyBasicFilters);
+			typeFilter.addEventListener("change", applyBasicFilters);
 			enableBasicColumnSorting(document.getElementById("pub-table"), { numericColumns: [0], disabledColumns: [5], defaultOrder: { column: 0, direction: "desc" } });
+			filters.style.display = "block";
 			status.textContent = `Loaded ${rows.length} publications from works.bib. DataTables did not load, so basic column sorting is enabled.`;
 			return;
 		}
