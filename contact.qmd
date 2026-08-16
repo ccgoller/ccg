@@ -1,6 +1,6 @@
 ---
 title: "Contact"
-subtitle: "Professional contact details and ways to connect"
+subtitle: "Contact details and ways to connect"
 page-layout: article
 ---
 
@@ -11,7 +11,7 @@ Use this page to connect regarding teaching, research, mentoring, collaboration,
 ::: {.feature-card-grid}
 ::: {.feature-card .feature-card-contact}
 ### Professional Inquiries
-Questions about teaching, academic work, speaking, or collaboration.
+Questions about teaching, academic work, speaking, and collaboration.
 :::
 ::: {.feature-card .feature-card-mentoring}
 ### Mentoring Connections
