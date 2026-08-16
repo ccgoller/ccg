@@ -39,9 +39,9 @@ Microbiology · Mentoring · Open Education
 ::: {.home-hero-panel}
 ## Current focus
 
-- Inclusive and evidence-based microbiology teaching
+- Evidence-based microbiology teaching
 - Research-informed course design and open learning resources
-- Student growth through mentoring and professional development
+- Student growth through mentoring, leadership, and professional development
 :::
 :::
 :::
@@ -95,7 +95,7 @@ Overview
 :::
 
 ::: {.prose}
-Carlos teaches microbiology, life science, and related courses while building learning environments that help students engage deeply with science. His academic work blends classroom practice, mentoring, scholarly communication, and course innovation in ways that support both scientific understanding and student belonging.
+Carlos teaches microbiology, life science, and related courses while building learning environments that help students engage deeply with science. His academic work blends classroom practice, mentoring, scholarly communication, and course innovation to support both scientific understanding and student belonging.
 
 The site brings together research directions, publications, teaching materials, mentoring resources, and professional information in one place.
 :::
@@ -154,7 +154,7 @@ Access course pages, learning resources, and classroom materials.
 :::
 ::: {.feature}
 ### Professional development
-Find workshops, leadership activities, and professional engagement highlights.
+Workshops, leadership activities, and professional engagement highlights.
 
 [Go to professional development](professional-development.html)
 :::
