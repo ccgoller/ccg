@@ -973,8 +973,33 @@ body:has(.home-page) #quarto-content > main.content {
 }
 
 @media (max-width: 767.98px) {
+  #quarto-header .navbar .navbar-brand-container {
+    max-width: calc(100vw - 7rem);
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  #quarto-header .navbar .navbar-brand {
+    min-width: 0;
+    padding: 0.65rem 0.4rem;
+    overflow: visible;
+  }
+
+  #quarto-header .navbar .navbar-title {
+    font-size: 0.95rem;
+    line-height: 1.2;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    overflow-wrap: anywhere;
+  }
+
   .navbar-brand img {
-    max-height: 24px;
+    max-height: 28px;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    padding: 0.1rem;
   }
 
   body.quarto-light.fullcontent main.content {
