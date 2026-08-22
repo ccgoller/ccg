@@ -53,13 +53,13 @@ body.quarto-light:not(:has(.home-page)) {
 
 body.quarto-light:not(:has(.home-page)) #quarto-content {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.9) 220px, rgba(255, 255, 255, 0.96) 100%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.9) 28%, rgba(255, 255, 255, 0.96) 100%);
 }
 
 body.quarto-light:not(:has(.home-page)) .quarto-title-block.default {
   margin-top: 0.55rem;
   margin-bottom: 2rem;
-  padding: 1.35rem 1.45rem 1.15rem;
+  padding: 1.25rem 1.5rem;
   border: 1px solid rgba(215, 221, 226, 0.92);
   border-left: 6px solid rgba(183, 121, 31, 0.84);
   border-radius: 12px;
@@ -68,7 +68,7 @@ body.quarto-light:not(:has(.home-page)) .quarto-title-block.default {
 }
 
 body.quarto-light:not(:has(.home-page)) main.content {
-  padding: 1.2rem 1.3rem 1.4rem;
+  padding: 1.25rem 1.25rem 1.5rem;
   border: 1px solid rgba(215, 221, 226, 0.9);
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.92);
@@ -982,7 +982,7 @@ body:has(.home-page) #quarto-content > main.content {
   }
 
   body.quarto-light:not(:has(.home-page)) .quarto-title-block.default {
-    padding: 1rem 1rem 0.95rem;
+    padding: 1rem;
   }
 
   .page-intro {
