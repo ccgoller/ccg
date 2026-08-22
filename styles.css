@@ -986,7 +986,7 @@ body:has(.home-page) #quarto-content > main.content {
   }
 
   #quarto-header .navbar .navbar-title {
-    font-size: 0.94rem;
+    font-size: 0.95rem;
     line-height: 1.2;
     white-space: normal;
     overflow: visible;
