@@ -88,6 +88,8 @@ body.quarto-dark {
   --bs-body-color: #eef2f4;
   --bs-secondary-color: #c7d0d8;
   --bs-border-color: #33424f;
+  --dt-row-stripe: 255, 255, 255;
+  --dt-row-hover: 255, 255, 255;
   background: #111820;
 }
 
