@@ -77,8 +77,7 @@ const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor
 	const padT = compact ? 24 : 30;
 	const cW = W - padL - padR;
 	const cH = H - padT - padB;
-	const axisFont = compact ? 10 : 11;
-	const valueFont = compact ? 10 : 11;
+	const fontSize = compact ? 10 : 11;
 
 	canvasEl.width = W * dpr;
 	canvasEl.height = H * dpr;
@@ -103,7 +102,7 @@ const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor
 		ctx.lineTo(padL + cW, y);
 		ctx.stroke();
 		ctx.fillStyle = textColor;
-		ctx.font = `${axisFont}px sans-serif`;
+		ctx.font = `${fontSize}px sans-serif`;
 		ctx.textAlign = "right";
 		ctx.fillText(Math.round(v), padL - 6, y + 4);
 	}
@@ -124,7 +123,7 @@ const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor
 
 		if (val > 0) {
 			ctx.fillStyle = textColor;
-			ctx.font = `${valueFont}px sans-serif`;
+			ctx.font = `${fontSize}px sans-serif`;
 			ctx.textAlign = "center";
 			ctx.fillText(val, x + barW / 2, Math.max(y - 5, padT + 12));
 		}
@@ -138,7 +137,7 @@ const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor
 			ctx.textAlign = "center";
 		}
 		ctx.fillStyle = textColor;
-		ctx.font = `${axisFont}px sans-serif`;
+		ctx.font = `${fontSize}px sans-serif`;
 		ctx.fillText(lbl, 0, 0);
 		ctx.restore();
 	});
