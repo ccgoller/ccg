@@ -1107,7 +1107,24 @@ body:has(.home-page) #quarto-content > main.content {
   #pub-table,
   #mentor-table,
   table.dataTable {
-    min-width: 560px;
+    min-width: 0;
+    width: 100% !important;
+  }
+
+  #pub-table th,
+  #pub-table td,
+  #mentor-table th,
+  #mentor-table td,
+  table.dataTable th,
+  table.dataTable td {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  main.content table.table:not(.dataTable) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
   }
 }
 
