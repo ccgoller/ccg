@@ -1125,7 +1125,6 @@ body:has(.home-page) #quarto-content > main.content {
     display: block;
     max-width: 100%;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
   }
 }
 
