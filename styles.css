@@ -446,7 +446,7 @@ figure.chart-figure canvas {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 0.95rem;
-  background-color: white;
+  background-color: var(--bs-body-bg);
   cursor: pointer;
 }
 

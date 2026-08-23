@@ -95,11 +95,14 @@ const renderMentoringChart = (rows) => {
 	drawBarChart(canvas, labels, values);
 	if (caption) caption.textContent = `Mentees by category: Undergraduate (${counts.Undergraduate}), Graduate (${counts.Graduate}), Postdoctoral (${counts.Postdoctoral}), Total (${total}).`;
 };
-window.addEventListener("resize", () => {
-	if (!mentorChartRows.length) return;
-	clearTimeout(mentorResizeTimer);
-	mentorResizeTimer = setTimeout(() => renderMentoringChart(mentorChartRows), 120);
-});
+if (!window.__mentorChartResizeBound) {
+	window.__mentorChartResizeBound = true;
+	window.addEventListener("resize", () => {
+		if (!mentorChartRows.length) return;
+		clearTimeout(mentorResizeTimer);
+		mentorResizeTimer = setTimeout(() => renderMentoringChart(mentorChartRows), 120);
+	});
+}
 const cleanField = (value) => { if (!value) return ""; const asText = String(value).replace(/<[^>]*>/g, " ").replace(/[{}]/g, "").replace(/\\[a-zA-Z]+\s*/g, "").replace(/\s+/g, " ").trim(); const decode = document.createElement("textarea"); decode.innerHTML = asText; return decode.value; };
 const escapeRegex = (value) => String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const createDataTable = (selector, options) => typeof window.DataTable === "function" ? new window.DataTable(selector, options) : (window.jQuery?.fn?.DataTable ? window.jQuery(selector).DataTable(options) : null);

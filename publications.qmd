@@ -175,11 +175,14 @@ const renderPubChart = (rows) => {
 	}
 };
 
-window.addEventListener("resize", () => {
-	if (!pubChartRows.length) return;
-	clearTimeout(pubResizeTimer);
-	pubResizeTimer = setTimeout(() => renderPubChart(pubChartRows), 120);
-});
+if (!window.__pubChartResizeBound) {
+	window.__pubChartResizeBound = true;
+	window.addEventListener("resize", () => {
+		if (!pubChartRows.length) return;
+		clearTimeout(pubResizeTimer);
+		pubResizeTimer = setTimeout(() => renderPubChart(pubChartRows), 120);
+	});
+}
 
 const cleanField = (value) => {
 	if (!value) return "";
