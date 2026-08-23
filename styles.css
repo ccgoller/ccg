@@ -396,6 +396,72 @@ main.content {
   color: var(--bs-secondary-color);
 }
 
+figure.chart-figure {
+  margin: 2rem 0;
+}
+
+figure.chart-figure canvas {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.chart-caption {
+  margin-top: 0.7rem;
+  font-size: 0.92rem;
+  color: var(--bs-secondary-color);
+}
+
+#pub-load-status,
+#mentor-load-status {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+#pub-filters,
+#mentor-filters {
+  margin: 1.5rem 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#pub-filters label,
+#mentor-filters label {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-weight: 500;
+  color: var(--bs-body-color);
+}
+
+#pub-filters select,
+#mentor-filters select {
+  min-height: 40px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  background-color: var(--bs-body-bg);
+  cursor: pointer;
+}
+
+#pub-filters select:focus,
+#mentor-filters select:focus {
+  outline: 2px solid #990000;
+  outline-offset: 0;
+}
+
+.dt-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .sidebar {
   border-right: 1px solid var(--line);
 }
@@ -1018,6 +1084,30 @@ body:has(.home-page) #quarto-content > main.content {
 
   .quarto-title-block.default {
     margin-bottom: 2rem;
+  }
+
+  #pub-filters,
+  #mentor-filters {
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  #pub-filters label,
+  #mentor-filters label {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #pub-filters select,
+  #mentor-filters select {
+    width: 100%;
+  }
+
+  #pub-table,
+  #mentor-table,
+  table.dataTable {
+    min-width: 560px;
   }
 }
 

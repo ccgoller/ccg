@@ -28,55 +28,6 @@ The table below is generated from `works.bib` and supports instant search and co
 <link rel="stylesheet" href="assets/vendor/datatables/dataTables.dataTables.min.css">
 <script src="assets/vendor/datatables/dataTables.min.js"></script>
 
-<style>
-#pub-load-status {
-	padding: 1rem;
-	margin: 1rem 0;
-	border-radius: 4px;
-	font-weight: 500;
-}
-
-#pub-filters {
-	margin: 1.5rem 0;
-	display: flex;
-	gap: 2rem;
-	align-items: center;
-	flex-wrap: wrap;
-}
-
-#pub-filters label {
-	display: flex;
-	gap: 0.5rem;
-	align-items: center;
-	font-weight: 500;
-	color: #333;
-}
-
-#pub-filters select {
-	padding: 0.5rem 0.75rem;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	font-size: 0.95rem;
-	background-color: white;
-	cursor: pointer;
-}
-
-#pub-filters select:focus {
-	outline: 2px solid #990000;
-	outline-offset: 0;
-}
-
-@media (prefers-color-scheme: dark) {
-	#pub-filters label {
-		color: #e0e0e0;
-	}
-}
-
-figure.chart-figure {
-	margin: 2rem 0;
-}
-</style>
-
 <div id="pub-load-status">Loading publications from works.bib...</div>
 
 <figure class="chart-figure" aria-label="Bar chart: publications per year">
@@ -109,14 +60,24 @@ const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor
 	const gridColor = isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)";
 	const axisColor = isDark ? "rgba(255,255,255,0.25)" : "rgba(0,0,0,0.18)";
 	const bar = barColor || primary;
+	if (!labels.length || !values.length) {
+		const ctx = canvasEl.getContext("2d");
+		ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
+		return;
+	}
 
 	const dpr = window.devicePixelRatio || 1;
-	const W = Math.max(canvasEl.parentElement?.clientWidth || 640, 320);
-	const padB = rotateLabels ? 72 : 48;
-	const H = 300;
-	const padL = 48, padR = 16, padT = 30;
+	const W = Math.max(canvasEl.parentElement?.clientWidth || 640, 280);
+	const compact = W < 520;
+	const autoRotate = rotateLabels || (W < 560 && labels.some((lbl) => String(lbl).length > 6));
+	const padB = autoRotate ? (compact ? 86 : 72) : (compact ? 58 : 48);
+	const H = compact ? 250 : 300;
+	const padL = compact ? 40 : 48;
+	const padR = compact ? 12 : 16;
+	const padT = compact ? 24 : 30;
 	const cW = W - padL - padR;
 	const cH = H - padT - padB;
+	const fontSize = compact ? 10 : 11;
 
 	canvasEl.width = W * dpr;
 	canvasEl.height = H * dpr;
@@ -124,7 +85,8 @@ const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor
 	canvasEl.style.height = H + "px";
 
 	const ctx = canvasEl.getContext("2d");
-	ctx.scale(dpr, dpr);
+	ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+	ctx.clearRect(0, 0, W, H);
 
 	const maxVal = Math.max(...values, 1);
 	const niceMax = Math.ceil(maxVal / 5) * 5 || 5;
@@ -140,7 +102,7 @@ const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor
 		ctx.lineTo(padL + cW, y);
 		ctx.stroke();
 		ctx.fillStyle = textColor;
-		ctx.font = "11px sans-serif";
+		ctx.font = `${fontSize}px sans-serif`;
 		ctx.textAlign = "right";
 		ctx.fillText(Math.round(v), padL - 6, y + 4);
 	}
@@ -161,21 +123,21 @@ const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor
 
 		if (val > 0) {
 			ctx.fillStyle = textColor;
-			ctx.font = "11px sans-serif";
+			ctx.font = `${fontSize}px sans-serif`;
 			ctx.textAlign = "center";
 			ctx.fillText(val, x + barW / 2, Math.max(y - 5, padT + 12));
 		}
 
 		ctx.save();
 		ctx.translate(x + barW / 2, padT + cH + 10);
-		if (rotateLabels) {
+		if (autoRotate) {
 			ctx.rotate(-Math.PI / 4);
 			ctx.textAlign = "right";
 		} else {
 			ctx.textAlign = "center";
 		}
 		ctx.fillStyle = textColor;
-		ctx.font = "11px sans-serif";
+		ctx.font = `${fontSize}px sans-serif`;
 		ctx.fillText(lbl, 0, 0);
 		ctx.restore();
 	});
@@ -189,10 +151,14 @@ const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor
 	ctx.stroke();
 };
 
+let pubChartRows = [];
+let pubResizeTimer;
+
 const renderPubChart = (rows) => {
 	const canvas = document.getElementById("pub-chart");
 	const caption = document.getElementById("pub-chart-caption");
 	if (!canvas) return;
+	pubChartRows = rows;
 
 	const yearCounts = {};
 	rows.forEach(({ year }) => {
@@ -208,6 +174,15 @@ const renderPubChart = (rows) => {
 		caption.textContent = `Publications per year: ${years.map((y) => `${y} (${yearCounts[y]})`).join(", ")}.`;
 	}
 };
+
+if (!window.__pubChartResizeBound) {
+	window.__pubChartResizeBound = true;
+	window.addEventListener("resize", () => {
+		if (!pubChartRows.length) return;
+		clearTimeout(pubResizeTimer);
+		pubResizeTimer = setTimeout(() => renderPubChart(pubChartRows), 120);
+	});
+}
 
 const cleanField = (value) => {
 	if (!value) return "";
