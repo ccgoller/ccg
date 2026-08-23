@@ -1107,8 +1107,10 @@ body:has(.home-page) #quarto-content > main.content {
   #pub-table,
   #mentor-table,
   table.dataTable {
-    min-width: 0;
-    width: 100% !important;
+    min-width: 42rem;
+    width: max-content !important;
+    max-width: none;
+    table-layout: auto;
   }
 
   #pub-table th,
@@ -1119,6 +1121,25 @@ body:has(.home-page) #quarto-content > main.content {
   table.dataTable td {
     white-space: normal;
     overflow-wrap: anywhere;
+    min-width: 7rem;
+    vertical-align: top;
+  }
+
+  #pub-table th:first-child,
+  #pub-table td:first-child,
+  #mentor-table th:first-child,
+  #mentor-table td:first-child,
+  #pub-table th:last-child,
+  #pub-table td:last-child,
+  #mentor-table th:last-child,
+  #mentor-table td:last-child {
+    min-width: 4.75rem;
+  }
+
+  main.content table.table th,
+  main.content table.table td {
+    min-width: 8rem;
+    vertical-align: top;
   }
 
   main.content table.table:not(.dataTable) {
