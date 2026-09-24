@@ -340,7 +340,7 @@ const loadPublications = async () => {
 		const renderRows = (rowsToRender) => {
 			tbody.innerHTML = rowsToRender.map((row) => {
 				const escapedTitle = escapeHtml(row.title);
-				return `<tr><td>${escapeHtml(row.year)}</td><th scope="row">${escapedTitle}</th><td>${escapeHtml(row.authors)}</td><td>${escapeHtml(row.venue)}</td><td>${escapeHtml(row.type)}</td><td>${row.link ? `<a href="${row.link}" target="_blank" rel="noopener noreferrer" aria-label="View publication: ${escapedTitle}">View</a>` : ""}</td></tr>`;
+				return `<tr><td data-label="Year">${escapeHtml(row.year)}</td><th scope="row" data-label="Title">${escapedTitle}</th><td data-label="Authors">${escapeHtml(row.authors)}</td><td data-label="Venue">${escapeHtml(row.venue)}</td><td data-label="Type">${escapeHtml(row.type)}</td><td data-label="Link">${row.link ? `<a href="${row.link}" target="_blank" rel="noopener noreferrer" aria-label="View publication: ${escapedTitle}">View</a>` : ""}</td></tr>`;
 			}).join("");
 		};
 		renderRows(rows);
