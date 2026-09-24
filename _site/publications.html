@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -40,10 +43,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0e9dfbca8abe5cdcfab96e7d70680b13.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9e83d583f3a84aec5b85fcabe577867d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -137,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./professional-development.html"><i class="bi bi-briefcase" role="img">
 </i> 
- <span class="dropdown-text">Prof.&nbsp;Dev</span></a>
+ <span class="dropdown-text">Professional Development</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./contact.html"><i class="bi bi-envelope" role="img">
@@ -256,14 +259,24 @@ const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor
     const gridColor = isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)";
     const axisColor = isDark ? "rgba(255,255,255,0.25)" : "rgba(0,0,0,0.18)";
     const bar = barColor || primary;
+    if (!labels.length || !values.length) {
+        const ctx = canvasEl.getContext("2d");
+        ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
+        return;
+    }
 
     const dpr = window.devicePixelRatio || 1;
-    const W = Math.max(canvasEl.parentElement?.clientWidth || 640, 320);
-    const padB = rotateLabels ? 72 : 48;
-    const H = 300;
-    const padL = 48, padR = 16, padT = 30;
+    const W = Math.max(canvasEl.parentElement?.clientWidth || 640, 280);
+    const compact = W < 520;
+    const autoRotate = rotateLabels || (W < 560 && labels.some((lbl) => String(lbl).length > 6));
+    const padB = autoRotate ? (compact ? 86 : 72) : (compact ? 58 : 48);
+    const H = compact ? 250 : 300;
+    const padL = compact ? 40 : 48;
+    const padR = compact ? 12 : 16;
+    const padT = compact ? 24 : 30;
     const cW = W - padL - padR;
     const cH = H - padT - padB;
+    const fontSize = compact ? 10 : 11;
 
     canvasEl.width = W * dpr;
     canvasEl.height = H * dpr;
@@ -271,7 +284,8 @@ const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor
     canvasEl.style.height = H + "px";
 
     const ctx = canvasEl.getContext("2d");
-    ctx.scale(dpr, dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, W, H);
 
     const maxVal = Math.max(...values, 1);
     const niceMax = Math.ceil(maxVal / 5) * 5 || 5;
@@ -287,7 +301,7 @@ const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor
         ctx.lineTo(padL + cW, y);
         ctx.stroke();
         ctx.fillStyle = textColor;
-        ctx.font = "11px sans-serif";
+        ctx.font = `${fontSize}px sans-serif`;
         ctx.textAlign = "right";
         ctx.fillText(Math.round(v), padL - 6, y + 4);
     }
@@ -308,21 +322,21 @@ const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor
 
         if (val > 0) {
             ctx.fillStyle = textColor;
-            ctx.font = "11px sans-serif";
+            ctx.font = `${fontSize}px sans-serif`;
             ctx.textAlign = "center";
             ctx.fillText(val, x + barW / 2, Math.max(y - 5, padT + 12));
         }
 
         ctx.save();
         ctx.translate(x + barW / 2, padT + cH + 10);
-        if (rotateLabels) {
+        if (autoRotate) {
             ctx.rotate(-Math.PI / 4);
             ctx.textAlign = "right";
         } else {
             ctx.textAlign = "center";
         }
         ctx.fillStyle = textColor;
-        ctx.font = "11px sans-serif";
+        ctx.font = `${fontSize}px sans-serif`;
         ctx.fillText(lbl, 0, 0);
         ctx.restore();
     });
@@ -336,10 +350,14 @@ const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor
     ctx.stroke();
 };
 
+let pubChartRows = [];
+let pubResizeTimer;
+
 const renderPubChart = (rows) => {
     const canvas = document.getElementById("pub-chart");
     const caption = document.getElementById("pub-chart-caption");
     if (!canvas) return;
+    pubChartRows = rows;
 
     const yearCounts = {};
     rows.forEach(({ year }) => {
@@ -355,6 +373,15 @@ const renderPubChart = (rows) => {
         caption.textContent = `Publications per year: ${years.map((y) => `${y} (${yearCounts[y]})`).join(", ")}.`;
     }
 };
+
+if (!window.__pubChartResizeBound) {
+    window.__pubChartResizeBound = true;
+    window.addEventListener("resize", () => {
+        if (!pubChartRows.length) return;
+        clearTimeout(pubResizeTimer);
+        pubResizeTimer = setTimeout(() => renderPubChart(pubChartRows), 120);
+    });
+}
 
 const cleanField = (value) => {
     if (!value) return "";
@@ -379,15 +406,37 @@ const parseAuthors = (rawAuthors) => {
         .join(", ");
 };
 
+const escapeHtml = (value) => String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+
+const sanitizeUrl = (value) => {
+    try {
+        const parsed = new URL(String(value || ""), window.location.href);
+        return parsed.protocol === "http:" || parsed.protocol === "https:" ? parsed.href : "";
+    } catch {
+        return "";
+    }
+};
+
 const entryLink = (fields) => {
     const doi = cleanField(fields.doi || fields.DOI);
     const url = cleanField(fields.url || fields.URL);
-    if (doi) return `https://doi.org/${doi}`;
-    return url;
+    if (doi) return sanitizeUrl(`https://doi.org/${doi}`);
+    return sanitizeUrl(url);
 };
 
 const escapeRegex = (value) => String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-const createDataTable = (selector, options) => typeof window.DataTable === "function" ? new window.DataTable(selector, options) : (window.jQuery?.fn?.DataTable ? window.jQuery(selector).DataTable(options) : null);
+const createDataTable = (selector, options) => {
+    try {
+        return typeof window.DataTable === "function" ? new window.DataTable(selector, options) : (window.jQuery?.fn?.DataTable ? window.jQuery(selector).DataTable(options) : null);
+    } catch {
+        return null;
+    }
+};
 const enableBasicColumnSorting = (tableElement, { numericColumns = [], disabledColumns = [], defaultOrder = null } = {}) => {
     const headers = Array.from(tableElement.querySelectorAll("thead th"));
     const tbodyElement = tableElement.querySelector("tbody");
@@ -414,7 +463,12 @@ const enableBasicColumnSorting = (tableElement, { numericColumns = [], disabledC
         header.setAttribute("aria-sort", "none");
         const onSort = () => sortByColumn(index, header.dataset.sortDir === "asc" ? "desc" : "asc");
         header.addEventListener("click", onSort);
-        header.addEventListener("keydown", (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); onSort(); } });
+        header.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                onSort();
+            }
+        });
     });
     if (defaultOrder) sortByColumn(defaultOrder.column, defaultOrder.direction);
 };
@@ -462,24 +516,63 @@ const loadPublications = async () => {
     const typeLabel = document.createElement("label"); typeLabel.htmlFor = "pub-type-filter"; typeLabel.textContent = "Type: ";
     const typeFilter = document.createElement("select"); typeFilter.id = "pub-type-filter"; typeFilter.setAttribute("aria-label", "Filter publications by type"); typeFilter.setAttribute("aria-controls", "pub-table"); typeFilter.innerHTML = '<option value="">All</option>'; typeLabel.appendChild(typeFilter);
     try {
-        const response = await fetch("works.bib"); if (!response.ok) throw new Error(`Could not load works.bib (HTTP ${response.status})`);
-        const bibText = await response.text(); const entries = parseBibEntries(bibText);
+        const response = await fetch("works.bib");
+        if (!response.ok) throw new Error(`Could not load works.bib (HTTP ${response.status})`);
+        const bibText = await response.text();
+        const entries = parseBibEntries(bibText);
         const rows = entries.map((entry) => {
             const fields = entry.entryTags || {};
-            return { year: cleanField(fields.year || ""), title: cleanField(fields.title || ""), authors: parseAuthors(fields.author || ""), venue: cleanField(fields.journal || fields.booktitle || fields.publisher || ""), type: cleanField(entry.entryType || ""), link: entryLink(fields) };
+            return {
+                year: cleanField(fields.year || ""),
+                title: cleanField(fields.title || ""),
+                authors: parseAuthors(fields.author || ""),
+                venue: cleanField(fields.journal || fields.booktitle || fields.publisher || ""),
+                type: cleanField(entry.entryType || ""),
+                link: entryLink(fields)
+            };
         });
         rows.sort((a, b) => Number(b.year || 0) - Number(a.year || 0));
         renderPubChart(rows);
         [...new Set(rows.map((row) => row.year).filter(Boolean))].sort((a, b) => Number(b) - Number(a)).forEach((year) => { const option = document.createElement("option"); option.value = year; option.textContent = year; yearFilter.appendChild(option); });
         [...new Set(rows.map((row) => row.type).filter(Boolean))].sort((a, b) => a.localeCompare(b)).forEach((type) => { const option = document.createElement("option"); option.value = type; option.textContent = type; typeFilter.appendChild(option); });
         filters.replaceChildren(yearLabel, typeLabel);
-        tbody.innerHTML = rows.map((row) => `<tr><td>${row.year}</td><th scope="row">${row.title}</th><td>${row.authors}</td><td>${row.venue}</td><td>${row.type}</td><td>${row.link ? `<a href="${row.link}" target="_blank" rel="noopener noreferrer" aria-label="View publication: ${row.title}">View</a>` : ""}</td></tr>`).join("");
+        const renderRows = (rowsToRender) => {
+            tbody.innerHTML = rowsToRender.map((row) => {
+                const escapedTitle = escapeHtml(row.title);
+                return `<tr><td>${escapeHtml(row.year)}</td><th scope="row">${escapedTitle}</th><td>${escapeHtml(row.authors)}</td><td>${escapeHtml(row.venue)}</td><td>${escapeHtml(row.type)}</td><td>${row.link ? `<a href="${row.link}" target="_blank" rel="noopener noreferrer" aria-label="View publication: ${escapedTitle}">View</a>` : ""}</td></tr>`;
+            }).join("");
+        };
+        renderRows(rows);
         const table = createDataTable("#pub-table", { pageLength: 25, order: [[0, "desc"]], columnDefs: [{ targets: 0, type: "num", orderable: true }, { targets: [1, 2, 3, 4], orderable: true }, { targets: 5, orderable: false }] });
-        if (!table) { enableBasicColumnSorting(document.getElementById("pub-table"), { numericColumns: [0], disabledColumns: [5], defaultOrder: { column: 0, direction: "desc" } }); status.textContent = `Loaded ${rows.length} publications from works.bib. DataTables did not load, so basic column sorting is enabled.`; return; }
-        const applyFilters = () => { table.column(0).search(yearFilter.value ? `^${escapeRegex(yearFilter.value)}$` : "", true, false); table.column(4).search(typeFilter.value ? `^${escapeRegex(typeFilter.value)}$` : "", true, false); table.draw(); };
-        yearFilter.addEventListener("change", applyFilters); typeFilter.addEventListener("change", applyFilters); filters.style.display = "block"; status.textContent = `Loaded ${rows.length} publications from works.bib.`;
-    } catch (error) { status.textContent = `Unable to load publications: ${error.message}`; }
+        if (!table) {
+            const applyBasicFilters = () => {
+                const yearValue = yearFilter.value;
+                const typeValue = typeFilter.value;
+                const filteredRows = rows.filter((row) => (!yearValue || row.year === yearValue) && (!typeValue || row.type === typeValue));
+                renderRows(filteredRows);
+                enableBasicColumnSorting(document.getElementById("pub-table"), { numericColumns: [0], disabledColumns: [5], defaultOrder: { column: 0, direction: "desc" } });
+            };
+            yearFilter.addEventListener("change", applyBasicFilters);
+            typeFilter.addEventListener("change", applyBasicFilters);
+            enableBasicColumnSorting(document.getElementById("pub-table"), { numericColumns: [0], disabledColumns: [5], defaultOrder: { column: 0, direction: "desc" } });
+            filters.style.display = "block";
+            status.textContent = `Loaded ${rows.length} publications from works.bib. DataTables did not load, so basic column sorting is enabled.`;
+            return;
+        }
+        const applyFilters = () => {
+            table.column(0).search(yearFilter.value ? `^${escapeRegex(yearFilter.value)}$` : "", true, false);
+            table.column(4).search(typeFilter.value ? `^${escapeRegex(typeFilter.value)}$` : "", true, false);
+            table.draw();
+        };
+        yearFilter.addEventListener("change", applyFilters);
+        typeFilter.addEventListener("change", applyFilters);
+        filters.style.display = "block";
+        status.textContent = `Loaded ${rows.length} publications from works.bib.`;
+    } catch (error) {
+        status.textContent = `Unable to load publications: ${error.message}`;
+    }
 };
+
 loadPublications();
 </script>
 

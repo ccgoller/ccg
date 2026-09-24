@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -40,10 +43,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0e9dfbca8abe5cdcfab96e7d70680b13.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9e83d583f3a84aec5b85fcabe577867d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -137,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./professional-development.html"><i class="bi bi-briefcase" role="img">
 </i> 
- <span class="dropdown-text">Prof.&nbsp;Dev</span></a>
+ <span class="dropdown-text">Professional Development</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./contact.html"><i class="bi bi-envelope" role="img">
@@ -188,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div class="page-intro">
-<p>Mentoring emphasizes confidence, belonging, scientific identity, and long-term growth through supportive and high-expectation academic relationships.</p>
+<p>Mentoring emphasizes confidence, a sense of belonging, scientific identity, and long-term growth through supportive, high-expectation academic relationships.</p>
 </div>
 <div class="feature-card-grid">
 <section id="scientific-identity" class="level3 feature-card feature-card-mentoring">
@@ -253,29 +256,50 @@ const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor
     const gridColor = isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)";
     const axisColor = isDark ? "rgba(255,255,255,0.25)" : "rgba(0,0,0,0.18)";
     const bar = barColor || primary;
+    if (!labels.length || !values.length) {
+        const ctx = canvasEl.getContext("2d");
+        ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
+        return;
+    }
     const dpr = window.devicePixelRatio || 1;
-    const W = Math.max(canvasEl.parentElement?.clientWidth || 640, 320);
-    const padB = rotateLabels ? 72 : 48;
-    const H = 300;
-    const padL = 48, padR = 16, padT = 30;
+    const W = Math.max(canvasEl.parentElement?.clientWidth || 640, 280);
+    const compact = W < 520;
+    const autoRotate = rotateLabels || (W < 560 && labels.some((lbl) => String(lbl).length > 6));
+    const padB = autoRotate ? (compact ? 86 : 72) : (compact ? 58 : 48);
+    const H = compact ? 250 : 300;
+    const padL = compact ? 40 : 48;
+    const padR = compact ? 12 : 16;
+    const padT = compact ? 24 : 30;
     const cW = W - padL - padR;
     const cH = H - padT - padB;
+    const fontSize = compact ? 10 : 11;
     canvasEl.width = W * dpr; canvasEl.height = H * dpr; canvasEl.style.width = W + "px"; canvasEl.style.height = H + "px";
-    const ctx = canvasEl.getContext("2d"); ctx.scale(dpr, dpr);
+    const ctx = canvasEl.getContext("2d"); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H);
     const maxVal = Math.max(...values, 1); const niceMax = Math.ceil(maxVal / 5) * 5 || 5; const nTicks = 5;
-    for (let t = 0; t <= nTicks; t++) { const v = (t / nTicks) * niceMax; const y = padT + cH - (v / niceMax) * cH; ctx.strokeStyle = gridColor; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(padL + cW, y); ctx.stroke(); ctx.fillStyle = textColor; ctx.font = "11px sans-serif"; ctx.textAlign = "right"; ctx.fillText(Math.round(v), padL - 6, y + 4); }
+    for (let t = 0; t <= nTicks; t++) { const v = (t / nTicks) * niceMax; const y = padT + cH - (v / niceMax) * cH; ctx.strokeStyle = gridColor; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(padL + cW, y); ctx.stroke(); ctx.fillStyle = textColor; ctx.font = `${fontSize}px sans-serif`; ctx.textAlign = "right"; ctx.fillText(Math.round(v), padL - 6, y + 4); }
     const n = labels.length; const slot = cW / n; const barW = Math.max(slot * 0.65, 4); const barOffset = (slot - barW) / 2;
-    labels.forEach((lbl, i) => { const val = values[i]; const bH = Math.max((val / niceMax) * cH, 0); const x = padL + slot * i + barOffset; const y = padT + cH - bH; ctx.fillStyle = bar; ctx.fillRect(x, y, barW, bH); if (val > 0) { ctx.fillStyle = textColor; ctx.font = "11px sans-serif"; ctx.textAlign = "center"; ctx.fillText(val, x + barW / 2, Math.max(y - 5, padT + 12)); } ctx.save(); ctx.translate(x + barW / 2, padT + cH + 10); if (rotateLabels) { ctx.rotate(-Math.PI / 4); ctx.textAlign = "right"; } else { ctx.textAlign = "center"; } ctx.fillStyle = textColor; ctx.font = "11px sans-serif"; ctx.fillText(lbl, 0, 0); ctx.restore(); });
+    labels.forEach((lbl, i) => { const val = values[i]; const bH = Math.max((val / niceMax) * cH, 0); const x = padL + slot * i + barOffset; const y = padT + cH - bH; ctx.fillStyle = bar; ctx.fillRect(x, y, barW, bH); if (val > 0) { ctx.fillStyle = textColor; ctx.font = `${fontSize}px sans-serif`; ctx.textAlign = "center"; ctx.fillText(val, x + barW / 2, Math.max(y - 5, padT + 12)); } ctx.save(); ctx.translate(x + barW / 2, padT + cH + 10); if (autoRotate) { ctx.rotate(-Math.PI / 4); ctx.textAlign = "right"; } else { ctx.textAlign = "center"; } ctx.fillStyle = textColor; ctx.font = `${fontSize}px sans-serif`; ctx.fillText(lbl, 0, 0); ctx.restore(); });
     ctx.strokeStyle = axisColor; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(padL, padT); ctx.lineTo(padL, padT + cH); ctx.lineTo(padL + cW, padT + cH); ctx.stroke();
 };
 const CATEGORY_LABELS = { "Undergraduate Scholars": "Undergraduate", "Graduate Student Mentoring": "Graduate", "Postdoctoral Education Scholar Mentoring": "Postdoctoral" };
+let mentorChartRows = [];
+let mentorResizeTimer;
 const renderMentoringChart = (rows) => {
     const canvas = document.getElementById("mentor-chart"); const caption = document.getElementById("mentor-chart-caption"); if (!canvas) return;
+    mentorChartRows = rows;
     const counts = { Undergraduate: 0, Graduate: 0, Postdoctoral: 0 }; rows.forEach(({ category }) => { const short = CATEGORY_LABELS[category]; if (short) counts[short] += 1; });
     const labels = ["Undergraduate", "Graduate", "Postdoctoral", "Total"]; const total = counts.Undergraduate + counts.Graduate + counts.Postdoctoral; const values = [counts.Undergraduate, counts.Graduate, counts.Postdoctoral, total];
     drawBarChart(canvas, labels, values);
     if (caption) caption.textContent = `Mentees by category: Undergraduate (${counts.Undergraduate}), Graduate (${counts.Graduate}), Postdoctoral (${counts.Postdoctoral}), Total (${total}).`;
 };
+if (!window.__mentorChartResizeBound) {
+    window.__mentorChartResizeBound = true;
+    window.addEventListener("resize", () => {
+        if (!mentorChartRows.length) return;
+        clearTimeout(mentorResizeTimer);
+        mentorResizeTimer = setTimeout(() => renderMentoringChart(mentorChartRows), 120);
+    });
+}
 const cleanField = (value) => { if (!value) return ""; const asText = String(value).replace(/<[^>]*>/g, " ").replace(/[{}]/g, "").replace(/\\[a-zA-Z]+\s*/g, "").replace(/\s+/g, " ").trim(); const decode = document.createElement("textarea"); decode.innerHTML = asText; return decode.value; };
 const escapeRegex = (value) => String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const createDataTable = (selector, options) => typeof window.DataTable === "function" ? new window.DataTable(selector, options) : (window.jQuery?.fn?.DataTable ? window.jQuery(selector).DataTable(options) : null);
