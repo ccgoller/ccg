@@ -14,7 +14,22 @@ about:
       href: https://github.com/ccgoller
 ---
 
-Carlos C. Goller is a Teaching Professor at North Carolina State University in Raleigh, NC. He teaches microbiology, life science, public health, and other fun courses as part of the Department of Biological Sciences. When not playing with *Delftia acidovorans* or code, Carlos enjoys spending time with his family and playing with his dog Sunshine.
+Carlos C. Goller is a Teaching Professor in the Department of Biological Sciences at North Carolina State University. His academic work connects microbiology, genomics, evidence-based teaching, open pedagogy, and student mentoring through research-rich learning environments.
+
+## Professional Summary
+
+Carlos develops learning experiences that help students participate in authentic scientific inquiry while building confidence, communication skills, and a sense of belonging in STEM. His work spans microbiology, biotechnology, genomics, and biology education, with an emphasis on collaborative teaching practice and public-facing educational resources.
+
+Key areas of focus include:
+
+- Microbiology and genomics education
+- Discovery-centered and inquiry-driven teaching
+- Open educational resources and accessible course design
+- Student mentoring, professional growth, and scientific identity development
+
+## Current Appointment
+
+Carlos currently serves as Teaching Professor in the Department of Biological Sciences at North Carolina State University in Raleigh, North Carolina.
 
 ## Education
 
@@ -54,7 +69,7 @@ August 1998 - May 2002
 - Associate Teaching Professor, North Carolina State University Department of Biological Sciences, 2019 - 2024
 - Assistant Teaching Professor, North Carolina State University Department of Biological Sciences, 2015 - 2019
 
-## Additional Links
+## Selected Projects and Resources
 
 - [BSC 495: The Hidden World's Code](https://ccgoller.github.io/bsc-fungal-genomics-lab/)
 - [MB 360: Microbial Metabolism](https://ccgoller.github.io/mb360workbook/)

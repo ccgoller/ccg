@@ -5,7 +5,7 @@ page-layout: article
 ---
 
 ::: {.page-intro}
-Use this page to connect regarding teaching, research, mentoring, collaboration, or professional opportunities.
+Use this page to connect regarding teaching, research, mentoring, collaboration, speaking, or professional opportunities.
 :::
 
 ::: {.feature-card-grid}
@@ -22,3 +22,46 @@ Opportunities related to student support, development, and growth.
 Invitations to work across science, education, or interdisciplinary projects.
 :::
 :::
+
+## Contact Information
+
+::: {.contact-grid}
+::: {.contact-card}
+### Email
+[ccgoller@ncsu.edu](mailto:ccgoller@ncsu.edu)
+
+Best for teaching, collaboration, mentoring, and speaking inquiries.
+:::
+::: {.contact-card}
+### Department
+Department of Biological Sciences  
+North Carolina State University  
+Raleigh, North Carolina
+:::
+::: {.contact-card}
+### LinkedIn
+[linkedin.com/in/ccgoller](https://linkedin.com/in/ccgoller)
+
+Professional profile, academic updates, and broader network connections.
+:::
+::: {.contact-card}
+### GitHub
+[github.com/ccgoller](https://github.com/ccgoller)
+
+Course resources, public-facing projects, and site-linked repositories.
+:::
+:::
+
+## Good Reasons to Reach Out
+
+- Teaching talks, workshops, or invited conversations in microbiology and STEM education
+- Collaborations involving course design, open pedagogy, mentoring, or student research experiences
+- Questions about teaching materials, public resources, or featured course sites
+- Networking around microbiology, biotechnology, and higher-education innovation
+
+## Featured Links
+
+- [Curriculum vitae](cv.qmd)
+- [Research overview](research.qmd)
+- [Teaching portfolio](teaching.qmd)
+- [Publications](publications.qmd)

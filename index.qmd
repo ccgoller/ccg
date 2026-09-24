@@ -14,23 +14,23 @@ Carlos C. Goller, Ph.D.
 
 # Teaching, microbiology, and academic leadership
 
-Carlos C. Goller is a Teaching Professor in the Department of Biological Sciences at North Carolina State University. His work connects microbiology, course innovation, student mentoring, and evidence-based teaching through research-rich learning experiences.
+Carlos C. Goller is a Teaching Professor in the Department of Biological Sciences at North Carolina State University. His work brings together microbiology, genomics, course innovation, mentoring, and evidence-based teaching through research-rich learning experiences.
 
 ::: {.home-chip-row}
 ::: {.home-chip}
-North Carolina State University
+Teaching Professor · NC State University
 :::
 ::: {.home-chip}
-Department of Biological Sciences
+Microbiology · Genomics · STEM Education
 :::
 ::: {.home-chip}
-Microbiology · Mentoring · Open Education
+Student mentoring · Open pedagogy · Academic leadership
 :::
 :::
 
 ::: {.home-hero-actions}
 <a class="home-button home-button-primary" href="teaching.html">Explore Teaching</a>
-<a class="home-button home-button-secondary" href="research.html">View Research</a>
+<a class="home-button home-button-secondary" href="cv.html">Review CV</a>
 <a class="home-button home-button-secondary" href="contact.html">Connect</a>
 :::
 :::
@@ -39,9 +39,9 @@ Microbiology · Mentoring · Open Education
 ::: {.home-hero-panel}
 ## Current focus
 
-- Evidence-based microbiology teaching
-- Research-informed course design and open learning resources
-- Student growth through mentoring, leadership, and professional development
+- Evidence-based microbiology and biotechnology teaching
+- Research-informed course design, open educational resources, and student discovery
+- Mentoring, faculty collaboration, and professional development in STEM education
 :::
 :::
 :::
@@ -68,20 +68,20 @@ Microbiology · Mentoring · Open Education
 
 ::: {.details-strip}
 ::: {.detail-item}
-<span>Role</span>
-<strong>Teaching Professor</strong>
+<span>Appointment</span>
+<strong>Teaching Professor at NC State</strong>
 :::
 ::: {.detail-item}
-<span>Department</span>
-<strong>Biological Sciences</strong>
+<span>Expertise</span>
+<strong>Microbiology, genomics, and course innovation</strong>
 :::
 ::: {.detail-item}
-<span>Location</span>
-<strong>Raleigh, North Carolina</strong>
+<span>Approach</span>
+<strong>Discovery-centered, student-focused, evidence-based teaching</strong>
 :::
 ::: {.detail-item}
-<span>Focus</span>
-<strong>Microbiology, mentoring, and student-centered learning</strong>
+<span>Professional priorities</span>
+<strong>Teaching excellence, mentoring, and collaborative scholarship</strong>
 :::
 :::
 
@@ -98,6 +98,38 @@ Overview
 Carlos teaches microbiology, life science, and related courses while building learning environments that help students engage deeply with science. His academic work blends classroom practice, mentoring, scholarly communication, and course innovation to support both scientific understanding and student belonging.
 
 The site brings together research directions, publications, teaching materials, mentoring resources, and professional information in one place.
+:::
+:::
+:::
+
+::: {.home-section .home-section-band}
+::: {.section-inner}
+::: {.section-kicker}
+Professional snapshot
+:::
+## Highlights at a glance
+
+::: {.profile-snapshot}
+::: {.profile-stat}
+<span>Current role</span>
+<strong>Teaching Professor</strong>
+<p>Department of Biological Sciences, North Carolina State University.</p>
+:::
+::: {.profile-stat}
+<span>Core domains</span>
+<strong>Microbiology and STEM education</strong>
+<p>Academic work spanning microbiology, genomics, mentorship, and open pedagogy.</p>
+:::
+::: {.profile-stat}
+<span>Academic pathway</span>
+<strong>Four institutions</strong>
+<p>Training and appointments connecting WPI, Emory, Duke, and NC State.</p>
+:::
+::: {.profile-stat}
+<span>What this site offers</span>
+<strong>One professional hub</strong>
+<p>Research, publications, courses, mentoring, and professional materials in one place.</p>
+:::
 :::
 :::
 :::
@@ -183,10 +215,10 @@ Use the contact page for collaboration, teaching, mentoring, or speaking inquiri
 [Contact Carlos](contact.html)
 :::
 ::: {.feature}
-### About
-Read the full profile, academic background, and selected external links.
+### Featured projects
+Visit course and project sites that extend this academic portfolio into public-facing learning resources.
 
-[Read full profile](about.html)
+[Browse featured links](about.html#selected-projects-and-resources)
 :::
 :::
 :::

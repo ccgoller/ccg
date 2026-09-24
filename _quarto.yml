@@ -9,7 +9,7 @@ project:
 website:
   title: "Carlos C. Goller, Ph.D."
   favicon: ccg100.jpg
-  description: Explorer of Bacterial and Learner Diversity
+  description: Teaching professor in microbiology, genomics, mentoring, and evidence-based STEM education
   page-navigation: true
   reader-mode: true
   navbar:
@@ -39,7 +39,7 @@ website:
           - text: "Mentoring"
             icon: people
             href: mentoring.qmd
-          - text: "Prof. Dev"
+          - text: "Professional Development"
             icon: briefcase
             href: professional-development.qmd
           - text: "Contact"
