@@ -247,6 +247,11 @@ body.quarto-light #quarto-header .navbar .nav-link.active {
   text-underline-offset: 0.24em;
 }
 
+body.quarto-light #quarto-header .navbar .nav-link.active {
+  color: var(--ncsu-yellow);
+  background: rgba(250, 200, 0, 0.04);
+}
+
 body.quarto-dark #quarto-header .navbar .nav-link:hover,
 body.quarto-dark #quarto-header .navbar .nav-link:focus-visible,
 body.quarto-dark #quarto-header .navbar .nav-link.active {
@@ -257,6 +262,11 @@ body.quarto-dark #quarto-header .navbar .nav-link.active {
   text-decoration-color: rgba(250, 200, 0, 0.95);
   text-decoration-thickness: 0.12em;
   text-underline-offset: 0.24em;
+}
+
+body.quarto-dark #quarto-header .navbar .nav-link.active {
+  color: var(--ncsu-yellow);
+  background: rgba(250, 200, 0, 0.04);
 }
 
 body.quarto-light #quarto-header .navbar .nav-link:hover::after,
