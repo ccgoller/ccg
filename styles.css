@@ -244,6 +244,9 @@ body.quarto-light #quarto-header .navbar .dropdown-menu .dropdown-item:hover {
 #quarto-header .navbar .nav-link.active,
 #quarto-header .navbar .nav-link[aria-current="page"] {
   color: var(--ncsu-yellow);
+  text-decoration: underline;
+  text-decoration-thickness: 0.16em;
+  text-underline-offset: 0.24em;
   background:
     radial-gradient(circle at 24% 42%, rgba(250, 200, 0, 0.24) 0 10%, transparent 40%),
     radial-gradient(circle at 68% 28%, rgba(250, 200, 0, 0.2) 0 9%, transparent 36%),
