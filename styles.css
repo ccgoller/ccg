@@ -483,6 +483,13 @@ figure.chart-figure canvas {
   background: var(--pub-row-band-focus);
 }
 
+#pub-table tbody tr:hover > th,
+#pub-table tbody tr:hover > td,
+#pub-table tbody tr:focus-within > th,
+#pub-table tbody tr:focus-within > td {
+  background: var(--pub-row-band-focus);
+}
+
 #pub-table td[data-label="Link"] .pub-view-link {
   display: inline-flex;
   align-items: center;
