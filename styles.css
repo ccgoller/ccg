@@ -219,8 +219,7 @@ body.quarto-light #quarto-header .navbar .dropdown-menu .dropdown-item:hover {
   box-shadow: none !important;
 }
 
-#quarto-header .navbar .nav-link:hover,
-#quarto-header .navbar .nav-link:focus-visible {
+#quarto-header .navbar .nav-link:hover {
   color: var(--ncsu-yellow);
   background:
     radial-gradient(circle at 24% 42%, rgba(250, 200, 0, 0.2) 0 10%, transparent 38%),
@@ -231,6 +230,13 @@ body.quarto-light #quarto-header .navbar .dropdown-menu .dropdown-item:hover {
 }
 
 #quarto-header .navbar .nav-link:focus-visible {
+  color: var(--ncsu-yellow);
+  background:
+    radial-gradient(circle at 24% 42%, rgba(250, 200, 0, 0.24) 0 11%, transparent 39%),
+    radial-gradient(circle at 68% 28%, rgba(250, 200, 0, 0.22) 0 10%, transparent 35%),
+    radial-gradient(circle at 78% 68%, rgba(250, 200, 0, 0.2) 0 9%, transparent 33%),
+    rgba(250, 200, 0, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(250, 200, 0, 0.3), 0 0 20px rgba(250, 200, 0, 0.16);
   outline: 2px solid rgba(250, 200, 0, 0.92);
   outline-offset: 2px;
 }
