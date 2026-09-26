@@ -46,7 +46,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9e83d583f3a84aec5b85fcabe577867d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f06ef4814a272b7e817b15f27906b60b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -539,7 +539,7 @@ const loadPublications = async () => {
         const renderRows = (rowsToRender) => {
             tbody.innerHTML = rowsToRender.map((row) => {
                 const escapedTitle = escapeHtml(row.title);
-                return `<tr><td>${escapeHtml(row.year)}</td><th scope="row">${escapedTitle}</th><td>${escapeHtml(row.authors)}</td><td>${escapeHtml(row.venue)}</td><td>${escapeHtml(row.type)}</td><td>${row.link ? `<a href="${row.link}" target="_blank" rel="noopener noreferrer" aria-label="View publication: ${escapedTitle}">View</a>` : ""}</td></tr>`;
+                return `<tr><td data-label="Year">${escapeHtml(row.year)}</td><th scope="row" data-label="Title">${escapedTitle}</th><td data-label="Authors">${escapeHtml(row.authors)}</td><td data-label="Venue">${escapeHtml(row.venue)}</td><td data-label="Type">${escapeHtml(row.type)}</td><td data-label="Link">${row.link ? `<a class="pub-view-link" href="${row.link}" target="_blank" rel="noopener noreferrer" aria-label="View publication: ${escapedTitle}"><span>View</span><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>` : ""}</td></tr>`;
             }).join("");
         };
         renderRows(rows);
