@@ -19,6 +19,12 @@
   --crimson-dark: #990000;
   --maroon: #660000;
   --teal: #0f766e;
+  --card-accent-gold: #c48728;
+  --card-accent-crimson: #d43636;
+  --card-accent-maroon: #872222;
+  --card-accent-teal: #14867d;
+  --card-accent-graphite: #496173;
+  --card-accent-graphite-soft: #5c7a8b;
   --hero-text-shadow: 0 2px 12px rgba(0, 0, 0, 0.82);
   --shadow: 0 20px 60px rgba(23, 32, 38, 0.14);
   --shadow-soft: 0 14px 32px rgba(31, 41, 51, 0.08);
@@ -93,6 +99,12 @@ body.quarto-dark {
   --bs-border-color: #33424f;
   --dt-row-stripe: 255, 255, 255;
   --dt-row-hover: 255, 255, 255;
+  --card-accent-gold: #f0bf63;
+  --card-accent-crimson: #ff7b7b;
+  --card-accent-maroon: #d97b7b;
+  --card-accent-teal: #49c2b6;
+  --card-accent-graphite: #88a3b8;
+  --card-accent-graphite-soft: #9dbacb;
   --pub-row-band-odd: #1a2530;
   --pub-row-band-even: #223140;
   --pub-row-band-focus: #2a3d4f;
@@ -418,10 +430,11 @@ main.content {
 }
 
 .feature-card {
+  --card-accent: var(--card-accent-teal);
   position: relative;
   padding: 1.2rem 1.1rem 1rem;
   border: 1px solid var(--line);
-  border-top: 5px solid var(--teal);
+  border-top: 6px solid var(--card-accent);
   border-radius: 8px;
   background: var(--surface);
   box-shadow: var(--shadow-soft);
@@ -434,31 +447,31 @@ main.content {
 }
 
 .feature-card-research {
-  border-top-color: var(--gold);
+  --card-accent: var(--card-accent-gold);
 }
 
 .feature-card-publications {
-  border-top-color: var(--crimson);
+  --card-accent: var(--card-accent-crimson);
 }
 
 .feature-card-teaching {
-  border-top-color: var(--maroon);
+  --card-accent: var(--card-accent-maroon);
 }
 
 .feature-card-mentoring {
-  border-top-color: var(--teal);
+  --card-accent: var(--card-accent-teal);
 }
 
 .feature-card-collaboration {
-  border-top-color: #3d4f5f;
+  --card-accent: var(--card-accent-graphite);
 }
 
 .feature-card-discovery {
-  border-top-color: #4b6a78;
+  --card-accent: var(--card-accent-graphite-soft);
 }
 
 .feature-card-contact {
-  border-top-color: var(--gold);
+  --card-accent: var(--card-accent-gold);
 }
 
 .quarto-cover-image {
@@ -1051,9 +1064,10 @@ body:has(.home-page) #quarto-content > main.content {
 
 .profile-stat,
 .contact-card {
+  --card-accent: var(--card-accent-teal);
   padding: 1.3rem 1.2rem;
   border: 1px solid var(--line);
-  border-top: 5px solid var(--teal);
+  border-top: 6px solid var(--card-accent);
   border-radius: 8px;
   background: var(--surface);
   box-shadow: var(--shadow-soft);
@@ -1061,17 +1075,17 @@ body:has(.home-page) #quarto-content > main.content {
 
 .profile-stat:nth-child(1),
 .contact-card:nth-child(1) {
-  border-top-color: var(--gold);
+  --card-accent: var(--card-accent-gold);
 }
 
 .profile-stat:nth-child(2),
 .contact-card:nth-child(2) {
-  border-top-color: var(--crimson);
+  --card-accent: var(--card-accent-crimson);
 }
 
 .profile-stat:nth-child(3),
 .contact-card:nth-child(3) {
-  border-top-color: var(--maroon);
+  --card-accent: var(--card-accent-maroon);
 }
 
 .profile-stat span,
