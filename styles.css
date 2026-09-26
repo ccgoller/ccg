@@ -314,6 +314,7 @@ body.quarto-light #quarto-header .navbar .dropdown-menu .dropdown-item:hover {
     text-decoration-style: solid;
     text-decoration-color: currentColor;
     text-decoration-thickness: 0.16em;
+    text-underline-offset: 0.24em;
   }
 
   #quarto-header .navbar .nav-link.active::after,
