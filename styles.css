@@ -266,13 +266,6 @@ body.quarto-light #quarto-header .navbar .dropdown-menu .dropdown-item:hover {
     0 0 0 3px rgba(250, 200, 0, 0.35);
 }
 
-body.quarto-light #quarto-header .navbar .nav-link:hover,
-body.quarto-light #quarto-header .navbar .nav-link:focus-visible,
-body.quarto-light #quarto-header .navbar .nav-link.active,
-body.quarto-light #quarto-header .navbar .nav-link[aria-current="page"] {
-  color: #ffe8a8;
-}
-
 body.quarto-light #quarto-header .navbar .nav-link:hover {
   background:
     radial-gradient(circle at 24% 42%, rgba(250, 200, 0, 0.16) 0 10%, transparent 38%),
