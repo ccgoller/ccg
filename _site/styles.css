@@ -6,7 +6,7 @@
   --ncsu-yellow-rgb: 250, 200, 0;
   --ncsu-yellow-border: rgba(var(--ncsu-yellow-rgb), 0.28);
   --ink: #172026;
-  --muted: #5c6873;
+  --muted: #4d5863;
   --line: #d7dde2;
   --surface: #ffffff;
   --surface-soft: #f4f7f8;
@@ -22,6 +22,9 @@
   --hero-text-shadow: 0 2px 12px rgba(0, 0, 0, 0.82);
   --shadow: 0 20px 60px rgba(23, 32, 38, 0.14);
   --shadow-soft: 0 14px 32px rgba(31, 41, 51, 0.08);
+  --pub-row-band-odd: #ffffff;
+  --pub-row-band-even: #f3f6f8;
+  --pub-row-band-focus: #e8eef2;
 }
 
 body.quarto-light {
@@ -90,6 +93,9 @@ body.quarto-dark {
   --bs-border-color: #33424f;
   --dt-row-stripe: 255, 255, 255;
   --dt-row-hover: 255, 255, 255;
+  --pub-row-band-odd: #1a2530;
+  --pub-row-band-even: #223140;
+  --pub-row-band-focus: #2a3d4f;
   background: #111820;
 }
 
@@ -235,9 +241,9 @@ body.quarto-dark #quarto-header .navbar .nav-link.active {
 #quarto-footer .nav-footer-left,
 #quarto-footer .nav-footer-center,
 #quarto-footer .nav-footer-right {
-  color: rgba(255, 255, 255, 0.86);
+  color: rgba(255, 255, 255, 0.92);
   line-height: 1.7;
-  font-size: 0.96rem;
+  font-size: 1rem;
 }
 
 #quarto-footer a {
@@ -393,7 +399,7 @@ main.content {
 
 .quarto-float-caption.quarto-float-caption-bottom {
   margin-top: 0.65rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.45;
   color: var(--bs-secondary-color);
 }
@@ -411,7 +417,7 @@ figure.chart-figure canvas {
 
 .chart-caption {
   margin-top: 0.7rem;
-  font-size: 0.92rem;
+  font-size: 1rem;
   color: var(--bs-secondary-color);
 }
 
@@ -447,7 +453,7 @@ figure.chart-figure canvas {
   padding: 0.5rem 0.75rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   background-color: var(--bs-body-bg);
   cursor: pointer;
 }
@@ -462,6 +468,32 @@ figure.chart-figure canvas {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+#pub-table tbody tr {
+  background: var(--pub-row-band-odd);
+}
+
+#pub-table tbody tr:nth-child(even) {
+  background: var(--pub-row-band-even);
+}
+
+#pub-table tbody tr:hover,
+#pub-table tbody tr:focus-within {
+  background: var(--pub-row-band-focus);
+}
+
+#pub-table tbody tr:hover > th,
+#pub-table tbody tr:hover > td,
+#pub-table tbody tr:focus-within > th,
+#pub-table tbody tr:focus-within > td {
+  background: var(--pub-row-band-focus);
+}
+
+#pub-table td[data-label="Link"] .pub-view-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .sidebar {
@@ -554,7 +586,7 @@ body:has(.home-page) #quarto-content > main.content {
 .section-kicker {
   margin: 0 0 14px;
   color: var(--kicker-color);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -608,7 +640,7 @@ body:has(.home-page) #quarto-content > main.content {
   border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: 6px;
   color: #ffffff;
-  font-size: 0.86rem;
+  font-size: 0.95rem;
   font-weight: 800;
   line-height: 1.15;
   background: rgba(0, 0, 0, 0.58);
@@ -731,7 +763,7 @@ body:has(.home-page) #quarto-content > main.content {
 
 .affiliation-intro span {
   color: #f7c66d;
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -838,7 +870,7 @@ body:has(.home-page) #quarto-content > main.content {
   display: block;
   margin-bottom: 8px;
   color: var(--muted);
-  font-size: 0.86rem;
+  font-size: 0.95rem;
   font-weight: 800;
   text-transform: uppercase;
 }
@@ -965,7 +997,7 @@ body:has(.home-page) #quarto-content > main.content {
 .profile-stat span {
   margin-bottom: 0.55rem;
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1032,7 +1064,7 @@ body:has(.home-page) #quarto-content > main.content {
 
 .course-meta {
   margin-bottom: 0.55rem;
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   color: var(--muted);
 }
 
@@ -1047,7 +1079,7 @@ body:has(.home-page) #quarto-content > main.content {
   border: 1px solid var(--crimson);
   border-radius: 6px;
   color: var(--crimson);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
 }
@@ -1135,7 +1167,7 @@ body:has(.home-page) #quarto-content > main.content {
   }
 
   #quarto-header .navbar .navbar-title {
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.2;
     white-space: normal;
     overflow: visible;
@@ -1194,6 +1226,14 @@ body:has(.home-page) #quarto-content > main.content {
     table-layout: auto;
   }
 
+  #pub-table,
+  #pub-table.dataTable {
+    min-width: 0;
+    width: 100% !important;
+    max-width: 100%;
+    table-layout: fixed;
+  }
+
   #pub-table th,
   #pub-table td,
   #mentor-table th,
@@ -1217,6 +1257,56 @@ body:has(.home-page) #quarto-content > main.content {
     min-width: 4.75rem;
   }
 
+  #pub-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  #pub-table tbody,
+  #pub-table tbody tr,
+  #pub-table tbody th,
+  #pub-table tbody td {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  #pub-table tbody tr {
+    margin-bottom: 0.85rem;
+    padding: 0.85rem;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+  }
+
+  #pub-table tbody th[scope="row"],
+  #pub-table tbody td {
+    padding: 0.32rem 0;
+    border: 0;
+  }
+
+  #pub-table tbody th[scope="row"]::before,
+  #pub-table tbody td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.12rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--bs-secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  #pub-table tbody td[data-label="Link"]:empty {
+    display: none;
+  }
+
   main.content table.table th,
   main.content table.table td {
     min-width: 8rem;
@@ -1232,7 +1322,7 @@ body:has(.home-page) #quarto-content > main.content {
 
 @media (max-width: 560px) {
   body.quarto-light {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .feature-card-grid,

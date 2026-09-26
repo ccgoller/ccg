@@ -22,6 +22,9 @@
   --hero-text-shadow: 0 2px 12px rgba(0, 0, 0, 0.82);
   --shadow: 0 20px 60px rgba(23, 32, 38, 0.14);
   --shadow-soft: 0 14px 32px rgba(31, 41, 51, 0.08);
+  --pub-row-band-odd: #ffffff;
+  --pub-row-band-even: #f3f6f8;
+  --pub-row-band-focus: #e8eef2;
 }
 
 body.quarto-light {
@@ -90,6 +93,9 @@ body.quarto-dark {
   --bs-border-color: #33424f;
   --dt-row-stripe: 255, 255, 255;
   --dt-row-hover: 255, 255, 255;
+  --pub-row-band-odd: #1a2530;
+  --pub-row-band-even: #223140;
+  --pub-row-band-focus: #2a3d4f;
   background: #111820;
 }
 
@@ -462,6 +468,32 @@ figure.chart-figure canvas {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+#pub-table tbody tr {
+  background: var(--pub-row-band-odd);
+}
+
+#pub-table tbody tr:nth-child(even) {
+  background: var(--pub-row-band-even);
+}
+
+#pub-table tbody tr:hover,
+#pub-table tbody tr:focus-within {
+  background: var(--pub-row-band-focus);
+}
+
+#pub-table tbody tr:hover > th,
+#pub-table tbody tr:hover > td,
+#pub-table tbody tr:focus-within > th,
+#pub-table tbody tr:focus-within > td {
+  background: var(--pub-row-band-focus);
+}
+
+#pub-table td[data-label="Link"] .pub-view-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .sidebar {
@@ -1251,7 +1283,6 @@ body:has(.home-page) #quarto-content > main.content {
     padding: 0.85rem;
     border: 1px solid var(--line);
     border-radius: 10px;
-    background: var(--bs-body-bg);
   }
 
   #pub-table tbody th[scope="row"],
