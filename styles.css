@@ -579,7 +579,7 @@ body:has(.home-page) #quarto-content > main.content {
   display: grid;
   grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.9fr);
   gap: 3rem;
-  align-items: center;
+  align-items: start;
 }
 
 .home-kicker,
@@ -593,6 +593,7 @@ body:has(.home-page) #quarto-content > main.content {
 }
 
 .section-kicker,
+.home-hero-panel h2,
 .home-hero-panel h3 {
   display: inline-flex;
   align-items: center;
@@ -693,7 +694,8 @@ body:has(.home-page) #quarto-content > main.content {
 .home-hero-media {
   display: grid;
   gap: 1rem;
-  justify-items: center;
+  justify-items: end;
+  align-self: start;
 }
 
 .home-hero-logo {
@@ -715,6 +717,7 @@ body:has(.home-page) #quarto-content > main.content {
   backdrop-filter: blur(10px);
 }
 
+.home-hero-panel h2,
 .home-hero-panel h3 {
   margin-top: 0;
   margin-bottom: 0.85rem;
@@ -726,6 +729,7 @@ body:has(.home-page) #quarto-content > main.content {
 .home-hero-panel ul {
   padding-left: 1.15rem;
   color: #ffffff;
+  line-height: 1.45;
 }
 
 .home-hero-panel li + li {
@@ -1125,6 +1129,10 @@ body:has(.home-page) #quarto-content > main.content {
   .two-column,
   .home-hero-grid {
     grid-template-columns: 1fr;
+  }
+
+  .home-hero-media {
+    justify-items: start;
   }
 
   .affiliation-intro,
