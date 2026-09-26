@@ -310,6 +310,7 @@ body.quarto-light #quarto-header .navbar .dropdown-menu .dropdown-item:hover {
 @media (forced-colors: active) {
   #quarto-header .navbar .nav-link.active,
   #quarto-header .navbar .nav-link[aria-current="page"] {
+    color: LinkText;
     text-decoration-line: underline;
     text-decoration-style: solid;
     text-decoration-color: currentColor;
