@@ -6,7 +6,7 @@
   --ncsu-yellow-rgb: 250, 200, 0;
   --ncsu-yellow-border: rgba(var(--ncsu-yellow-rgb), 0.28);
   --ink: #172026;
-  --muted: #5c6873;
+  --muted: #4d5863;
   --line: #d7dde2;
   --surface: #ffffff;
   --surface-soft: #f4f7f8;
@@ -235,9 +235,9 @@ body.quarto-dark #quarto-header .navbar .nav-link.active {
 #quarto-footer .nav-footer-left,
 #quarto-footer .nav-footer-center,
 #quarto-footer .nav-footer-right {
-  color: rgba(255, 255, 255, 0.86);
+  color: rgba(255, 255, 255, 0.92);
   line-height: 1.7;
-  font-size: 0.96rem;
+  font-size: 1rem;
 }
 
 #quarto-footer a {
@@ -393,7 +393,7 @@ main.content {
 
 .quarto-float-caption.quarto-float-caption-bottom {
   margin-top: 0.65rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.45;
   color: var(--bs-secondary-color);
 }
@@ -411,7 +411,7 @@ figure.chart-figure canvas {
 
 .chart-caption {
   margin-top: 0.7rem;
-  font-size: 0.92rem;
+  font-size: 1rem;
   color: var(--bs-secondary-color);
 }
 
@@ -447,7 +447,7 @@ figure.chart-figure canvas {
   padding: 0.5rem 0.75rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   background-color: var(--bs-body-bg);
   cursor: pointer;
 }
@@ -554,7 +554,7 @@ body:has(.home-page) #quarto-content > main.content {
 .section-kicker {
   margin: 0 0 14px;
   color: var(--kicker-color);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -608,7 +608,7 @@ body:has(.home-page) #quarto-content > main.content {
   border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: 6px;
   color: #ffffff;
-  font-size: 0.86rem;
+  font-size: 0.95rem;
   font-weight: 800;
   line-height: 1.15;
   background: rgba(0, 0, 0, 0.58);
@@ -731,7 +731,7 @@ body:has(.home-page) #quarto-content > main.content {
 
 .affiliation-intro span {
   color: #f7c66d;
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -838,7 +838,7 @@ body:has(.home-page) #quarto-content > main.content {
   display: block;
   margin-bottom: 8px;
   color: var(--muted);
-  font-size: 0.86rem;
+  font-size: 0.95rem;
   font-weight: 800;
   text-transform: uppercase;
 }
@@ -965,7 +965,7 @@ body:has(.home-page) #quarto-content > main.content {
 .profile-stat span {
   margin-bottom: 0.55rem;
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1032,7 +1032,7 @@ body:has(.home-page) #quarto-content > main.content {
 
 .course-meta {
   margin-bottom: 0.55rem;
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   color: var(--muted);
 }
 
@@ -1047,7 +1047,7 @@ body:has(.home-page) #quarto-content > main.content {
   border: 1px solid var(--crimson);
   border-radius: 6px;
   color: var(--crimson);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
 }
@@ -1135,7 +1135,7 @@ body:has(.home-page) #quarto-content > main.content {
   }
 
   #quarto-header .navbar .navbar-title {
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.2;
     white-space: normal;
     overflow: visible;
@@ -1265,7 +1265,7 @@ body:has(.home-page) #quarto-content > main.content {
     content: attr(data-label);
     display: block;
     margin-bottom: 0.12rem;
-    font-size: 0.78rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: var(--bs-secondary-color);
     text-transform: uppercase;
@@ -1291,7 +1291,7 @@ body:has(.home-page) #quarto-content > main.content {
 
 @media (max-width: 560px) {
   body.quarto-light {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .feature-card-grid,
