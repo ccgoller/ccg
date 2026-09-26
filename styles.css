@@ -307,6 +307,18 @@ body.quarto-light #quarto-header .navbar .dropdown-menu .dropdown-item:hover {
   box-shadow: 0 0 0 3px rgba(250, 200, 0, 0.35);
 }
 
+@media (forced-colors: active) {
+  #quarto-header .navbar .nav-link.active,
+  #quarto-header .navbar .nav-link[aria-current="page"] {
+    text-decoration-color: currentColor;
+  }
+
+  #quarto-header .navbar .nav-link.active::after,
+  #quarto-header .navbar .nav-link[aria-current="page"]::after {
+    display: none;
+  }
+}
+
 body.quarto-light #quarto-header .navbar .nav-link:hover {
   background:
     radial-gradient(circle at 24% 42%, rgba(250, 200, 0, 0.16) 0 10%, transparent 38%),
