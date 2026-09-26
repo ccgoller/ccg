@@ -19,12 +19,6 @@
   --crimson-dark: #990000;
   --maroon: #660000;
   --teal: #0f766e;
-  --card-accent-gold: #c48728;
-  --card-accent-crimson: #d43636;
-  --card-accent-maroon: #872222;
-  --card-accent-teal: #14867d;
-  --card-accent-graphite: #496173;
-  --card-accent-graphite-soft: #5c7a8b;
   --hero-text-shadow: 0 2px 12px rgba(0, 0, 0, 0.82);
   --shadow: 0 20px 60px rgba(23, 32, 38, 0.14);
   --shadow-soft: 0 14px 32px rgba(31, 41, 51, 0.08);
@@ -99,12 +93,6 @@ body.quarto-dark {
   --bs-border-color: #33424f;
   --dt-row-stripe: 255, 255, 255;
   --dt-row-hover: 255, 255, 255;
-  --card-accent-gold: #f0bf63;
-  --card-accent-crimson: #ff7b7b;
-  --card-accent-maroon: #d97b7b;
-  --card-accent-teal: #49c2b6;
-  --card-accent-graphite: #88a3b8;
-  --card-accent-graphite-soft: #9dbacb;
   --pub-row-band-odd: #1a2530;
   --pub-row-band-even: #223140;
   --pub-row-band-focus: #2a3d4f;
@@ -210,12 +198,6 @@ body.quarto-light #quarto-header .navbar .dropdown-menu .dropdown-item:hover {
   font-weight: 700;
 }
 
-#quarto-header .navbar .nav-link {
-  position: relative;
-  border-radius: 999px;
-  transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-}
-
 .navbar-brand {
   display: inline-flex;
   align-items: center;
@@ -231,91 +213,16 @@ body.quarto-light #quarto-header .navbar .dropdown-menu .dropdown-item:hover {
   box-shadow: none !important;
 }
 
-#quarto-header .navbar .nav-link:hover {
+body.quarto-light #quarto-header .navbar .nav-link:hover,
+body.quarto-light #quarto-header .navbar .nav-link:focus-visible,
+body.quarto-light #quarto-header .navbar .nav-link.active {
   color: var(--ncsu-yellow);
-  background:
-    radial-gradient(circle at 24% 42%, rgba(250, 200, 0, 0.2) 0 10%, transparent 38%),
-    radial-gradient(circle at 68% 28%, rgba(250, 200, 0, 0.18) 0 9%, transparent 34%),
-    radial-gradient(circle at 78% 68%, rgba(250, 200, 0, 0.16) 0 8%, transparent 32%),
-    rgba(250, 200, 0, 0.05);
-  box-shadow: inset 0 0 0 1px rgba(250, 200, 0, 0.22), 0 0 16px rgba(250, 200, 0, 0.1);
 }
 
-#quarto-header .navbar .nav-link:focus {
-  outline: 1px solid rgba(250, 200, 0, 0.62);
-  outline-offset: 1px;
-}
-
-#quarto-header .navbar .nav-link:focus-visible {
+body.quarto-dark #quarto-header .navbar .nav-link:hover,
+body.quarto-dark #quarto-header .navbar .nav-link:focus-visible,
+body.quarto-dark #quarto-header .navbar .nav-link.active {
   color: var(--ncsu-yellow);
-  background:
-    radial-gradient(circle at 24% 42%, rgba(250, 200, 0, 0.24) 0 11%, transparent 39%),
-    radial-gradient(circle at 68% 28%, rgba(250, 200, 0, 0.22) 0 10%, transparent 35%),
-    radial-gradient(circle at 78% 68%, rgba(250, 200, 0, 0.2) 0 9%, transparent 33%),
-    rgba(250, 200, 0, 0.08);
-  box-shadow: inset 0 0 0 1px rgba(250, 200, 0, 0.3), 0 0 20px rgba(250, 200, 0, 0.16);
-  outline: 2px solid rgba(250, 200, 0, 0.92);
-  outline-offset: 2px;
-}
-
-#quarto-header .navbar .nav-link.active,
-#quarto-header .navbar .nav-link[aria-current="page"] {
-  color: var(--ncsu-yellow);
-  outline: 1px solid rgba(250, 200, 0, 0.45);
-  outline-offset: 1px;
-  text-decoration: underline;
-  text-decoration-thickness: 0.16em;
-  text-underline-offset: 0.24em;
-  background:
-    radial-gradient(circle at 24% 42%, rgba(250, 200, 0, 0.24) 0 10%, transparent 40%),
-    radial-gradient(circle at 68% 28%, rgba(250, 200, 0, 0.2) 0 9%, transparent 36%),
-    radial-gradient(circle at 78% 68%, rgba(250, 200, 0, 0.18) 0 8%, transparent 34%),
-    rgba(250, 200, 0, 0.07);
-  box-shadow:
-    inset 0 -3px 0 rgba(250, 200, 0, 0.98),
-    inset 0 0 0 1px rgba(250, 200, 0, 0.3),
-    0 0 18px rgba(250, 200, 0, 0.12);
-}
-
-#quarto-header .navbar .nav-link.active:focus,
-#quarto-header .navbar .nav-link[aria-current="page"]:focus,
-#quarto-header .navbar .nav-link.active:focus-visible,
-#quarto-header .navbar .nav-link[aria-current="page"]:focus-visible {
-  outline: 1px solid rgba(250, 200, 0, 0.62);
-  outline-offset: 1px;
-}
-
-#quarto-header .navbar .nav-link.active:focus-visible,
-#quarto-header .navbar .nav-link[aria-current="page"]:focus-visible {
-  outline: 2px solid rgba(250, 200, 0, 0.92);
-  outline-offset: 2px;
-  box-shadow:
-    inset 0 -3px 0 rgba(250, 200, 0, 0.98),
-    inset 0 0 0 1px rgba(250, 200, 0, 0.3),
-    0 0 18px rgba(250, 200, 0, 0.12),
-    0 0 0 3px rgba(250, 200, 0, 0.35);
-}
-
-body.quarto-light #quarto-header .navbar .nav-link:hover {
-  background:
-    radial-gradient(circle at 24% 42%, rgba(250, 200, 0, 0.16) 0 10%, transparent 38%),
-    radial-gradient(circle at 68% 28%, rgba(250, 200, 0, 0.14) 0 9%, transparent 34%),
-    radial-gradient(circle at 78% 68%, rgba(250, 200, 0, 0.12) 0 8%, transparent 32%),
-    rgba(250, 200, 0, 0.04);
-}
-
-body.quarto-light #quarto-header .navbar .nav-link:focus-visible {
-  background:
-    radial-gradient(circle at 24% 42%, rgba(250, 200, 0, 0.2) 0 11%, transparent 39%),
-    radial-gradient(circle at 68% 28%, rgba(250, 200, 0, 0.18) 0 10%, transparent 35%),
-    radial-gradient(circle at 78% 68%, rgba(250, 200, 0, 0.16) 0 9%, transparent 33%),
-    rgba(250, 200, 0, 0.06);
-  box-shadow:
-    inset 0 0 0 1px rgba(250, 200, 0, 0.28),
-    0 0 18px rgba(250, 200, 0, 0.12),
-    0 0 0 3px rgba(250, 200, 0, 0.3);
-  outline: 2px solid rgba(250, 200, 0, 0.92);
-  outline-offset: 2px;
 }
 
 #quarto-footer {
@@ -430,11 +337,10 @@ main.content {
 }
 
 .feature-card {
-  --card-accent: var(--card-accent-teal);
   position: relative;
   padding: 1.2rem 1.1rem 1rem;
   border: 1px solid var(--line);
-  border-top: 6px solid var(--card-accent);
+  border-top: 5px solid var(--teal);
   border-radius: 8px;
   background: var(--surface);
   box-shadow: var(--shadow-soft);
@@ -447,31 +353,31 @@ main.content {
 }
 
 .feature-card-research {
-  --card-accent: var(--card-accent-gold);
+  border-top-color: var(--gold);
 }
 
 .feature-card-publications {
-  --card-accent: var(--card-accent-crimson);
+  border-top-color: var(--crimson);
 }
 
 .feature-card-teaching {
-  --card-accent: var(--card-accent-maroon);
+  border-top-color: var(--maroon);
 }
 
 .feature-card-mentoring {
-  --card-accent: var(--card-accent-teal);
+  border-top-color: var(--teal);
 }
 
 .feature-card-collaboration {
-  --card-accent: var(--card-accent-graphite);
+  border-top-color: #3d4f5f;
 }
 
 .feature-card-discovery {
-  --card-accent: var(--card-accent-graphite-soft);
+  border-top-color: #4b6a78;
 }
 
 .feature-card-contact {
-  --card-accent: var(--card-accent-gold);
+  border-top-color: var(--gold);
 }
 
 .quarto-cover-image {
@@ -653,9 +559,8 @@ body:has(.home-page) #quarto-content > main.content {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 88% 12%, rgba(255, 236, 176, 0.22) 0%, rgba(255, 236, 176, 0.13) 24%, rgba(255, 236, 176, 0) 48%),
-    linear-gradient(95deg, rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0.58) 44%, rgba(0, 0, 0, 0.4) 100%),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.12) 46%, rgba(0, 0, 0, 0.5) 100%),
+    linear-gradient(95deg, rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0.58) 44%, rgba(0, 0, 0, 0.42) 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.12) 46%, rgba(0, 0, 0, 0.52) 100%),
     url("https://github.com/user-attachments/assets/ac10ec07-a213-4765-9f56-8a1676547464");
   background-size: cover;
   background-position: center;
@@ -674,7 +579,7 @@ body:has(.home-page) #quarto-content > main.content {
   display: grid;
   grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.9fr);
   gap: 3rem;
-  align-items: start;
+  align-items: center;
 }
 
 .home-kicker,
@@ -688,7 +593,6 @@ body:has(.home-page) #quarto-content > main.content {
 }
 
 .section-kicker,
-.home-hero-panel h2,
 .home-hero-panel h3 {
   display: inline-flex;
   align-items: center;
@@ -789,8 +693,7 @@ body:has(.home-page) #quarto-content > main.content {
 .home-hero-media {
   display: grid;
   gap: 1rem;
-  justify-items: end;
-  align-self: start;
+  justify-items: center;
 }
 
 .home-hero-logo {
@@ -812,7 +715,6 @@ body:has(.home-page) #quarto-content > main.content {
   backdrop-filter: blur(10px);
 }
 
-.home-hero-panel h2,
 .home-hero-panel h3 {
   margin-top: 0;
   margin-bottom: 0.85rem;
@@ -824,7 +726,6 @@ body:has(.home-page) #quarto-content > main.content {
 .home-hero-panel ul {
   padding-left: 1.15rem;
   color: #ffffff;
-  line-height: 1.45;
 }
 
 .home-hero-panel li + li {
@@ -1064,10 +965,9 @@ body:has(.home-page) #quarto-content > main.content {
 
 .profile-stat,
 .contact-card {
-  --card-accent: var(--card-accent-teal);
   padding: 1.3rem 1.2rem;
   border: 1px solid var(--line);
-  border-top: 6px solid var(--card-accent);
+  border-top: 5px solid var(--teal);
   border-radius: 8px;
   background: var(--surface);
   box-shadow: var(--shadow-soft);
@@ -1075,17 +975,17 @@ body:has(.home-page) #quarto-content > main.content {
 
 .profile-stat:nth-child(1),
 .contact-card:nth-child(1) {
-  --card-accent: var(--card-accent-gold);
+  border-top-color: var(--gold);
 }
 
 .profile-stat:nth-child(2),
 .contact-card:nth-child(2) {
-  --card-accent: var(--card-accent-crimson);
+  border-top-color: var(--crimson);
 }
 
 .profile-stat:nth-child(3),
 .contact-card:nth-child(3) {
-  --card-accent: var(--card-accent-maroon);
+  border-top-color: var(--maroon);
 }
 
 .profile-stat span,
@@ -1225,10 +1125,6 @@ body:has(.home-page) #quarto-content > main.content {
   .two-column,
   .home-hero-grid {
     grid-template-columns: 1fr;
-  }
-
-  .home-hero-media {
-    justify-items: start;
   }
 
   .affiliation-intro,
