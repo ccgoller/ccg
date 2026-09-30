@@ -266,7 +266,7 @@ const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor
     }
 
     const dpr = window.devicePixelRatio || 1;
-    const W = Math.max(canvasEl.parentElement?.clientWidth || 640, 1);
+    const W = Math.max(canvasEl.parentElement?.clientWidth || 640, 280);
     const compact = W < 520;
     const autoRotate = rotateLabels || (W < 560 && labels.some((lbl) => String(lbl).length > 6));
     const padB = autoRotate ? (compact ? 86 : 72) : (compact ? 58 : 48);
