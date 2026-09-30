@@ -115,8 +115,10 @@ body.quarto-dark {
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 .skip-link {
@@ -571,7 +573,7 @@ figure.chart-figure canvas {
 
 #pub-filters select,
 #mentor-filters select {
-  min-height: 40px;
+  min-height: 44px;
   padding: 0.5rem 0.75rem;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -1359,7 +1361,9 @@ body:has(.home-page) #quarto-content > main.content {
   }
 
   #pub-table,
-  #pub-table.dataTable {
+  #pub-table.dataTable,
+  #mentor-table,
+  #mentor-table.dataTable {
     min-width: 0;
     width: 100% !important;
     max-width: 100%;
@@ -1389,7 +1393,8 @@ body:has(.home-page) #quarto-content > main.content {
     min-width: 4.75rem;
   }
 
-  #pub-table thead {
+  #pub-table thead,
+  #mentor-table thead {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -1401,16 +1406,41 @@ body:has(.home-page) #quarto-content > main.content {
     border: 0;
   }
 
-  #pub-table tbody,
-  #pub-table tbody tr,
-  #pub-table tbody th,
-  #pub-table tbody td {
+  #pub-table thead:focus-within,
+  #mentor-table thead:focus-within {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
+  #pub-table thead:focus-within tr,
+  #mentor-table thead:focus-within tr,
+  #pub-table thead:focus-within th,
+  #mentor-table thead:focus-within th {
     display: block;
     width: 100%;
     min-width: 0;
   }
 
-  #pub-table tbody tr {
+  #pub-table tbody,
+  #pub-table tbody tr,
+  #pub-table tbody th,
+  #pub-table tbody td,
+  #mentor-table tbody,
+  #mentor-table tbody tr,
+  #mentor-table tbody th,
+  #mentor-table tbody td {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  #pub-table tbody tr,
+  #mentor-table tbody tr {
     margin-bottom: 0.85rem;
     padding: 0.85rem;
     border: 1px solid var(--line);
@@ -1418,13 +1448,17 @@ body:has(.home-page) #quarto-content > main.content {
   }
 
   #pub-table tbody th[scope="row"],
-  #pub-table tbody td {
+  #pub-table tbody td,
+  #mentor-table tbody th[scope="row"],
+  #mentor-table tbody td {
     padding: 0.32rem 0;
     border: 0;
   }
 
   #pub-table tbody th[scope="row"]::before,
-  #pub-table tbody td::before {
+  #pub-table tbody td::before,
+  #mentor-table tbody th[scope="row"]::before,
+  #mentor-table tbody td::before {
     content: attr(data-label);
     display: block;
     margin-bottom: 0.12rem;
@@ -1435,7 +1469,8 @@ body:has(.home-page) #quarto-content > main.content {
     letter-spacing: 0.02em;
   }
 
-  #pub-table tbody td[data-label="Link"]:empty {
+  #pub-table tbody td[data-label="Link"]:empty,
+  #mentor-table tbody td[data-label="Source"]:empty {
     display: none;
   }
 

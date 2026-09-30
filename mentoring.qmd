@@ -65,7 +65,7 @@ const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor
 		return;
 	}
 	const dpr = window.devicePixelRatio || 1;
-	const W = Math.max(canvasEl.parentElement?.clientWidth || 640, 280);
+	const W = Math.max(canvasEl.parentElement?.clientWidth || 640, 1);
 	const compact = W < 520;
 	const autoRotate = rotateLabels || (W < 560 && labels.some((lbl) => String(lbl).length > 6));
 	const padB = autoRotate ? (compact ? 86 : 72) : (compact ? 58 : 48);
@@ -104,6 +104,8 @@ if (!window.__mentorChartResizeBound) {
 	});
 }
 const cleanField = (value) => { if (!value) return ""; const asText = String(value).replace(/<[^>]*>/g, " ").replace(/[{}]/g, "").replace(/\\[a-zA-Z]+\s*/g, "").replace(/\s+/g, " ").trim(); const decode = document.createElement("textarea"); decode.innerHTML = asText; return decode.value; };
+const escapeHtml = (value) => String(value ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+const sanitizeUrl = (value) => { try { const url = new URL(value, window.location.href); return ["http:", "https:"].includes(url.protocol) ? url.href : ""; } catch { return ""; } };
 const escapeRegex = (value) => String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const createDataTable = (selector, options) => typeof window.DataTable === "function" ? new window.DataTable(selector, options) : (window.jQuery?.fn?.DataTable ? window.jQuery(selector).DataTable(options) : null);
 const enableBasicColumnSorting = (tableElement, { numericColumns = [], disabledColumns = [], defaultOrder = null } = {}) => {
@@ -134,7 +136,7 @@ const loadMentoring = async () => {
 		[...new Set(rows.map((row) => row.year).filter(Boolean))].sort((a, b) => Number(b) - Number(a)).forEach((year) => { const option = document.createElement("option"); option.value = year; option.textContent = year; yearFilter.appendChild(option); });
 		[...new Set(rows.map((row) => row.category).filter(Boolean))].sort((a, b) => a.localeCompare(b)).forEach((category) => { const option = document.createElement("option"); option.value = category; option.textContent = category; categoryFilter.appendChild(option); });
 		filters.replaceChildren(yearLabel, categoryLabel);
-		tbody.innerHTML = rows.map((row) => `<tr><td>${row.year}</td><th scope="row">${row.mentee}</th><td>${row.category}</td><td>${row.summary}</td><td>${row.source ? `<a href="${row.source}" target="_blank" rel="noopener noreferrer" aria-label="Source for ${row.mentee}">Source</a>` : ""}</td></tr>`).join("");
+		tbody.innerHTML = rows.map((row) => { const source = sanitizeUrl(row.source); return `<tr><td data-label="Year">${escapeHtml(row.year)}</td><th scope="row" data-label="Mentee">${escapeHtml(row.mentee)}</th><td data-label="Category">${escapeHtml(row.category)}</td><td data-label="Summary">${escapeHtml(row.summary)}</td><td data-label="Source">${source ? `<a href="${escapeHtml(source)}" target="_blank" rel="noopener noreferrer" aria-label="Source for ${escapeHtml(row.mentee)}">Source</a>` : ""}</td></tr>`; }).join("");
 		const table = createDataTable("#mentor-table", { pageLength: 25, order: [[0, "desc"]], columnDefs: [{ targets: 0, type: "num", orderable: true }, { targets: [1, 2, 3], orderable: true }, { targets: 4, orderable: false }] });
 		if (!table) { enableBasicColumnSorting(document.getElementById("mentor-table"), { numericColumns: [0], disabledColumns: [4], defaultOrder: { column: 0, direction: "desc" } }); status.textContent = `Loaded ${rows.length} mentoring records from mentoring.bib. DataTables did not load, so basic column sorting is enabled.`; return; }
 		const applyFilters = () => { table.column(0).search(yearFilter.value ? `^${escapeRegex(yearFilter.value)}$` : "", true, false); table.column(2).search(categoryFilter.value ? `^${escapeRegex(categoryFilter.value)}$` : "", true, false); table.draw(); };
