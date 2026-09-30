@@ -19,12 +19,12 @@
   --crimson-dark: #990000;
   --maroon: #660000;
   --teal: #0f766e;
-  --card-accent-gold: #c48728;
-  --card-accent-crimson: #d43636;
-  --card-accent-maroon: #872222;
-  --card-accent-teal: #14867d;
-  --card-accent-graphite: #496173;
-  --card-accent-graphite-soft: #5c7a8b;
+  --card-accent-gold: #a87518;
+  --card-accent-crimson: #cc0000;
+  --card-accent-maroon: #8f1111;
+  --card-accent-red: #b5121b;
+  --card-accent-graphite: #475569;
+  --card-accent-graphite-soft: #64748b;
   --hero-text-shadow: 0 2px 12px rgba(0, 0, 0, 0.82);
   --shadow: 0 20px 60px rgba(23, 32, 38, 0.14);
   --shadow-soft: 0 14px 32px rgba(31, 41, 51, 0.08);
@@ -100,11 +100,11 @@ body.quarto-dark {
   --dt-row-stripe: 255, 255, 255;
   --dt-row-hover: 255, 255, 255;
   --card-accent-gold: #f0bf63;
-  --card-accent-crimson: #ff7b7b;
-  --card-accent-maroon: #d97b7b;
-  --card-accent-teal: #49c2b6;
-  --card-accent-graphite: #88a3b8;
-  --card-accent-graphite-soft: #9dbacb;
+  --card-accent-crimson: #ff7777;
+  --card-accent-maroon: #e08a8a;
+  --card-accent-red: #ff8585;
+  --card-accent-graphite: #9aafc0;
+  --card-accent-graphite-soft: #b5c4d0;
   --pub-row-band-odd: #1a2530;
   --pub-row-band-even: #223140;
   --pub-row-band-focus: #2a3d4f;
@@ -460,7 +460,7 @@ main.content {
 }
 
 .feature-card {
-  --card-accent: var(--card-accent-teal);
+  --card-accent: var(--card-accent-red);
   position: relative;
   padding: 1.2rem 1.1rem 1rem;
   border: 1px solid var(--line);
@@ -489,7 +489,7 @@ main.content {
 }
 
 .feature-card-mentoring {
-  --card-accent: var(--card-accent-teal);
+  --card-accent: var(--card-accent-red);
 }
 
 .feature-card-collaboration {
@@ -1056,25 +1056,26 @@ body:has(.home-page) #quarto-content > main.content {
 }
 
 .feature {
+  --card-accent: var(--card-accent-red);
   position: relative;
   padding: 26px;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-top: 5px solid var(--teal);
+  border-top: 5px solid var(--card-accent);
   border-radius: 8px;
   box-shadow: var(--shadow-soft);
 }
 
 .feature:nth-child(1) {
-  border-top-color: var(--gold);
+  --card-accent: var(--card-accent-gold);
 }
 
 .feature:nth-child(2) {
-  border-top-color: var(--crimson);
+  --card-accent: var(--card-accent-crimson);
 }
 
 .feature:nth-child(3) {
-  border-top-color: var(--maroon);
+  --card-accent: var(--card-accent-maroon);
 }
 
 .feature p {
@@ -1094,7 +1095,7 @@ body:has(.home-page) #quarto-content > main.content {
 
 .profile-stat,
 .contact-card {
-  --card-accent: var(--card-accent-teal);
+  --card-accent: var(--card-accent-graphite);
   padding: 1.3rem 1.2rem;
   border: 1px solid var(--line);
   border-top: 6px solid var(--card-accent);
@@ -1116,6 +1117,11 @@ body:has(.home-page) #quarto-content > main.content {
 .profile-stat:nth-child(3),
 .contact-card:nth-child(3) {
   --card-accent: var(--card-accent-maroon);
+}
+
+.profile-stat:nth-child(4),
+.contact-card:nth-child(4) {
+  --card-accent: var(--card-accent-graphite-soft);
 }
 
 .profile-stat span,
@@ -1171,12 +1177,14 @@ body:has(.home-page) #quarto-content > main.content {
 }
 
 .course-card {
+  --card-accent: var(--card-accent-crimson);
   display: flex;
   flex-wrap: wrap;
   gap: 1.25rem;
   align-items: flex-start;
   padding: 1.4rem 1.5rem;
   border: 1px solid var(--line);
+  border-top: 5px solid var(--card-accent);
   border-radius: 10px;
   background: var(--surface);
   box-shadow: var(--shadow-soft);
