@@ -4,23 +4,10 @@ subtitle: "Research themes, scholarly directions, and discovery-centered academi
 page-layout: article
 ---
 
-::: {.page-intro}
-Research in the Goller academic portfolio connects microbiology, genomics, bioinformatics, and biology education research, with an emphasis on discovery, collaboration, and student engagement.
-:::
+::: {.page-card}
+## Research {.unnumbered .unlisted}
 
-::: {.feature-card-grid}
-::: {.feature-card .feature-card-research}
-### Microbial Physiology
-Investigating how microorganisms function, adapt, and interact across diverse biological systems.
-:::
-::: {.feature-card .feature-card-discovery}
-### Student Discovery
-Creating authentic research experiences that help students participate in real scientific questions.
-:::
-::: {.feature-card .feature-card-collaboration}
-### Scholarly Collaboration
-Supporting interdisciplinary work that links teaching, mentorship, and microbiological research.
-:::
+Research in the Goller academic portfolio connects microbiology, genomics, bioinformatics, and biology education research, with an emphasis on discovery, collaboration, and student engagement.
 :::
 
 ## Research Overview

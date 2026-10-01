@@ -4,23 +4,10 @@ subtitle: "Teaching philosophy, course design, and learning practices"
 page-layout: article
 ---
 
-::: {.page-intro}
-Teaching centers on evidence-based pedagogy, scientific curiosity, and student participation in meaningful, inquiry-driven learning experiences.
-:::
+::: {.page-card}
+## Teaching {.unnumbered .unlisted}
 
-::: {.feature-card-grid}
-::: {.feature-card .feature-card-teaching}
-### Open Pedagogy
-Designing learning environments that are welcoming and accessible.
-:::
-::: {.feature-card .feature-card-discovery}
-### Active Learning
-Using practice, reflection, and collaboration to deepen scientific understanding.
-:::
-::: {.feature-card .feature-card-mentoring}
-### Student Growth
-Helping students build confidence, communication skills, and scientific identity.
-:::
+Teaching centers on evidence-based pedagogy, scientific curiosity, and student participation in meaningful, inquiry-driven learning experiences.
 :::
 
 This page highlights a teaching philosophy and course portfolio presented as part of this independent academic site.

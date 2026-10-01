@@ -25,6 +25,9 @@
   --card-accent-red: #b5121b;
   --card-accent-graphite: #475569;
   --card-accent-graphite-soft: #64748b;
+  --logo-red: #dd2424;
+  --logo-red-rgb: 221, 36, 36;
+  --logo-red-bright: #ff7a7a;
   --hero-text-shadow: 0 2px 12px rgba(0, 0, 0, 0.82);
   --shadow: 0 20px 60px rgba(23, 32, 38, 0.14);
   --shadow-soft: 0 14px 32px rgba(31, 41, 51, 0.08);
@@ -244,12 +247,14 @@ body.quarto-light #quarto-header .navbar .dropdown-menu .dropdown-item:hover {
 }
 
 .navbar-brand img {
-  max-height: 30px;
+  height: 40px;
+  max-height: 40px;
   width: auto;
-  padding: 0.2rem;
+  padding: 0.25rem 0.45rem;
   background: #ffffff !important;
+  border: 2px solid var(--logo-red);
   border-radius: 8px;
-  box-shadow: none !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85), 0 4px 12px rgba(0, 0, 0, 0.45) !important;
 }
 
 #quarto-header .navbar .nav-link:hover {
@@ -440,68 +445,38 @@ main.content {
   max-width: 72rem;
 }
 
-.page-intro {
+.page-card {
   margin: 0 0 2rem;
-  padding: 1.2rem 1.25rem;
-  border: 1px solid var(--line);
-  border-left: 5px solid var(--gold);
+  padding: 1.35rem 1.5rem 1.25rem;
+  border: 1px solid rgba(var(--logo-red-rgb), 0.22);
+  border-top: 6px solid var(--logo-red);
   border-radius: 8px;
   font-size: 1.05rem;
   line-height: 1.75;
-  background: linear-gradient(180deg, #ffffff 0%, #f7f9fa 100%);
+  background: linear-gradient(180deg, #fff7f7 0%, #ffffff 100%);
   box-shadow: var(--shadow-soft);
 }
 
-.feature-card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  margin: 0 0 2rem;
+.page-card h2 {
+  margin: 0 0 0.5rem;
+  padding: 0;
+  border: 0;
+  color: var(--logo-red);
+  font-size: 1.35rem;
 }
 
-.feature-card {
-  --card-accent: var(--card-accent-red);
-  position: relative;
-  padding: 1.2rem 1.1rem 1rem;
-  border: 1px solid var(--line);
-  border-top: 6px solid var(--card-accent);
-  border-radius: 8px;
-  background: var(--surface);
-  box-shadow: var(--shadow-soft);
+.page-card p:last-child {
+  margin-bottom: 0;
 }
 
-.feature-card h3 {
-  margin-top: 0;
-  margin-bottom: 0.55rem;
-  font-size: 1.05rem;
+body.quarto-dark .page-card {
+  border-color: rgba(var(--logo-red-rgb), 0.45);
+  border-top-color: var(--logo-red-bright);
+  background: #1a2530;
 }
 
-.feature-card-research {
-  --card-accent: var(--card-accent-gold);
-}
-
-.feature-card-publications {
-  --card-accent: var(--card-accent-crimson);
-}
-
-.feature-card-teaching {
-  --card-accent: var(--card-accent-maroon);
-}
-
-.feature-card-mentoring {
-  --card-accent: var(--card-accent-red);
-}
-
-.feature-card-collaboration {
-  --card-accent: var(--card-accent-graphite);
-}
-
-.feature-card-discovery {
-  --card-accent: var(--card-accent-graphite-soft);
-}
-
-.feature-card-contact {
-  --card-accent: var(--card-accent-gold);
+body.quarto-dark .page-card h2 {
+  color: var(--logo-red-bright);
 }
 
 .quarto-cover-image {
@@ -1254,7 +1229,6 @@ body:has(.home-page) #quarto-content > main.content {
     padding: 0.8rem 0.55rem;
   }
 
-  .feature-card-grid,
   .feature-grid,
   .profile-snapshot,
   .contact-grid,
@@ -1318,11 +1292,11 @@ body:has(.home-page) #quarto-content > main.content {
   }
 
   .navbar-brand img {
-    max-height: 28px;
-    height: auto;
+    height: 34px;
+    max-height: 34px;
     width: auto;
     object-fit: contain;
-    padding: 0.1rem;
+    padding: 0.15rem 0.35rem;
   }
 
   body.quarto-light.fullcontent main.content {
@@ -1333,7 +1307,7 @@ body:has(.home-page) #quarto-content > main.content {
     padding: 1rem;
   }
 
-  .page-intro {
+  .page-card {
     padding: 1rem;
   }
 
@@ -1500,7 +1474,6 @@ body:has(.home-page) #quarto-content > main.content {
     font-size: 16px;
   }
 
-  .feature-card-grid,
   .feature-grid {
     grid-template-columns: 1fr;
   }
