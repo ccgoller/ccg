@@ -36,6 +36,11 @@
   --pub-row-band-focus: #e8eef2;
 }
 
+/* Hide title block on pages with page-card to avoid duplication */
+body:has(main .page-card) header.quarto-title-block {
+  display: none;
+}
+
 body.quarto-light {
   --bs-primary: #cc0000;
   --bs-primary-rgb: 204, 0, 0;
@@ -446,23 +451,29 @@ main.content {
 }
 
 .page-card {
-  margin: 0 0 2rem;
-  padding: 1.35rem 1.5rem 1.25rem;
-  border: 1px solid rgba(var(--logo-red-rgb), 0.22);
-  border-top: 6px solid var(--logo-red);
-  border-radius: 8px;
-  font-size: 1.05rem;
-  line-height: 1.75;
-  background: linear-gradient(180deg, #fff7f7 0%, #ffffff 100%);
-  box-shadow: var(--shadow-soft);
+  margin: 0 0 3rem;
+  padding: 2.5rem 2rem 2rem;
+  border: 1px solid rgba(var(--logo-red-rgb), 0.25);
+  border-top: 8px solid var(--logo-red);
+  border-radius: 10px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  background: linear-gradient(135deg, #fff9f9 0%, #ffffff 100%);
+  box-shadow: 0 16px 40px rgba(221, 36, 36, 0.08);
 }
 
 .page-card h2 {
-  margin: 0 0 0.5rem;
+  margin: 0 0 1rem;
   padding: 0;
   border: 0;
   color: var(--logo-red);
-  font-size: 1.35rem;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.page-card p {
+  color: var(--muted);
 }
 
 .page-card p:last-child {
@@ -470,13 +481,18 @@ main.content {
 }
 
 body.quarto-dark .page-card {
-  border-color: rgba(var(--logo-red-rgb), 0.45);
+  border-color: rgba(var(--logo-red-rgb), 0.5);
   border-top-color: var(--logo-red-bright);
-  background: #1a2530;
+  background: linear-gradient(135deg, #1f3335 0%, #1a2530 100%);
+  box-shadow: 0 16px 40px rgba(255, 122, 122, 0.12);
 }
 
 body.quarto-dark .page-card h2 {
   color: var(--logo-red-bright);
+}
+
+body.quarto-dark .page-card p {
+  color: #c7d0d8;
 }
 
 .quarto-cover-image {
@@ -1308,7 +1324,7 @@ body:has(.home-page) #quarto-content > main.content {
   }
 
   .page-card {
-    padding: 1rem;
+    padding: 1.5rem 1.25rem 1.25rem;
   }
 
   .quarto-title-block.default {
