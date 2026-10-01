@@ -123,7 +123,7 @@
     "href": "courses.html",
     "title": "Courses",
     "section": "",
-    "text": "Skip to main content\n\n\n\n\nBelow are featured courses. Click any card title or the Visit Course button to open the course website.\n\n\n  \n  \n    \n      \n        \n          Microbiology | MB 360\n        \n      \n      NC State University · Department of Biological Sciences\n      \n        An introductory microbiology course exploring the diversity, physiology, genetics, and\n        ecological roles of microorganisms, with an emphasis on active learning and discovery.\n      \n      \n        Visit Course ↗\n      \n    \n    \n      \n        \n      \n    \n  \n\n  \n  \n    \n      \n        \n          Microbial Superheroes | LSC 170\n        \n      \n      NC State University · Department of Biological Sciences\n      \n        A course built around an open educational resource (the Delftia book) that\n        engages students in exploring microbial superpowers—from gold biomineralization to\n        antibiotic resistance—through collaborative, inquiry-driven learning.\n      \n      \n        Visit Course ↗\n      \n    \n    \n      \n        \n      \n    \n  \n\n  \n  \n    \n      \n        \n          BSC 495: The Hidden World's Code (MycoEd)\n        \n      \n      NC State University\n      \n        An open educational resource and course companion focused on microbiology concepts\n        and evidence-based pedagogies, supporting instructors and students through\n        collaborative, community-driven content.\n      \n      \n        Visit Course ↗"
+    "text": "Skip to main content\nBelow are featured courses. Click any card title or the Visit Course button to open the course website."
   },
   {
     "objectID": "teaching.html",
@@ -158,7 +158,7 @@
     "href": "cv.html",
     "title": "CV",
     "section": "",
-    "text": "Skip to main content\nThis page provides a web-friendly CV for Carlos C. Goller, Ph.D., with links to related resources and download options."
+    "text": "Skip to main content"
   },
   {
     "objectID": "cv.html#professional-summary",
@@ -327,5 +327,19 @@
     "title": "Contact",
     "section": "Featured Links",
     "text": "Featured Links\n\nCurriculum vitae\nResearch overview\nTeaching portfolio\nPublications"
+  },
+  {
+    "objectID": "courses.html#courses",
+    "href": "courses.html#courses",
+    "title": "Courses",
+    "section": "Courses",
+    "text": "Courses\nA portfolio of featured courses that exemplify inquiry-driven learning, open pedagogy, and evidence-based teaching practices in microbiology and biotechnology education."
+  },
+  {
+    "objectID": "cv.html#cv",
+    "href": "cv.html#cv",
+    "title": "CV",
+    "section": "CV",
+    "text": "CV\nA comprehensive web-friendly CV for Carlos C. Goller, Ph.D., with academic credentials, teaching experience, research, and professional development."
   }
 ]
