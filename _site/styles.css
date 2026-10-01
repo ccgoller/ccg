@@ -452,28 +452,32 @@ main.content {
 
 .page-card {
   margin: 0 0 3rem;
-  padding: 2.5rem 2rem 2rem;
-  border: 1px solid rgba(var(--logo-red-rgb), 0.25);
-  border-top: 8px solid var(--logo-red);
-  border-radius: 10px;
-  font-size: 1.1rem;
+  padding: 2.5rem 2rem 3rem;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+  font-size: 1rem;
   line-height: 1.8;
-  background: linear-gradient(135deg, #fff9f9 0%, #ffffff 100%);
-  box-shadow: 0 16px 40px rgba(221, 36, 36, 0.08);
+  background: transparent;
+  box-shadow: none;
+  text-align: center;
 }
 
 .page-card h2 {
-  margin: 0 0 1rem;
+  margin: 0 0 1.5rem;
   padding: 0;
   border: 0;
-  color: var(--logo-red);
-  font-size: 1.75rem;
-  font-weight: 800;
-  letter-spacing: -0.01em;
+  color: #000;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: normal;
 }
 
 .page-card p {
-  color: var(--muted);
+  color: #333;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .page-card p:last-child {
@@ -481,18 +485,18 @@ main.content {
 }
 
 body.quarto-dark .page-card {
-  border-color: rgba(var(--logo-red-rgb), 0.5);
-  border-top-color: var(--logo-red-bright);
-  background: linear-gradient(135deg, #1f3335 0%, #1a2530 100%);
-  box-shadow: 0 16px 40px rgba(255, 122, 122, 0.12);
+  border-color: #555;
+  border-top-color: transparent;
+  background: transparent;
+  box-shadow: none;
 }
 
 body.quarto-dark .page-card h2 {
-  color: var(--logo-red-bright);
+  color: #fff;
 }
 
 body.quarto-dark .page-card p {
-  color: #c7d0d8;
+  color: #d0d0d0;
 }
 
 .quarto-cover-image {
