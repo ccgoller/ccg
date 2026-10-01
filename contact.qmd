@@ -4,23 +4,10 @@ subtitle: "Contact details and ways to connect"
 page-layout: article
 ---
 
-::: {.page-intro}
-Use this page to connect regarding teaching, research, mentoring, collaboration, speaking, or professional opportunities.
-:::
+::: {.page-card}
+## Contact {.unnumbered .unlisted}
 
-::: {.feature-card-grid}
-::: {.feature-card .feature-card-contact}
-### Professional Inquiries
-Questions about teaching, academic work, speaking, and collaboration.
-:::
-::: {.feature-card .feature-card-mentoring}
-### Mentoring Connections
-Opportunities related to student support, development, and growth.
-:::
-::: {.feature-card .feature-card-collaboration}
-### Collaboration
-Invitations to work across science, education, or interdisciplinary projects.
-:::
+Use this page to connect regarding teaching, research, mentoring, collaboration, speaking, or professional opportunities.
 :::
 
 ## Contact Information

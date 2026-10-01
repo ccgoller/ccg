@@ -4,23 +4,10 @@ subtitle: "Mentoring values, learner support, and professional growth"
 page-layout: article
 ---
 
-::: {.page-intro}
-Mentoring emphasizes confidence, a sense of belonging, scientific identity, and long-term growth through supportive, high-expectation academic relationships.
-:::
+::: {.page-card}
+## Mentoring {.unnumbered .unlisted}
 
-::: {.feature-card-grid}
-::: {.feature-card .feature-card-mentoring}
-### Scientific Identity
-Helping learners see themselves as contributors to science.
-:::
-::: {.feature-card .feature-card-collaboration}
-### Professional Growth
-Supporting communication, reflection, and long-term career development.
-:::
-::: {.feature-card .feature-card-discovery}
-### Research Participation
-Creating pathways into authentic inquiry and collaborative problem-solving.
-:::
+Mentoring emphasizes confidence, a sense of belonging, scientific identity, and long-term growth through supportive, high-expectation academic relationships.
 :::
 
 The table below is generated from `mentoring.bib` and supports instant search and column sorting.
