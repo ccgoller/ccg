@@ -1,6 +1,14 @@
 ---
 title: "Courses"
+subtitle: "Featured courses, course design, and teaching portfolio"
+page-layout: article
 ---
+
+::: {.page-card}
+## Courses {.unnumbered .unlisted}
+
+A portfolio of featured courses that exemplify inquiry-driven learning, open pedagogy, and evidence-based teaching practices in microbiology and biotechnology education.
+:::
 
 Below are featured courses. Click any card title or the **Visit Course** button to open the course website.
 

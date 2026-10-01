@@ -1,8 +1,14 @@
 ---
 title: "CV"
+subtitle: "Academic credentials, teaching portfolio, and professional summary"
+page-layout: article
 ---
 
-This page provides a web-friendly CV for Carlos C. Goller, Ph.D., with links to related resources and download options.
+::: {.page-card}
+## CV {.unnumbered .unlisted}
+
+A comprehensive web-friendly CV for Carlos C. Goller, Ph.D., with academic credentials, teaching experience, research, and professional development.
+:::
 
 ::: {.callout-note}
 **Download:** [PDF CV](https://go.ncsu.edu/goller)  
