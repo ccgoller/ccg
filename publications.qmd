@@ -290,7 +290,7 @@ const parseBibEntries = (text) => {
 		const typeStart = index; while (index < normalized.length && /[A-Za-z]/.test(normalized[index])) index += 1;
 		const entryType = normalized.slice(typeStart, index).toLowerCase(); skipWhitespace(); if (normalized[index] !== "{") continue; index += 1;
 		const key = readUntil(",").trim(); if (normalized[index] === ",") index += 1;
-		const body = readBalancedBlock("{", "}"); const entryTags = parseFields(body); entries.push({ entryType, citationKey: key, entryTags });
+		const body = readBalancedBlock("{", "}"); const entryTags = parseFields(body); entries.push({ entryType, citationKey: key, entryTags, rawEntry: normalized.slice(at, index) });
 	}
 	return entries;
 };
@@ -303,6 +303,12 @@ const loadPublications = async () => {
 	const yearFilter = document.createElement("select"); yearFilter.id = "pub-year-filter"; yearFilter.setAttribute("aria-label", "Filter publications by year"); yearFilter.setAttribute("aria-controls", "pub-table"); yearFilter.innerHTML = '<option value="">All</option>'; yearLabel.appendChild(yearFilter);
 	const typeLabel = document.createElement("label"); typeLabel.htmlFor = "pub-type-filter"; typeLabel.textContent = "Type: ";
 	const typeFilter = document.createElement("select"); typeFilter.id = "pub-type-filter"; typeFilter.setAttribute("aria-label", "Filter publications by type"); typeFilter.setAttribute("aria-controls", "pub-table"); typeFilter.innerHTML = '<option value="">All</option>'; typeLabel.appendChild(typeFilter);
+	const formatLabel = document.createElement("label"); formatLabel.htmlFor = "pub-export-format"; formatLabel.textContent = "Download format: ";
+	const formatFilter = document.createElement("select"); formatFilter.id = "pub-export-format"; formatFilter.setAttribute("aria-label", "Citation download format");
+	[["bib", "BibTeX (.bib)"], ["ris", "RIS (.ris)"], ["csv", "CSV (.csv)"]].forEach(([value, label]) => { const option = document.createElement("option"); option.value = value; option.textContent = label; formatFilter.appendChild(option); });
+	formatLabel.appendChild(formatFilter);
+	const downloadButton = document.createElement("button"); downloadButton.type = "button"; downloadButton.className = "btn btn-primary"; downloadButton.textContent = "Download citations";
+	const exportStatus = document.createElement("span"); exportStatus.setAttribute("role", "status"); exportStatus.setAttribute("aria-live", "polite");
 	try {
 		const response = await fetch("works.bib");
 		if (!response.ok) throw new Error(`Could not load works.bib (HTTP ${response.status})`);
@@ -311,6 +317,9 @@ const loadPublications = async () => {
 		const rows = entries.map((entry) => {
 			const fields = entry.entryTags || {};
 			return {
+				citationKey: entry.citationKey,
+				bibtex: entry.rawEntry,
+				fields,
 				year: cleanField(fields.year || ""),
 				title: cleanField(fields.title || ""),
 				authors: parseAuthors(fields.author || ""),
@@ -331,6 +340,46 @@ const loadPublications = async () => {
 			}).join("");
 		};
 		renderRows(rows);
+		const csvCell = (value) => `"${String(value ?? "").replace(/"/g, '""')}"`;
+		const risType = { article: "JOUR", inproceedings: "CONF", conference: "CONF", book: "BOOK", inbook: "CHAP", incollection: "CHAP", phdthesis: "THES", mastersthesis: "THES", techreport: "RPRT" };
+		const serializeCitations = (selectedRows, format) => {
+			if (format === "bib") return selectedRows.map((row) => row.bibtex).join("\n\n");
+			if (format === "ris") return selectedRows.map((row) => {
+				const fields = row.fields;
+				const lines = [`TY  - ${risType[row.type] || "GEN"}`];
+				(fields.author || "").split(/\s+and\s+/i).map(cleanField).filter(Boolean).forEach((author) => lines.push(`AU  - ${author}`));
+				[["title", "TI"], ["journal", "JO"], ["booktitle", "T2"], ["year", "PY"], ["volume", "VL"], ["number", "IS"], ["pages", "SP"], ["doi", "DO"], ["url", "UR"], ["publisher", "PB"]].forEach(([field, tag]) => {
+					const value = cleanField(fields[field] || fields[field.toUpperCase()] || "");
+					if (value) lines.push(`${tag}  - ${value}`);
+				});
+				lines.push("ER  -");
+				return lines.join("\n");
+			}).join("\n\n");
+			const headers = ["Citation key", "Year", "Type", "Authors", "Title", "Venue", "DOI", "URL"];
+			return [headers, ...selectedRows.map((row) => [row.citationKey, row.year, row.type, row.authors, row.title, row.venue, cleanField(row.fields.doi || row.fields.DOI || ""), cleanField(row.fields.url || row.fields.URL || "")])].map((record) => record.map(csvCell).join(",")).join("\r\n");
+		};
+		downloadButton.addEventListener("click", () => {
+			const selectedRows = rows.filter((row) => (!yearFilter.value || row.year === yearFilter.value) && (!typeFilter.value || row.type === typeFilter.value));
+			if (!selectedRows.length) {
+				exportStatus.textContent = "No citations match the selected filters.";
+				return;
+			}
+			const format = formatFilter.value;
+			const extension = format === "bib" ? "bib" : format;
+			const mimeType = format === "bib" ? "application/x-bibtex" : format === "ris" ? "application/x-research-info-systems" : "text/csv";
+			const blob = new Blob([serializeCitations(selectedRows, format)], { type: `${mimeType};charset=utf-8` });
+			const objectUrl = URL.createObjectURL(blob);
+			const link = document.createElement("a");
+			const filterPart = (value) => (value || "all").toLowerCase().replace(/[^a-z0-9-]+/g, "-").replace(/^-+|-+$/g, "") || "all";
+			link.href = objectUrl;
+			link.download = `citations-${filterPart(yearFilter.value)}-${filterPart(typeFilter.value)}.${extension}`;
+			document.body.appendChild(link);
+			link.click();
+			link.remove();
+			setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
+			exportStatus.textContent = `Downloaded ${selectedRows.length} citations in ${format.toUpperCase()} format.`;
+		});
+		filters.replaceChildren(yearLabel, typeLabel, formatLabel, downloadButton, exportStatus);
 		const table = createDataTable("#pub-table", { pageLength: 25, order: [[0, "desc"]], columnDefs: [{ targets: 0, type: "num", orderable: true }, { targets: [1, 2, 3, 4], orderable: true }, { targets: 5, orderable: false }] });
 		if (!table) {
 			const applyBasicFilters = () => {
