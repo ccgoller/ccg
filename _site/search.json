@@ -126,6 +126,13 @@
     "text": "Skip to main content\nBelow are featured courses. Click any card title or the Visit Course button to open the course website."
   },
   {
+    "objectID": "courses.html#courses",
+    "href": "courses.html#courses",
+    "title": "Courses",
+    "section": "Courses",
+    "text": "Courses\nA portfolio of featured courses that exemplify inquiry-driven learning, open pedagogy, and evidence-based teaching practices in microbiology and biotechnology education."
+  },
+  {
     "objectID": "teaching.html",
     "href": "teaching.html",
     "title": "Teaching",
@@ -159,6 +166,13 @@
     "title": "CV",
     "section": "",
     "text": "Skip to main content"
+  },
+  {
+    "objectID": "cv.html#cv",
+    "href": "cv.html#cv",
+    "title": "CV",
+    "section": "CV",
+    "text": "CV\nA comprehensive web-friendly CV for Carlos C. Goller, Ph.D., with academic credentials, teaching experience, research, and professional development."
   },
   {
     "objectID": "cv.html#professional-summary",
@@ -327,19 +341,5 @@
     "title": "Contact",
     "section": "Featured Links",
     "text": "Featured Links\n\nCurriculum vitae\nResearch overview\nTeaching portfolio\nPublications"
-  },
-  {
-    "objectID": "courses.html#courses",
-    "href": "courses.html#courses",
-    "title": "Courses",
-    "section": "Courses",
-    "text": "Courses\nA portfolio of featured courses that exemplify inquiry-driven learning, open pedagogy, and evidence-based teaching practices in microbiology and biotechnology education."
-  },
-  {
-    "objectID": "cv.html#cv",
-    "href": "cv.html#cv",
-    "title": "CV",
-    "section": "CV",
-    "text": "CV\nA comprehensive web-friendly CV for Carlos C. Goller, Ph.D., with academic credentials, teaching experience, research, and professional development."
   }
 ]

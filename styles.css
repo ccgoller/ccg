@@ -464,13 +464,26 @@ main.content {
 }
 
 .page-card h2 {
+  position: relative;
   margin: 0 0 1.5rem;
-  padding: 0;
+  padding: 0 0 0.75rem;
   border: 0;
   color: #000;
   font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: normal;
+}
+
+.page-card h2::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 3.5rem;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--card-accent-red);
+  content: "";
+  transform: translateX(-50%);
 }
 
 .page-card p {
@@ -482,6 +495,19 @@ main.content {
 
 .page-card p:last-child {
   margin-bottom: 0;
+}
+
+#pub-filters .btn-primary {
+  color: #fff;
+  border-color: var(--crimson);
+  background-color: var(--crimson);
+}
+
+#pub-filters .btn-primary:hover,
+#pub-filters .btn-primary:focus-visible {
+  color: #fff;
+  border-color: var(--crimson-dark);
+  background-color: var(--crimson-dark);
 }
 
 body.quarto-dark .page-card {
