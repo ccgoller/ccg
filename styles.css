@@ -469,9 +469,15 @@ main.content {
   padding: 0 0 3rem;
   border: 0;
   color: #000;
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
   font-weight: 700;
   letter-spacing: normal;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.page-card h2 .anchorjs-link {
+  position: absolute;
 }
 
 .page-card h2::before,
@@ -484,8 +490,8 @@ main.content {
   z-index: 1;
   right: 0;
   bottom: 0;
-  width: 4.375rem;
-  height: 2.8rem;
+  width: 3.28125rem;
+  height: 2.1rem;
   background-image: url("CCG-nobkg.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -494,8 +500,8 @@ main.content {
 
 .page-card h2::after {
   z-index: 0;
-  right: 4.625rem;
-  bottom: 1.4rem;
+  right: 3.53125rem;
+  bottom: 1.05rem;
   left: 0;
   height: 2px;
   background: var(--crimson);
