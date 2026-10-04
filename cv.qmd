@@ -21,11 +21,17 @@ Carlos C. Goller is a Teaching Professor in the Department of Biological Science
 
 ## Current Appointment
 
+::: { .branded-table-scroll role="region" aria-label="Current appointment" tabindex="0" }
+
 | Role | Unit | Institution | Location |
 |---|---|---|---|
 | Teaching Professor | Department of Biological Sciences | North Carolina State University | Raleigh, NC |
 
+:::
+
 ## Contact and Professional Profiles
+
+::: { .branded-table-scroll role="region" aria-label="Contact and professional profiles" tabindex="0" }
 
 | Type | Details |
 |---|---|
@@ -34,7 +40,11 @@ Carlos C. Goller is a Teaching Professor in the Department of Biological Science
 | GitHub | [github.com/ccgoller](https://github.com/ccgoller) |
 | Department | Department of Biological Sciences, North Carolina State University |
 
+:::
+
 ## Education and Training
+
+::: { .branded-table-scroll role="region" aria-label="Education and training" tabindex="0" }
 
 | Institution | Location | Degree / Training | Focus | Dates |
 |---|---|---|---|---|
@@ -43,7 +53,11 @@ Carlos C. Goller is a Teaching Professor in the Department of Biological Science
 | Emory University | Atlanta, GA | Ph.D., Microbiology and Molecular Genetics | Bacterial Biofilm Formation and Regulation | Aug. 2002 - Sept. 2008 |
 | Worcester Polytechnic Institute | Worcester, MA | B.S., Biology and Biotechnology | Biology and Biotechnology | Aug. 1998 - May 2002 |
 
+:::
+
 ## Academic Appointments
+
+::: { .branded-table-scroll role="region" aria-label="Academic appointments" tabindex="0" }
 
 | Title | Institution | Dates |
 |---|---|---|
@@ -51,11 +65,17 @@ Carlos C. Goller is a Teaching Professor in the Department of Biological Science
 | Associate Teaching Professor | North Carolina State University, Department of Biological Sciences | 2019 - 2024 |
 | Assistant Teaching Professor | North Carolina State University, Department of Biological Sciences | 2015 - 2019 |
 
+:::
+
 ## Honors and Fellowships
+
+::: { .branded-table-scroll role="region" aria-label="Honors and fellowships" tabindex="0" }
 
 | Recognition | Institution | Dates |
 |---|---|---|
 | The Hartwell Foundation Postdoctoral Fellowship | Duke University Medical Center | Sept. 2008 - July 2012 |
+
+:::
 
 ## Teaching and Curriculum Leadership
 
