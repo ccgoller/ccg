@@ -468,7 +468,7 @@ main.content {
 .page-card h2 {
   position: relative;
   margin: 0 0 1.5rem;
-  padding: 0 0 0.75rem;
+  padding: 0 0 3rem;
   border: 0;
   color: #000;
   font-size: 2.5rem;
@@ -479,34 +479,28 @@ main.content {
 .page-card h2::before,
 .page-card h2::after {
   position: absolute;
-  left: 50%;
   content: "";
-  transform: translateX(-50%);
 }
 
 .page-card h2::before {
   z-index: 1;
-  bottom: -0.625rem;
-  width: 2.6rem;
-  height: 1.25rem;
+  right: 0;
+  bottom: 0;
+  width: 4.375rem;
+  height: 2.8rem;
   background-image: url("CCG-nobkg.png");
   background-repeat: no-repeat;
-  background-position: 40% 100%;
-  background-size: 4.375rem auto;
+  background-position: center;
+  background-size: contain;
 }
 
 .page-card h2::after {
   z-index: 0;
-  bottom: 0;
-  width: 6.5rem;
+  right: 4.625rem;
+  bottom: 1.4rem;
+  left: 0;
   height: 2px;
-  background: linear-gradient(
-    to right,
-    var(--page-title-rule) 0 calc(50% - 1.25rem),
-    transparent calc(50% - 1.25rem) calc(50% + 1.25rem),
-    var(--page-title-rule) calc(50% + 1.25rem) 100%
-  );
-  content: "";
+  background: var(--crimson);
 }
 
 .page-card p {
