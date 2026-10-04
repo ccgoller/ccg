@@ -32,8 +32,40 @@
   --shadow: 0 20px 60px rgba(23, 32, 38, 0.14);
   --shadow-soft: 0 14px 32px rgba(31, 41, 51, 0.08);
   --pub-row-band-odd: #ffffff;
-  --pub-row-band-even: #f3f6f8;
+  --pub-row-band-even: #fff4bd;
   --pub-row-band-focus: var(--pub-row-band-even);
+}
+
+main table thead th {
+  border-color: var(--ncsu-yellow);
+  background-color: var(--logo-red);
+  color: #ffffff;
+}
+
+main table tbody tr:nth-child(even) > * {
+  background-color: var(--pub-row-band-even);
+}
+
+body.quarto-dark main table tbody tr:nth-child(even) > * {
+  background-color: #292719;
+}
+
+:is(button, input[type="button"], input[type="submit"], input[type="reset"], .btn, .dt-button, .home-button, .contact-primary-action, .course-btn),
+.dt-container .dt-button {
+  border-color: var(--logo-red);
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 700;
+  background-color: var(--logo-red);
+}
+
+:is(button, input[type="button"], input[type="submit"], input[type="reset"], .btn, .dt-button, .home-button, .contact-primary-action, .course-btn):hover,
+:is(button, input[type="button"], input[type="submit"], input[type="reset"], .btn, .dt-button, .home-button, .contact-primary-action, .course-btn):focus-visible,
+.dt-container .dt-button:hover,
+.dt-container .dt-button:focus-visible {
+  border-color: var(--ncsu-yellow);
+  color: var(--ncsu-black);
+  background-color: var(--ncsu-yellow);
 }
 
 /* Hide title block on pages with page-card to avoid duplication */
@@ -59,8 +91,12 @@ body.quarto-light {
     radial-gradient(ellipse 800px 480px at 100% 0%, rgba(153, 0, 0, 0.10) 0%, transparent 60%),
     radial-gradient(ellipse 600px 400px at 50% 100%, rgba(102, 0, 0, 0.06) 0%, transparent 70%),
     linear-gradient(175deg, #f8fafb 0%, #eef2f5 45%, #f5f7f9 100%);
-  font-size: 16px;
+  font-size: 1.125rem;
   line-height: 1.7;
+}
+
+body.quarto-dark {
+  font-size: 1.125rem;
 }
 
 body.quarto-light.fullcontent {
@@ -376,7 +412,7 @@ body.quarto-light #quarto-header .navbar .nav-link:focus-visible {
 #quarto-footer .nav-footer-right {
   color: rgba(255, 255, 255, 0.92);
   line-height: 1.7;
-  font-size: 1rem;
+  font-size: 1.125rem;
 }
 
 #quarto-footer a {
@@ -644,6 +680,7 @@ figure.chart-figure canvas {
 #pub-table tbody > tr > *,
 #mentor-table tbody > tr > * {
   background-color: var(--pub-row-band-odd);
+  box-shadow: none !important;
 }
 
 #pub-table tbody tr:nth-child(even),
@@ -654,6 +691,7 @@ figure.chart-figure canvas {
 #pub-table tbody > tr:nth-child(even) > *,
 #mentor-table tbody > tr:nth-child(even) > * {
   background-color: var(--pub-row-band-even);
+  box-shadow: none !important;
 }
 
 #pub-table tbody tr:hover,
@@ -672,23 +710,24 @@ figure.chart-figure canvas {
 #mentor-table tbody tr:focus-within > th,
 #mentor-table tbody tr:focus-within > td {
   background: var(--pub-row-band-focus);
+  box-shadow: none !important;
 }
 
 #pub-table thead th,
 #mentor-table thead th {
-  border-color: var(--crimson-dark);
-  background-color: var(--crimson-dark);
+  border-color: var(--ncsu-yellow);
+  background-color: var(--logo-red);
   color: #ffffff;
 }
 
 .branded-table-scroll {
-  --table-row-even: #f3f6f8;
+  --table-row-even: #fff4bd;
   --table-row-hover: var(--table-row-even);
   max-width: 100%;
   margin: 0 0 1.5rem;
   overflow-x: auto;
   border: 1px solid var(--line);
-  border-top: 4px solid var(--crimson-dark);
+  border-top: 4px solid var(--ncsu-yellow);
   border-radius: 10px;
   background: var(--surface);
   box-shadow: var(--shadow-soft);
@@ -696,10 +735,10 @@ figure.chart-figure canvas {
 }
 
 body.quarto-dark .branded-table-scroll {
-  --table-row-even: #1e2b36;
+  --table-row-even: #292719;
   --table-row-hover: var(--table-row-even);
   border-color: #33424f;
-  border-top-color: var(--crimson-dark);
+  border-top-color: var(--ncsu-yellow);
   background: #17232d;
 }
 
@@ -715,9 +754,9 @@ body.quarto-dark .branded-table-scroll {
 
 .branded-table-scroll thead th {
   padding: 0.85rem 1rem;
-  border-color: var(--crimson-dark);
-  border-bottom: 1px solid var(--crimson-dark);
-  background-color: var(--crimson-dark);
+  border-color: var(--ncsu-yellow);
+  border-bottom: 1px solid var(--ncsu-yellow);
+  background-color: var(--logo-red);
   color: #ffffff;
   font-weight: 700;
   vertical-align: bottom;
@@ -1446,7 +1485,7 @@ body.ccg-reader-mode #quarto-content > main.content {
   max-width: 42rem;
   margin-left: auto;
   margin-right: auto;
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   line-height: 1.9;
 }
 
@@ -1772,7 +1811,7 @@ body.ccg-reader-mode .detail-item:last-child {
 
 @media (max-width: 560px) {
   body.quarto-light {
-    font-size: 16px;
+    font-size: 1.125rem;
   }
 
   .feature-grid {
