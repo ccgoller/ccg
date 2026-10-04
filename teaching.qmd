@@ -5,7 +5,7 @@ page-layout: article
 ---
 
 ::: {.page-card}
-## Teaching {.unnumbered .unlisted}
+# Teaching {.unnumbered .unlisted}
 
 Teaching centers on evidence-based pedagogy, scientific curiosity, and student participation in meaningful, inquiry-driven learning experiences.
 :::
