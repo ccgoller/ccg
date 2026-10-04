@@ -705,8 +705,8 @@ body:has(.home-page) #quarto-content > main.content {
   inset: 0;
   background:
     radial-gradient(circle at 88% 12%, rgba(255, 236, 176, 0.22) 0%, rgba(255, 236, 176, 0.13) 24%, rgba(255, 236, 176, 0) 48%),
-    linear-gradient(95deg, rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0.58) 44%, rgba(0, 0, 0, 0.4) 100%),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.12) 46%, rgba(0, 0, 0, 0.5) 100%),
+    linear-gradient(95deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.42) 44%, rgba(0, 0, 0, 0.28) 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.08) 46%, rgba(0, 0, 0, 0.35) 100%),
     url("https://github.com/user-attachments/assets/ac10ec07-a213-4765-9f56-8a1676547464");
   background-size: cover;
   background-position: center;
@@ -840,8 +840,8 @@ body:has(.home-page) #quarto-content > main.content {
 .home-hero-media {
   display: grid;
   gap: 1rem;
-  justify-items: end;
-  align-self: start;
+  justify-items: center;
+  align-self: center;
 }
 
 .home-hero-logo {
@@ -1286,7 +1286,7 @@ body:has(.home-page) #quarto-content > main.content {
   }
 
   .home-hero-media {
-    justify-items: start;
+    justify-items: center;
   }
 
   .affiliation-intro,
