@@ -688,7 +688,7 @@ figure.chart-figure canvas {
   margin: 0 0 1.5rem;
   overflow-x: auto;
   border: 1px solid var(--line);
-  border-top: 4px solid var(--crimson);
+  border-top: 4px solid var(--crimson-dark);
   border-radius: 10px;
   background: var(--surface);
   box-shadow: var(--shadow-soft);
@@ -708,7 +708,7 @@ body.quarto-dark .branded-table-scroll {
   --bs-table-striped-bg: transparent;
   --bs-table-hover-bg: transparent;
   width: 100%;
-  min-width: max-content;
+  min-width: 0;
   margin: 0;
   color: var(--bs-body-color);
 }
@@ -1676,6 +1676,20 @@ body.ccg-reader-mode .detail-item:last-child {
     display: block;
     max-width: 100%;
     overflow-x: auto;
+  }
+
+  main.content .branded-table-scroll table.table {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  main.content .branded-table-scroll table.table th,
+  main.content .branded-table-scroll table.table td {
+    min-width: 0;
+    padding: 0.6rem 0.4rem;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 }
 
