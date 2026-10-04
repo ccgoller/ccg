@@ -1,19 +1,27 @@
 ---
 title: "Professional Development"
+subtitle: "Professional learning, teaching development, and leadership"
+page-layout: article
 ---
 
-Professional growth activities, workshops, and certifications.
+::: {.page-card}
+## Professional Development {.unnumbered .unlisted}
+
+A summary of professional learning, certifications, and programs that support evidence-based teaching, inclusive course design, and STEM education leadership.
+:::
 
 ## Workshops and Training
 
-### Key Categories
+Professional learning focuses on practical skills and evidence-based approaches for teaching and faculty collaboration.
+
+### Areas of Focus
 
 - Online and hybrid teaching quality
 - Evidence-based pedagogy
 - STEM education networks and faculty mentoring
 - Bioinformatics and life-science instructional training
 
-### At a Glance
+### Participation at a Glance
 
 | Category | Count |
 |---|---:|
@@ -21,20 +29,25 @@ Professional growth activities, workshops, and certifications.
 | Other named pedagogy workshops/programs | 8+ |
 | Total workshops/programs | 28+ |
 
-## Certifications
+## Certifications and Credentials
 
-| Certifications | Count |
+| Credential | Count |
 |---|---:|
 | QM Teaching Online Certificate | 1 |
 | Universal Course Design Certification (UCDC) | 1 |
-| Total certifications (LinkedIn profile) | 1100+ |
+| Certifications listed on LinkedIn profile | 1100+ |
 
 ## Selected Professional Development Programs
+
+### Programs and Workshops
 
 - ASM Biology Scholars Program
 - Summer Institute on Scientific Teaching
 - Science CaseNet & NCCSTS workshops
 - POGIL Workshops
+
+### Fellowships
+
 - PALM Fellowship
 - NSF ENCOUR Fellowship
 - NSF TAPESTRy Fellowship
@@ -43,5 +56,5 @@ Professional growth activities, workshops, and certifications.
 
 ## Leadership and Service
 
-- Facilitator and contributor in faculty mentoring and professional learning communities.
-- Active participant in national STEM education collaborations that support sustained teaching innovation.
+- Facilitates and contributes to faculty mentoring and professional learning communities.
+- Participates in national STEM education collaborations focused on sustained teaching innovation.
