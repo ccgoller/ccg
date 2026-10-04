@@ -3,6 +3,7 @@ project:
   resources:
     - works.bib
     - mentoring.bib
+    - assets/SPH-1-p3.jpg
     - assets/vendor/datatables/*
   post-render: fix-aria.py
 
