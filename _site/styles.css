@@ -32,7 +32,7 @@
   --shadow: 0 20px 60px rgba(23, 32, 38, 0.14);
   --shadow-soft: 0 14px 32px rgba(31, 41, 51, 0.08);
   --pub-row-band-odd: #ffffff;
-  --pub-row-band-even: #fff4bd;
+  --pub-row-band-even: var(--surface-band);
   --pub-row-band-focus: var(--pub-row-band-even);
 }
 
@@ -118,7 +118,7 @@ body.quarto-dark {
   --card-accent-graphite: #9aafc0;
   --card-accent-graphite-soft: #b5c4d0;
   --pub-row-band-odd: #1a2530;
-  --pub-row-band-even: #292719;
+  --pub-row-band-even: #26313a;
   --pub-row-band-focus: var(--pub-row-band-even);
   background: #111820;
 }
@@ -689,7 +689,7 @@ figure.chart-figure canvas {
 }
 
 .branded-table-scroll {
-  --table-row-even: #fff4bd;
+  --table-row-even: var(--surface-band);
   --table-row-hover: var(--table-row-even);
   max-width: 100%;
   margin: 0 0 1.5rem;
@@ -703,7 +703,7 @@ figure.chart-figure canvas {
 }
 
 body.quarto-dark .branded-table-scroll {
-  --table-row-even: #292719;
+  --table-row-even: #26313a;
   --table-row-hover: var(--table-row-even);
   border-color: #33424f;
   border-top-color: var(--ncsu-yellow);
