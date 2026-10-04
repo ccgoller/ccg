@@ -656,6 +656,69 @@ figure.chart-figure canvas {
   background: var(--pub-row-band-focus);
 }
 
+.branded-table-scroll {
+  --table-row-even: #f3f6f8;
+  --table-row-hover: #e8eef2;
+  max-width: 100%;
+  margin: 0 0 1.5rem;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--crimson);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  -webkit-overflow-scrolling: touch;
+}
+
+body.quarto-dark .branded-table-scroll {
+  --table-row-even: #1e2b36;
+  --table-row-hover: #293a47;
+  border-color: #33424f;
+  border-top-color: var(--ncsu-yellow);
+  background: #17232d;
+}
+
+.branded-table-scroll .table {
+  --bs-table-bg: transparent;
+  --bs-table-striped-bg: transparent;
+  --bs-table-hover-bg: transparent;
+  width: 100%;
+  min-width: max-content;
+  margin: 0;
+  color: var(--bs-body-color);
+}
+
+.branded-table-scroll thead th {
+  padding: 0.85rem 1rem;
+  border-color: #990000;
+  border-bottom: 3px solid var(--ncsu-yellow);
+  background-color: var(--maroon);
+  color: #ffffff;
+  font-weight: 700;
+  vertical-align: bottom;
+}
+
+body.quarto-dark .branded-table-scroll thead th {
+  border-color: #b7791f;
+  background-color: var(--ncsu-yellow);
+  color: #172026;
+}
+
+.branded-table-scroll tbody > tr > * {
+  padding: 0.75rem 1rem;
+  border-color: var(--line);
+  vertical-align: top;
+}
+
+.branded-table-scroll tbody > tr:nth-child(even) > * {
+  background-color: var(--table-row-even);
+}
+
+.branded-table-scroll tbody > tr:hover > *,
+.branded-table-scroll tbody > tr:focus-within > * {
+  background-color: var(--table-row-hover);
+}
+
 #pub-table td[data-label="Link"] .pub-view-link {
   display: inline-flex;
   align-items: center;

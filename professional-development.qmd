@@ -23,19 +23,27 @@ Professional learning focuses on practical skills and evidence-based approaches 
 
 ### Participation at a Glance
 
+::: { .branded-table-scroll role="region" aria-label="Professional development participation at a glance" tabindex="0" }
+
 | Category | Count |
 |---|---:|
 | Quality Matters (QM) workshops | 20+ |
 | Other named pedagogy workshops/programs | 8+ |
 | Total workshops/programs | 28+ |
 
+:::
+
 ## Certifications and Credentials
+
+::: { .branded-table-scroll role="region" aria-label="Certifications and credentials" tabindex="0" }
 
 | Credential | Count |
 |---|---:|
 | QM Teaching Online Certificate | 1 |
 | Universal Course Design Certification (UCDC) | 1 |
 | Certifications listed on LinkedIn profile | 1100+ |
+
+:::
 
 ## Selected Professional Development Programs
 
