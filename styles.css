@@ -826,15 +826,14 @@ body:has(.home-page) #quarto-content > main.content {
   width: min(1160px, 100%);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  justify-items: center;
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
   gap: 2rem;
   align-items: center;
 }
 
 .home-hero-copy {
   width: min(100%, 54rem);
-  text-align: center;
+  text-align: left;
 }
 
 .home-kicker,
@@ -868,7 +867,7 @@ body:has(.home-page) #quarto-content > main.content {
 
 .home-page h1 {
   max-width: 760px;
-  margin: 0 auto 1.4rem;
+  margin: 0 0 1.4rem;
   color: inherit;
   font-size: clamp(2.5rem, 5vw, 4.2rem);
   line-height: 1.04;
@@ -876,7 +875,7 @@ body:has(.home-page) #quarto-content > main.content {
 
 .home-hero-copy > p {
   max-width: 720px;
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
   color: #ffffff;
   font-size: 1.15rem;
@@ -886,7 +885,7 @@ body:has(.home-page) #quarto-content > main.content {
 .home-chip-row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.7rem;
   margin-top: 1.6rem;
 }
@@ -909,7 +908,7 @@ body:has(.home-page) #quarto-content > main.content {
 .home-hero-actions {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1.25rem;
   margin-top: 1.8rem;
 }
@@ -946,10 +945,10 @@ body:has(.home-page) #quarto-content > main.content {
 }
 
 .home-hero-media {
-  width: min(100%, 44rem);
+  width: 100%;
   display: grid;
   gap: 1rem;
-  justify-items: center;
+  justify-items: end;
   align-self: center;
 }
 
