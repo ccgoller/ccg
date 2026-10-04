@@ -1353,7 +1353,7 @@ body:has(.home-page) #quarto-content > main.content {
 .contact-primary-action:hover,
 .contact-primary-action:focus-visible {
   border-color: var(--crimson-dark);
-  color: #ffffff !important;
+  color: var(--ncsu-black) !important;
   background: var(--crimson-dark);
 }
 
