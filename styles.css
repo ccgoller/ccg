@@ -28,7 +28,6 @@
   --logo-red: #dd2424;
   --logo-red-rgb: 221, 36, 36;
   --logo-red-bright: #ff7a7a;
-  --page-title-rule: #000;
   --hero-text-shadow: 0 2px 12px rgba(0, 0, 0, 0.82);
   --shadow: 0 20px 60px rgba(23, 32, 38, 0.14);
   --shadow-soft: 0 14px 32px rgba(31, 41, 51, 0.08);
@@ -96,7 +95,6 @@ body.quarto-light.fullcontent main.content {
 }
 
 body.quarto-dark {
-  --page-title-rule: #fff;
   --bs-primary: var(--ncsu-yellow);
   --bs-primary-rgb: var(--ncsu-yellow-rgb);
   --bs-link-color: var(--ncsu-yellow);
