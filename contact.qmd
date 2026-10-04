@@ -7,10 +7,18 @@ page-layout: article
 ::: {.page-card}
 # Contact {.unnumbered .unlisted}
 
-Use this page to connect regarding teaching, research, mentoring, collaboration, speaking, or professional opportunities.
+Connect about teaching, research, mentoring, collaboration, speaking, or professional opportunities.
 :::
 
-## Contact Information
+::: {.contact-cta}
+<div class="contact-cta-copy">
+  <strong>Start a conversation</strong>
+  <p>For teaching, mentoring, collaboration, or speaking inquiries, email is the best way to reach me.</p>
+</div>
+<a class="contact-primary-action" href="mailto:ccgoller@ncsu.edu"><i class="bi bi-envelope-fill" aria-hidden="true"></i> Email Carlos</a>
+:::
+
+## Ways to Connect
 
 ::: {.contact-grid}
 ::: {.contact-card}
