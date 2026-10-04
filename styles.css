@@ -910,7 +910,7 @@ body:has(.home-page) #quarto-content > main.content {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.9rem;
+  gap: 1.25rem;
   margin-top: 1.8rem;
 }
 
@@ -932,22 +932,17 @@ body:has(.home-page) #quarto-content > main.content {
   box-shadow: 0 12px 28px rgba(153, 0, 0, 0.28);
 }
 
-.home-button-primary:hover,
-.home-button-primary:focus-visible {
+.home-button:hover,
+.home-button:focus-visible {
   color: #ffffff;
-  background: var(--crimson-dark);
+  background: var(--crimson);
+  border-color: var(--crimson);
 }
 
 .home-button-secondary {
   color: #ffffff;
   background: rgba(0, 0, 0, 0.66);
   border-color: rgba(255, 255, 255, 0.78);
-}
-
-.home-button-secondary:hover,
-.home-button-secondary:focus-visible {
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.82);
 }
 
 .home-hero-media {
