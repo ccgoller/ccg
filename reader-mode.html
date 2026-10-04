@@ -1,0 +1,42 @@
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Quarto's built-in reader mode only hides the TOC and sidebars, which this
+  // site does not use, so the navbar toggle had no visible effect. Mirror the
+  // toggle's "reader" state onto <body> so styles.css can apply a focused
+  // reading layout, and expose the toggle as an accessible toggle button.
+  var toggles = document.querySelectorAll('.quarto-reader-toggle');
+  if (!toggles.length) {
+    return;
+  }
+
+  var sync = function () {
+    var active = false;
+    toggles.forEach(function (toggle) {
+      if (toggle.classList.contains('reader')) {
+        active = true;
+      }
+    });
+    document.body.classList.toggle('ccg-reader-mode', active);
+    toggles.forEach(function (toggle) {
+      toggle.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+  };
+
+  toggles.forEach(function (toggle) {
+    toggle.setAttribute('role', 'button');
+    toggle.setAttribute('aria-label', 'Toggle focused reading mode');
+    toggle.addEventListener('keydown', function (event) {
+      if (event.key === ' ') {
+        event.preventDefault();
+        toggle.click();
+      }
+    });
+    new MutationObserver(sync).observe(toggle, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  });
+
+  sync();
+});
+</script>
