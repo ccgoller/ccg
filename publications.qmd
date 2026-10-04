@@ -5,7 +5,7 @@ page-layout: article
 ---
 
 ::: {.page-card}
-## Publications {.unnumbered .unlisted}
+# Publications {.unnumbered .unlisted}
 
 Publications bring together microbiology research, educational scholarship, and interdisciplinary collaboration across teaching, mentoring, and scientific practice.
 :::

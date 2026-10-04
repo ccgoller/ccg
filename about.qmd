@@ -4,6 +4,7 @@ number-sections: true
 about:
   template: trestles
   image: https://raw.githubusercontent.com/ccgoller/mb360workbook/main/workbook/images/author/GollerCarlos.jpg
+  image-alt: "Portrait of Carlos C. Goller"
   image-shape: rounded
   links:
     - icon: linkedin

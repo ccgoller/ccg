@@ -463,7 +463,7 @@ main.content {
   text-align: center;
 }
 
-.page-card h2 {
+.page-card h1 {
   position: relative;
   margin: 0 0 1.5rem;
   padding: 0 0 3rem;
@@ -476,17 +476,17 @@ main.content {
   overflow-wrap: anywhere;
 }
 
-.page-card h2 .anchorjs-link {
+.page-card h1 .anchorjs-link {
   position: absolute;
 }
 
-.page-card h2::before,
-.page-card h2::after {
+.page-card h1::before,
+.page-card h1::after {
   position: absolute;
   content: "";
 }
 
-.page-card h2::before {
+.page-card h1::before {
   z-index: 1;
   right: 0;
   bottom: 0;
@@ -498,7 +498,7 @@ main.content {
   background-size: contain;
 }
 
-.page-card h2::after {
+.page-card h1::after {
   z-index: 0;
   right: 3.53125rem;
   bottom: 1.05rem;
@@ -538,7 +538,7 @@ body.quarto-dark .page-card {
   box-shadow: none;
 }
 
-body.quarto-dark .page-card h2 {
+body.quarto-dark .page-card h1 {
   color: #fff;
 }
 

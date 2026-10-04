@@ -5,7 +5,7 @@ page-layout: article
 ---
 
 ::: {.page-card}
-## Courses {.unnumbered .unlisted}
+# Courses {.unnumbered .unlisted}
 
 A portfolio of featured courses that exemplify inquiry-driven learning, open pedagogy, and evidence-based teaching practices in microbiology and biotechnology education.
 :::

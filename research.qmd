@@ -5,7 +5,7 @@ page-layout: article
 ---
 
 ::: {.page-card}
-## Research {.unnumbered .unlisted}
+# Research {.unnumbered .unlisted}
 
 Research in the Goller academic portfolio connects microbiology, genomics, bioinformatics, and biology education research, with an emphasis on discovery, collaboration, and student engagement.
 :::

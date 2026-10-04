@@ -5,7 +5,7 @@ page-layout: article
 ---
 
 ::: {.page-card}
-## CV {.unnumbered .unlisted}
+# CV {.unnumbered .unlisted}
 
 A comprehensive web-friendly CV for Carlos C. Goller, Ph.D., with academic credentials, teaching experience, research, and professional development.
 :::
