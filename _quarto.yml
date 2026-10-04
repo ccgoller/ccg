@@ -51,7 +51,9 @@ format:
     theme: cosmo
     css: styles.css
     include-before-body: skip-link.html
-    include-after-body: aria-fix.html
+    include-after-body:
+      - aria-fix.html
+      - reader-mode.html
     toc: false
 
     page-footer:

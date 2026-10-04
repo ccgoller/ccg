@@ -1352,6 +1352,47 @@ body:has(.home-page) #quarto-content > main.content {
 
 /* ── End course cards ─────────────────────────────────────── */
 
+/* ── Focused reading mode (navbar reader toggle) ─────────── */
+body.ccg-reader-mode #quarto-content > main.content {
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.0625rem;
+  line-height: 1.9;
+}
+
+body.ccg-reader-mode #quarto-content > main.content:has(#pub-table, #mentor-table) {
+  max-width: 50rem;
+}
+
+body.ccg-reader-mode .home-page {
+  margin: 0;
+}
+
+body.ccg-reader-mode .feature-grid,
+body.ccg-reader-mode .profile-snapshot,
+body.ccg-reader-mode .contact-grid,
+body.ccg-reader-mode .details-strip,
+body.ccg-reader-mode .affiliation-banner,
+body.ccg-reader-mode .two-column,
+body.ccg-reader-mode .home-hero-grid {
+  grid-template-columns: 1fr;
+}
+
+body.ccg-reader-mode .home-hero-media,
+body.ccg-reader-mode .home-hero-section::before {
+  display: none;
+}
+
+body.ccg-reader-mode .detail-item {
+  border-right: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+body.ccg-reader-mode .detail-item:last-child {
+  border-bottom: 0;
+}
+
 @media (max-width: 991.98px) {
   #quarto-header .navbar .nav-link,
   #quarto-header .navbar .navbar-brand,
@@ -1401,9 +1442,14 @@ body:has(.home-page) #quarto-content > main.content {
 
 @media (max-width: 767.98px) {
   #quarto-header .navbar .navbar-brand-container {
-    max-width: calc(100vw - 7rem);
-    margin-left: 0;
-    margin-right: auto;
+    flex: 1 1 0;
+    min-width: 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  #quarto-header .navbar #quarto-search {
+    flex: 0 0 auto;
   }
 
   #quarto-header .navbar .navbar-brand {
@@ -1413,12 +1459,13 @@ body:has(.home-page) #quarto-content > main.content {
   }
 
   #quarto-header .navbar .navbar-title {
+    padding: 0;
     font-size: 1rem;
     line-height: 1.2;
     white-space: normal;
     overflow: visible;
     text-overflow: clip;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
   }
 
   .navbar-brand img {
@@ -1596,6 +1643,17 @@ body:has(.home-page) #quarto-content > main.content {
     display: block;
     max-width: 100%;
     overflow-x: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  #quarto-header .navbar .navbar-brand {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  #quarto-header .navbar .navbar-title {
+    font-size: 0.92rem;
   }
 }
 
