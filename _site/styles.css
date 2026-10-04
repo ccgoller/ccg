@@ -32,7 +32,7 @@
   --shadow: 0 20px 60px rgba(23, 32, 38, 0.14);
   --shadow-soft: 0 14px 32px rgba(31, 41, 51, 0.08);
   --pub-row-band-odd: #ffffff;
-  --pub-row-band-even: #f3f6f8;
+  --pub-row-band-even: #fff4bd;
   --pub-row-band-focus: var(--pub-row-band-even);
 }
 
@@ -59,8 +59,12 @@ body.quarto-light {
     radial-gradient(ellipse 800px 480px at 100% 0%, rgba(153, 0, 0, 0.10) 0%, transparent 60%),
     radial-gradient(ellipse 600px 400px at 50% 100%, rgba(102, 0, 0, 0.06) 0%, transparent 70%),
     linear-gradient(175deg, #f8fafb 0%, #eef2f5 45%, #f5f7f9 100%);
-  font-size: 16px;
+  font-size: 1.125rem;
   line-height: 1.7;
+}
+
+body.quarto-dark {
+  font-size: 1.125rem;
 }
 
 body.quarto-light.fullcontent {
@@ -114,7 +118,7 @@ body.quarto-dark {
   --card-accent-graphite: #9aafc0;
   --card-accent-graphite-soft: #b5c4d0;
   --pub-row-band-odd: #1a2530;
-  --pub-row-band-even: #22303b;
+  --pub-row-band-even: #292719;
   --pub-row-band-focus: var(--pub-row-band-even);
   background: #111820;
 }
@@ -520,15 +524,15 @@ main.content {
 
 #pub-filters .btn-primary {
   color: #fff;
-  border-color: var(--crimson);
-  background-color: var(--crimson);
+  border-color: var(--logo-red);
+  background-color: var(--logo-red);
 }
 
 #pub-filters .btn-primary:hover,
 #pub-filters .btn-primary:focus-visible {
-  color: #fff;
-  border-color: var(--crimson-dark);
-  background-color: var(--crimson-dark);
+  color: var(--ncsu-black);
+  border-color: var(--ncsu-yellow);
+  background-color: var(--ncsu-yellow);
 }
 
 body.quarto-dark .page-card {
@@ -644,6 +648,7 @@ figure.chart-figure canvas {
 #pub-table tbody > tr > *,
 #mentor-table tbody > tr > * {
   background-color: var(--pub-row-band-odd);
+  box-shadow: none !important;
 }
 
 #pub-table tbody tr:nth-child(even),
@@ -654,6 +659,7 @@ figure.chart-figure canvas {
 #pub-table tbody > tr:nth-child(even) > *,
 #mentor-table tbody > tr:nth-child(even) > * {
   background-color: var(--pub-row-band-even);
+  box-shadow: none !important;
 }
 
 #pub-table tbody tr:hover,
@@ -672,23 +678,24 @@ figure.chart-figure canvas {
 #mentor-table tbody tr:focus-within > th,
 #mentor-table tbody tr:focus-within > td {
   background: var(--pub-row-band-focus);
+  box-shadow: none !important;
 }
 
 #pub-table thead th,
 #mentor-table thead th {
-  border-color: var(--crimson-dark);
-  background-color: var(--crimson-dark);
+  border-color: var(--ncsu-yellow);
+  background-color: var(--logo-red);
   color: #ffffff;
 }
 
 .branded-table-scroll {
-  --table-row-even: #f3f6f8;
+  --table-row-even: #fff4bd;
   --table-row-hover: var(--table-row-even);
   max-width: 100%;
   margin: 0 0 1.5rem;
   overflow-x: auto;
   border: 1px solid var(--line);
-  border-top: 4px solid var(--crimson-dark);
+  border-top: 4px solid var(--ncsu-yellow);
   border-radius: 10px;
   background: var(--surface);
   box-shadow: var(--shadow-soft);
@@ -696,10 +703,10 @@ figure.chart-figure canvas {
 }
 
 body.quarto-dark .branded-table-scroll {
-  --table-row-even: #1e2b36;
+  --table-row-even: #292719;
   --table-row-hover: var(--table-row-even);
   border-color: #33424f;
-  border-top-color: var(--crimson-dark);
+  border-top-color: var(--ncsu-yellow);
   background: #17232d;
 }
 
@@ -715,9 +722,9 @@ body.quarto-dark .branded-table-scroll {
 
 .branded-table-scroll thead th {
   padding: 0.85rem 1rem;
-  border-color: var(--crimson-dark);
-  border-bottom: 1px solid var(--crimson-dark);
-  background-color: var(--crimson-dark);
+  border-color: var(--ncsu-yellow);
+  border-bottom: 1px solid var(--ncsu-yellow);
+  background-color: var(--logo-red);
   color: #ffffff;
   font-weight: 700;
   vertical-align: bottom;
@@ -810,7 +817,7 @@ body:has(.home-page) #quarto-content > main.content {
     radial-gradient(circle at 88% 12%, rgba(255, 236, 176, 0.22) 0%, rgba(255, 236, 176, 0.13) 24%, rgba(255, 236, 176, 0) 48%),
     linear-gradient(95deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.28) 44%, rgba(0, 0, 0, 0.2) 100%),
     linear-gradient(0deg, rgba(0, 0, 0, 0.36) 0%, rgba(0, 0, 0, 0.08) 46%, rgba(0, 0, 0, 0.25) 100%),
-    url("https://github.com/user-attachments/assets/ac10ec07-a213-4765-9f56-8a1676547464");
+    url("https://github.com/user-attachments/assets/31c7c4fb-a91f-4cf0-afa8-ce6eee5ee800");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -826,15 +833,14 @@ body:has(.home-page) #quarto-content > main.content {
   width: min(1160px, 100%);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  justify-items: center;
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
   gap: 2rem;
   align-items: center;
 }
 
 .home-hero-copy {
   width: min(100%, 54rem);
-  text-align: center;
+  text-align: left;
 }
 
 .home-kicker,
@@ -868,7 +874,7 @@ body:has(.home-page) #quarto-content > main.content {
 
 .home-page h1 {
   max-width: 760px;
-  margin: 0 auto 1.4rem;
+  margin: 0 0 1.4rem;
   color: inherit;
   font-size: clamp(2.5rem, 5vw, 4.2rem);
   line-height: 1.04;
@@ -876,7 +882,7 @@ body:has(.home-page) #quarto-content > main.content {
 
 .home-hero-copy > p {
   max-width: 720px;
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
   color: #ffffff;
   font-size: 1.15rem;
@@ -886,7 +892,7 @@ body:has(.home-page) #quarto-content > main.content {
 .home-chip-row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.7rem;
   margin-top: 1.6rem;
 }
@@ -909,8 +915,8 @@ body:has(.home-page) #quarto-content > main.content {
 .home-hero-actions {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.9rem;
+  justify-content: flex-start;
+  gap: 1.25rem;
   margin-top: 1.8rem;
 }
 
@@ -932,10 +938,11 @@ body:has(.home-page) #quarto-content > main.content {
   box-shadow: 0 12px 28px rgba(153, 0, 0, 0.28);
 }
 
-.home-button-primary:hover,
-.home-button-primary:focus-visible {
+.home-button:hover,
+.home-button:focus-visible {
   color: #ffffff;
-  background: var(--crimson-dark);
+  background: var(--crimson);
+  border-color: var(--crimson);
 }
 
 .home-button-secondary {
@@ -944,17 +951,11 @@ body:has(.home-page) #quarto-content > main.content {
   border-color: rgba(255, 255, 255, 0.78);
 }
 
-.home-button-secondary:hover,
-.home-button-secondary:focus-visible {
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.82);
-}
-
 .home-hero-media {
-  width: min(100%, 44rem);
+  width: 100%;
   display: grid;
   gap: 1rem;
-  justify-items: center;
+  justify-items: end;
   align-self: center;
 }
 
@@ -1329,6 +1330,10 @@ body:has(.home-page) #quarto-content > main.content {
   color: var(--muted);
 }
 
+.contact-cta > p {
+  margin: 0;
+}
+
 .contact-primary-action {
   display: inline-flex;
   flex: 0 0 auto;
@@ -1448,7 +1453,7 @@ body.ccg-reader-mode #quarto-content > main.content {
   max-width: 42rem;
   margin-left: auto;
   margin-right: auto;
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   line-height: 1.9;
 }
 
@@ -1774,7 +1779,7 @@ body.ccg-reader-mode .detail-item:last-child {
 
 @media (max-width: 560px) {
   body.quarto-light {
-    font-size: 16px;
+    font-size: 1.125rem;
   }
 
   .feature-grid {
@@ -1809,4 +1814,32 @@ body.ccg-reader-mode .detail-item:last-child {
   .skip-link {
     transition: none;
   }
+}
+
+main table thead th {
+  border-color: var(--ncsu-yellow);
+  background-color: var(--logo-red);
+  color: #ffffff;
+}
+
+main table tbody tr:nth-child(even) > * {
+  background-color: var(--pub-row-band-even);
+}
+
+:is(button, input[type="button"], input[type="submit"], input[type="reset"], .btn, .dt-button, .home-button, .contact-primary-action, .course-btn),
+.dt-container .dt-button {
+  border-color: var(--logo-red);
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 700;
+  background-color: var(--logo-red);
+}
+
+:is(button, input[type="button"], input[type="submit"], input[type="reset"], .btn, .dt-button, .home-button, .contact-primary-action, .course-btn):hover,
+:is(button, input[type="button"], input[type="submit"], input[type="reset"], .btn, .dt-button, .home-button, .contact-primary-action, .course-btn):focus-visible,
+.dt-container .dt-button:hover,
+.dt-container .dt-button:focus-visible {
+  border-color: var(--ncsu-yellow);
+  color: var(--ncsu-black);
+  background-color: var(--ncsu-yellow);
 }

@@ -36,38 +36,6 @@
   --pub-row-band-focus: var(--pub-row-band-even);
 }
 
-main table thead th {
-  border-color: var(--ncsu-yellow);
-  background-color: var(--logo-red);
-  color: #ffffff;
-}
-
-main table tbody tr:nth-child(even) > * {
-  background-color: var(--pub-row-band-even);
-}
-
-body.quarto-dark main table tbody tr:nth-child(even) > * {
-  background-color: #292719;
-}
-
-:is(button, input[type="button"], input[type="submit"], input[type="reset"], .btn, .dt-button, .home-button, .contact-primary-action, .course-btn),
-.dt-container .dt-button {
-  border-color: var(--logo-red);
-  color: #ffffff;
-  font-size: 1.125rem;
-  font-weight: 700;
-  background-color: var(--logo-red);
-}
-
-:is(button, input[type="button"], input[type="submit"], input[type="reset"], .btn, .dt-button, .home-button, .contact-primary-action, .course-btn):hover,
-:is(button, input[type="button"], input[type="submit"], input[type="reset"], .btn, .dt-button, .home-button, .contact-primary-action, .course-btn):focus-visible,
-.dt-container .dt-button:hover,
-.dt-container .dt-button:focus-visible {
-  border-color: var(--ncsu-yellow);
-  color: var(--ncsu-black);
-  background-color: var(--ncsu-yellow);
-}
-
 /* Hide title block on pages with page-card to avoid duplication */
 body:has(main .page-card) header.quarto-title-block {
   display: none;
@@ -150,7 +118,7 @@ body.quarto-dark {
   --card-accent-graphite: #9aafc0;
   --card-accent-graphite-soft: #b5c4d0;
   --pub-row-band-odd: #1a2530;
-  --pub-row-band-even: #22303b;
+  --pub-row-band-even: #292719;
   --pub-row-band-focus: var(--pub-row-band-even);
   background: #111820;
 }
@@ -412,7 +380,7 @@ body.quarto-light #quarto-header .navbar .nav-link:focus-visible {
 #quarto-footer .nav-footer-right {
   color: rgba(255, 255, 255, 0.92);
   line-height: 1.7;
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
 #quarto-footer a {
@@ -556,15 +524,15 @@ main.content {
 
 #pub-filters .btn-primary {
   color: #fff;
-  border-color: var(--crimson);
-  background-color: var(--crimson);
+  border-color: var(--logo-red);
+  background-color: var(--logo-red);
 }
 
 #pub-filters .btn-primary:hover,
 #pub-filters .btn-primary:focus-visible {
-  color: #fff;
-  border-color: var(--crimson-dark);
-  background-color: var(--crimson-dark);
+  color: var(--ncsu-black);
+  border-color: var(--ncsu-yellow);
+  background-color: var(--ncsu-yellow);
 }
 
 body.quarto-dark .page-card {
@@ -1846,4 +1814,32 @@ body.ccg-reader-mode .detail-item:last-child {
   .skip-link {
     transition: none;
   }
+}
+
+main table thead th {
+  border-color: var(--ncsu-yellow);
+  background-color: var(--logo-red);
+  color: #ffffff;
+}
+
+main table tbody tr:nth-child(even) > * {
+  background-color: var(--pub-row-band-even);
+}
+
+:is(button, input[type="button"], input[type="submit"], input[type="reset"], .btn, .dt-button, .home-button, .contact-primary-action, .course-btn),
+.dt-container .dt-button {
+  border-color: var(--logo-red);
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 700;
+  background-color: var(--logo-red);
+}
+
+:is(button, input[type="button"], input[type="submit"], input[type="reset"], .btn, .dt-button, .home-button, .contact-primary-action, .course-btn):hover,
+:is(button, input[type="button"], input[type="submit"], input[type="reset"], .btn, .dt-button, .home-button, .contact-primary-action, .course-btn):focus-visible,
+.dt-container .dt-button:hover,
+.dt-container .dt-button:focus-visible {
+  border-color: var(--ncsu-yellow);
+  color: var(--ncsu-black);
+  background-color: var(--ncsu-yellow);
 }
