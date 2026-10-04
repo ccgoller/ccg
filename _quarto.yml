@@ -30,6 +30,9 @@ website:
       - text: "CV"
         icon: file-earmark-person
         href: cv.qmd
+      - text: "Contact"
+        icon: envelope
+        href: contact.qmd
     right:
       - text: "More"
         menu:
@@ -42,9 +45,6 @@ website:
           - text: "Professional Development"
             icon: briefcase
             href: professional-development.qmd
-          - text: "Contact"
-            icon: envelope
-            href: contact.qmd
 
 format:
   html:

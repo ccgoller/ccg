@@ -119,6 +119,11 @@ ul.task-list li input[type="checkbox"] {
 </i> 
 <span class="menu-text">CV</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./contact.html"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text">Contact</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
@@ -140,11 +145,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./professional-development.html"><i class="bi bi-briefcase" role="img">
 </i> 
  <span class="dropdown-text">Professional Development</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./contact.html"><i class="bi bi-envelope" role="img">
-</i> 
- <span class="dropdown-text">Contact</span></a>
   </li>  
     </ul>
   </li>
@@ -168,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <div class="quarto-about-trestles">
   <div class="about-entity">
-    <img src="https://raw.githubusercontent.com/ccgoller/mb360workbook/main/workbook/images/author/GollerCarlos.jpg" class="about-image
+    <img src="https://raw.githubusercontent.com/ccgoller/mb360workbook/main/workbook/images/author/GollerCarlos.jpg" alt="Portrait of Carlos C. Goller" class="about-image
   rounded " style="width: 20em;">
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -276,6 +276,48 @@ document.addEventListener('DOMContentLoaded', function () {
     logoLink.setAttribute('aria-hidden', 'true');
     logoLink.setAttribute('tabindex', '-1');
   }
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Quarto's built-in reader mode only hides the TOC and sidebars, which this
+  // site does not use, so the navbar toggle had no visible effect. Mirror the
+  // toggle's "reader" state onto <body> so styles.css can apply a focused
+  // reading layout, and expose the toggle as an accessible toggle button.
+  var toggles = document.querySelectorAll('.quarto-reader-toggle');
+  if (!toggles.length) {
+    return;
+  }
+
+  var sync = function () {
+    var active = false;
+    toggles.forEach(function (toggle) {
+      if (toggle.classList.contains('reader')) {
+        active = true;
+      }
+    });
+    document.body.classList.toggle('ccg-reader-mode', active);
+    toggles.forEach(function (toggle) {
+      toggle.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+  };
+
+  toggles.forEach(function (toggle) {
+    toggle.setAttribute('role', 'button');
+    toggle.setAttribute('aria-label', 'Toggle focused reading mode');
+    toggle.addEventListener('keydown', function (event) {
+      if (event.key === ' ') {
+        event.preventDefault();
+        toggle.click();
+      }
+    });
+    new MutationObserver(sync).observe(toggle, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  });
+
+  sync();
 });
 </script>
 <script id="quarto-html-after-body" type="application/javascript">

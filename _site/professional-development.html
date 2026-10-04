@@ -120,6 +120,11 @@ ul.task-list li input[type="checkbox"] {
 </i> 
 <span class="menu-text">CV</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./contact.html"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text">Contact</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
@@ -141,11 +146,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./professional-development.html"><i class="bi bi-briefcase" role="img">
 </i> 
  <span class="dropdown-text">Professional Development</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./contact.html"><i class="bi bi-envelope" role="img">
-</i> 
- <span class="dropdown-text">Contact</span></a>
   </li>  
     </ul>
   </li>
@@ -173,6 +173,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Professional Development</h1>
+<p class="subtitle lead">Professional learning, teaching development, and leadership</p>
 </div>
 
 
@@ -189,11 +190,15 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Professional growth activities, workshops, and certifications.</p>
+<section id="professional-development" class="level1 unnumbered unlisted page-card">
+<h1 class="unnumbered unlisted">Professional Development</h1>
+<p>A summary of professional learning, certifications, and programs that support evidence-based teaching, inclusive course design, and STEM education leadership.</p>
+</section>
 <section id="workshops-and-training" class="level2">
 <h2 class="anchored" data-anchor-id="workshops-and-training">Workshops and Training</h2>
-<section id="key-categories" class="level3">
-<h3 class="anchored" data-anchor-id="key-categories">Key Categories</h3>
+<p>Professional learning focuses on practical skills and evidence-based approaches for teaching and faculty collaboration.</p>
+<section id="areas-of-focus" class="level3">
+<h3 class="anchored" data-anchor-id="areas-of-focus">Areas of Focus</h3>
 <ul>
 <li>Online and hybrid teaching quality</li>
 <li>Evidence-based pedagogy</li>
@@ -201,8 +206,9 @@ ul.task-list li input[type="checkbox"] {
 <li>Bioinformatics and life-science instructional training</li>
 </ul>
 </section>
-<section id="at-a-glance" class="level3">
-<h3 class="anchored" data-anchor-id="at-a-glance">At a Glance</h3>
+<section id="participation-at-a-glance" class="level3">
+<h3 class="anchored" data-anchor-id="participation-at-a-glance">Participation at a Glance</h3>
+<div class="branded-table-scroll" role="region" aria-label="Professional development participation at a glance" tabindex="0">
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -225,14 +231,16 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 </section>
-<section id="certifications" class="level2">
-<h2 class="anchored" data-anchor-id="certifications">Certifications</h2>
+<section id="certifications-and-credentials" class="level2">
+<h2 class="anchored" data-anchor-id="certifications-and-credentials">Certifications and Credentials</h2>
+<div class="branded-table-scroll" role="region" aria-label="Certifications and credentials" tabindex="0">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Certifications</th>
+<th>Credential</th>
 <th style="text-align: right;">Count</th>
 </tr>
 </thead>
@@ -246,19 +254,27 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td>Total certifications (LinkedIn profile)</td>
+<td>Certifications listed on LinkedIn profile</td>
 <td style="text-align: right;">1100+</td>
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="selected-professional-development-programs" class="level2">
 <h2 class="anchored" data-anchor-id="selected-professional-development-programs">Selected Professional Development Programs</h2>
+<section id="programs-and-workshops" class="level3">
+<h3 class="anchored" data-anchor-id="programs-and-workshops">Programs and Workshops</h3>
 <ul>
 <li>ASM Biology Scholars Program</li>
 <li>Summer Institute on Scientific Teaching</li>
 <li>Science CaseNet &amp; NCCSTS workshops</li>
 <li>POGIL Workshops</li>
+</ul>
+</section>
+<section id="fellowships" class="level3">
+<h3 class="anchored" data-anchor-id="fellowships">Fellowships</h3>
+<ul>
 <li>PALM Fellowship</li>
 <li>NSF ENCOUR Fellowship</li>
 <li>NSF TAPESTRy Fellowship</li>
@@ -266,11 +282,12 @@ ul.task-list li input[type="checkbox"] {
 <li>NSF BioGraphI Fellowship</li>
 </ul>
 </section>
+</section>
 <section id="leadership-and-service" class="level2">
 <h2 class="anchored" data-anchor-id="leadership-and-service">Leadership and Service</h2>
 <ul>
-<li>Facilitator and contributor in faculty mentoring and professional learning communities.</li>
-<li>Active participant in national STEM education collaborations that support sustained teaching innovation.</li>
+<li>Facilitates and contributes to faculty mentoring and professional learning communities.</li>
+<li>Participates in national STEM education collaborations focused on sustained teaching innovation.</li>
 </ul>
 
 
@@ -293,6 +310,48 @@ document.addEventListener('DOMContentLoaded', function () {
     logoLink.setAttribute('aria-hidden', 'true');
     logoLink.setAttribute('tabindex', '-1');
   }
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Quarto's built-in reader mode only hides the TOC and sidebars, which this
+  // site does not use, so the navbar toggle had no visible effect. Mirror the
+  // toggle's "reader" state onto <body> so styles.css can apply a focused
+  // reading layout, and expose the toggle as an accessible toggle button.
+  var toggles = document.querySelectorAll('.quarto-reader-toggle');
+  if (!toggles.length) {
+    return;
+  }
+
+  var sync = function () {
+    var active = false;
+    toggles.forEach(function (toggle) {
+      if (toggle.classList.contains('reader')) {
+        active = true;
+      }
+    });
+    document.body.classList.toggle('ccg-reader-mode', active);
+    toggles.forEach(function (toggle) {
+      toggle.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+  };
+
+  toggles.forEach(function (toggle) {
+    toggle.setAttribute('role', 'button');
+    toggle.setAttribute('aria-label', 'Toggle focused reading mode');
+    toggle.addEventListener('keydown', function (event) {
+      if (event.key === ' ') {
+        event.preventDefault();
+        toggle.click();
+      }
+    });
+    new MutationObserver(sync).observe(toggle, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  });
+
+  sync();
 });
 </script>
 <script id="quarto-html-after-body" type="application/javascript">

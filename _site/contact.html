@@ -120,6 +120,11 @@ ul.task-list li input[type="checkbox"] {
 </i> 
 <span class="menu-text">CV</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./contact.html" aria-current="page"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text">Contact</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
@@ -141,11 +146,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./professional-development.html"><i class="bi bi-briefcase" role="img">
 </i> 
  <span class="dropdown-text">Professional Development</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./contact.html"><i class="bi bi-envelope" role="img">
-</i> 
- <span class="dropdown-text">Contact</span></a>
   </li>  
     </ul>
   </li>
@@ -190,12 +190,21 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="contact" class="level2 unnumbered unlisted page-card">
-<h2 class="unnumbered unlisted anchored" data-anchor-id="contact">Contact</h2>
-<p>Use this page to connect regarding teaching, research, mentoring, collaboration, speaking, or professional opportunities.</p>
+<section id="contact" class="level1 unnumbered unlisted page-card">
+<h1 class="unnumbered unlisted">Contact</h1>
+<p>Connect about teaching, research, mentoring, collaboration, speaking, or professional opportunities.</p>
 </section>
-<section id="contact-information" class="level2">
-<h2 class="anchored" data-anchor-id="contact-information">Contact Information</h2>
+<div class="contact-cta">
+<div class="contact-cta-copy">
+<strong>Start a conversation</strong>
+<p>
+For teaching, mentoring, collaboration, or speaking inquiries, email is the best way to reach me.
+</p>
+</div>
+<p><a class="contact-primary-action" href="mailto:ccgoller@ncsu.edu"><i class="bi bi-envelope-fill" aria-hidden="true"></i> Email Carlos</a></p>
+</div>
+<section id="ways-to-connect" class="level2">
+<h2 class="anchored" data-anchor-id="ways-to-connect">Ways to Connect</h2>
 <div class="contact-grid">
 <section id="email" class="level3 contact-card">
 <h3 class="anchored" data-anchor-id="email">Email</h3>
@@ -258,6 +267,48 @@ document.addEventListener('DOMContentLoaded', function () {
     logoLink.setAttribute('aria-hidden', 'true');
     logoLink.setAttribute('tabindex', '-1');
   }
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Quarto's built-in reader mode only hides the TOC and sidebars, which this
+  // site does not use, so the navbar toggle had no visible effect. Mirror the
+  // toggle's "reader" state onto <body> so styles.css can apply a focused
+  // reading layout, and expose the toggle as an accessible toggle button.
+  var toggles = document.querySelectorAll('.quarto-reader-toggle');
+  if (!toggles.length) {
+    return;
+  }
+
+  var sync = function () {
+    var active = false;
+    toggles.forEach(function (toggle) {
+      if (toggle.classList.contains('reader')) {
+        active = true;
+      }
+    });
+    document.body.classList.toggle('ccg-reader-mode', active);
+    toggles.forEach(function (toggle) {
+      toggle.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+  };
+
+  toggles.forEach(function (toggle) {
+    toggle.setAttribute('role', 'button');
+    toggle.setAttribute('aria-label', 'Toggle focused reading mode');
+    toggle.addEventListener('keydown', function (event) {
+      if (event.key === ' ') {
+        event.preventDefault();
+        toggle.click();
+      }
+    });
+    new MutationObserver(sync).observe(toggle, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  });
+
+  sync();
 });
 </script>
 <script id="quarto-html-after-body" type="application/javascript">

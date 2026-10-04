@@ -120,6 +120,11 @@ ul.task-list li input[type="checkbox"] {
 </i> 
 <span class="menu-text">CV</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./contact.html"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text">Contact</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
@@ -141,11 +146,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./professional-development.html"><i class="bi bi-briefcase" role="img">
 </i> 
  <span class="dropdown-text">Professional Development</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./contact.html"><i class="bi bi-envelope" role="img">
-</i> 
- <span class="dropdown-text">Contact</span></a>
   </li>  
     </ul>
   </li>
@@ -190,8 +190,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="cv" class="level2 unnumbered unlisted page-card">
-<h2 class="unnumbered unlisted anchored" data-anchor-id="cv">CV</h2>
+<section id="cv" class="level1 unnumbered unlisted page-card">
+<h1 class="unnumbered unlisted">CV</h1>
 <p>A comprehensive web-friendly CV for Carlos C. Goller, Ph.D., with academic credentials, teaching experience, research, and professional development.</p>
 </section>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -214,6 +214,7 @@ Note
 </section>
 <section id="current-appointment" class="level2">
 <h2 class="anchored" data-anchor-id="current-appointment">Current Appointment</h2>
+<div class="branded-table-scroll" role="region" aria-label="Current appointment" tabindex="0">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -238,9 +239,11 @@ Note
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="contact-and-professional-profiles" class="level2">
 <h2 class="anchored" data-anchor-id="contact-and-professional-profiles">Contact and Professional Profiles</h2>
+<div class="branded-table-scroll" role="region" aria-label="Contact and professional profiles" tabindex="0">
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -267,9 +270,11 @@ Note
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="education-and-training" class="level2">
 <h2 class="anchored" data-anchor-id="education-and-training">Education and Training</h2>
+<div class="branded-table-scroll" role="region" aria-label="Education and training" tabindex="0">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 20%">
@@ -318,9 +323,11 @@ Note
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="academic-appointments" class="level2">
 <h2 class="anchored" data-anchor-id="academic-appointments">Academic Appointments</h2>
+<div class="branded-table-scroll" role="region" aria-label="Academic appointments" tabindex="0">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -352,9 +359,11 @@ Note
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="honors-and-fellowships" class="level2">
 <h2 class="anchored" data-anchor-id="honors-and-fellowships">Honors and Fellowships</h2>
+<div class="branded-table-scroll" role="region" aria-label="Honors and fellowships" tabindex="0">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -376,6 +385,7 @@ Note
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="teaching-and-curriculum-leadership" class="level2">
 <h2 class="anchored" data-anchor-id="teaching-and-curriculum-leadership">Teaching and Curriculum Leadership</h2>
@@ -461,6 +471,48 @@ document.addEventListener('DOMContentLoaded', function () {
     logoLink.setAttribute('aria-hidden', 'true');
     logoLink.setAttribute('tabindex', '-1');
   }
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Quarto's built-in reader mode only hides the TOC and sidebars, which this
+  // site does not use, so the navbar toggle had no visible effect. Mirror the
+  // toggle's "reader" state onto <body> so styles.css can apply a focused
+  // reading layout, and expose the toggle as an accessible toggle button.
+  var toggles = document.querySelectorAll('.quarto-reader-toggle');
+  if (!toggles.length) {
+    return;
+  }
+
+  var sync = function () {
+    var active = false;
+    toggles.forEach(function (toggle) {
+      if (toggle.classList.contains('reader')) {
+        active = true;
+      }
+    });
+    document.body.classList.toggle('ccg-reader-mode', active);
+    toggles.forEach(function (toggle) {
+      toggle.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+  };
+
+  toggles.forEach(function (toggle) {
+    toggle.setAttribute('role', 'button');
+    toggle.setAttribute('aria-label', 'Toggle focused reading mode');
+    toggle.addEventListener('keydown', function (event) {
+      if (event.key === ' ') {
+        event.preventDefault();
+        toggle.click();
+      }
+    });
+    new MutationObserver(sync).observe(toggle, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  });
+
+  sync();
 });
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
