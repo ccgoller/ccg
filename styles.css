@@ -1329,6 +1329,10 @@ body:has(.home-page) #quarto-content > main.content {
   color: var(--muted);
 }
 
+.contact-cta > p {
+  margin: 0;
+}
+
 .contact-primary-action {
   display: inline-flex;
   flex: 0 0 auto;
