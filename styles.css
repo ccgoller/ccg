@@ -34,6 +34,7 @@
   --pub-row-band-odd: #ffffff;
   --pub-row-band-even: var(--surface-band);
   --pub-row-band-focus: var(--pub-row-band-even);
+  --table-accent: #aeb8c0;
 }
 
 /* Hide title block on pages with page-card to avoid duplication */
@@ -120,6 +121,7 @@ body.quarto-dark {
   --pub-row-band-odd: #1a2530;
   --pub-row-band-even: #26313a;
   --pub-row-band-focus: var(--pub-row-band-even);
+  --table-accent: #71808c;
   background: #111820;
 }
 
@@ -683,7 +685,7 @@ figure.chart-figure canvas {
 
 #pub-table thead th,
 #mentor-table thead th {
-  border-color: var(--ncsu-yellow);
+  border-color: var(--table-accent);
   background-color: var(--logo-red);
   color: #ffffff;
 }
@@ -695,7 +697,7 @@ figure.chart-figure canvas {
   margin: 0 0 1.5rem;
   overflow-x: auto;
   border: 1px solid var(--line);
-  border-top: 4px solid var(--ncsu-yellow);
+  border-top: 4px solid var(--table-accent);
   border-radius: 10px;
   background: var(--surface);
   box-shadow: var(--shadow-soft);
@@ -706,7 +708,7 @@ body.quarto-dark .branded-table-scroll {
   --table-row-even: #26313a;
   --table-row-hover: var(--table-row-even);
   border-color: #33424f;
-  border-top-color: var(--ncsu-yellow);
+  border-top-color: var(--table-accent);
   background: #17232d;
 }
 
@@ -722,8 +724,8 @@ body.quarto-dark .branded-table-scroll {
 
 .branded-table-scroll thead th {
   padding: 0.85rem 1rem;
-  border-color: var(--ncsu-yellow);
-  border-bottom: 1px solid var(--ncsu-yellow);
+  border-color: var(--table-accent);
+  border-bottom: 1px solid var(--table-accent);
   background-color: var(--logo-red);
   color: #ffffff;
   font-weight: 700;
@@ -1817,7 +1819,7 @@ body.ccg-reader-mode .detail-item:last-child {
 }
 
 main table thead th {
-  border-color: var(--ncsu-yellow);
+  border-color: var(--table-accent);
   background-color: var(--logo-red);
   color: #ffffff;
 }
