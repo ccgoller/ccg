@@ -111,22 +111,22 @@ Professional snapshot
 
 ::: {.profile-snapshot}
 ::: {.profile-stat}
-<span>Current role</span>
+<span><i class="bi bi-briefcase" aria-hidden="true"></i> Current role</span>
 <strong>Teaching Professor</strong>
 <p>Department of Biological Sciences, North Carolina State University.</p>
 :::
 ::: {.profile-stat}
-<span>Core domains</span>
+<span><i class="bi bi-search" aria-hidden="true"></i> Core domains</span>
 <strong>Microbiology and STEM education</strong>
 <p>Academic work spanning microbiology, genomics, mentorship, and open pedagogy.</p>
 :::
 ::: {.profile-stat}
-<span>Academic pathway</span>
+<span><i class="bi bi-building" aria-hidden="true"></i> Academic pathway</span>
 <strong>Four institutions</strong>
 <p>Training and appointments connecting WPI, Emory, Duke, and NC State.</p>
 :::
 ::: {.profile-stat}
-<span>What this site offers</span>
+<span><i class="bi bi-grid-3x3-gap" aria-hidden="true"></i> What this site offers</span>
 <strong>One professional hub</strong>
 <p>Research, publications, courses, mentoring, and professional materials in one place.</p>
 :::
@@ -143,19 +143,19 @@ Core areas
 
 ::: {.feature-grid}
 ::: {.feature}
-### Research
+### <i class="bi bi-search" aria-hidden="true"></i> Research
 Explore research themes in microbiology, physiology, genomics, and discovery-centered scholarship.
 
 [Go to research](research.html)
 :::
 ::: {.feature}
-### Publications
+### <i class="bi bi-journal-text" aria-hidden="true"></i> Publications
 Browse peer-reviewed scholarship, academic writing, and collaborative publications.
 
 [Go to publications](publications.html)
 :::
 ::: {.feature}
-### Teaching
+### <i class="bi bi-mortarboard" aria-hidden="true"></i> Teaching
 See teaching philosophy, course design, and evidence-based instructional practice.
 
 [Go to teaching](teaching.html)
@@ -173,19 +173,19 @@ Student support
 
 ::: {.feature-grid}
 ::: {.feature}
-### Mentoring
+### <i class="bi bi-people" aria-hidden="true"></i> Mentoring
 Learn how mentoring work supports scientific identity, growth, and student persistence.
 
 [Go to mentoring](mentoring.html)
 :::
 ::: {.feature}
-### Courses
+### <i class="bi bi-grid-3x3-gap" aria-hidden="true"></i> Courses
 Access course pages, learning resources, and classroom materials.
 
 [Go to courses](courses.html)
 :::
 ::: {.feature}
-### Professional development
+### <i class="bi bi-briefcase" aria-hidden="true"></i> Professional development
 Workshops, leadership activities, and professional engagement highlights.
 
 [Go to professional development](professional-development.html)
@@ -203,19 +203,19 @@ Featured links
 
 ::: {.feature-grid}
 ::: {.feature}
-### Curriculum vitae
+### <i class="bi bi-file-earmark-person" aria-hidden="true"></i> Curriculum vitae
 Review a concise web version of the CV, including appointments, teaching, and education.
 
 [Open CV](cv.html)
 :::
 ::: {.feature}
-### Contact
+### <i class="bi bi-envelope" aria-hidden="true"></i> Contact
 Use the contact page for collaboration, teaching, mentoring, or speaking inquiries.
 
 [Contact Carlos](contact.html)
 :::
 ::: {.feature}
-### Featured projects
+### <i class="bi bi-collection" aria-hidden="true"></i> Featured projects
 Visit course and project sites that extend this academic portfolio into public-facing learning resources.
 
 [Browse featured links](about.html#selected-projects-and-resources)
