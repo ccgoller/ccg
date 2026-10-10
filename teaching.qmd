@@ -27,5 +27,8 @@ Teaching priorities include:
 
 ## Courses
 
-- Outbreak | HON 312 | NC State University Honors Program. Website: <http://go.ncsu.edu/outbreak>
-- Microbial Superheroes | LSC 170 | NC State Department of Biological Sciences. Website: <http://go.ncsu.edu/delftiabook>
+- HON 312: Outbreak | NC State University Honors Program. Website: <https://go.ncsu.edu/outbreak>
+- LSC 101: Critical and Creative Thinking in Life Sciences | NC State University
+- LSC 170: Microbial Superheroes | NC State Department of Biological Sciences. Website: <https://go.ncsu.edu/delftiabook>
+- MB 360: Inquiry at the Bench | NC State Department of Biological Sciences. Website: <https://go.ncsu.edu/mb360>
+- BSC 495: The Hidden World's Code — Fungal Genomics. Website: <https://go.ncsu.edu/mycoed>
