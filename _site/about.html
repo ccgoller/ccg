@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-f06ef4814a272b7e817b15f27906b60b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -79,6 +79,7 @@ ul.task-list li input[type="checkbox"] {
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
+<a class="skip-link" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -188,8 +189,8 @@ ul.task-list li input[type="checkbox"] {
   </a>
 </div>
   </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-<a class="skip-link" href="#quarto-content">Skip to main content</a>
+  <div class="about-contents"><main class="content" id="quarto-document-content" tabindex="-1">
+
 <p>Carlos C. Goller is a Teaching Professor in the Department of Biological Sciences at North Carolina State University. His academic work connects microbiology, genomics, evidence-based teaching, open pedagogy, and student mentoring through research-rich learning environments.</p>
 <section id="professional-summary" class="level2" data-number="1">
 <h2 data-number="1" data-anchor-id="professional-summary"><span class="header-section-number">1</span> Professional Summary</h2>
@@ -262,6 +263,25 @@ August 1998 - May 2002</p>
  <!-- /main -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.navbar .nav-link i.bi, .navbar .dropdown-item i.bi, .about-link i.bi, .quarto-reader-toggle i.bi').forEach(function (icon) {
+    icon.removeAttribute('role');
+    icon.setAttribute('aria-hidden', 'true');
+  });
+
+  // Keep native table relationships explicit when mobile CSS stacks the cells.
+  document.querySelectorAll('table.accessible-table').forEach(function (table) {
+    table.setAttribute('role', 'table');
+    table.querySelectorAll('thead, tbody').forEach(function (group) {
+      group.setAttribute('role', 'rowgroup');
+    });
+    table.querySelectorAll('thead tr').forEach(function (row) {
+      row.setAttribute('role', 'row');
+    });
+    table.querySelectorAll('thead th').forEach(function (header) {
+      header.setAttribute('role', 'columnheader');
+    });
+  });
+
   // Fix: mark the logo anchor as presentational so that assistive
   // technologies skip the adjacent duplicate link to the home page.
   // The brand-title anchor immediately following it already labels the

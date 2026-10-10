@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-f06ef4814a272b7e817b15f27906b60b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -80,6 +80,7 @@ ul.task-list li input[type="checkbox"] {
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
+<a class="skip-link" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -167,8 +168,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-<a class="skip-link" href="#quarto-content">Skip to main content</a>
+<main class="content" id="quarto-document-content" tabindex="-1">
+
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -196,12 +197,18 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <p>The table below is generated from <code>works.bib</code> and supports instant search and column sorting.</p>
 <link rel="stylesheet" href="assets/vendor/datatables/dataTables.dataTables.min.css">
+<script src="assets/vendor/datatables/jquery.min.js"></script>
 <script src="assets/vendor/datatables/dataTables.min.js"></script>
-<div id="pub-load-status">
+<div id="pub-load-status" role="status" aria-live="polite">
 Loading publications from works.bib…
 </div>
+<noscript>
+<p>
+JavaScript is required for the interactive table. <a href="works.bib">Download the publications bibliography (BibTeX)</a>.
+</p>
+</noscript>
 <figure class="chart-figure figure" aria-label="Bar chart: publications per year">
-<canvas id="pub-chart" role="img" aria-label="Bar chart showing number of publications per year">
+<canvas id="pub-chart" role="img" aria-label="Bar chart showing number of publications per year" aria-describedby="pub-chart-caption">
 </canvas>
 <figcaption id="pub-chart-caption" class="chart-caption">
 </figcaption>
@@ -445,7 +452,10 @@ const enableBasicColumnSorting = (tableElement, { numericColumns = [], disabledC
     };
     headers.forEach((header, index) => {
         if (disabledColumns.includes(index)) return;
+        if (header.dataset.sortBound) return;
+        header.dataset.sortBound = "true";
         header.tabIndex = 0;
+        header.setAttribute("aria-label", `${header.textContent.trim()}: activate to sort`);
         header.style.cursor = "pointer";
         header.setAttribute("aria-sort", "none");
         const onSort = () => sortByColumn(index, header.dataset.sortDir === "asc" ? "desc" : "asc");
@@ -535,7 +545,7 @@ const loadPublications = async () => {
         const renderRows = (rowsToRender) => {
             tbody.innerHTML = rowsToRender.map((row) => {
                 const escapedTitle = escapeHtml(row.title);
-                return `<tr><td data-label="Year">${escapeHtml(row.year)}</td><th scope="row" data-label="Title">${escapedTitle}</th><td data-label="Authors">${escapeHtml(row.authors)}</td><td data-label="Venue">${escapeHtml(row.venue)}</td><td data-label="Type">${escapeHtml(row.type)}</td><td data-label="Link">${row.link ? `<a class="pub-view-link" href="${escapeHtml(row.link)}" target="_blank" rel="noopener noreferrer" aria-label="View publication: ${escapedTitle}"><span>View</span><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>` : ""}</td></tr>`;
+                return `<tr role="row"><td role="cell" data-label="Year">${escapeHtml(row.year)}</td><th role="rowheader" scope="row" data-label="Title">${escapedTitle}</th><td role="cell" data-label="Authors">${escapeHtml(row.authors)}</td><td role="cell" data-label="Venue">${escapeHtml(row.venue)}</td><td role="cell" data-label="Type">${escapeHtml(row.type)}</td><td role="cell" data-label="Link">${row.link ? `<a class="pub-view-link" href="${escapeHtml(row.link)}" target="_blank" rel="noopener noreferrer" aria-label="View publication: ${escapedTitle} (opens in a new tab)"><span>View</span><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>` : ""}</td></tr>`;
             }).join("");
         };
         renderRows(rows);
@@ -586,12 +596,13 @@ const loadPublications = async () => {
                 const typeValue = typeFilter.value;
                 const filteredRows = rows.filter((row) => (!yearValue || row.year === yearValue) && (!typeValue || row.type === typeValue));
                 renderRows(filteredRows);
+                status.textContent = `Showing ${filteredRows.length} of ${rows.length} publications.`;
                 enableBasicColumnSorting(document.getElementById("pub-table"), { numericColumns: [0], disabledColumns: [5], defaultOrder: { column: 0, direction: "desc" } });
             };
             yearFilter.addEventListener("change", applyBasicFilters);
             typeFilter.addEventListener("change", applyBasicFilters);
             enableBasicColumnSorting(document.getElementById("pub-table"), { numericColumns: [0], disabledColumns: [5], defaultOrder: { column: 0, direction: "desc" } });
-            filters.style.display = "block";
+            filters.style.display = "flex";
             status.textContent = `Loaded ${rows.length} publications from works.bib. DataTables did not load, so basic column sorting is enabled.`;
             return;
         }
@@ -602,7 +613,7 @@ const loadPublications = async () => {
         };
         yearFilter.addEventListener("change", applyFilters);
         typeFilter.addEventListener("change", applyFilters);
-        filters.style.display = "block";
+        filters.style.display = "flex";
         status.textContent = `Loaded ${rows.length} publications from works.bib.`;
     } catch (error) {
         status.textContent = `Unable to load publications: ${error.message}`;
@@ -617,6 +628,25 @@ loadPublications();
 </main> <!-- /main -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.navbar .nav-link i.bi, .navbar .dropdown-item i.bi, .about-link i.bi, .quarto-reader-toggle i.bi').forEach(function (icon) {
+    icon.removeAttribute('role');
+    icon.setAttribute('aria-hidden', 'true');
+  });
+
+  // Keep native table relationships explicit when mobile CSS stacks the cells.
+  document.querySelectorAll('table.accessible-table').forEach(function (table) {
+    table.setAttribute('role', 'table');
+    table.querySelectorAll('thead, tbody').forEach(function (group) {
+      group.setAttribute('role', 'rowgroup');
+    });
+    table.querySelectorAll('thead tr').forEach(function (row) {
+      row.setAttribute('role', 'row');
+    });
+    table.querySelectorAll('thead th').forEach(function (header) {
+      header.setAttribute('role', 'columnheader');
+    });
+  });
+
   // Fix: mark the logo anchor as presentational so that assistive
   // technologies skip the adjacent duplicate link to the home page.
   // The brand-title anchor immediately following it already labels the
