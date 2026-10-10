@@ -1,5 +1,24 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.navbar .nav-link i.bi, .navbar .dropdown-item i.bi, .about-link i.bi, .quarto-reader-toggle i.bi').forEach(function (icon) {
+    icon.removeAttribute('role');
+    icon.setAttribute('aria-hidden', 'true');
+  });
+
+  // Keep native table relationships explicit when mobile CSS stacks the cells.
+  document.querySelectorAll('table.accessible-table').forEach(function (table) {
+    table.setAttribute('role', 'table');
+    table.querySelectorAll('thead, tbody').forEach(function (group) {
+      group.setAttribute('role', 'rowgroup');
+    });
+    table.querySelectorAll('thead tr').forEach(function (row) {
+      row.setAttribute('role', 'row');
+    });
+    table.querySelectorAll('thead th').forEach(function (header) {
+      header.setAttribute('role', 'columnheader');
+    });
+  });
+
   // Fix: mark the logo anchor as presentational so that assistive
   // technologies skip the adjacent duplicate link to the home page.
   // The brand-title anchor immediately following it already labels the

@@ -13,12 +13,14 @@ Publications bring together microbiology research, educational scholarship, and 
 The table below is generated from `works.bib` and supports instant search and column sorting.
 
 <link rel="stylesheet" href="assets/vendor/datatables/dataTables.dataTables.min.css">
+<script src="assets/vendor/datatables/jquery.min.js"></script>
 <script src="assets/vendor/datatables/dataTables.min.js"></script>
 
-<div id="pub-load-status">Loading publications from works.bib...</div>
+<div id="pub-load-status" role="status" aria-live="polite">Loading publications from works.bib...</div>
+<noscript><p>JavaScript is required for the interactive table. <a href="works.bib">Download the publications bibliography (BibTeX)</a>.</p></noscript>
 
 <figure class="chart-figure" aria-label="Bar chart: publications per year">
-	<canvas id="pub-chart" role="img" aria-label="Bar chart showing number of publications per year"></canvas>
+	<canvas id="pub-chart" role="img" aria-label="Bar chart showing number of publications per year" aria-describedby="pub-chart-caption"></canvas>
 	<figcaption id="pub-chart-caption" class="chart-caption"></figcaption>
 </figure>
 
@@ -246,7 +248,10 @@ const enableBasicColumnSorting = (tableElement, { numericColumns = [], disabledC
 	};
 	headers.forEach((header, index) => {
 		if (disabledColumns.includes(index)) return;
+		if (header.dataset.sortBound) return;
+		header.dataset.sortBound = "true";
 		header.tabIndex = 0;
+		header.setAttribute("aria-label", `${header.textContent.trim()}: activate to sort`);
 		header.style.cursor = "pointer";
 		header.setAttribute("aria-sort", "none");
 		const onSort = () => sortByColumn(index, header.dataset.sortDir === "asc" ? "desc" : "asc");
@@ -336,7 +341,7 @@ const loadPublications = async () => {
 		const renderRows = (rowsToRender) => {
 			tbody.innerHTML = rowsToRender.map((row) => {
 				const escapedTitle = escapeHtml(row.title);
-				return `<tr><td data-label="Year">${escapeHtml(row.year)}</td><th scope="row" data-label="Title">${escapedTitle}</th><td data-label="Authors">${escapeHtml(row.authors)}</td><td data-label="Venue">${escapeHtml(row.venue)}</td><td data-label="Type">${escapeHtml(row.type)}</td><td data-label="Link">${row.link ? `<a class="pub-view-link" href="${escapeHtml(row.link)}" target="_blank" rel="noopener noreferrer" aria-label="View publication: ${escapedTitle}"><span>View</span><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>` : ""}</td></tr>`;
+				return `<tr role="row"><td role="cell" data-label="Year">${escapeHtml(row.year)}</td><th role="rowheader" scope="row" data-label="Title">${escapedTitle}</th><td role="cell" data-label="Authors">${escapeHtml(row.authors)}</td><td role="cell" data-label="Venue">${escapeHtml(row.venue)}</td><td role="cell" data-label="Type">${escapeHtml(row.type)}</td><td role="cell" data-label="Link">${row.link ? `<a class="pub-view-link" href="${escapeHtml(row.link)}" target="_blank" rel="noopener noreferrer" aria-label="View publication: ${escapedTitle} (opens in a new tab)"><span>View</span><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>` : ""}</td></tr>`;
 			}).join("");
 		};
 		renderRows(rows);
@@ -387,12 +392,13 @@ const loadPublications = async () => {
 				const typeValue = typeFilter.value;
 				const filteredRows = rows.filter((row) => (!yearValue || row.year === yearValue) && (!typeValue || row.type === typeValue));
 				renderRows(filteredRows);
+				status.textContent = `Showing ${filteredRows.length} of ${rows.length} publications.`;
 				enableBasicColumnSorting(document.getElementById("pub-table"), { numericColumns: [0], disabledColumns: [5], defaultOrder: { column: 0, direction: "desc" } });
 			};
 			yearFilter.addEventListener("change", applyBasicFilters);
 			typeFilter.addEventListener("change", applyBasicFilters);
 			enableBasicColumnSorting(document.getElementById("pub-table"), { numericColumns: [0], disabledColumns: [5], defaultOrder: { column: 0, direction: "desc" } });
-			filters.style.display = "block";
+			filters.style.display = "flex";
 			status.textContent = `Loaded ${rows.length} publications from works.bib. DataTables did not load, so basic column sorting is enabled.`;
 			return;
 		}
@@ -403,7 +409,7 @@ const loadPublications = async () => {
 		};
 		yearFilter.addEventListener("change", applyFilters);
 		typeFilter.addEventListener("change", applyFilters);
-		filters.style.display = "block";
+		filters.style.display = "flex";
 		status.textContent = `Loaded ${rows.length} publications from works.bib.`;
 	} catch (error) {
 		status.textContent = `Unable to load publications: ${error.message}`;

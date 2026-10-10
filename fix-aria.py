@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
-Post-render script: remove the invalid role="menu" attribute that Quarto's
-Bootstrap template places on the .navbar-toggler <button>.
+Post-render script: fix Quarto navigation semantics and skip-link placement.
 
 A <button> has the implicit ARIA role "button". Adding role="menu" is
 incorrect and causes a WAVE "Broken ARIA menu" error because a role="menu"
@@ -51,6 +50,7 @@ def _fix_button_tag(match: re.Match) -> str:
 
 def fix_file(path: Path) -> bool:
     """Strip ``role="menu"`` from navbar-toggler buttons in an HTML file.
+    Move the skip link before navigation and make the main landmark focusable.
 
     Args:
         path: Path to the HTML file to process.
@@ -64,9 +64,21 @@ def fix_file(path: Path) -> bool:
     """
     text = path.read_text(encoding="utf-8")
     new_text = _BUTTON_TAG.sub(_fix_button_tag, text)
+    # Quarto inserts include-before-body inside main, after the navigation.
+    # Move the skip link ahead of the header and make its destination focusable.
+    skip_link = re.search(r'<a class="skip-link" href="#quarto-document-content">[^<]*</a>', new_text)
+    if skip_link:
+        new_text = new_text.replace(skip_link.group(0), "", 1)
+        new_text = re.sub(r'(<body\b[^>]*>)', lambda match: match.group(0) + "\n" + skip_link.group(0), new_text, count=1)
+        new_text = re.sub(
+            r'<main\b[^>]*\bid="quarto-document-content"[^>]*>',
+            lambda match: match.group(0) if "tabindex=" in match.group(0) else match.group(0)[:-1] + ' tabindex="-1">',
+            new_text,
+            count=1,
+        )
     if new_text != text:
         path.write_text(new_text, encoding="utf-8")
-        print(f'Removed role="menu" attribute from {path}', file=sys.stderr)
+        print(f"Applied accessibility cleanup to {path}", file=sys.stderr)
         return True
     return False
 
