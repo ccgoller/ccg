@@ -206,6 +206,23 @@ body.quarto-dark #quarto-header .navbar {
   color: #ffffff;
 }
 
+#quarto-header .navbar .navbar-toggler,
+#quarto-header .navbar .aa-DetachedSearchButton {
+  color: #ffffff;
+  background-color: var(--crimson);
+  border-color: var(--crimson);
+}
+
+#quarto-header .navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+#quarto-header .navbar .aa-DetachedSearchButton svg {
+  color: #ffffff;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
 body.quarto-light #quarto-header .navbar .dropdown-menu {
   background: rgba(255, 255, 255, 0.98);
   border: 1px solid var(--line);
