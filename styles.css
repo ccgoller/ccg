@@ -206,6 +206,27 @@ body.quarto-dark #quarto-header .navbar {
   color: #ffffff;
 }
 
+#quarto-header .navbar .navbar-toggler,
+#quarto-header .navbar #quarto-search .aa-DetachedSearchButton {
+  color: #ffffff;
+  background-color: var(--crimson);
+  border-color: var(--crimson);
+}
+
+#quarto-header .navbar .navbar-toggler-icon {
+  filter: brightness(0) invert(1);
+}
+
+#quarto-header .navbar #quarto-search .aa-DetachedSearchButton :is(svg, path) {
+  fill: currentColor;
+}
+
+#quarto-header .navbar :is(.navbar-toggler, #quarto-search .aa-DetachedSearchButton):hover {
+  color: #ffffff;
+  background-color: var(--crimson-dark);
+  border-color: var(--crimson-dark);
+}
+
 body.quarto-light #quarto-header .navbar .dropdown-menu {
   background: rgba(255, 255, 255, 0.98);
   border: 1px solid var(--line);
