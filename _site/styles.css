@@ -34,7 +34,7 @@
   --pub-row-band-odd: #ffffff;
   --pub-row-band-even: var(--surface-band);
   --pub-row-band-focus: var(--pub-row-band-even);
-  --table-accent: #aeb8c0;
+  --table-accent: var(--crimson-dark);
 }
 
 /* Hide title block on pages with page-card to avoid duplication */
@@ -121,7 +121,7 @@ body.quarto-dark {
   --pub-row-band-odd: #1a2530;
   --pub-row-band-even: #26313a;
   --pub-row-band-focus: var(--pub-row-band-even);
-  --table-accent: #71808c;
+  --table-accent: var(--ncsu-yellow);
   background: #111820;
 }
 
