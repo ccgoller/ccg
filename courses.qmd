@@ -31,6 +31,11 @@ These cards highlight current courses. Use a linked title or **Visit Course** bu
         Visit Course ↗
       </a>
     </div>
+    <div class="course-logo">
+      <a href="https://go.ncsu.edu/outbreak" target="_blank" rel="noopener" aria-label="Open HON 312: Outbreak course website">
+        <span class="course-icon bi bi-globe-americas" aria-hidden="true"></span>
+      </a>
+    </div>
   </div>
 
   <!-- LSC 101 -->
@@ -64,7 +69,7 @@ These cards highlight current courses. Use a linked title or **Visit Course** bu
     </div>
     <div class="course-logo">
       <a href="https://go.ncsu.edu/delftiabook" target="_blank" rel="noopener" aria-label="Open Microbial Superheroes course website">
-        <img src="assets/courses/microbial-superheroes-lsc-170.png" alt="Microbial Superheroes | LSC 170" loading="lazy">
+        <img src="assets/courses/delftia-project.png" alt="Delftia Project logo" loading="lazy">
       </a>
     </div>
   </div>
@@ -87,7 +92,7 @@ These cards highlight current courses. Use a linked title or **Visit Course** bu
     </div>
     <div class="course-logo">
       <a href="https://go.ncsu.edu/mb360" target="_blank" rel="noopener" aria-label="Open MB 360 course website">
-        <img src="assets/courses/microbiology-mb-360.png" alt="MB 360: Inquiry at the Bench" loading="lazy">
+        <img src="assets/courses/mb360.png" alt="MB 360 logo" loading="lazy">
       </a>
     </div>
   </div>
@@ -110,7 +115,7 @@ These cards highlight current courses. Use a linked title or **Visit Course** bu
     </div>
     <div class="course-logo">
       <a href="https://go.ncsu.edu/mycoed" target="_blank" rel="noopener" aria-label="Open MycoEd course website">
-        <img src="assets/courses/mycoed.png" alt="MycoEd: The Hidden World's Code, Fungal Genomics" loading="lazy">
+        <img src="assets/courses/bsc495.png" alt="BSC 495: The Hidden World's Code logo" loading="lazy">
       </a>
     </div>
   </div>

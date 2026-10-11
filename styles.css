@@ -1498,6 +1498,18 @@ body.quarto-dark .contact-cta {
   padding: 0.4rem;
 }
 
+.course-logo .course-icon {
+  display: grid;
+  width: 140px;
+  height: 140px;
+  place-items: center;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  color: var(--crimson);
+  font-size: 5rem;
+  background: var(--surface-soft);
+}
+
 /* ── End course cards ─────────────────────────────────────── */
 
 /* ── Focused reading mode (navbar reader toggle) ─────────── */
