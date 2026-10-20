@@ -23,7 +23,7 @@ Research interests span microbial physiology, metabolism, pathogenesis, and inte
 
 ## Featured Research
 
-::: {.callout-note appearance="simple" icon="true"}
+::: {.contact-card}
 ### The Delftia Project
 
 [![Delftia logo](delftia-logo.png){fig-alt="Delftia logo" width=260px}](https://delftia.org/)
