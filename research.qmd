@@ -20,3 +20,13 @@ Research interests span microbial physiology, metabolism, pathogenesis, and inte
 - Discovery-driven student learning experiences
 - Research-informed teaching and mentoring
 - Interdisciplinary scientific collaboration, teamwork, and leadership
+
+## Featured Research
+
+::: {.callout-note appearance="simple" icon="true"}
+### The Delftia Project
+
+[![Delftia logo](delftia-logo.png){fig-alt="Delftia logo" width=260px}](https://delftia.org/)
+
+Supporting undergraduate research and discovery by exploring the genomic potential of *Delftia* spp.
+:::
