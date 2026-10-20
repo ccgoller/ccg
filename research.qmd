@@ -26,7 +26,7 @@ Research interests span microbial physiology, metabolism, pathogenesis, and inte
 ::: {.contact-card}
 ### The Delftia Project
 
-[![Delftia logo](delftia-logo.png){fig-alt="Delftia logo" width=260px}](https://delftia.org/)
+[![Delftia logo](Delftialogo.png){fig-alt="Delftia logo" width=260px}](https://delftia.org/)
 
 Supporting undergraduate research and discovery by exploring the genomic potential of *Delftia* spp.
 :::
