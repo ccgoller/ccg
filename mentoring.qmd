@@ -26,6 +26,7 @@ The table below is generated from `mentoring.bib` and supports instant search an
 
 <div id="mentor-filters" style="display:none"></div>
 
+<div class="records-table-scroll">
 <table id="mentor-table" class="caption-top table display accessible-table" style="width:100%" aria-label="Mentoring records">
 	<caption class="visually-hidden">Mentoring records with year, mentee, category, and summary.</caption>
 	<thead>
@@ -38,6 +39,7 @@ The table below is generated from `mentoring.bib` and supports instant search an
 	</thead>
 	<tbody></tbody>
 </table>
+</div>
 
 <script>
 const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor = null } = {}) => {

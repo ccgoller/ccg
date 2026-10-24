@@ -26,6 +26,7 @@ The table below is generated from `works.bib` and supports instant search and co
 
 <div id="pub-filters" style="display:none"></div>
 
+<div class="records-table-scroll">
 <table id="pub-table" class="caption-top table display accessible-table" style="width:100%" aria-label="Publications">
 	<caption class="visually-hidden">Publications with year, title, authors, venue, type, and link.</caption>
 	<thead>
@@ -40,6 +41,7 @@ The table below is generated from `works.bib` and supports instant search and co
 	</thead>
 	<tbody></tbody>
 </table>
+</div>
 
 <script>
 const drawBarChart = (canvasEl, labels, values, { rotateLabels = false, barColor = null } = {}) => {

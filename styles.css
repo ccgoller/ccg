@@ -121,7 +121,7 @@ body.quarto-dark {
   --pub-row-band-odd: #1a2530;
   --pub-row-band-even: #26313a;
   --pub-row-band-focus: var(--pub-row-band-even);
-  --table-accent: var(--ncsu-yellow);
+  --table-accent: var(--crimson-dark);
   background: #111820;
 }
 
@@ -724,8 +724,15 @@ figure.chart-figure canvas {
 #pub-table thead th,
 #mentor-table thead th {
   border-color: var(--table-accent);
-  background-color: var(--logo-red);
+  background-color: var(--table-accent);
   color: #ffffff;
+}
+
+.records-table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .branded-table-scroll {
@@ -764,7 +771,7 @@ body.quarto-dark .branded-table-scroll {
   padding: 0.85rem 1rem;
   border-color: var(--table-accent);
   border-bottom: 1px solid var(--table-accent);
-  background-color: var(--logo-red);
+  background-color: var(--table-accent);
   color: #ffffff;
   font-weight: 700;
   vertical-align: bottom;
@@ -1837,6 +1844,14 @@ body.ccg-reader-mode .detail-item:last-child {
     padding: 0.6rem 0.4rem;
     white-space: normal;
     overflow-wrap: anywhere;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #pub-table,
+  #mentor-table {
+    min-width: 48rem;
+    width: max-content;
   }
 }
 
