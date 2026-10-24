@@ -1851,7 +1851,7 @@ body.ccg-reader-mode .detail-item:last-child {
   #pub-table,
   #mentor-table {
     min-width: 48rem;
-    width: max-content;
+    width: max-content !important;
   }
 }
 
