@@ -735,6 +735,10 @@ figure.chart-figure canvas {
   -webkit-overflow-scrolling: touch;
 }
 
+main.content table {
+  font-size: clamp(0.9375rem, 0.88rem + 0.3vw, 1.0625rem);
+}
+
 .branded-table-scroll {
   --table-row-even: var(--surface-band);
   --table-row-hover: var(--table-row-even);
@@ -1808,7 +1812,7 @@ body.ccg-reader-mode .detail-item:last-child {
     content: attr(data-label);
     display: block;
     margin-bottom: 0.12rem;
-    font-size: 0.9rem;
+    font-size: clamp(0.875rem, 0.82rem + 0.2vw, 0.95rem);
     font-weight: 700;
     color: var(--bs-secondary-color);
     text-transform: uppercase;

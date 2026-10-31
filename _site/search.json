@@ -4,7 +4,7 @@
     "href": "mentoring.html",
     "title": "Mentoring",
     "section": "",
-    "text": "Skip to main content\n\n\n\n\n\nMentoring\nMentoring emphasizes confidence, a sense of belonging, scientific identity, and long-term growth through supportive, high-expectation academic relationships.\n\nThe table below is generated from mentoring.bib and supports instant search and column sorting.\n\n\n\n\nLoading mentoring records from mentoring.bib…\n\n\n\nJavaScript is required for the interactive table. Download the mentoring bibliography (BibTeX).\n\n\n\n\n\n\n\n\n\n\n\n\n\nMentoring records with year, mentee, category, and summary.\n\n\n\n\nYear\n\n\nMentee\n\n\nCategory\n\n\nSummary"
+    "text": "Skip to main content\n\n\n\n\n\nMentoring\nMentoring emphasizes confidence, a sense of belonging, scientific identity, and long-term growth through supportive, high-expectation academic relationships.\n\nThe table below is generated from mentoring.bib and supports instant search and column sorting.\n\n\n\n\nLoading mentoring records from mentoring.bib…\n\n\n\nJavaScript is required for the interactive table. Download the mentoring bibliography (BibTeX).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMentoring records with year, mentee, category, and summary.\n\n\n\n\nYear\n\n\nMentee\n\n\nCategory\n\n\nSummary"
   },
   {
     "objectID": "about.html",
@@ -53,7 +53,7 @@
     "href": "publications.html",
     "title": "Publications",
     "section": "",
-    "text": "Skip to main content\n\n\n\n\n\nPublications\nPublications bring together microbiology research, educational scholarship, and interdisciplinary collaboration across teaching, mentoring, and scientific practice.\n\nThe table below is generated from works.bib and supports instant search and column sorting.\n\n\n\n\nLoading publications from works.bib…\n\n\n\nJavaScript is required for the interactive table. Download the publications bibliography (BibTeX).\n\n\n\n\n\n\n\n\n\n\n\n\n\nPublications with year, title, authors, venue, type, and link.\n\n\n\n\nYear\n\n\nTitle\n\n\nAuthors\n\n\nVenue\n\n\nType\n\n\nLink"
+    "text": "Skip to main content\n\n\n\n\n\nPublications\nPublications bring together microbiology research, educational scholarship, and interdisciplinary collaboration across teaching, mentoring, and scientific practice.\n\nThe table below is generated from works.bib and supports instant search and column sorting.\n\n\n\n\nLoading publications from works.bib…\n\n\n\nJavaScript is required for the interactive table. Download the publications bibliography (BibTeX).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPublications with year, title, authors, venue, type, and link.\n\n\n\n\nYear\n\n\nTitle\n\n\nAuthors\n\n\nVenue\n\n\nType\n\n\nLink"
   },
   {
     "objectID": "index.html",
@@ -264,6 +264,13 @@
     "title": "Research",
     "section": "Current Directions",
     "text": "Current Directions\n\nMicrobiology and genomics-centered scholarship\nDiscovery-driven student learning experiences\nResearch-informed teaching and mentoring\nInterdisciplinary scientific collaboration, teamwork, and leadership"
+  },
+  {
+    "objectID": "research.html#featured-research",
+    "href": "research.html#featured-research",
+    "title": "Research",
+    "section": "Featured Research",
+    "text": "Featured Research\n\nThe Delftia Project\n\n\n\nDelftia logo\n\n\nSupporting undergraduate research and discovery by exploring the genomic potential of Delftia spp."
   },
   {
     "objectID": "contact.html",
