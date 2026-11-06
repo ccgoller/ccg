@@ -68,9 +68,9 @@ format:
         <a href="/ccg/publications.html">Publications</a> ·
         <a href="/ccg/teaching.html">Teaching</a> ·
         <a href="/ccg/contact.html">Contact</a><br>
-        Built with <a href="https://quarto.org/" target="_blank">Quarto</a>
+        Built with <a href="https://quarto.org/" target="_blank" rel="noopener">Quarto<span class="visually-hidden"> (opens in a new tab)</span></a>
       right: >-
-        <a href="https://linkedin.com/in/ccgoller" target="_blank">LinkedIn</a><br>
-        <a href="https://github.com/ccgoller" target="_blank">GitHub</a><br>
-        <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 License</a>
+        <a href="https://linkedin.com/in/ccgoller" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a><br>
+        <a href="https://github.com/ccgoller" target="_blank" rel="noopener">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a><br>
+        <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0 License<span class="visually-hidden"> (opens in a new tab)</span></a>
 editor: source
