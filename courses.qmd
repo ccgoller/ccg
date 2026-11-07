@@ -53,7 +53,7 @@ These cards highlight current courses. Use a linked title or **Visit Course** bu
   <div class="course-card">
     <div class="course-card-body">
       <h2 class="course-title">
-        <a href="https://go.ncsu.edu/delftiabook" target="_blank" rel="noopener">
+        <a href="https://go.ncsu.edu/lsc170" target="_blank" rel="noopener">
           Microbial Superheroes | LSC 170
         </a>
       </h2>
@@ -63,12 +63,12 @@ These cards highlight current courses. Use a linked title or **Visit Course** bu
         engages students in exploring microbial superpowers—from gold biomineralization to
         antibiotic resistance—through collaborative, inquiry-driven learning.
       </p>
-      <a class="course-btn" href="https://go.ncsu.edu/delftiabook" target="_blank" rel="noopener">
+      <a class="course-btn" href="https://go.ncsu.edu/lsc170" target="_blank" rel="noopener">
         Visit Course<span class="visually-hidden"> for Microbial Superheroes (opens in a new tab)</span> <span aria-hidden="true">↗</span>
       </a>
     </div>
     <div class="course-logo">
-      <a href="https://go.ncsu.edu/delftiabook" target="_blank" rel="noopener" aria-label="Open Microbial Superheroes course website (opens in a new tab)">
+      <a href="https://go.ncsu.edu/lsc170" target="_blank" rel="noopener" aria-label="Open Microbial Superheroes course website (opens in a new tab)">
         <img src="assets/courses/delftia-project.png" alt="Delftia Project logo" loading="lazy">
       </a>
     </div>
